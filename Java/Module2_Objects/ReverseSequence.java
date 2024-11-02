@@ -17,21 +17,21 @@ public class ReverseSequence {
         
         // Split Input by whitespace and store in an array
         String [] words = inputSequence.split(" "); 
-        
-        // Stack: Last-In, First-Out (LIFO) | Last Element In will also be the first element out
-        Stack<String> stack = new Stack<String>(); 
-        
-        // Push Each Word Into the Stack
+
+        // // Stack: Last-In, First-Out (LIFO) | Last Element In will also be the first element out
+        Stack<String> stack = new Stack<String>();
+
+        // Push Words into Stack, Last-In, First-Out
         for (String word : words) {
             stack.push(word); 
         }
-
+        
         // Print the Reverse Word Order
         System.out.println("Output Sequence: "); 
-        while (!stack.isEmpty()) {
+        while (!stack.isEmpty()){
             System.out.print(stack.pop() + " "); 
         }
-
+        
         scanner.close(); 
 
     }
