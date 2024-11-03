@@ -1,6 +1,6 @@
-// Based on what we have learned thus far, you have been provided with a partially complete 
-// code for a program. You are required to write two methods only. Each method needs to be 
-// independent and must be defined based on the following requirements.
+// Description: Calculates the area of a Rectangle and Triangle
+// Author: Tristan Sim
+// Version: 1.00
 
 public class Area
 {
@@ -8,12 +8,12 @@ public class Area
     public Area() {
     }
 
-    // Replace this line with the code for rectangle area
+    // Calculates tje Area of a Rectangle
     public double areaRectangle(double base, double height) {
         return base*height; 
     } 
 
-    // Replace this line with the code for triangle area
+    // Calculates the Area of a Triangle
     public double areaTriangle(double length, double width) { 
         return (length*width)/2; 
     }
