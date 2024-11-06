@@ -1,4 +1,8 @@
 
+// Description: Creates an Indefinie For Loop
+// Aurthor: Tristan Sim
+// Version: 1.00 
+
 import java.util.Scanner; 
 
 public class IndefiniteFor {
