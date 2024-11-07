@@ -7,6 +7,8 @@
 //       Based on the input, the method must print out all the prime numbers less than that number.
 // Note: a prime number is one which is only divisible by 1 and itself.
 
+// Recommendations: Use Sieve of Eratosthenes next time
+
 import java.util.Scanner;
 
 public class ListPrime {
@@ -20,22 +22,16 @@ public class ListPrime {
         int numOfDivision; 
 
         for (int iterI = 1; iterI < userNumberInput; iterI++) {
-
             numOfDivision = 0; 
-
             for (int iterJ = 1; iterJ <= iterI; iterJ++) {
                  if (iterI % iterJ == 0) {
                      numOfDivision++; 
                  }
             }
-
             if (numOfDivision <= 2 || iterI == 1)  {
                 System.out.println("Prime Number: " + iterI);
             }
-
         }
-
-
         scanner.close();
     }
 
