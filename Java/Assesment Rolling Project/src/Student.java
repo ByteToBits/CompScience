@@ -25,21 +25,34 @@ public class Student
     email = ""; 
     }
 
-    /** 
-     * Non-Default Constructor 
-     * @param studentName The Name of the Student as a String
-     * @param studentAddress The Address of the Student as a String
-     * @param studentPhoneNo The Phone Number of the Student as a String
-     * @param studentEmail The Email of the Student as a String
+    /**
+     * Constructs a Student instance with the specified name, address, phone number, and email.
+     * 
+     * @param studentName the name of the student, as a non-null, non-empty String
+     * @param studentAddress the address of the student, as a non-null, non-empty String
+     * @param studentPhoneNo the phone number of the student, as a non-null String
+     * @param studentEmail the email of the student, as a non-null String
+     * @throws IllegalArgumentException if studentName, studentAddress, studentPhoneNo, or studentEmail is null or empty
      */
-    public Student(String studentName, String studentAddress, String studentPhoneNo, String studentEmail)
-    {
-        name = studentName; 
-        address = studentAddress; 
-        phoneNo = studentPhoneNo; 
-        email = studentEmail; 
+    public Student(final String studentName, final String studentAddress, final String studentPhoneNo, final String studentEmail) {
+        if (studentName == null || studentName.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be Empty");
+        }
+        if (studentAddress == null || studentAddress.isEmpty()) {
+            throw new IllegalArgumentException("Address cannot be Empty");
+        }
+        if (studentPhoneNo == null || studentPhoneNo.isEmpty()) {
+            throw new IllegalArgumentException("Phone Number cannot be Empty");
+        }
+        if (studentEmail == null || studentEmail.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be empty");
+        }
+        this.name = studentName;
+        this.address = studentAddress;
+        this.phoneNo = studentPhoneNo;
+        this.email = studentEmail;
     }
-
+    
     /**
      * Display Method to Print out the Student Information
      */
