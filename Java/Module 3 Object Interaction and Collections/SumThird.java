@@ -1,9 +1,11 @@
 
-// Description: 
-// Aurthor: Tristan Sim
-// Version: 1.00
+/**
+ * Description: Sum every third number in the range given
+ * @author Tristan
+ * @version 1.00
+ */
 
-/** 
+/*
 You are required to write a method that accepts two input parameters, both of integer types. 
  1) The first represents the lower number of a range.
  2) The second represents the higher number of the range.
@@ -12,7 +14,9 @@ Write a class with a main() method. In another method using the two values provi
 total sum of every THIRD number within the range.
 
 For e.g. Lower Number is 1, Upper Number is 10. Range is 1–10. Every third number is 3, 6, 9. The method should return 18 as the total.
-**/
+
+Create a JavaDoc -> javadoc -d ./doc "SumThird.java"
+*/
 
 import java.util.Scanner; 
 
@@ -32,13 +36,21 @@ public class SumThird {
         sum = 0; 
     }
     
+    /** Non-default constructor which creates the object for the SumThird class
+     * @newLowerNumber Accepts the New Lower Limit Number as a Integer
+     * @newHigherNumber Accepts the New Higher Limit Number as a Integer
+     */
     public SumThird(int newLowerNumber, int newHigherNumber) {
         lowerNumber = newLowerNumber; 
         higherNumber = newHigherNumber; 
         sum = 0;  
     }
     
-    // Accessor Methods
+     // Accessor Methods
+    /**
+     * Accesor Method to get the Lower Number 
+     * @return Returns the Lower Number as an Integer
+     */
     public int getLowerNumber() {
         return this.lowerNumber; 
     }
@@ -52,6 +64,10 @@ public class SumThird {
     }
 
     // Mutator Mehtods
+    /**
+     * Mutator Method to set the lower number value
+     * @param newLowerNumber Takes in a New Lower Number value as a Integer
+     */
     public void setLowerNumber(int newLowerNumber) {
         this.lowerNumber = newLowerNumber;
     }

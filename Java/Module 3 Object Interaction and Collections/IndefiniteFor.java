@@ -1,13 +1,17 @@
 
-// Description: Creates an Indefinie For Loop
-// Aurthor: Tristan Sim
-// Version: 1.00 
+/**
+* Description: Creates an Indefinie For Loop
+* @author Tristan Sim
+* @version 1.00 
+*/
 
 import java.util.Scanner; 
 
 public class IndefiniteFor {
 
-/* Task: Write the code for such a for loop that keeps repeating to print out a number until the user tells the loop to exit.  */
+    /** 
+     * Task: Write the code for such a for loop that keeps repeating to print out a number until the user tells the loop to exit. 
+    */
 
     public IndefiniteFor() {
     }
