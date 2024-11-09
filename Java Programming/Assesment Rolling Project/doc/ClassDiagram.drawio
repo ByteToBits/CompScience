@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="dSvuV1CNV-9eOFvfghRx">
-    <mxGraphModel dx="1221" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="698" dy="498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
         <mxCell id="y66Isht47EPB-E9qdgSM-9" value="date: String&lt;div style=&quot;font-size: 13px;&quot;&gt;student: Student&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;unit: Unit&lt;/div&gt;" style="text;strokeColor=#214f79;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;" parent="y66Isht47EPB-E9qdgSM-7" vertex="1">
           <mxGeometry y="30" width="240" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="y66Isht47EPB-E9qdgSM-12" value="Enrolment()&lt;div style=&quot;font-size: 13px;&quot;&gt;Enrolment(String, Student, Unit)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;display: String&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getData(): String&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getStudent(): Student&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getUnit(): Unit&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setDate(String)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setStudent(Student)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setUnit(Unit)&lt;/div&gt;" style="text;strokeColor=#214f79;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;" parent="y66Isht47EPB-E9qdgSM-7" vertex="1">
+        <mxCell id="y66Isht47EPB-E9qdgSM-12" value="Enrolment()&lt;div style=&quot;font-size: 13px;&quot;&gt;Enrolment(String, Student, Unit)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;display: String&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getDate(): String&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getStudent(): Student&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;getUnit(): Unit&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setDate(String)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setStudent(Student)&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;setUnit(Unit)&lt;/div&gt;" style="text;strokeColor=#214f79;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;" parent="y66Isht47EPB-E9qdgSM-7" vertex="1">
           <mxGeometry y="90" width="240" height="160" as="geometry" />
         </mxCell>
         <mxCell id="y66Isht47EPB-E9qdgSM-31" value="" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;shadow=0;perimeterSpacing=0;swimlaneLine=0;" parent="y66Isht47EPB-E9qdgSM-59" vertex="1">
@@ -69,16 +69,16 @@
         <mxCell id="y66Isht47EPB-E9qdgSM-44" value="Is For" style="text;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=15;strokeWidth=2;fontStyle=1;labelBackgroundColor=default;gradientColor=none;arcSize=12;imageHeight=24;spacing=1;" parent="y66Isht47EPB-E9qdgSM-59" vertex="1">
           <mxGeometry x="270" y="409" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-4" value="Associations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00CC00;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="y66Isht47EPB-E9qdgSM-59" vertex="1">
+        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-4" value="Associations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FF33;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="y66Isht47EPB-E9qdgSM-59" vertex="1">
           <mxGeometry x="160" y="130" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-1" value="Class Names" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00CC00;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-1" value="Class Names" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FF33;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="40" y="220" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-2" value="Fields" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00CC00;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-2" value="Fields" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FF33;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="40" y="270" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-3" value="Methods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00CC00;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="7Wb6oGiZ9n-uL5kr2Mqo-3" value="Methods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FF33;fontColor=#000000;strokeColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="40" y="370" width="120" height="30" as="geometry" />
         </mxCell>
       </root>

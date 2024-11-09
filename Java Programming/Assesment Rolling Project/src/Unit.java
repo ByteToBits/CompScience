@@ -1,11 +1,11 @@
 
 /**
- * Description: Units Class contains instructions to handle the Units (Subjects) information
+ * Description: Unit Class contains instructions to handle the Unit (Subjects) information
  * @author Tristan Sim
  * @version 1.00
  */
 
-public class Units {
+public class Unit {
     
     // Fields
     private String unitCode;
@@ -15,7 +15,7 @@ public class Units {
     /**
      * Default Constructor
      */
-    public Units() 
+    public Unit() 
     {
         unitCode = ""; 
         unitDescription = "";
@@ -29,7 +29,7 @@ public class Units {
      * @param creditPoints The amount of Credit Points for the Unit as an Integer
      * @throw IllegalArgumentException if Unit Code and Unit Desecription are Empty
      */
-    public Units(String unitCode, String unitDescription, int creditPoints)
+    public Unit(String unitCode, String unitDescription, int creditPoints)
     {   
         if (unitCode == null || unitCode.isEmpty()) {
             throw new IllegalArgumentException("Unit Code cannot be Empty"); 
