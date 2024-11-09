@@ -56,8 +56,8 @@ public class Student
     /**
      * Display Method to Print out the Student Information
      */
-    public void display() {
-        System.out.printf("Student Name: %s\nStudent Address: %s\nStudent Phone No: %s\nStudent Email: %s\n",
+    public String display() {
+        return String.format("Student Name: %s\nStudent Address: %s\nStudent Phone No: %s\nStudent Email: %s\n",
         this.name, this.address, this.phoneNo, this.email); 
     }
 

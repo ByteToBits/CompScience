@@ -46,13 +46,13 @@ public class Units {
     /**
      * Display Method:L Display Unit Information
      */
-    public void display()
+    public String display()
     {
         String tempString = String.format(
             "Unit Code: %s\nUnit Description: %s\nCredit Points %d",
             this.unitCode, this.unitDescription, this.creditPoints
         );
-        System.out.println(tempString);
+        return tempString; 
     }
 
     /**
