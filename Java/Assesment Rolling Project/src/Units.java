@@ -3,7 +3,6 @@
  * Description: Units Class contains instructions to handle the Units (Subjects) information
  * @author Tristan Sim
  * @version 1.00
-
  */
 
 public class Units {
@@ -16,7 +15,8 @@ public class Units {
     /**
      * Default Constructor
      */
-    public Units() {
+    public Units() 
+    {
         unitCode = ""; 
         unitDescription = "";
         creditPoints = 0; 
@@ -44,13 +44,66 @@ public class Units {
     }
 
     /**
-     * Display Unit Information Method
+     * Display Method:L Display Unit Information
      */
-    public void display() {
+    public void display()
+    {
         String tempString = String.format(
             "Unit Code: %s\nUnit Description: %s\nCredit Points %d",
             this.unitCode, this.unitDescription, this.creditPoints
         );
         System.out.println(tempString);
     }
+
+    /**
+     * Accessor Method: Get the Credit Points
+     * @return Returns the Credit Points in as a Integer
+     */
+    public int getCreditPoints() 
+    {
+        return this.creditPoints;
+    }
+
+    /**
+     * Accessor Method: Get the Unit Code
+     * @return Returns the Unit Code as a String
+     */
+    public String getUnitCode() 
+    {
+        return this.unitCode;
+    }
+
+    /**
+     * Accesor Method: Get the Unit Description
+     * @return Returns the Unit Description as a String
+     */
+    public String getUnitDescription() 
+    {
+        return this.unitDescription;
+    }
+    
+    /** Mutator Method: Set the Credit Points
+     * @param creditPoints The New Credit Point to be Updated for the Unit as a Integer
+     */
+    public void setCreditPoints(int creditPoints) 
+    {
+        this.creditPoints = creditPoints;
+    }
+
+    /** Mutator Method: Set the Unit Code
+     * @param unitCode The New Unit Code to be Updated for the Unit as a String
+     */
+    public void setUnitCode(String unitCode)
+    {
+        this.unitCode = unitCode;
+    }
+
+    /** Mutator Method: Set the Unit Description
+     * @param unitDescription The New Unit Description to be Updated for the Unit as a String
+     */
+    public void setUnitDescription(String unitDescription)
+    {
+        this.unitDescription = unitDescription; 
+    }
+
 }
