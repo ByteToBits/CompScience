@@ -31,45 +31,65 @@ public class Input
     }
 
     /**
-     * Custom Method: Accept Character Inputs
-     * If the User inputs Character a Integer or String, convert it to a Char Type
-     * @param inputString 
-     * @param inputInteger 
+     * Custom Method:  Accepts a Display Message as a String to prompt for a Character
+     * @param message The Message Display to prompt the user Input as a String
+     * @param index The Index of the Character as an Integer, Default as 0
      * @return Returns a Character Type
+     * @throws IndexOutOfBoundsException if the index is out of range for the input string.
      */
-    public char acceptCharInput(String inputString, int inputInteger) 
+    public char acceptCharInput(String message, int index) 
     {  
-       if (inputString == null || inputString.isEmpty()) 
-       {
-           // Character Unicode has a Range of 0...65535 (16-bit Unsigned Integer)
-           if (inputInteger <= 65535) 
-           {   
-               // Explicit Casting (Converting a 32-Bit Integer to a 16-Bit Character)
-               return (char) inputInteger; 
-           } else
-           {
-               // The high surrogate is in the range of 0xD800 to 0xDBFF
-               int highSurrogate = (inputInteger - 0x10000) / 0x400 + 0xD800;
-               return (char) highSurrogate; // Return the high surrogate as a char
-           }
-           
-       } else
-       {
-         return inputString.charAt(0); 
-       }
+        System.out.println(message); 
+        String tempString = scanner.nextLine(); 
+
+        if (index < 0 || index >= message.length()) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        }
+        return tempString.charAt(index); 
     }
     
-   public static void main(String[] args) {
-      Input input = new Input();
+    /**
+     * Custom Method: Accepts a Display Message as a String to prompt for a Double Input
+     * @param message The Message Display to prompt the user Input as a String
+     * @return Returns a Double Type
+     */
+    public double acceptDoubleInput(String message) 
+    {
+        System.out.println(message);  
+        String tempString = scanner.nextLine(); 
+        return Double.parseDouble(tempString); 
+    }
 
-      // Test with a normal character
-      System.out.println(input.acceptCharInput("", 65));    // Outputs: A (U+0041)
+    /**
+     * Custom Method: Accepts a Display Message as a String to prompt for a Integer Input
+     * @param message The Message Display to prompt the user Input as a String
+     * @return Returns a Integer Type
+     */
+    public int acceptIntegerInput(String message)
+    {
+        System.out.println(message);
+        String temString = scanner.nextLine(); 
+        return Integer.parseInt(temString); 
+    }
 
-      // Test with a larger code point (supplementary character)
-      System.out.println(input.acceptCharInput("", 0x1F600)); // Outputs: ���� (surrogate high)
+    /**
+     * Custom Method: Accepts a Display Message as a String to prompt for a String Input
+     * @param message The Message Display to prompt the user Input as a String
+     * @return Returns a String Type
+     */
+    public String acceptStringInput(String message)
+    {
+       System.out.println(message); 
+       return scanner.nextLine(); 
+    }
 
-      // Test with a larger code point (supplementary character)
-      System.out.println(input.acceptCharInput("Test", 0)); // Outputs: T
-  }
+    /**
+     * Custom Methods: Closes the Scanner Class for the Input Class
+     */
+    public void closeScanner() {
+      if (scanner != null) {
+            scanner.close();
+        }
+    }
 
 }
