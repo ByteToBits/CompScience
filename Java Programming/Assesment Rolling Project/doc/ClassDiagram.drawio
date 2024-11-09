@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="dSvuV1CNV-9eOFvfghRx">
-    <mxGraphModel dx="842" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1018" dy="726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -121,7 +121,7 @@
         <mxCell id="XH4O_Xo0e676Nhpj7tfd-10" value="" style="text;strokeColor=#4C0099;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;container=0;" parent="1" vertex="1">
           <mxGeometry x="122" y="352" width="300" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="XH4O_Xo0e676Nhpj7tfd-11" value="Input()&lt;div&gt;acceptCharInput(String, int): char&lt;/div&gt;&lt;div&gt;acceptDoubleInput(String): double&lt;/div&gt;&lt;div&gt;acceptIntelligence(String): int&lt;/div&gt;&lt;div&gt;acceptStringInput(String): String&lt;/div&gt;" style="text;strokeColor=#4C0099;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;container=0;" parent="1" vertex="1">
+        <mxCell id="XH4O_Xo0e676Nhpj7tfd-11" value="Input()&lt;div&gt;acceptCharInput(String, int): char&lt;/div&gt;&lt;div&gt;acceptDoubleInput(String): double&lt;/div&gt;&lt;div&gt;acceptIntegerInput(String): int&lt;/div&gt;&lt;div&gt;acceptStringInput(String): String&lt;/div&gt;" style="text;strokeColor=#4C0099;fillColor=#FFFFFF;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=10;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;shape=mxgraph.bootstrap.bottomButton;rSize=5;fontColor=#000000;strokeWidth=2;labelPadding=0;labelBorderColor=none;fontSize=13;fontStyle=1;shadow=0;perimeterSpacing=0;swimlaneLine=0;container=0;" parent="1" vertex="1">
           <mxGeometry x="122" y="380" width="300" height="100" as="geometry" />
         </mxCell>
         <mxCell id="XH4O_Xo0e676Nhpj7tfd-23" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.005;entryY=0.358;entryDx=0;entryDy=0;entryPerimeter=0;curved=0;strokeWidth=2;" parent="1" edge="1">
