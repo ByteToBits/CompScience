@@ -26,7 +26,7 @@
     {
         if (inputString == null || inputString.isEmpty()) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
