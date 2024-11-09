@@ -100,23 +100,4 @@ public class Enrollment {
         this.unit = unit; 
     }
 
-    /** Main Method
-     * Given the above class diagram, you main() method must be included in your Enrolment class for now if you would like to test your code. 
-     */
-    public static void main(String[] args) 
-    {    
-        // 1) Create and object of the Student class using the non-default constructor
-        Student objStudent = new Student("John Doe", "No Where Land, Wasteland", "12345678", "john@gmail.com"); 
-
-        // 2) Create and object of the Unit class using the non-default constructor
-        Unit objUnit = new Unit("CS 8888", "Java Programming", 6); 
-        
-        //  3) Create and object of the Enrolment class using the non-default constructor
-        Enrollment objEnrollment = new Enrollment("9-Nov-2024", objStudent, objUnit); 
-        
-        // 4) Now call the display() method in the enrolment class to display the state of the enrolment object.
-        System.out.println(objEnrollment.displayEnrollment());
-        
-    }
-
 }
