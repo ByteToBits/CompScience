@@ -59,12 +59,8 @@ public class University
     */
     public void inputStudentDetails(Enrollment enrollment) 
     {   
-        // Check if the Student Object Has already been Previously Instatiated
+        // Get the Student information from the Enrollment Class
         Student student = enrollment.getStudent(); 
-        if (student == null) {
-            student = new Student(); // Create a New Student if it has not and initialize
-            enrollment.setStudent(student);
-        }
 
         Input inputFromUser = new Input(); 
         Validation validateInput = new Validation(); 
@@ -72,7 +68,7 @@ public class University
         String[] inputFields = {"Name", "Address", "Phone No", "E-mail"}; 
         String[] tempString = new String[inputFields.length]; 
         
-        // 1) Get User Input 2) Validate Input if it is Not Blank 
+        // Get User Input & Validate Input if it is Not Blank 
         for (int iterI = 0; iterI < inputFields.length; iterI++)
         {
             tempString[iterI] = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":");       
@@ -82,7 +78,7 @@ public class University
             }; 
         }
 
-        // 3) Set the Student Object in the 
+        // Set the Student Object in the 
         student.setName(tempString[0]);
         student.setAddress(tempString[1]);
         student.setPhoneNo(tempString[2]);
