@@ -37,8 +37,8 @@ public class Enrollment {
      * Display Method: Display the Enrollment Information
      */
     public String displayEnrollment() {
-        return String.format("Enrollment Information\n\nStudent:\n%s\nUnit:\n%s\n\nEnrollment Date: %s\n",
-                                               this.student.display(), this.unit.display(), this.date); 
+        return String.format("\nEnrollment Information:\n\nEnrollment Date: %s\n\n%s\n%s\n",
+                             this.date, this.student.display(), this.unit.display()); 
     }
 
     /** Accesor Method: Get Date
