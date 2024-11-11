@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Scanner; 
 
-public class TestArrayList {
+public class LearnArrayList {
     
     public static void main(String[] args)
     {
@@ -52,7 +52,8 @@ public class TestArrayList {
         System.out.println("The number of even numbers between 1 to 20 are " + evenNumbers.size()); 
         int firstEvenNumber = evenNumbers.get(0); 
         System.out.println("The First Even Number is " + firstEvenNumber);
-
+        
+        console.close();
     }
 
 }
