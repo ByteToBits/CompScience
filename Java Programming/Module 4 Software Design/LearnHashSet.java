@@ -7,7 +7,9 @@
 // Learning Material: "Coding with John" From Youtube
 // When is HashSet Useful? Store Data with no Duplicates with no particular order
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set; 
 
 public class LearnHashSet {
@@ -37,6 +39,17 @@ public class LearnHashSet {
         // Lambda Function for For-Eacg Loop
         System.out.println("\nPrinted using a Lambda Function");
         names.forEach(System.out::println); 
+
+        // Application: We want to remove duplicates from a List
+        List <Integer> numberList = new ArrayList<>(); 
+        numberList.add(1); numberList.add(2); 
+        numberList.add(2); numberList.add(3); 
+        numberList.add(1); numberList.add(3); 
+        System.out.println("\nNumber List: " + numberList);
+
+        Set<Integer> numberSet = new HashSet<>(numberList); 
+
+        System.out.println("Using HashSet to Remove Duplicates: " + numberSet + "\n");
 
     }
 }
