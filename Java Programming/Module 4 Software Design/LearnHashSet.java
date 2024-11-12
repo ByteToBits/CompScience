@@ -6,6 +6,7 @@
 
 // Learning Material: "Coding with John" From Youtube
 // When is HashSet Useful? Store Data with no Duplicates with no particular order
+// Why Hash? It uses the HashTable as a storage mechanism
 
 import java.util.ArrayList;
 import java.util.HashSet;
