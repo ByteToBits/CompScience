@@ -37,7 +37,7 @@ public class LearnHashSet {
             System.out.println(name);
         }
         
-        // Lambda Function for For-Eacg Loop
+        // Lambda Function for For-Each Loop
         System.out.println("\nPrinted using a Lambda Function");
         names.forEach(System.out::println); 
 
@@ -45,11 +45,10 @@ public class LearnHashSet {
         List <Integer> numberList = new ArrayList<>(); 
         numberList.add(1); numberList.add(2); 
         numberList.add(2); numberList.add(3); 
-        numberList.add(1); numberList.add(3); 
+        numberList.add(1); numberList.add(3);
         System.out.println("\nNumber List: " + numberList);
 
         Set<Integer> numberSet = new HashSet<>(numberList); 
-
         System.out.println("Using HashSet to Remove Duplicates: " + numberSet + "\n");
 
     }
