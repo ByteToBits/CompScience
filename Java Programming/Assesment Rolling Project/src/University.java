@@ -6,7 +6,6 @@
  */
 
 import java.util.ArrayList;
-import java.util.stream.IntStream; 
 
 public class University
 {
@@ -32,13 +31,11 @@ public class University
      * Display Method: Display the University Information
      * @return A String Output of the Array List of Enrollment of Ojects
      */
-    public String displayUniversity() 
-    {
+    public String displayUniversity() {
         StringBuffer enrollmentText = new StringBuffer(); 
-        for (Enrollment enrollment:this.enrollments)
-        {
+        for (Enrollment enrollment : this.enrollments) {
             if (enrollment != null) {
-                enrollmentText.append(enrollments); 
+                enrollmentText.append(enrollment.displayEnrollment());  
             }
         }
         return enrollmentText.toString(); 
@@ -128,13 +125,12 @@ public class University
      */
     public void inputUnitDetails(ArrayList<Enrollment> enrollments)
     {   
-        // Check if enrollment has values 
-        if (enrollments == null || enrollments.isEmpty()) {
-            System.out.print("The Enrollment ArrayList is Empty"); 
+        int currentIndex = enrollments.size() - 1; 
+        int unitSize = enrollments.get(currentIndex).getUnitSize();
+        
+        for (int iterI = 0; iterI < unitSize; iterI++) {
+            inputUnitDetailsOnce(iterI, this.enrollments.get(currentIndex)); 
         }
-
-        // Integer Stream: Sequence of Numbers | From a Range of 0 to ArraListSize - For each element excute process) 
-        IntStream.range(0, enrollments.size()).forEach(index -> inputUnitDetailsOnce(index, enrollments.get(index)));
     }
 
     /** 
@@ -153,7 +149,9 @@ public class University
         String userResponse; 
 
         // May need to verify if the Index is within Bounds
-        if (index < 0 || index >= this.enrollments.size()) {
+        int currentIndex = enrollments.size() - 1; 
+        
+        if (index < 0 || index >= enrollments.get(currentIndex).getUnitSize()) {
             throw new IndexOutOfBoundsException("The index is out of bounds of the Array List"); 
         }
         
@@ -238,6 +236,72 @@ public class University
         }
         this.enrollments.set(index, enrollment);
     }
+    
+    public static void startProgram()
+    {
+        Input userInput = new Input(); 
+        ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>(); 
+        University university = new University(enrollments); 
+   
+        // Initial prompt message
+        System.out.println("\nThis is the University Enrollment Program.");
+
+        while (true) {
+            // Prompt the user for input
+            String userSelection = userInput.acceptStringInput("Please Enter:\n1 - To Enroll a Student\n2 - To Exit the Program");
+
+            // Handle the user's selection
+            if (userSelection.equals("1")) {
+
+                Enrollment newEnrollment = new Enrollment();
+
+                // Enter Enrollment Date
+                String newEnrollmentDate = userInput.acceptStringInput("\nPlease Enter the Enrollment Date:");
+                if (newEnrollmentDate == null || newEnrollmentDate.isEmpty()) {
+                    newEnrollmentDate = ""; // Default Value of String in Default Constructor is also Null
+                    System.out.println("The Enrollment Date should not be Blank");
+                }
+
+                newEnrollment.setDate(newEnrollmentDate);
+
+                // Get user to Input the Student and Unit Details
+                university.inputStudentDetails(newEnrollment);
+
+                // Add the new Enrollment to the list
+                enrollments.add(newEnrollment); 
+                
+                int numberOfUnits = userInput.acceptIntegerInput("Input the Number of Units to Enroll: ");
+                int currentIndex = enrollments.size() - 1; 
+                enrollments.get(currentIndex).setUnitSize(numberOfUnits);
+
+                university.inputUnitDetails(enrollments);
+
+                // Display the University Object Information1
+                System.out.println(university.displayUniversity());
+
+                // After enrollment, re-prompt the user whether to enroll again or exit
+                String continueSelection = userInput.acceptStringInput("Would you like to enroll another student?\n1 - Yes\n2 - No");
+                
+                if (continueSelection.equals("2")) {
+                    System.out.println("Program Execution has terminated.\n");
+                    break; // Exit the loop and terminate the program
+                }
+                // Otherwise, continue the loop to enroll again if the user selects '1'
+
+            } else if (userSelection.equals("2")) {
+                System.out.println("Program Execution has terminated.\n");
+                break; // Exit the loop and terminate the program
+
+            } else {
+                // If the user enters an invalid option, prompt them again
+                System.out.println("Invalid option. Please enter 1 or 2.");
+            }
+        }
+        
+
+    }
+
+
 
     /*
      * Lastly, write the main() method in the University class.
@@ -253,32 +317,6 @@ public class University
      */
     public static void main(String[] args)
     {   
-        Input userInput = new Input(); 
-        ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>(); 
-        University university = new University(enrollments); 
-
-        System.out.println("\nThis is the University Enrollment Program."); 
-        String userSelection = userInput.acceptStringInput("Please Enter:\n1 - To Enroll a Student\n2 - To Exit the Program"); 
-        
-        if (userSelection.equals("1")) {
-
-            // Enter Enrollment Date 
-            String newEnrollmentDate = userInput.acceptStringInput("\nPlease Enter the Enrollment Date:");
-            if (newEnrollmentDate == null || newEnrollmentDate.isEmpty()) {
-                newEnrollmentDate = ""; // Default Value of String in Default Constructor is also Null
-                System.out.println("The Enrollment Date should not be Blank"); 
-            }
-            enrollments.setDate(newEnrollmentDate);
-            
-            // Get user to Input the Student and Unit Details
-            university.inputStudentDetails(enrollments);
-            university.inputUnitDetails(enrollments);
-
-            // Display the University Object Information
-            System.out.println(university.displayUniversity());
-      
-        } else {
-            System.out.println("Program Execution has terminated.\n"); 
-        }
+        startProgram();
     }
 }

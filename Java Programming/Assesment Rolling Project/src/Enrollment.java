@@ -51,9 +51,10 @@ public class Enrollment {
             }
         }
 
-        return String.format("\nEnrollment Information:\n\nEnrollment Date: %s\n\n%s\n%s\n",
+        return String.format("\nEnrollment Information:\nEnrollment Date: %s\n%s\n%s\n",
                              this.date, this.student.display(), unitsEnrolled); 
     }
+
 
     /** Custom Method: Create a New Student
      * @param name Name of the Student as a String
@@ -174,43 +175,74 @@ public class Enrollment {
      * @param unitSize The Size of the Unit Array as an Integer
      * @throw IndexOutOfBoundsException The Unit Size must be greater than 0 for a new Array
      */
-    public void setUnitSize(int unitSize)
-    {
-        if (unitSize < 0)
-        {
-        throw new IndexOutOfBoundsException("This Unit Size must be greater than Zero for an Array"); 
+    public void setUnitSize(int unitSize) {
+        if (unitSize <= 0) {
+            throw new IllegalArgumentException("Unit size must be greater than 0.");
         }
         
-        Unit[] newUnits = new Unit[unitSize]; 
+        // Initialize the units array with the given size
+        this.units = new Unit[unitSize];
         
-        // Copy Over the Values from the Old Array to New Array | Mind the Smallest Array size of the two Arrays
-        int smallerArraySize = Math.min(unitSize, this.getUnitSize()); 
-        System.arraycopy(this.units, 0, newUnits, 0, smallerArraySize);
-
-        this.units = newUnits; 
+        // Initialize each Unit object in the array
+        for (int i = 0; i < unitSize; i++) {
+            this.units[i] = new Unit();  // Initialize each Unit
+        }
     }
 
+    public String getLowestCreditPoints() 
+    {
+        Unit lowestCreditUnit = null;
+        for (Unit unit : units) 
+        {
+                if (unit != null) {
+                    if (lowestCreditUnit == null || unit.getCreditPoints() < lowestCreditUnit.getCreditPoints()) {
+                    lowestCreditUnit = unit; 
+                    }
+                }
+        }
+        if (lowestCreditUnit != null) {
+            return lowestCreditUnit.getUnitDescription();
+        } else {
+            return null;
+        }
+    }
+  
+    public void moveFITUnits() 
+    {
+        int index = 0; // If an element with FIT is detected, Insert at this index
+        for (int iterI = 0; iterI < units.length; iterI++) {
+            if (units[iterI] != null && units[iterI].getUnitCode().startsWith("FIT")) {
+                Unit tempUnit = units[index]; // Pass the Unit to be Swapped Out to Temp
+                units[index] = units[iterI];
+                units[iterI] = tempUnit;
+                index++;  // Increment to the next Index
+            }
+        }
+    }
 
     // Internal Testing
     public static void main(String[] args)
     {   
         // Have to Create a New Object to Initialize each Object in the Array
         Unit[] studentUnits = new Unit[] {
-            new Unit("ITO3888", "Java Programming", 5),
-            new Unit("ITO8888", "Databases", 5),
-            new Unit("ITO9688", "C++ Programming", 5),
-            new Unit("ITO8778", "Distributed Systems", 5),
-            new Unit("ITO9698", "Data Strucutres & Algorithm", 5),
+            new Unit("ITO3888", "Java Programming", 3),
+            new Unit("ITO8888", "Databases", 3),
+            new Unit("FIT9688", "C++ Programming",5),
+            new Unit("FTO8778", "Automata Theory", 2),
+            new Unit("FIT9698", "Data Strucutres & Algorithm", 5),
+            new Unit("FITO9698", "Distributed Systems", 5),
         };
         
         Student newStudent = new Student();
 
         Enrollment newEnrollmebnt1 = new Enrollment("20th Oct", newStudent, studentUnits); 
+        newEnrollmebnt1.moveFITUnits(); 
         
         newEnrollmebnt1.createStudent("John Hops", "Canberra", "888888", "Hops@gmail.com");
-        newEnrollmebnt1.setUnitSize(3);
-        newEnrollmebnt1.setSpecificUnit(2, "ITO9698", "Data Strucutres & Algorithm", 5);
 
         System.out.println(newEnrollmebnt1.displayEnrollment()); 
+
+        System.out.println("Lowest Credit Point: " + newEnrollmebnt1.getLowestCreditPoints()); 
+
     }
 }   
