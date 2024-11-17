@@ -125,7 +125,7 @@ public class University
      */
     public void inputUnitDetails(ArrayList<Enrollment> enrollments)
     {   
-        int currentIndex = enrollments.size() - 1; 
+        int currentIndex = enrollments.get(0).getNumberOfEnrollments() - 1; 
         int unitSize = enrollments.get(currentIndex).getUnitSize();
         
         for (int iterI = 0; iterI < unitSize; iterI++) {
@@ -149,7 +149,7 @@ public class University
         String userResponse; 
 
         // May need to verify if the Index is within Bounds
-        int currentIndex = enrollments.size() - 1; 
+        int currentIndex = enrollment.getNumberOfEnrollments() - 1; 
         
         if (index < 0 || index >= enrollments.get(currentIndex).getUnitSize()) {
             throw new IndexOutOfBoundsException("The index is out of bounds of the Array List"); 
@@ -159,7 +159,6 @@ public class University
         for (int iterI = 0; iterI < inputFields.length; iterI++)
         {   
             Boolean validInput = false; 
-
             while (!validInput) {
                 switch (iterI) 
                 {
@@ -254,6 +253,8 @@ public class University
             if (userSelection.equals("1")) {
 
                 Enrollment newEnrollment = new Enrollment();
+                int numberOfEnrolments = newEnrollment.getNumberOfEnrollments(); 
+                System.out.println("\nEnrollment No. " + (numberOfEnrolments)); 
 
                 // Enter Enrollment Date
                 String newEnrollmentDate = userInput.acceptStringInput("\nPlease Enter the Enrollment Date:");
@@ -263,20 +264,22 @@ public class University
                 }
 
                 newEnrollment.setDate(newEnrollmentDate);
+                
+                // Add the new Enrollment to the list
+                enrollments.add(newEnrollment); 
 
                 // Get user to Input the Student and Unit Details
                 university.inputStudentDetails(newEnrollment);
 
-                // Add the new Enrollment to the list
-                enrollments.add(newEnrollment); 
-                
                 int numberOfUnits = userInput.acceptIntegerInput("Input the Number of Units to Enroll: ");
-                int currentIndex = enrollments.size() - 1; 
-                enrollments.get(currentIndex).setUnitSize(numberOfUnits);
+                university.enrollments.get(numberOfEnrolments - 1).setUnitSize(numberOfUnits);
 
                 university.inputUnitDetails(enrollments);
 
-                // Display the University Object Information1
+                // Prioritize "FIT" to the Front
+                university.enrollments.get(numberOfEnrolments - 1).moveFITUnits();
+
+                // Display the University Object Information
                 System.out.println(university.displayUniversity());
 
                 // After enrollment, re-prompt the user whether to enroll again or exit

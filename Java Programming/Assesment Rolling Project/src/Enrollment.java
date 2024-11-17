@@ -13,6 +13,7 @@ public class Enrollment {
     private String date;
     private Student student; 
     private Unit[] units;
+    private static int numberOfEnrolments = 0; 
 
     /** Default Constructor
      */
@@ -21,6 +22,7 @@ public class Enrollment {
         date = "";
         student = new Student();
         units = new Unit[10]; 
+        numberOfEnrolments++; 
     }
 
     /** Non-Default Constructor
@@ -33,6 +35,7 @@ public class Enrollment {
         this.date = date;
         this.student = student;
         this.units = units;
+        numberOfEnrolments++; 
     }
 
     /**
@@ -47,11 +50,11 @@ public class Enrollment {
                 if (unitsEnrolled.length() > 0) {
                     unitsEnrolled.append(", "); 
                 }
-                unitsEnrolled.append(unit.getUnitDescription());
+                unitsEnrolled.append(unit.getUnitDescription() + " (" + unit.getUnitCode() + ")");
             }
         }
 
-        return String.format("\nEnrollment Information:\nEnrollment Date: %s\n%s\n%s\n",
+        return String.format("\nEnrollment Information:\nEnrollment Date: %s\n%sUnits Enrolled: %s\n",
                              this.date, this.student.display(), unitsEnrolled); 
     }
 
@@ -76,6 +79,13 @@ public class Enrollment {
     public String getDate() 
     {
         return this.date; 
+    }
+
+    /** Accessor Method: Number of Enrollments
+     * @return Number of Enrollment Objects Created 
+     */
+    public int getNumberOfEnrollments() {
+        return numberOfEnrolments; 
     }
     
     /** Get a Specifc Unit

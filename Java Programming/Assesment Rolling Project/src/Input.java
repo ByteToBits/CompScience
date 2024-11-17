@@ -66,7 +66,7 @@ public class Input
      * @return Returns a Integer Type
      */
     public int acceptIntegerInput(String message)
-    {
+    {   
         System.out.println(message);
         String temString = scanner.nextLine(); 
         return Integer.parseInt(temString); 
