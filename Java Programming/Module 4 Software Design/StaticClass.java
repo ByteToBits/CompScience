@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 
 public class StaticClass {
 
@@ -26,18 +27,40 @@ public class StaticClass {
         return numberOfStudents; 
     }
 
+    public String getStudentName ()
+    {
+        return this.studentName; 
+    }
+
+    public int getStudentID ()
+    {
+        return this.studentID; 
+    }
+
     public static void main(String[] args) 
     {   
+        ArrayList<StaticClass> studentRoster = new ArrayList<StaticClass>();
+
         // Class Variables are Created during the execution of the class even before any its objects are created
         if (numberOfStudents <= maxSudent) {
             StaticClass student10 = new StaticClass("Timothy", 6988); 
             StaticClass student20 = new StaticClass("Alexander", 1988); 
             StaticClass student30 = new StaticClass("Huang", 9699); 
-        }
-        
+            studentRoster.add(student10);  
+            studentRoster.add(student20);
+            studentRoster.add(student30);  
+        } 
+
         System.out.println("The Headmaster for this School is " + headMaster); 
         System.out.println("The Number of Studens is " + getNumberOfStudents());
-
+        
+        if (studentRoster.size() > 0) {
+            int studentCounter = 1; 
+            for (StaticClass student:studentRoster) {
+            System.out.println(studentCounter + ") " + student.getStudentName() + " (ID:" + student.getStudentID() + ")");
+                studentCounter++;
+            }
+        }
     }
     
 }
