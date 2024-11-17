@@ -5,6 +5,8 @@
  * @version 1.00
  */
 
+import java.util.ArrayList; 
+
 public class University
 {
     // Fields
@@ -69,12 +71,18 @@ public class University
         
         // Get User Input & Validate Input if it is Not Blank 
         for (int iterI = 0; iterI < inputFields.length; iterI++)
-        {
-            userResponse[iterI] = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":");       
-            if (validateInput.isBlank(userResponse[iterI])) {
-                System.out.println("Validation Failed: " + inputFields[iterI] + " cannot be Blank");
-                userResponse[iterI] = ""; // Write a Default Value in (Assignment Did Not specify Value)
-            }; 
+        {   
+            Boolean validInput = false; 
+            while (!validInput) {
+                userResponse[iterI] = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":");       
+                if (validateInput.isBlank(userResponse[iterI])) {
+                    System.out.println("Validation Failed: " + inputFields[iterI] + " cannot be Blank");
+                    userResponse[iterI] = ""; // Write a Default Value in (Assignment Did Not specify Value)
+                } else {
+                    validInput = true; 
+                }
+            }
+
         }
 
         // Set the Student Object in the 
@@ -116,38 +124,49 @@ public class University
         
         // Get User Input and Validate the Input 
         for (int iterI = 0; iterI < inputFields.length; iterI++)
-        {
-            switch (iterI) 
-            {
-                case 0: // Unit Code cannot be blank and must be exactly 7 characters long.  
-                   userResponse = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":"); 
-                   if (validateInput.isBlank(userResponse) || userResponse.length() != 7){     
-                       userResponse = ""; // Default Constructor also initializes null 
-                       System.out.println("Validation Failed: Unit Code cannot be Blank and must be Exactly 7 Characeters Long");
-                   }
-                   unit.setUnitCode(userResponse);
-                   break; 
-                
-                case 1: // Unit Description Must not be Blank and must be less than 25 Characters in Length
-                   userResponse = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":"); 
-                   if (validateInput.isBlank(userResponse) || userResponse.length() > 25) {
-                       userResponse = ""; // Default Constructor also initializes null 
-                       System.out.println("Validation Failed: Unit Desecription must not be Blank and be less than 25 Characters in Length"); 
-                   }
-                   unit.setUnitDescription(userResponse);
-                   break; 
-                
-                case 2: // Credit Point Must not be smaller than 0 
-                   int userResponseInteger = inputFromUser.acceptIntegerInput("Input " + inputFields[iterI] + ":"); 
-                   if (userResponseInteger < 0) {
-                       userResponseInteger = 0; 
-                       System.out.println("Validation Failed: The Credit Score must not be lesser than the value 0 "); 
-                   }
-                   unit.setCreditPoints(userResponseInteger);
-                   break; 
+        {   
+            Boolean validInput = false; 
 
-                default: 
-                   System.out.println("No Case for Iteration " + iterI);
+            while (!validInput) {
+                switch (iterI) 
+                {
+                    case 0: // Unit Code cannot be blank and must be exactly 7 characters long.  
+                    userResponse = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":"); 
+                    if (validateInput.isBlank(userResponse) || userResponse.length() != 7){     
+                        userResponse = ""; // Default Constructor also initializes null 
+                        System.out.println("Validation Failed: Unit Code cannot be Blank and must be Exactly 7 Characeters Long");
+                    } else {
+                        validInput = true; 
+                    }
+                    unit.setUnitCode(userResponse);
+                    break; 
+                    
+                    case 1: // Unit Description Must not be Blank and must be less than 25 Characters in Length
+                    userResponse = inputFromUser.acceptStringInput("Input " + inputFields[iterI] + ":"); 
+                    if (validateInput.isBlank(userResponse) || userResponse.length() > 25) {
+                        userResponse = ""; // Default Constructor also initializes null 
+                        System.out.println("Validation Failed: Unit Desecription must not be Blank and be less than 25 Characters in Length"); 
+                    } else {
+                        validInput = true; 
+                    }
+                    unit.setUnitDescription(userResponse);
+                    break; 
+                    
+                    case 2: // Credit Point Must not be smaller than 0 
+                    int userResponseInteger = inputFromUser.acceptIntegerInput("Input " + inputFields[iterI] + ":"); 
+                    if (userResponseInteger < 0) {
+                        userResponseInteger = 0; 
+                        System.out.println("Validation Failed: The Credit Score must not be lesser than the value 0 "); 
+                    } else {
+                        validInput = false; 
+                    }
+                    unit.setCreditPoints(userResponseInteger);
+                    break; 
+
+                    default: 
+                    System.out.println("No Case for Iteration " + iterI);
+                    validInput = true; 
+                }
             }
         }
     }
