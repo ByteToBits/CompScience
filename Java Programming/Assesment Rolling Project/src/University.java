@@ -236,7 +236,7 @@ public class University
         this.enrollments.set(index, enrollment);
     }
     
-    public static void startProgram()
+    public void startProgram()
     {
         Input userInput = new Input(); 
         ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>(); 
@@ -303,16 +303,6 @@ public class University
         
 
     }
-
-
-
-    /*
-     * Lastly, write the main() method in the University class.
-     * If the user selects Option 1, ask the user for the enrolment date, which should not be blank. 
-     * If blank, print an error message and assign the default date value specified in the default constructor.
-     * Next call the inputStudentDetails() and inputUnitDetails() methods.
-     * Then display the university object state on the screen.For now, you should have one student enrolled in one unit only.
-     */
     
     /**
      * Main Method of the Unviersity Class
@@ -320,6 +310,29 @@ public class University
      */
     public static void main(String[] args)
     {   
-        startProgram();
+        University university = new University(); 
+        university.startProgram();
+    }
+}
+
+
+// The Player class has a static score
+class Player {
+    public static int score = 0;
+
+    public static void displayScore() {
+        System.out.println("Player score: " + score);
+    }
+}
+
+// The GameEngine class modifies the player's score implicitly
+class GameEngine {
+    public void addPoints(int points) {
+        Player.score += points;  // Implicit coupling: modifying static variable in Player class
+    }
+    
+    public void startGame() {
+        System.out.println("Game Started!");
+        addPoints(10);  // Adds points to the player's score
     }
 }
