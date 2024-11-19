@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 
  /**
-  * Topic is about Refactoring, the code below has been refactored to remove duplicates 
+  * Not my Code: The is Subject Topic is about Refactoring, the code below has been refactored to remove duplicates 
   */
 public class SlotMachine
 {
@@ -214,5 +214,7 @@ public class SlotMachine
                     System.out.println("Please enter a number between 1 and 5");
             }
         }while (!option.equals("5"));
+
+        console.close();
     }
 }
