@@ -18,7 +18,7 @@ public class TestThrows
 
     public static void main(String[] args)
         throws IOException, FileNotFoundException    // Commenting this out will cause an error 
-        // This "main" method would also throw exceptions, it is Declated Exception to let Java know
+        // This "main" method would also throw exceptions, it is Declared Exception to let Java know
         // However, the "throw" propogates the exception to the Java Virtual Machine to Handle
         // The JVM Handles the Exceptions and prints a Stack Trace of where the exception occured
     {
