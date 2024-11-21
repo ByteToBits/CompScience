@@ -301,7 +301,6 @@ public class University
             }
         }
         
-
     }
     
     /**
@@ -312,27 +311,5 @@ public class University
     {   
         University university = new University(); 
         university.startProgram();
-    }
-}
-
-
-// The Player class has a static score
-class Player {
-    public static int score = 0;
-
-    public static void displayScore() {
-        System.out.println("Player score: " + score);
-    }
-}
-
-// The GameEngine class modifies the player's score implicitly
-class GameEngine {
-    public void addPoints(int points) {
-        Player.score += points;  // Implicit coupling: modifying static variable in Player class
-    }
-    
-    public void startGame() {
-        System.out.println("Game Started!");
-        addPoints(10);  // Adds points to the player's score
     }
 }
