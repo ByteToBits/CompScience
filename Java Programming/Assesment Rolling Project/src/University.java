@@ -300,7 +300,8 @@ public class University
                 System.out.println("Invalid option. Please enter 1 or 2.");
             }
         }
-        
+
+        userInput.closeScanner(); 
     }
     
     /**

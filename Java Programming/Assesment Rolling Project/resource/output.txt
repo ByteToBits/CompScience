@@ -1,0 +1,4 @@
+3 Sep 2018,Lucy,Caulfield,12345678,lucy@monash.edu,FIT9131-Java Programming-6;FIT9132-Databases-6
+1 Jan 2018,Stacey,Carnegie,87654321,stacey@monash.edu,FIT9131-Java Programming-6;FIT9132-Databases-6
+28 Apr 2018,Jacquie,Ormond,06660666,jacquie@monash.edu,FIT9131-Java Programming-6;FIT9132-Databases-6
+12 Dec 2018,Sarah,Melbourne,12121212,sarah@monash.edu,FIT9131-Java Programming-6;FIT9132-Databases-6
