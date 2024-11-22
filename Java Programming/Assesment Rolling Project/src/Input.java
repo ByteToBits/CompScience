@@ -68,17 +68,11 @@ public class Input
      * @param message The Message Display to prompt the user Input as a String
      * @return Returns an Integer Type
      */
-    public int acceptIntegerInput(String message)
+    public int acceptIntegerInput(String message) throws NumberFormatException
     {   
-        while (true) {
-            try {
-                System.out.println(message); 
-                String tempString = scanner.nextLine(); 
-                return Integer.parseInt(tempString); // Convert to integer and return immediately
-            } catch (NumberFormatException nfe) {
-                System.out.println("Invalid Input. Please try again...");
-            }
-        }
+        System.out.println(message); 
+        String tempString = scanner.nextLine(); 
+        return Integer.parseInt(tempString); // Convert to integer and return immediately
     }
 
     /**

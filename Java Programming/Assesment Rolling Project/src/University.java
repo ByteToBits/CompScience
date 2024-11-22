@@ -183,12 +183,17 @@ public class University
                     break; 
                     
                     case 2: // Credit Point Must not be smaller than 0 
-                    int userResponseInteger = inputFromUser.acceptIntegerInput("Input " + inputFields[iterI] + ":"); 
-                    if (userResponseInteger < 0) { 
-                        System.out.println("Validation Failed: The Credit Score must not be lesser than the value 0 "); 
-                    } else {
-                        units[index].setCreditPoints(userResponseInteger);
-                        validInput = true; 
+                    try {
+                        int userResponseInteger = inputFromUser.acceptIntegerInput("Input " + inputFields[iterI] + ":");  
+                        if (userResponseInteger < 0) { 
+                            System.out.println("Validation Failed: The Credit Score must not be lesser than the value 0 "); 
+                        } else {
+                            units[index].setCreditPoints(userResponseInteger);
+                            validInput = true; 
+                        }
+                    } catch (NumberFormatException nfe) {
+                        System.out.println("Invalid Input. Please try again...");
+                        validInput = false; 
                     }
                     break; 
 
@@ -270,9 +275,17 @@ public class University
 
                 // Get user to Input the Student and Unit Details
                 university.inputStudentDetails(newEnrollment);
-
-                int numberOfUnits = userInput.acceptIntegerInput("Input the Number of Units to Enroll: ");
-                university.enrollments.get(numberOfEnrolments - 1).setUnitSize(numberOfUnits);
+                
+                Boolean numberOfUnitsFlag = false; 
+                while (!numberOfUnitsFlag) {
+                    try {
+                        int numberOfUnits = userInput.acceptIntegerInput("Input the Number of Units to Enroll: ");
+                        university.enrollments.get(numberOfEnrolments - 1).setUnitSize(numberOfUnits);
+                        numberOfUnitsFlag = true; 
+                    } catch (NumberFormatException nfe) {
+                        System.out.println("Invalid Input. Please try again...");
+                    }
+                }
 
                 university.inputUnitDetails(enrollments);
 
