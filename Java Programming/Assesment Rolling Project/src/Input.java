@@ -12,7 +12,6 @@
   Instead, define it as a temporary object within methods to avoid locking issues and ensure proper resource management.
 */
 
-import java.text.ParseException;
 import java.util.Scanner; 
 
 public class Input 
@@ -25,7 +24,7 @@ public class Input
      */
     public Input() 
     {
-      // this.scanner = new Scanner(System.in); 
+      // this.scanner = new Scanner(System.in); * Fix * 1) Removed the Scanner Class from the Constructor 
     }
 
     /**
@@ -57,15 +56,13 @@ public class Input
      */
     public double acceptDoubleInput(String message) 
     {   
-        Double convertedString = 0.0; 
         try (Scanner console = new Scanner(System.in))
         {   
             while (true) {
                 try {
                     System.out.println(message);  
                     String tempString = console.nextLine(); 
-                    convertedString = Double.parseDouble(tempString);
-                    return convertedString;
+                    return Double.parseDouble(tempString);
                 } catch (NumberFormatException nfe) {
                     System.out.println("Invalid Input. Please try again...");  
                 }
@@ -80,9 +77,18 @@ public class Input
      */
     public int acceptIntegerInput(String message)
     {   
-        System.out.println(message);
-        String temString = scanner.nextLine(); 
-        return Integer.parseInt(temString); 
+        try (Scanner console = new Scanner(System.in))
+        {
+            while (true) {
+                try {
+                    System.out.println(message); 
+                    String tempString = console.nextLine(); 
+                    return Integer.parseInt(tempString);
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Invalid Input. Please try again...");
+                }
+            }
+        }
     }
 
     /**
@@ -94,15 +100,6 @@ public class Input
     {
        System.out.println(message); 
        return scanner.nextLine(); 
-    }
-
-    /**
-     * Custom Methods: Closes the Scanner Class for the Input Class
-     */
-    public void closeScanner() {
-      if (scanner != null) {
-            scanner.close();
-        }
     }
 
 }
