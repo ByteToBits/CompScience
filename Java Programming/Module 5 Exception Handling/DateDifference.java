@@ -46,8 +46,10 @@ public class DateDifference
         // Get User Inputs 
         userDateInput1 = dateDifferenceObject.inputDate(console, requiredDateFormat); 
         userDateInput2 = dateDifferenceObject.inputDate(console, requiredDateFormat); 
-
+       
         long daysDifference = ChronoUnit.DAYS.between(userDateInput1, userDateInput2);
         System.out.println("The Difference in Days is " + Math.abs(daysDifference));
     }
 }
+
+
