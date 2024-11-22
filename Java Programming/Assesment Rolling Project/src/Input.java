@@ -6,15 +6,13 @@
  */
 
  /*
-  Task Instructions: 
-  Create a new class called Input as shown in the class diagram above. This class is responsible for accepting input from the user via the keyboard.
-  The class accepts different inputs based on the data type. These are mentioned in the class diagram.
-  The String parameter passed to each method is the display message that gets printed on the screen informing the user what needs to be entered. 
-  For example, "Please enter your name."
-  The purpose of this class is to demonstrate the reusability of methods within your program.
-  This approach also allows you to suppress some of the errors associated with using the Scanner class when accepting input of different data types.
-  */
+  Changelog: 
+  1) Removed the Scanner Class from the Constructor 
+  Using Scanner as a class attribute isn’t ideal since it locks the console/terminal until explicitly closed or garbage collected. 
+  Instead, define it as a temporary object within methods to avoid locking issues and ensure proper resource management.
+*/
 
+import java.text.ParseException;
 import java.util.Scanner; 
 
 public class Input 
@@ -27,7 +25,7 @@ public class Input
      */
     public Input() 
     {
-       this.scanner = new Scanner(System.in); 
+      // this.scanner = new Scanner(System.in); 
     }
 
     /**
@@ -38,14 +36,18 @@ public class Input
      * @throws IndexOutOfBoundsException if the index is out of range for the input string.
      */
     public char acceptCharInput(String message, int index) 
-    {  
-        System.out.println(message); 
-        String tempString = scanner.nextLine(); 
+    {   
+        try (Scanner console = new Scanner(System.in)) 
+        {
+            System.out.println(message); 
+            String tempString= console.nextLine(); 
 
-        if (index < 0 || index >= message.length()) {
-            throw new IndexOutOfBoundsException("Index is out of range");
+            if (index < 0 || index >= message.length())
+            {
+                throw new IndexOutOfBoundsException("Index is out of range");
+            }
+            return tempString.charAt(index);
         }
-        return tempString.charAt(index); 
     }
     
     /**
@@ -54,10 +56,21 @@ public class Input
      * @return Returns a Double Type
      */
     public double acceptDoubleInput(String message) 
-    {
-        System.out.println(message);  
-        String tempString = scanner.nextLine(); 
-        return Double.parseDouble(tempString); 
+    {   
+        Double convertedString = 0.0; 
+        try (Scanner console = new Scanner(System.in))
+        {   
+            while (true) {
+                try {
+                    System.out.println(message);  
+                    String tempString = console.nextLine(); 
+                    convertedString = Double.parseDouble(tempString);
+                    return convertedString;
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Invalid Input. Please try again...");  
+                }
+            }
+        }
     }
 
     /**
