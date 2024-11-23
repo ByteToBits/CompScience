@@ -5,6 +5,7 @@
  * @version 1.00
  */
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,8 +14,8 @@ public class University
 {
     // Fields
     private ArrayList<Enrollment> enrollments;
-    private static final String studentFilePath = "Java Programming\\Assesment Rolling Project\\resource\\student.txt";
-    private static final String outputFilePath = "Java Programming\\Assesment Rolling Project\\resource\\output.txt";
+    private static final String outputFilePath = "C:\\Repository\\CompScience\\Java Programming\\Assesment Rolling Project\\resource\\output.txt";
+    private static final String studentFilePath = "C:\\Repository\\CompScience\\Java Programming\\Assesment Rolling Project\\resource\\student.txt";
     private static final String delimiter = "\r\n"; 
 
     /**
