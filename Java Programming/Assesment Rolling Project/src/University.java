@@ -5,6 +5,7 @@
  * @version 1.00
  */
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -251,7 +252,7 @@ public class University
      * @param contents A Single line of Text from the Text File of the File as a single String
      * @return Enrollmennt object of 1 Student
      */
-    public Enrollment parseStudentData(String contents) throws Exception
+    public Enrollment parseDataFromFile(String contents) throws Exception
     {   
         Enrollment tempEnrollment = new Enrollment(); 
         ArrayList<String> details = new ArrayList<>(Arrays.asList(contents.split(",")));
@@ -281,8 +282,39 @@ public class University
         return tempEnrollment; 
     }
 
+    /** Custom Method: Parse the Data from the Program to a Text File
+     * @param enrollments ArrayList of Enrollments 
+     * @return A Single-Line String of the enrollment contents
+     */
+    public String parseDataToFile(ArrayList<Enrollment> enrollments)
+    {
+        StringBuilder tempStringBuilder = new StringBuilder(); 
+
+        for (Enrollment eachEnrollment : enrollments) {
+    
+            tempStringBuilder.append(eachEnrollment.getDate()).append(","); 
+            tempStringBuilder.append(eachEnrollment.getStudent().getName()).append(","); 
+            tempStringBuilder.append(eachEnrollment.getStudent().getAddress()).append(","); 
+            tempStringBuilder.append(eachEnrollment.getStudent().getPhoneNo()).append(","); 
+            tempStringBuilder.append(eachEnrollment.getStudent().getEmail()).append(","); 
+    
+            Unit[] tempUnitArray = eachEnrollment.getUnits(); 
+    
+            for (int i = 0; i < tempUnitArray.length; i++) {
+                if (i > 0) {
+                    tempStringBuilder.append(";");
+                }
+                    tempStringBuilder.append(tempUnitArray[i].getUnitCode()).append("-").append(tempUnitArray[i].getUnitDescription()).append("-"); 
+                    tempStringBuilder.append(tempUnitArray[i].getCreditPoints()); 
+                }
+            tempStringBuilder.append("\n");
+        }
+
+        return tempStringBuilder.toString();
+    }
+
     /**
-     * Custom Message: Print Expcetion Message
+     * Custom Method: Print Expcetion Message
      * @param exceptionObject The exception object thrown by Java
      */
     public void printExceptionInfo(String message, Exception exceptionObject)
@@ -308,7 +340,7 @@ public class University
             for (String student : existingStudents.split(delimiter))
             {   
                 try {
-                    university.addEnrollment(university.parseStudentData(student));
+                    university.addEnrollment(university.parseDataFromFile(student));
                 } catch (Exception e) {
                     university.printExceptionInfo("Error Reading Data, Skipping Student...", e);
                 }
@@ -380,6 +412,16 @@ public class University
                 // If the user enters an invalid option, prompt them again
                 System.out.println("Invalid option. Please enter 1 or 2.");
             }
+        }
+
+        // Write Data to file before the Program ends
+        String outputDataString = university.parseDataToFile(enrollments); 
+        FileIO outputFile = new FileIO(outputFilePath); 
+        try {
+            outputFile.writeFile(outputDataString);
+            System.out.println("Data Successfully Saved to File");
+        } catch (IOException ioe) {
+            university.printExceptionInfo("Error Writing to Output.txt", ioe);
         }
         userInput.closeScanner(); 
     }
