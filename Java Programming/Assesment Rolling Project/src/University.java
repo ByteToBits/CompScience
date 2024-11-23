@@ -5,12 +5,16 @@
  * @version 1.00
  */
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class University
 {
     // Fields
-    ArrayList<Enrollment> enrollments;
+    private ArrayList<Enrollment> enrollments;
+    private static final String studentFilePath = "Java Programming\\Assesment Rolling Project\\resource\\student.txt";
+    private static final String outputFilePath = "Java Programming\\Assesment Rolling Project\\resource\\output.txt";
+    private static final String delimiter = "\r\n"; 
 
     /**
      * Default Constructor
@@ -240,16 +244,65 @@ public class University
         }
         this.enrollments.set(index, enrollment);
     }
+
+    /**
+     * Custom Method"
+     */
     
     public void startProgram()
     {
         Input userInput = new Input(); 
         ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>(); 
         University university = new University(enrollments); 
+        FileIO studentFileInfo = new FileIO(studentFilePath); 
    
         // Initial prompt message
         System.out.println("\nThis is the University Enrollment Program.");
 
+        System.out.println("\nInformation of Students Currently Enrolled: ");
+        try {
+            String existingStudents = studentFileInfo.readFile();
+            for (String student : existingStudents.split(delimiter))
+            {   
+                Enrollment exisitngEnrollment = new Enrollment(); 
+                ArrayList<String> details = new ArrayList<String>();  // Temporary ArrayList Holder
+                ArrayList<String> enrolledUnits = new ArrayList<String>(); 
+
+                // Student Information - Get Each Line of Student Information
+                for (String studentInfo : student.split(",")) {
+                    details.add(studentInfo); 
+                }
+                
+                // Populate the Student Information
+                exisitngEnrollment.setDate(details.get(0));
+                exisitngEnrollment.createStudent(details.get(1), details.get(2), details.get(3), details.get(4));
+
+                // Populate the Units Details
+                for (String units : details.get(5).split(";"))
+                {   
+                    enrolledUnits.add(units); 
+                }
+
+                System.out.println(enrolledUnits); 
+
+                Unit[] tempUnitArray = new Unit[enrolledUnits.size()]; 
+
+                for (int i = 0; i < enrolledUnits.size() - 1; i++)
+                {   
+                    String[] unit = enrolledUnits.get(i).split("-");
+                    Unit tempUnit = new Unit(unit[0], unit[1], Integer.parseInt(unit[2]));
+                    tempUnitArray[i] = tempUnit;
+                }
+                
+                exisitngEnrollment.setUnits(tempUnitArray);
+                university.addEnrollment(exisitngEnrollment);
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to read from student.txt" + e.getMessage()); 
+        }
+        
+        System.out.println(university.displayUniversity());
+        
         while (true) {
             // Prompt the user for input
             String userSelection = userInput.acceptStringInput("Please Enter:\n1 - To Enroll a Student\n2 - To Exit the Program");
@@ -313,7 +366,6 @@ public class University
                 System.out.println("Invalid option. Please enter 1 or 2.");
             }
         }
-
         userInput.closeScanner(); 
     }
     

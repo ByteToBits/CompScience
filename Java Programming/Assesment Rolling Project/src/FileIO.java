@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class FileIO
 {   
     private String fileName; 
-    private static final String delimiter = "#"; 
+    private static final String delimiter = "\r\n"; 
     private static final String studentFile = "Java Programming\\Assesment Rolling Project\\resource\\student.txt"; 
     private static final String outputFile = "Java Programming\\Assesment Rolling Project\\resource\\output.txt"; 
 
