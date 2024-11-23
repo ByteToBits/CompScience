@@ -1,6 +1,7 @@
-// Description: Basic Concepts in Arrays
-// Author: Tristan Sim
-// Version: 1.00
+/** Description: Basic Concepts in Arrays
+ * @author Tristan Sim
+ * @version 1.00
+ */
 
 public class ArrayBasics {
 
