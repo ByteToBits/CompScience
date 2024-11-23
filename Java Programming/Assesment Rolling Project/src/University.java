@@ -14,8 +14,9 @@ public class University
 {
     // Fields
     private ArrayList<Enrollment> enrollments;
-    private static final String outputFilePath = "C:\\Repository\\CompScience\\Java Programming\\Assesment Rolling Project\\resource\\output.txt";
-    private static final String studentFilePath = "C:\\Repository\\CompScience\\Java Programming\\Assesment Rolling Project\\resource\\student.txt";
+    private static final String parentDirectory = "C:\\Repository\\CompScience\\"; // May need to modify here
+    private static final String outputFilePath = parentDirectory + "Java Programming\\Assesment Rolling Project\\resources\\output.txt";
+    private static final String studentFilePath = parentDirectory +  "Java Programming\\Assesment Rolling Project\\resources\\student.txt";
     private static final String delimiter = "\r\n"; 
 
     /**
@@ -324,6 +325,56 @@ public class University
         System.out.println("Error Message: " + exceptionObject.getMessage()); 
         exceptionObject.printStackTrace();
     }
+
+    public void removeCreditPoints(String input) {
+        try {
+            String[] fields = input.split(",");
+            if (fields.length != 2) 
+            {
+                throw new IllegalArgumentException("Invalid input");
+            }
+
+            String name = fields[0].trim();
+            String unitCode = fields[1].trim();
+
+            // Find the target student
+            Enrollment targetEnrollment = null;
+            for (Enrollment enrollment : enrollments) 
+            {
+                if (enrollment.getStudent().getName().equalsIgnoreCase(name)) 
+                {
+                    targetEnrollment = enrollment;
+                    break;
+                }
+            }
+            if (targetEnrollment == null) {
+                throw new IllegalArgumentException("Student not found");
+            }
+                
+            // Find the target unit
+            Unit targetUnit = null;
+            for (Unit unit : targetEnrollment.getUnits())
+            {
+                if (unit.getUnitCode().equalsIgnoreCase(unitCode)) 
+                {
+                    targetUnit = unit;
+                    break;
+                }
+            }
+            if (targetUnit == null) 
+            {
+                throw new IllegalArgumentException("Unit not found");
+            }
+
+            // Set credit points to zero
+            targetUnit.setCreditPoints(0);
+            System.out.println("Credit points removed");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error occurred");
+        }
+    }
     
     public void startProgram()
     {
@@ -437,4 +488,6 @@ public class University
         university.startProgram();
     }
 }
+
+
 
