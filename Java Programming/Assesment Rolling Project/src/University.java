@@ -5,8 +5,8 @@
  * @version 1.00
  */
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class University
 {
@@ -246,8 +246,51 @@ public class University
     }
 
     /**
-     * Custom Method"
+     * Custom Method: Parse Student Data from Text File
+     * The contents of the text file is passed tp this function to parse into Student and Unit Objects
+     * @param contents A Single line of Text from the Text File of the File as a single String
+     * @return Enrollmennt object of 1 Student
      */
+    public Enrollment parseStudentData(String contents) throws Exception
+    {   
+        Enrollment tempEnrollment = new Enrollment(); 
+        ArrayList<String> details = new ArrayList<>(Arrays.asList(contents.split(",")));
+
+        if (details.size() < 6) {
+            throw new Exception("Malformed student data: Missing fields in input - " + contents);
+        }
+
+        // Populate Student Information
+        tempEnrollment.setDate(details.get(0).trim());
+        tempEnrollment.createStudent(details.get(1).trim(),details.get(2).trim(),details.get(3).trim(),details.get(4).trim());
+
+        // Populate Units Details 
+        String[] enrolledUnits = details.get(5).split(";");
+        Unit[] units = new Unit[enrolledUnits.length]; 
+        for (int i = 0; i < enrolledUnits.length; i++)
+        {
+            String[] unitInfo = enrolledUnits[i].split("-");
+            if (unitInfo.length == 3) {
+                units[i] = new Unit(unitInfo[0], unitInfo[1], Integer.parseInt(unitInfo[2]));
+            } else {
+                System.out.println("Skipping Malformed Data: " + details.get(1)); 
+            }
+        }
+        tempEnrollment.setUnits(units);
+        
+        return tempEnrollment; 
+    }
+
+    /**
+     * Custom Message: Print Expcetion Message
+     * @param exceptionObject The exception object thrown by Java
+     */
+    public void printExceptionInfo(String message, Exception exceptionObject)
+    {
+        System.out.println(message);
+        System.out.println("Error Message: " + exceptionObject.getMessage()); 
+        exceptionObject.printStackTrace();
+    }
     
     public void startProgram()
     {
@@ -264,43 +307,15 @@ public class University
             String existingStudents = studentFileInfo.readFile();
             for (String student : existingStudents.split(delimiter))
             {   
-                Enrollment exisitngEnrollment = new Enrollment(); 
-                ArrayList<String> details = new ArrayList<String>();  // Temporary ArrayList Holder
-                ArrayList<String> enrolledUnits = new ArrayList<String>(); 
-
-                // Student Information - Get Each Line of Student Information
-                for (String studentInfo : student.split(",")) {
-                    details.add(studentInfo); 
+                try {
+                    university.addEnrollment(university.parseStudentData(student));
+                } catch (Exception e) {
+                    university.printExceptionInfo("Error Reading Data, Skipping Student...", e);
                 }
-                
-                // Populate the Student Information
-                exisitngEnrollment.setDate(details.get(0));
-                exisitngEnrollment.createStudent(details.get(1), details.get(2), details.get(3), details.get(4));
-
-                // Populate the Units Details
-                for (String units : details.get(5).split(";"))
-                {   
-                    enrolledUnits.add(units); 
-                }
-
-                System.out.println(enrolledUnits); 
-
-                Unit[] tempUnitArray = new Unit[enrolledUnits.size()]; 
-
-                for (int i = 0; i < enrolledUnits.size() - 1; i++)
-                {   
-                    String[] unit = enrolledUnits.get(i).split("-");
-                    Unit tempUnit = new Unit(unit[0], unit[1], Integer.parseInt(unit[2]));
-                    tempUnitArray[i] = tempUnit;
-                }
-                
-                exisitngEnrollment.setUnits(tempUnitArray);
-                university.addEnrollment(exisitngEnrollment);
             }
         } catch (Exception e) {
-            System.out.println("Unable to read from student.txt" + e.getMessage()); 
+            university.printExceptionInfo("Unable to read from student.txt | Message", e);
         }
-        
         System.out.println(university.displayUniversity());
         
         while (true) {
