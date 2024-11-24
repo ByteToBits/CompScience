@@ -13,8 +13,8 @@ public class Building
     private static final int MIN_HEIGHT = 1; 
     private int height;
     private boolean portal; 
-    private boolean fuelCells; 
-    private boolean webTraps; 
+    private boolean fuelCell; 
+    private boolean webTrap; 
     private boolean frozen; 
 
     /**
@@ -24,8 +24,8 @@ public class Building
     {
         this.height = MIN_HEIGHT; 
         this.portal = false;
-        this.fuelCells = false;
-        this.webTraps = false;
+        this.fuelCell = false;
+        this.webTrap = false;
         this.frozen = false; 
     }
 
@@ -41,8 +41,8 @@ public class Building
     {
         this.height = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, height));  // Clamp the height to the Max & Min Boundaries
         this.portal = portal;
-        this.fuelCells = fuelCells;
-        this.webTraps = webTraps;
+        this.fuelCell = fuelCells;
+        this.webTrap = webTraps;
         this.frozen = frozen; 
     }
 
@@ -58,8 +58,8 @@ public class Building
     {
         this.height = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, height));  // Clamp the height to the Max & Min Boundaries
         this.portal = portal;
-        this.fuelCells = fuelCells;
-        this.webTraps = webTraps;
+        this.fuelCell = fuelCells;
+        this.webTrap = webTraps;
         this.frozen = frozen; 
     }
 
@@ -70,7 +70,7 @@ public class Building
     public String displayBuilding()
     {
         return String.format("Height: %d\nPortal: %b\nFuel Cells: %b\nWeb Traps: %b\nFrozen: %b",
-                               this.height, this.portal, this.fuelCells, this.webTraps, this.frozen);
+                               this.height, this.portal, this.fuelCell, this.webTrap, this.frozen);
     }
 
     /**
@@ -88,7 +88,7 @@ public class Building
      */
     public boolean getFuelCell()
     {
-        return this.fuelCells; 
+        return this.fuelCell; 
     }
 
     /**
@@ -115,16 +115,16 @@ public class Building
     */
     public boolean getWebTrap()
     {
-        return this.webTraps; 
+        return this.webTrap; 
     }
 
     /**
-    * Mutator Method: Set Web Trap
-    * @param portal Set a Portal to a Building if true; false removes the portal
-    */
-    public void setPortal(boolean portal)
+     * Mutator Method: Set Frozen Building
+     * @param frozen Assign a Building to be Frozen if true; false removes the Frost
+     */
+    public void setFrozen(boolean frozen)
     {
-        this.portal = portal; 
+        this.frozen = frozen; 
     }
 
     /**
@@ -133,23 +133,41 @@ public class Building
      */
     public void setFuelCell(boolean fuelCell)
     {
-        this.fuelCells = fuelCell; 
+        this.fuelCell = fuelCell; 
     }
 
-    /**
-     * 
-     * @param args
+     /**
+     * Mutator Method: Set Height of the Buildings
+     * @param height Set the Height of the Building as a an Integer
      */
+    public void setHeight(int height)
+    {
+        this.height = height; 
+    }
+
+        /**
+    * Mutator Method: Set Portal to a Bulding
+    * @param portal Set a Portal to a Building if true; false removes the portal
+    */
+    public void setPortal(boolean portal)
+    {
+        this.portal = portal; 
+    }
+    
+    /**
+    * Mutator Method: Set Web Trap to a Buidling
+    * @param webTrap Set a Web Trap to a Building if true; false removes the Web Trap
+    */
+    public void setWebTrap(boolean webTrap)
+    {
+        this.webTrap = webTrap; 
+    }
 
     public static void main(String[] args)
     {
         Building building = new Building(); 
         building.setPortal(true);
         System.out.println(building); 
-
-        // 00x3213213e9 - C
-        // [1 2] 5 - Java - i = 3 - Error - Refined but heavily abstracted
-        // [1 2] 5 - C i = 3 => 5 No error - For those who a Sadistic
     }
 
 }
