@@ -3,7 +3,7 @@
  * Description: The Building Class for the Java Jumper Game
  * Final Assesment Project for ITO4131 - Java Programming
  * @aurthor Tristan Sim
- * @version 1.00
+ * @version v1.00
  */
 
 public class Building
@@ -69,7 +69,7 @@ public class Building
      */
     public String displayBuilding()
     {
-        return String.format("Height: %d\nPortal: %b\nFuel Cells: %b\nWeb Traps: %b\nFrozen: %b",
+        return String.format("Height: %d; Portal: %b; Fuel Cells: %b; Web Traps: %b; Frozen: %b",
                                this.height, this.portal, this.fuelCell, this.webTrap, this.frozen);
     }
 
@@ -161,13 +161,6 @@ public class Building
     public void setWebTrap(boolean webTrap)
     {
         this.webTrap = webTrap; 
-    }
-
-    public static void main(String[] args)
-    {
-        Building building = new Building(); 
-        building.setPortal(true);
-        System.out.println(building); 
     }
 
 }
