@@ -90,9 +90,14 @@ public class Map {
         // This will track the Index of Which Building has Effects & Players
         ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();  
         occupiedBuildings.add(playerLocation); 
-        
-        
-        
+
+        int[] randomIndex = new int[3]; 
+        for (int i = 0; i < randomIndex.length; i++)
+        {
+            do {
+                randomIndex[i] = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS); 
+            } while (occupiedBuildings.contains(randomIndex[i]));
+        }
         
         randomizeBuildingsHeight();
     }
@@ -218,7 +223,8 @@ public class Map {
     */
     public void resetFuelCells(ArrayList<Integer> occupiedBuildings)
     {   
-        for (int i = 0; i < NUMBER_OF_BUILDINGS; i++) {
+        for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
+        {
             this.fuelCellBuildings[i] = 0;
         }
 
@@ -228,11 +234,16 @@ public class Map {
             do {
                 buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS); 
             } while (occupiedBuildings.contains(buildingIndex));  // Ensures no overlapping effects
-
             occupiedBuildings.add(buildingIndex);  // Similarly, do not spawn another fuel cell on the same building
             this.fuelCellBuildings[buildingIndex] = FUEL_CELL_LIFETIME; 
         }
     }
+
+    /** 
+     * Mutator Method: Set the Web Trap Building Index
+     * @param index Integer: Index of the Building where the Web Trap will be set
+    */
+
     
     /** 
      * Custom Method: Remove the Fuel Cell from a Building
