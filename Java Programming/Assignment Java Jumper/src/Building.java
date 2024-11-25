@@ -47,23 +47,6 @@ public class Building
     }
 
     /**
-     * Custom Method: Create a Building by passing in the Parameters
-     * @param height Height of the Building as an Integer; Will be clamped between the Max and Min Height
-     * @param portal Portal Flag if it exist on the building as a Boolean
-     * @param fuelCells Fuel Cell Flag if it exist on the building as a Boolean
-     * @param webTraps Web Traps Flag if it exist on the building as a Boolean
-     * @param frozen Frozen Flag if the building is frozen as a Boolean
-     */
-    public void createBuilding(int height, boolean portal, boolean fuelCells, boolean webTraps, boolean frozen)
-    {
-        this.height = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, height));  // Clamp the height to the Max & Min Boundaries
-        this.portal = portal;
-        this.fuelCell = fuelCells;
-        this.webTrap = webTraps;
-        this.frozen = frozen; 
-    }
-
-    /**
      * Display Method: 
      * @return Returns the Attributes of the Building Class as a String
      */
@@ -142,7 +125,7 @@ public class Building
      */
     public void setHeight(int height)
     {
-        this.height = height; 
+        this.height = Math.max(MIN_HEIGHT, Math.min(height, MAX_HEIGHT)); 
     }
 
         /**

@@ -8,7 +8,6 @@
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Logger;
 
 public class Map {
     
@@ -61,7 +60,7 @@ public class Map {
     }
 
     /** 
-     * Custom Method: Create New Map
+     * Custom Method: Create New Map ------ Needs updating
      * Will also randomize the Building Height, Effects, Portals & Traps 
      * Method also prevents Duplication of Effects on the same building
      * @param playerLocation Player Location/Index where the player is currently at 
@@ -81,14 +80,15 @@ public class Map {
             occupiedBuildings.add(randomIndex[i]); 
         }
         
+        resetFuelCells(occupiedBuildings);
         randomizeBuildingsHeight();
         setPortalBuilding(randomIndex[0]);
         setFrozenBuilding(randomIndex[1]);
-        setWebTrapBuilding(randomIndex[1]);
+        setWebTrapBuilding(randomIndex[2]);
     }
 
     /** 
-     * Custom Method: Create New Map with Existing Building Data, Example Below:
+     * Custom Method: Create New Map with Existing Building Data, Example Below: -- Needs Updating
      * Height, Portal, Fuel Cells, Trap, Frozen
      * "2,False,False,False,False"
      * @param playerLocation Player Location/Index where the player is currently at 
@@ -123,8 +123,21 @@ public class Map {
     public String displayMap() 
     {
         StringBuilder stringBuilder = new StringBuilder(); 
-        stringBuilder.append("\nIndex of Frozen Building: ").append(this.frozenBuildingIndex).append("\n"); 
-        stringBuilder.append("Index of Web Trap Building: ").append(this.webTrapBuildingIndex).append("\n"); 
+        stringBuilder.append("\nIndex of Portal Building: ").append(getPortalIndex() + 1).append("\n"); 
+        stringBuilder.append("Index of Frozen Building: ").append(getFrozenBuildingIndex() + 1).append("\n"); 
+        stringBuilder.append("Index of Web Trap Building: ").append(getWebTrapBuildingIndex() + 1).append("\n"); 
+        stringBuilder.append("Index of Fuel Cell Buildings: ");
+        
+        int counter = 1; 
+        for (int i = 0; i < this.fuelCellBuildings.length; i++) 
+        {   
+            if (this.fuelCellBuildings[i] > 0 && counter != MAX_FUEL_CELLS) {
+                stringBuilder.append(i).append(" , ");
+                counter++;
+            } else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) {
+                stringBuilder.append(i).append("\n");
+            }
+        }
 
         for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
         {   
@@ -203,7 +216,6 @@ public class Map {
         {
             this.fuelCellBuildings[i] = 0;
         }
-
         for (int i = 0; i < MAX_FUEL_CELLS; i++)
         {
             int buildingIndex = 0;
@@ -211,16 +223,10 @@ public class Map {
                 buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS); 
             } while (occupiedBuildings.contains(buildingIndex));  // Ensures no overlapping effects
             occupiedBuildings.add(buildingIndex);  // Similarly, do not spawn another fuel cell on the same building
-            this.fuelCellBuildings[buildingIndex] = FUEL_CELL_LIFETIME; 
+            setSpecificFuelCellBuilding(buildingIndex, FUEL_CELL_LIFETIME);
         }
     }
-
-    /** 
-     * Mutator Method: Set the Web Trap Building Index
-     * @param index Integer: Index of the Building where the Web Trap will be set
-    */
-
-    
+  
     /** 
      * Custom Method: Remove the Fuel Cell from a Building
      * @param index Integer: The Building index where the Fuel Cell was consumed by the Player
@@ -288,8 +294,8 @@ public class Map {
     }
 
     /**
-     * Mutator Method: Set Portal Building Index
-     * @param index Integer: The index of the building with the Portal
+     * Mutator Method: Set Web Trap Building Index
+     * @param index Integer: The index of the building with the Web Trap
      */
     public void setWebTrapBuilding(int index)
     {
@@ -298,13 +304,29 @@ public class Map {
     }
 
     /**
-     * Main Method 
+     * Main Method for Testing
      * @param args
      */
-    
-    public static void main(String[] args)
-    {
-        Map map1 = new Map(); 
-        System.out.println(map1.displayMap());
+
+    public static void main(String[] args) {
+        // Create an instance of the Map
+        Map map = new Map();
+
+        // Testing createMap()
+        System.out.println("Testing createMap()...");
+        map.createMap(0);
+        System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
+
+    //     // Testing resetFuelCells()
+    //     System.out.println("\nTesting resetFuelCells()...");
+    //     ArrayList<Integer> occupiedBuildings = new ArrayList<>();
+    //     occupiedBuildings.add(0); // Assume player starts at building 0
+    //     map.resetFuelCells(occupiedBuildings);
+
+    //     System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
+    //     // Display final state of the map
+    //     System.out.println("\nFinal state of the map:");
+    //     System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
     }
+    
 }
