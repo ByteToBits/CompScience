@@ -317,6 +317,15 @@ public class Map {
     }
 
     /**
+     * Custom Method: Reshuffle the Map for a New Turn
+     */
+    public void reshuffleMap(int turnNumber)
+    {
+        randomizeBuildingsHeight();
+        decrementFuelCellLife();
+    }
+
+    /**
      * Main Method for Testing
      * @param args
      */
