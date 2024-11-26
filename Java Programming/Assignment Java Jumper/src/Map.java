@@ -8,6 +8,7 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Map {
     
@@ -120,8 +121,8 @@ public class Map {
     /**
      * Custom Method: Decrement Fuel Cell Lifetime
      */
-    public void decrementFuelCellLife()
-    {
+    public void decrementFuelCellTurnsRemaining()
+    {   
         for (int i = 0; i < this.fuelCellBuildings.length; i++)
         {
             if (this.fuelCellBuildings[i] > 0) {
@@ -204,6 +205,20 @@ public class Map {
     public int getWebTrapBuildingIndex()
     {
         return this.webTrapBuildingIndex;
+    }
+
+    /**
+     * Custom Method: Generates a unique building index that is not occupied by other buildings
+     * @param occupiedBuildings ArrayList<Integer>: List of occupied building indices
+     * @return int: Unique index for assigning effects
+     */
+    private int generateUniqueBuildingIndex(ArrayList<Integer> occupiedBuildings) {
+        int buildingIndex;
+        do {
+            buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS);
+        } while (occupiedBuildings.contains(buildingIndex));
+        occupiedBuildings.add(buildingIndex);
+        return buildingIndex;
     }
 
     /** 
@@ -319,12 +334,36 @@ public class Map {
     /**
      * Custom Method: Reshuffle the Map for a New Turn
      */
-    public void reshuffleMap(int turnNumber)
-    {
-        randomizeBuildingsHeight();
-        decrementFuelCellLife();
-    }
+    public void reshuffleMap(int playerLocation)
+    {   
+        // This will track the Index to Prevent Duplication of Effects on the same building
+        ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();
 
+        occupiedBuildings.add(playerLocation); 
+        for (int i = 0; i < this.fuelCellBuildings.length; i++) {
+            if (this.fuelCellBuildings[i] > 0) {
+                occupiedBuildings.add(i); 
+            }
+        }     
+
+        // Allows the Effect of Frozen & Portal to be Together
+        int newPortalBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
+        int newFrozenBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
+        occupiedBuildings.add(newPortalBuildingIndex);
+        occupiedBuildings.add(newFrozenBuildingIndex);
+
+        randomizeBuildingsHeight();
+        setPortalBuilding(newPortalBuildingIndex);
+        setFrozenBuilding(newFrozenBuildingIndex);
+        setWebTrapBuilding(generateUniqueBuildingIndex(occupiedBuildings));
+        
+        decrementFuelCellTurnsRemaining();
+        int sumTurns = Arrays.stream(this.fuelCellBuildings).sum(); 
+        if (sumTurns <= 0) {
+            resetFuelCells(occupiedBuildings);
+        }
+    }
+    
     /**
      * Main Method for Testing
      * @param args
@@ -337,20 +376,10 @@ public class Map {
         // Testing createMap()
         System.out.println("Testing createMap()...");
         map.createMap(0);
+        map.reshuffleMap(10);
 
-        map.decrementFuelCellLife();
         System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
 
-    //     // Testing resetFuelCells()
-    //     System.out.println("\nTesting resetFuelCells()...");
-    //     ArrayList<Integer> occupiedBuildings = new ArrayList<>();
-    //     occupiedBuildings.add(0); // Assume player starts at building 0
-    //     map.resetFuelCells(occupiedBuildings);
-
-    //     System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
-    //     // Display final state of the map
-    //     System.out.println("\nFinal state of the map:");
-    //     System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
     }
     
 }
