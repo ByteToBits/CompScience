@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Java Programming/Assignment Java Jumper/src",
         "Java Programming/Assesment Rolling Project/src",
-        "Java Programming/Assignment Java Jumper/src"
+        "Java Programming/Module 4 Software Design"
     ]
 }

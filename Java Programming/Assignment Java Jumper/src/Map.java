@@ -118,6 +118,19 @@ public class Map {
     }
 
     /**
+     * Custom Method: Decrement Fuel Cell Lifetime
+     */
+    public void decrementFuelCellLife()
+    {
+        for (int i = 0; i < this.fuelCellBuildings.length; i++)
+        {
+            if (this.fuelCellBuildings[i] > 0) {
+                this.fuelCellBuildings[i]--;
+            }
+        }
+    }
+
+    /**
      * Display Method: Display the Fields of the Map Object
      */
     public String displayMap() 
@@ -132,10 +145,10 @@ public class Map {
         for (int i = 0; i < this.fuelCellBuildings.length; i++) 
         {   
             if (this.fuelCellBuildings[i] > 0 && counter != MAX_FUEL_CELLS) {
-                stringBuilder.append(i).append(" , ");
+                stringBuilder.append(i + 1).append(" , ");
                 counter++;
             } else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) {
-                stringBuilder.append(i).append("\n");
+                stringBuilder.append(i + 1).append("\n");
             }
         }
 
@@ -315,6 +328,8 @@ public class Map {
         // Testing createMap()
         System.out.println("Testing createMap()...");
         map.createMap(0);
+
+        map.decrementFuelCellLife();
         System.out.println(map.displayMap()); // Assuming there's a displayMap() to show the state of the map
 
     //     // Testing resetFuelCells()
