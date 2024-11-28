@@ -20,7 +20,7 @@ public class Device {
     public Device()
     {
         this.fuelReserves = 10;
-        this.fuelReservesPercent = calculatePercentage(this.fuelReserves); 
+        this.fuelReservesPercent = calculateFuelPercentage(this.fuelReserves); 
     }
     
     /**
@@ -30,7 +30,7 @@ public class Device {
     public Device(int fuelReserves) 
     {
         this.fuelReserves = Math.min(MAX_FUEL_RESERVES, Math.max(fuelReserves, MIN_FUEL_RESERVES)); 
-        this.fuelReservesPercent = calculatePercentage(this.fuelReserves); 
+        this.fuelReservesPercent = calculateFuelPercentage(this.fuelReserves); 
     }
     
     /**
@@ -38,7 +38,7 @@ public class Device {
      * @param fuelReserves
      * @return
      */
-    public double calculatePercentage(int fuelReserves)
+    public double calculateFuelPercentage(int fuelReserves)
     {
         return (double)(fuelReserves-MIN_FUEL_RESERVES)/MAX_FUEL_RESERVES*100;
     }
@@ -51,7 +51,7 @@ public class Device {
     public void consumeFuelReserves(int fuel)
     {
         this.fuelReserves =  Math.min(MAX_FUEL_RESERVES, Math.max((this.fuelReserves - fuel), MIN_FUEL_RESERVES)); 
-        this.fuelReservesPercent = calculatePercentage(this.fuelReserves); 
+        this.fuelReservesPercent = calculateFuelPercentage(this.fuelReserves); 
     }
     
     /**
@@ -76,7 +76,7 @@ public class Device {
      * Accesor Method: Get Fuel Reserves In Percentage
      * @return double: Fuel Reserves in Percentage
      */
-    public double getFuelReservesPercent()
+    public double getFuelReservesPercentage()
     {
         return this.fuelReservesPercent;
     }
@@ -88,7 +88,7 @@ public class Device {
     public void replenishFuelReserves(int fuel)
     {
         this.fuelReserves = Math.min(MAX_FUEL_RESERVES, Math.max(this.fuelReserves + fuel, MIN_FUEL_RESERVES));
-        this.fuelReservesPercent = calculatePercentage(this.fuelReserves); 
+        this.fuelReservesPercent = calculateFuelPercentage(this.fuelReserves); 
     }
 
     /** 
@@ -104,11 +104,9 @@ public class Device {
      * Mutator Method: Set the Fuel Reserves Percentage
      * @param fuelPercent double: The Fuel Reserves Percentage to be set to the device
      */
-    public void setFuelReserves(double fuelPercent)
+    public void setFuelReservesPercentage(double fuelPercent)
     {
         this.fuelReservesPercent = fuelPercent; 
     }
-
-
-
+    
 }
