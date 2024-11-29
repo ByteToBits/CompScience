@@ -30,8 +30,9 @@ public class Player
     * @return String: Containing the Player Details
     */
     public String displayPlayer()
-    {
-        return String.format("Player Location: " + this.location + "\nDevice Information: \n" + this.device.displayDevice());
+    {   
+        String tempString = "Player Location: " + this.location + "\n" + this.device.displayDevice();
+        return tempString;
     }
     
     /**
@@ -45,7 +46,7 @@ public class Player
     
     /**
      * Accesor Method: Get the Device Object
-     * @return Device Object
+     * @return Device Object: The Player Device Object
      */
     public Device getDevice()
     {

@@ -11,8 +11,8 @@ public class Device {
     private static final int MAX_FUEL_RESERVES = 20; 
     private static final int MIN_FUEL_RESERVES = 0;
 
-    int fuelReserves; 
-    double fuelReservesPercent; 
+    private int fuelReserves; 
+    private double fuelReservesPercent; 
 
     /**
      * Default Constructor
@@ -59,8 +59,9 @@ public class Device {
      * @return String: The Fuel Reserves & Percentage Information
      */
     public String displayDevice()
-    {
-        return String.format("Fuel Reserves: " + this.fuelReserves + " (" + this.fuelReservesPercent + "% )"); 
+    {   
+        String tempString = "Fuel Reserves: " +  this.fuelReserves + " (" + (int)(this.fuelReservesPercent) + "%)";
+        return tempString;
     }
 
     /**
@@ -108,5 +109,4 @@ public class Device {
     {
         this.fuelReservesPercent = fuelPercent; 
     }
-    
 }
