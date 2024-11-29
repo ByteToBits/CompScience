@@ -34,6 +34,17 @@ public class Device {
     }
     
     /**
+     * Custom Method: Calculates the Fuel Consumption
+     * @param currentBuildingHeight int: Current Building Height
+     * @param targetBuildingHeight int: The Height of the Target Building
+     * @return int: Height Difference between the Buildigng
+     */
+    public int calculateFuelConsumption(int currentBuildingHeight, int targetBuildingHeight)
+    {
+        return Math.abs(currentBuildingHeight - targetBuildingHeight) + 1; 
+    }
+
+    /**
      * Custom Method: Converts the Fuel Reserves 
      * @param fuelReserves
      * @return
@@ -109,4 +120,5 @@ public class Device {
     {
         this.fuelReservesPercent = fuelPercent; 
     }
+
 }

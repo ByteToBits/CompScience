@@ -54,14 +54,49 @@ public class Player
     }
     
     /**
-     * Custom Method: Move the Player Left
-     * @param currentBuilding int: The Current Building Index the Player is currently on
-     * @param targetBuilding int: The Target Building Index for the next Hop
+     * Custom Method: The Player Jumps to the Building at the Left
+     * @param currentBuildingIndex int: The Current Building Index the Player is currently on
+     * @param targetBuildingIndex int: The Target Building Index for the next Hop
      */
-    public void moveLeft(int currentBuilding, int targetBuilding)
-    {
-        this.location = currentBuilding + targetBuilding; 
+    public void jumpLeft(int currentBuildingIndex, int targetBuildingIndex)
+    {   
+
+        this.location = targetBuildingIndex; 
+        this.device.consumeFuelReserves(1);
     }
+
+     /**
+     * Custom Method: The Player Jumps to the Building at the Right
+     * @param currentBuildingIndex int: The Current Building Index the Player is currently on
+     * @param targetBuildingIndex int: The Target Building Index for the next Hop
+     */
+    public void jumpRight(int currentBuildingIndex, int targetBuildingIndex)
+    {
+        this.location = targetBuildingIndex; 
+    }
+    
+    /**
+     * Custom Method: Player Stays at Current Position for the Turn
+     */
+    public void stay()
+    {
+        // Does return anything, player stays at current location
+    }
+
+    /**
+     * Mutator Method: Set Player Location
+     * @param buildingIndex int: The Building Index where to set the Player Location
+     */
+    public void setLocation(int buildingIndex)
+    {
+        this.location = buildingIndex;
+    }
+
+    /**
+     * Mutator Method: Set Player's Device Object
+     * @param device Device Object: The New Device Object to be set to the Player
+     */
+    
 
     public static void main(String[] args)
     {   
