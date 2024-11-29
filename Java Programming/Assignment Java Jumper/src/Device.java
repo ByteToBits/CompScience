@@ -60,7 +60,7 @@ public class Device {
      */
     public String displayDevice()
     {
-        return String.format("Fuel Reserves: " + this.fuelReserves + " (" + this.fuelReservesPercent + "%)"); 
+        return String.format("Fuel Reserves: " + this.fuelReserves + " (" + this.fuelReservesPercent + "% )"); 
     }
 
     /**
