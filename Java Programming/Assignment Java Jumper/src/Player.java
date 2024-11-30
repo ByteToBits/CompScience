@@ -34,7 +34,7 @@ public class Player
     */
     public String displayPlayer()
     {   
-        String tempString = "Player Building Location: " + (this.location + 1) + "\n" + this.device.displayDevice();
+        String tempString = "Player Building Location: " + (this.location) + "\n" + this.device.displayDevice();
         return tempString;
     }
     

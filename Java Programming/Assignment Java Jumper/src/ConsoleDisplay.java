@@ -81,20 +81,43 @@ public class ConsoleDisplay
     public String createBuildingLevel(ArrayList<String> state, int mapLevel) throws ParseException
     {   
         StringBuffer stringBuffer = new StringBuffer("|  Level " + mapLevel + ":     "); 
-        String[] effects = {"[FF]", "[##]", "[FC]"}; 
+
+        ArrayList<Integer> height = new ArrayList<>();
+        for (String rawHeight : state.get(6).split(" , "))
+        {
+            height.add(Integer.parseInt(rawHeight.trim())); 
+        }
 
         for (int i = 0; i < 15; i++)
-        {
-            if (mapLevel == Integer.parseInt(state.get(0))) {
-                
-                
-
-            } else {
-                stringBuffer.append("    ");
+        {   
+            stringBuffer.append(" ");
+            if (mapLevel == height.get(i))
+            {
+                if (i == Integer.parseInt(state.get(3))){
+                    stringBuffer.append("[FF]"); 
+                } 
+                else if (i == Integer.parseInt(state.get(3))){
+                    stringBuffer.append("[##]"); 
+                } 
+                else {
+                    stringBuffer.append("[  ]"); 
+                }              
+            } 
+            else 
+            {   
+                if ((i == Integer.parseInt(state.get(0)) && mapLevel == (height.get(i) + 1))) {
+                    stringBuffer.append("<P1>");
+                } 
+                else if ((i == Integer.parseInt(state.get(2)) && mapLevel == (height.get(i) + 1))) {
+                    stringBuffer.append("-{}-");
+                } 
+                else {
+                    stringBuffer.append("    ");
+                }
             }
         }
 
-        return floor; 
+        return stringBuffer.toString(); 
     }
 
 
