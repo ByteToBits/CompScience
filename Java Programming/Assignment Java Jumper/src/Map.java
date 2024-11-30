@@ -95,12 +95,12 @@ public class Map {
             }
         }
 
-        for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
-        {   
-            stringBuilder.append("\nBuilding ").append(i+1).append(" Info:\n");
-            stringBuilder.append(this.buildings[i].displayBuilding()); 
-            stringBuilder.append("\nFuel Cell Lifetime (Turns): ").append(this.fuelCellBuildings[i]).append("\n"); 
-        }
+        // for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
+        // {   
+        //     stringBuilder.append("\nBuilding ").append(i+1).append(" Info:\n");
+        //     stringBuilder.append(this.buildings[i].displayBuilding()); 
+        //     stringBuilder.append("\nFuel Cell Lifetime (Turns): ").append(this.fuelCellBuildings[i]).append("\n"); 
+        // }
         return stringBuilder.toString(); 
     }
 
@@ -204,7 +204,6 @@ public class Map {
      * "2,False,False,False,False"
      * @param playerLocation Player Location/Index where the player is currently at 
      * @param buildingData String[]; An Array of String Lines containing Building Information
-
     */
     public void initializeMap(int playerLocation, String[] buildingData) 
         throws NumberFormatException
