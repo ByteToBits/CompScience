@@ -79,7 +79,7 @@ public class Map {
     public String displayMap() 
     {
         StringBuilder stringBuilder = new StringBuilder(); 
-        stringBuilder.append("\nIndex of Portal Building: ").append(getPortalIndex() + 1).append("\n"); 
+        stringBuilder.append("Index of Portal Building: ").append(getPortalIndex() + 1).append("\n"); 
         stringBuilder.append("Index of Frozen Building: ").append(getFrozenBuildingIndex() + 1).append("\n"); 
         stringBuilder.append("Index of Web Trap Building: ").append(getWebTrapBuildingIndex() + 1).append("\n"); 
         stringBuilder.append("Index of Fuel Cell Buildings: ");
@@ -91,7 +91,7 @@ public class Map {
                 stringBuilder.append(i + 1).append(" , ");
                 counter++;
             } else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) {
-                stringBuilder.append(i + 1).append("\n");
+                stringBuilder.append(i + 1); //.append("\n");
             }
         }
 

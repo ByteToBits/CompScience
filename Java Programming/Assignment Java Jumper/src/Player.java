@@ -2,6 +2,7 @@
 public class Player 
 {
     // Fields
+    private String name; 
     private int location;
     private Device device; 
 
@@ -9,7 +10,8 @@ public class Player
     * Default Constructor
     */
     public Player()
-    {
+    {   
+        this.name = "Tristan"; 
         this.location = 0;
         this.device = new Device(); 
     }
@@ -19,8 +21,9 @@ public class Player
     * @param location int: Current Location of the Player as Building Index
     * @param device Device(Object): The Device Object with its Parameters to be Initialized
     */
-    public Player(int location, Device device)
-    {
+    public Player(String name, int location, Device device)
+    {   
+        this.name = name;
         this.location = location;
         this.device = device; 
     }
@@ -31,7 +34,7 @@ public class Player
     */
     public String displayPlayer()
     {   
-        String tempString = "Player Location: Building " + (this.location + 1) + "\n" + this.device.displayDevice();
+        String tempString = "Player Building Location: " + (this.location + 1) + "\n" + this.device.displayDevice();
         return tempString;
     }
     

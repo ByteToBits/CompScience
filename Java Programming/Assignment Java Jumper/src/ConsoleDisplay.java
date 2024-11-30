@@ -1,4 +1,5 @@
 
+import java.util.ArrayList; 
 
 public class ConsoleDisplay
 {
@@ -23,27 +24,55 @@ public class ConsoleDisplay
     public String testMap(){
 
         String newString =  
-        "\n---------------------------------------------- < NoWhere Land > ---------------------------------------------------------\n"  + //
-        "| Player: John  |  Turn: 10  |  Fuel Reserves: 10 (50%)                                     | Legends:                  |\n"  + //
-        "|                                                                                           | <P1> Player               |\n"  + //
-        "|                                                                                           | -{}- Portal               |\n"  + //
-        "|                        **        **                                                       | [FC] Fuel Cell            |\n"  + //
-        "|  Level 5:        [FC] [  ]      <P1>           [  ]                                       | [##] Web Trap             |\n"  + //
-        "|  Level 4:        [  ] [  ]      [  ]       **  [  ] [FC] [  ]      [  ]      [  ] -{}-    | [FF] Frozen Building      |\n"  + //
-        "|  Level 3:   [  ] [  ] [  ]      [  ]      [##] [  ] [  ] [  ]      [  ]      [  ] [FF]    |                           |\n"  + //
-        "|  Level 3:   [  ] [  ] [  ] [FC] [  ]      [  ] [  ] [  ] [  ] [  ] [  ]      [  ] [  ]    |  **  Indicator where      |\n"  + //
-        "|  Level 1:   [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [FC] [  ] [  ]    |      the Player will be   |\n"  + //
-        "| Building:     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15     |      after selecting one  |\n"  + //
-        "|   Height:   ( 3) ( 5) ( 5) ( 2) ( 4) ( 1) ( 3) ( 5) ( 4) ( 4) ( 2) ( 4) ( 2) ( 4) ( 3)    |      of the Actions below |\n"  + //
-        "|                                                                                           |                           |\n"  + //
-        "|-----------------------------------------------------------------------------------------------------------------------|\n"  + //
-        "| Please Select Actions: 1) Jump Right (Cost: 5)  |  2) Jump Left (Cost: 5)  |  3) Stay (Cost: 1)                       |\n"  +//
-        "|                        S) Settings  R) Rules   N) New Game  E) End Game                                               |\n"  + //
-        "-------------------------------------------------------------------------------------------------------------------------\n";
+        "\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"  + //
+        "| Player: John                                                                                               |\n"  + //
+        "| Turn: 10  |  Fuel Reserves: 10 (50%)                                                                       |\n"  + //
+        "|                                                                                                            |\n"  + //
+        "|                                                                                                            |\n"  + //
+        "|  Level 5:          [FC] [  ]      <P1>           [  ]                                                      |\n"  + //
+        "|  Level 4:          [  ] [  ]      [  ]           [  ] [FC] [  ]      [  ]      [  ] -{}-                   |\n"  + //
+        "|  Level 3:     [  ] [  ] [  ]      [  ]      [##] [  ] [  ] [  ]      [  ]      [  ] [FF]                   |\n"  + //
+        "|  Level 3:     [  ] [  ] [  ] [FC] [  ]      [  ] [  ] [  ] [  ] [  ] [  ]      [  ] [  ]                   |\n"  + //
+        "|  Level 1:     [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [  ] [FC] [  ] [  ]                   |\n"  + //
+        "| Building:       1    2    3    4    5    6    7    8    9   10   11   12   13   14   15                    |\n"  + //
+        "|   Height:     ( 3) ( 5) ( 5) ( 2) ( 4) ( 1) ( 3) ( 5) ( 4) ( 4) ( 2) ( 4) ( 2) ( 4) ( 3)                   |\n"  + //
+        "|                                                                                                            |\n"  + //
+        "|------------------------------------------------------------------------------------------------------------|\n"  + //
+        "| Legends:  <P1> Player  |  -{}- Portal  |  [FC] Fuel Cell  |  [##] Web Trap |  [FF] Frozen Building         |\n"  + //
+        "|------------------------------------------------------------------------------------------------------------|\n"  + //
+        "| Please Select Actions: 1) Jump Right (Cost: 5)  |  2) Jump Left (Cost: 5)  |  3) Stay (Cost: 1)            |\n"  + //
+        "|                        S) Settings  |  R) Rules                                                            |\n"  + //
+        "--------------------------------------------------------------------------------------------------------------\n";
         return newString; 
     }
-
     
+    /**
+     * Description: Print the Jave Jumper Map onto the Console
+     * @param gameStates String: The States of the Building and Player Object parsed as a String 
+     * @param turn int: The current Turn of the Game
+     */
+    public void printMap(String gameStates, String playerName, int turn)
+    {   
+        ArrayList<String> gameState = new ArrayList<String>(); 
+        StringBuffer stringBuffer = new StringBuffer(); 
+
+        for (String  state : gameStates.split("\n"))
+        {   
+            String[] tempString = state.split(": ");
+            gameState.add(tempString[1].trim());
+        }
+
+        // Each Line is 110 Characters Long
+        String line1 = "\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"; 
+        // Use "paddings" in string format to keep the second line consistently 110 Characters Long
+        String line2 = String.format("%-109s|\n",String.format("| Player: %-13s", playerName)); 
+        String line3 = String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, gameState.get(1))); 
+
+        System.out.println(line1 + line2 + line3);
+
+    }
+
+
 
 
 }

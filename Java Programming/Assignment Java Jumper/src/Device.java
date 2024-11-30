@@ -71,7 +71,7 @@ public class Device {
      */
     public String displayDevice()
     {   
-        String tempString = "Fuel Reserves: " +  this.fuelReserves + " (" + (int)(this.fuelReservesPercent) + "%)";
+        String tempString = "Fuel Reserves: " +  this.fuelReserves + " (" + (int)(this.fuelReservesPercent) + "%)\n";
         return tempString;
     }
 
