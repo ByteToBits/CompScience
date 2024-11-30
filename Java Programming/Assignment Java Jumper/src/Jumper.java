@@ -45,11 +45,11 @@ public class Jumper
 
         System.out.println(javaJumper.consoleDisplay.testMap()); 
 
-        System.out.println(javaJumper.player.displayPlayer());
+        System.out.print(javaJumper.player.displayPlayer());
         System.out.println(javaJumper.map.displayMap());
         
         javaJumper.consoleDisplay.printMap(javaJumper.player.displayPlayer() + javaJumper.map.displayMap(), "John", 5); 
-        // Load 
+
 
     }
 

@@ -91,16 +91,18 @@ public class Map {
                 stringBuilder.append(i + 1).append(" , ");
                 counter++;
             } else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) {
-                stringBuilder.append(i + 1); //.append("\n");
+                stringBuilder.append(i + 1).append("\n");
             }
         }
-
-        // for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
-        // {   
-        //     stringBuilder.append("\nBuilding ").append(i+1).append(" Info:\n");
-        //     stringBuilder.append(this.buildings[i].displayBuilding()); 
-        //     stringBuilder.append("\nFuel Cell Lifetime (Turns): ").append(this.fuelCellBuildings[i]).append("\n"); 
-        // }
+        
+        stringBuilder.append("Building Height: "); 
+        for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
+        {   
+            stringBuilder.append(this.buildings[i].getHeight()); 
+            if (i < NUMBER_OF_BUILDINGS - 1) {
+                stringBuilder.append(" , ");  
+            }
+        } 
         return stringBuilder.toString(); 
     }
 

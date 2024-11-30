@@ -1,4 +1,5 @@
 
+import java.text.ParseException;
 import java.util.ArrayList; 
 
 public class ConsoleDisplay
@@ -48,28 +49,52 @@ public class ConsoleDisplay
     
     /**
      * Description: Print the Jave Jumper Map onto the Console
+     * This Method Generates the Map using a String Data containing the Player & Building States
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
      * @param turn int: The current Turn of the Game
      */
     public void printMap(String gameStates, String playerName, int turn)
     {   
-        ArrayList<String> gameState = new ArrayList<String>(); 
-        StringBuffer stringBuffer = new StringBuffer(); 
+        ArrayList<String> map = new ArrayList<String>();
+        ArrayList<String> state = new ArrayList<String>(); 
 
-        for (String  state : gameStates.split("\n"))
+        for (String  segment : gameStates.split("\n"))
         {   
-            String[] tempString = state.split(": ");
-            gameState.add(tempString[1].trim());
+            String[] tempString = segment.split(": ");
+            state.add(tempString[1].trim());   
         }
 
-        // Each Line is 110 Characters Long
-        String line1 = "\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"; 
-        // Use "paddings" in string format to keep the second line consistently 110 Characters Long
-        String line2 = String.format("%-109s|\n",String.format("| Player: %-13s", playerName)); 
-        String line3 = String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, gameState.get(1))); 
+        // Each Line is 110 Characters Long & Use "paddings" in string format to keep the second line consistently 110 Characters Long
+        map.add("\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"); 
+        map.add(String.format("%-109s|\n",String.format("| Player: %-13s", playerName))); 
+        map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, gameState.get(1)))); 
+        map.add( "|                                                                                                            |\n"); 
+        
+        for (String mapSegment : map){
+            System.out.print(mapSegment);
+        }
 
-        System.out.println(line1 + line2 + line3);
+    }
+    
+    String testBuilding = "Height: 4; Portal: false; Fuel Cells: false; Web Traps: false; Frozen: false; Fuel Cell Lifetime (Turns): 0";
 
+    public String createBuildingLevel(ArrayList<String> state, int mapLevel) throws ParseException
+    {   
+        StringBuffer stringBuffer = new StringBuffer("|  Level " + mapLevel + ":     "); 
+        String[] effects = {"[FF]", "[##]", "[FC]"}; 
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (mapLevel == Integer.parseInt(state.get(0))) {
+                
+                
+
+            } else {
+                stringBuffer.append("    ");
+            }
+        }
+
+        return floor; 
     }
 
 

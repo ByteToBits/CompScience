@@ -30,7 +30,7 @@ public class Player
  
     /**
     * Display Method: Display String of the Player Details
-    * @return String: Containing the Player Details
+    * @return String: Conta                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ining the Player Details
     */
     public String displayPlayer()
     {   
