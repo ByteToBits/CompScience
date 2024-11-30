@@ -31,9 +31,9 @@ public class Map {
     public Map()
     {   
         // Initialize Values
-        this.frozenBuildingIndex = 1; 
-        this.portalBuildingIndex = 1; 
-        this.webTrapBuildingIndex = 1; 
+        this.frozenBuildingIndex = 0; 
+        this.portalBuildingIndex = 0;
+        this.webTrapBuildingIndex = 0; 
         this.buildings = new Building[NUMBER_OF_BUILDINGS];   
         this.fuelCellBuildings = new int[NUMBER_OF_BUILDINGS]; 
 

@@ -14,8 +14,8 @@ public class FileIO
 {
     private String fileName; 
     private static final String DELIMITER = "\r\n"; 
-    private static final String BUILDING_FILE = "Java Programming\\Assignment Java Jumper\\resources\\building.txt"; 
-    private static final String OUTCOME_FILE = "Java Programming\\Assignment Java Jumper\\resources\\outcome.txt";
+    private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\building.txt"; 
+    private static final String OUTCOME_FILE = "Assignment Java Jumper\\resources\\outcome.txt";
     
     /**
      * Default Constructor
@@ -36,8 +36,8 @@ public class FileIO
     /**
      * Custom Method: Read File Contents
      * Remarks: Data Parsing is handle by another class
-     * IOException: Declare Checked Exceiption, FileNotFoundException, and propogate to the method Caller
      * @return A Single String of all the contents of the File
+     * @throws IOException: Declare Checked Exceiption, FileNotFoundException, and propogate to the method Caller
      */
     public String readFile() throws IOException
     {
@@ -49,7 +49,8 @@ public class FileIO
             {   
                 stringBuffer.append(scanner.nextLine()); 
                 // Check if it is the Last Line before appending delimiter
-                if (scanner.hasNextLine()) {
+                if (scanner.hasNextLine()) 
+                {
                     stringBuffer.append(DELIMITER); 
                 }
             }
@@ -57,14 +58,31 @@ public class FileIO
         return stringBuffer.toString();
     }
 
-    /** Custom Method: Write String Dat to File
+    /** Custom Method: Write String Data to File
      * @param contents String: A String Data to be Written to a text file
+     * @throws IOException: Declare Checked Exceiption, FileNotFoundException, and propogate to the method Caller
      */
+    public void writeFile(String contents) throws IOException
+    {
+        try (FileWriter fileWriter = new FileWriter(this.fileName); PrintWriter printWriter = new PrintWriter(fileWriter)) 
+        {
+            for (String contentSegment : contents.split(DELIMITER)) 
+            {
+                printWriter.println(contentSegment);
+            }
+        }
+    }
     
     public static void main(String[] args) throws IOException
     {
         FileIO fileIO = new FileIO(BUILDING_FILE);
         System.out.println(fileIO.readFile());
+
+        String testString = "Number of Turns: 0,\r\nNumber of Fuel Cells: 10,\r\nWin Status: false"; 
+        FileIO writeFileIO = new FileIO(OUTCOME_FILE); 
+
+        writeFileIO.writeFile(testString); 
+
     }
 
 }
