@@ -1,0 +1,3 @@
+Number of Turns: 0,
+Number of Fuel Cells: 10,
+Win Status: false

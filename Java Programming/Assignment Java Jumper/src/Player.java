@@ -96,7 +96,10 @@ public class Player
      * Mutator Method: Set Player's Device Object
      * @param device Device Object: The New Device Object to be set to the Player
      */
-    
+    public void setDevice(Device device)
+    {
+        this.device = device; 
+    }
 
     public static void main(String[] args)
     {   
