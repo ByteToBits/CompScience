@@ -53,7 +53,7 @@ public class ConsoleDisplay
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
      * @param turn int: The current Turn of the Game
      */
-    public void printMap(String gameStates, String playerName, int turn)
+    public void printMap(String gameStates, String playerName, int turn) throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
         ArrayList<String> map = new ArrayList<String>();
         ArrayList<String> state = new ArrayList<String>(); 
@@ -67,25 +67,43 @@ public class ConsoleDisplay
         // Each Line is 110 Characters Long & Use "paddings" in string format to keep the second line consistently 110 Characters Long
         map.add("\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"); 
         map.add(String.format("%-109s|\n",String.format("| Player: %-13s", playerName))); 
-        map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, gameState.get(1)))); 
+        map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, state.get(1)))); 
         map.add( "|                                                                                                            |\n"); 
         
+        for (int i = 5; i > 0; i--) 
+        {
+            if (i == 5) {
+                map.add(createBuildingLevel(state, i + 1));   // Account for 1 Row Additional Row above Level 5 (Where Player & Portal can exist)
+                map.add(createBuildingLevel(state, i)); 
+            } else {
+                map.add(createBuildingLevel(state, i)); 
+            }
+        }
+
         for (String mapSegment : map){
             System.out.print(mapSegment);
         }
 
     }
     
-    String testBuilding = "Height: 4; Portal: false; Fuel Cells: false; Web Traps: false; Frozen: false; Fuel Cell Lifetime (Turns): 0";
 
-    public String createBuildingLevel(ArrayList<String> state, int mapLevel) throws ParseException
+
+
+
+    public String createBuildingLevel(ArrayList<String> state, int mapLevel) 
+        throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
-        StringBuffer stringBuffer = new StringBuffer("|  Level " + mapLevel + ":     "); 
-
+        StringBuffer stringBuffer = new StringBuffer(); 
         ArrayList<Integer> height = new ArrayList<>();
-        for (String rawHeight : state.get(6).split(" , "))
-        {
+
+        for (String rawHeight : state.get(6).split(" , ")){
             height.add(Integer.parseInt(rawHeight.trim())); 
+        }
+
+        if (mapLevel > 5) {
+            stringBuffer.append("|               "); 
+        } else {
+            stringBuffer.append("|  Level " + mapLevel + ":     "); 
         }
 
         for (int i = 0; i < 15; i++)
@@ -96,27 +114,30 @@ public class ConsoleDisplay
                 if (i == Integer.parseInt(state.get(3))){
                     stringBuffer.append("[FF]"); 
                 } 
-                else if (i == Integer.parseInt(state.get(3))){
+                else if (i == Integer.parseInt(state.get(4))) {
                     stringBuffer.append("[##]"); 
                 } 
                 else {
                     stringBuffer.append("[  ]"); 
                 }              
-            } 
-            else 
-            {   
-                if ((i == Integer.parseInt(state.get(0)) && mapLevel == (height.get(i) + 1))) {
-                    stringBuffer.append("<P1>");
-                } 
-                else if ((i == Integer.parseInt(state.get(2)) && mapLevel == (height.get(i) + 1))) {
-                    stringBuffer.append("-{}-");
-                } 
+            } else {   
+                if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) {
+                    if (i == Integer.parseInt(state.get(0))) {
+                        stringBuffer.append("<P1>");
+                    } else if ((i == Integer.parseInt(state.get(2)))) {
+                        stringBuffer.append("-{}-");
+                    } else {
+                        stringBuffer.append("    ");
+                    }
+                } else if (mapLevel < height.get(i)){
+                    stringBuffer.append("[  ]");
+                }
                 else {
                     stringBuffer.append("    ");
                 }
             }
         }
-
+        stringBuffer.append("\n");
         return stringBuffer.toString(); 
     }
 
