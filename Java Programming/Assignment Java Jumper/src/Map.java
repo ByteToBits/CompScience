@@ -403,23 +403,4 @@ public class Map {
         this.buildings[index].setWebTrap(true);
     }
     
-    /**
-     * Main Method for Testing
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        // initialize an instance of the Map
-        Map map = new Map();
-
-        // Testing initializeMap()
-        System.out.println("Testing initializeMap()...");
-        map.initializeMap(0);
-
-        System.out.println("Round 1: " + map.displayMap()); // Assuming there's a displayMap() to show the state of the map
-
-        map.reshuffleMap(0);
-
-        System.out.println("Round 2: " + map.displayMap()); // Assuming there's a displayMap() to show the state of the map
-    }
 }

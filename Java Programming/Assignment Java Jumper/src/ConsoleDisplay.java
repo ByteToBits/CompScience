@@ -148,7 +148,7 @@ public class ConsoleDisplay
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
      * @param turn int: The current Turn of the Game
      */
-    public void printMap(String gameStates, String playerName, int turn) 
+    public void printMap(String gameStates, int turn) 
       throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
         ArrayList<String> map = new ArrayList<String>();
@@ -180,7 +180,7 @@ public class ConsoleDisplay
         }
 
         map.add( "| Building:        1    2    3    4    5    6    7    8    9   10   11   12   13   14   15                   |\n"); 
-        map.add( "|   Height:      ( 3) ( 5) ( 5) ( 2) ( 4) ( 1) ( 3) ( 5) ( 4) ( 4) ( 2) ( 4) ( 2) ( 4) ( 3)                  |\n");
+        //map.add( "|   Height:      ( 3) ( 5) ( 5) ( 2) ( 4) ( 1) ( 3) ( 5) ( 4) ( 4) ( 2) ( 4) ( 2) ( 4) ( 3)                  |\n");
         map.add( "|                                                                                                            |\n"); 
         map.add( "|------------------------------------------------------------------------------------------------------------|\n"); 
         map.add( "| Legends:  <P1> Player  |  -{}- Portal  |  [FC] Fuel Cell  |  [##] Web Trap |  [FF] Frozen Building         |\n");
