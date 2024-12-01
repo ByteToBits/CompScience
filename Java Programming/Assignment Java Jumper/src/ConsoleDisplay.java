@@ -50,10 +50,12 @@ public class ConsoleDisplay
     /**
      * Description: Print the Jave Jumper Map onto the Console
      * This Method Generates the Map using a String Data containing the Player & Building States
+     * It will also use System.out.println to print the Map onto the Console
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
      * @param turn int: The current Turn of the Game
      */
-    public void printMap(String gameStates, String playerName, int turn) throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
+    public void printMap(String gameStates, String playerName, int turn) 
+      throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
         ArrayList<String> map = new ArrayList<String>();
         ArrayList<String> state = new ArrayList<String>(); 
@@ -92,7 +94,6 @@ public class ConsoleDisplay
             System.out.print(mapSegment);
         }
     }
-    
 
     /**
      * Custom Method: Generates a Single Line String representing one of the 5 building levels.

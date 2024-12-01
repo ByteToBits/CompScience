@@ -38,12 +38,18 @@ public class Jumper
 
         System.out.println(javaJumper.consoleDisplay.printWelcomeMessage()); 
 
-        System.out.println(javaJumper.consoleDisplay.testMap()); 
+        // System.out.println(javaJumper.consoleDisplay.testMap()); 
 
-        System.out.print(javaJumper.player.displayPlayer());
-        System.out.println(javaJumper.map.displayMap());
-        
-        javaJumper.consoleDisplay.printMap(javaJumper.player.displayPlayer() + javaJumper.map.displayMap(), "John", 5); 
+        String gameStatePacket = javaJumper.player.displayPlayer() + javaJumper.map.displayMap();
+
+        System.out.println(gameStatePacket);
+
+        System.out.println(javaJumper.player.pathFinder(gameStatePacket));
+        javaJumper.consoleDisplay.printMap(gameStatePacket, "John", 5); 
+
+        // Players Next Move
+
+        // Input Player Moves
 
 
     }
