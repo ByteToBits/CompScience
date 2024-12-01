@@ -72,76 +72,126 @@ public class ConsoleDisplay
         
         for (int i = 5; i > 0; i--) 
         {
-            if (i == 5) {
-                map.add(createBuildingLevel(state, i + 1));   // Account for 1 Row Additional Row above Level 5 (Where Player & Portal can exist)
-                map.add(createBuildingLevel(state, i)); 
-            } else {
-                map.add(createBuildingLevel(state, i)); 
+            if (i == 5) 
+            {
+                map.add(createLevel(state, i + 1));   // Account for 1 Row Additional Row above Level 5 (Where Player & Portal can exist)
+                map.add(createLevel(state, i)); 
+            } 
+            else 
+            {
+                map.add(createLevel(state, i)); 
             }
         }
 
-        for (String mapSegment : map){
+        map.add( "|------------------------------------------------------------------------------------------------------------|\n"); 
+        map.add( "| Legends:  <P1> Player  |  -{}- Portal  |  [FC] Fuel Cell  |  [##] Web Trap |  [FF] Frozen Building         |\n");
+        map.add( "|------------------------------------------------------------------------------------------------------------|\n"); 
+
+        for (String mapSegment : map) 
+        {
             System.out.print(mapSegment);
         }
-
     }
     
 
-
-
-
-    public String createBuildingLevel(ArrayList<String> state, int mapLevel) 
+    /**
+     * Custom Method: Generates a Single Line String representing one of the 5 building levels.
+     * Example Output: "Level 5   [  ] [  ] [FC] [##] [  ] ..."
+     * @param state String: The overall game state (e.g., "Player Location: 0, Index of Portal: 2")
+     * @param mapLevel int: The building level to generate
+     * @return String: A formatted string representing the specified building level
+     * @throws NumberFormatException If parsing from String to Integer fails
+     * @throws IndexOutOfBoundsException If the state ArrayList index is out of bounds
+     * @throws NullPointerException If the state ArrayList is not correctly initialized
+     */
+    public String createLevel(ArrayList<String> state, int mapLevel) 
         throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
         StringBuffer stringBuffer = new StringBuffer(); 
         ArrayList<Integer> height = new ArrayList<>();
-
-        for (String rawHeight : state.get(6).split(" , ")){
-            height.add(Integer.parseInt(rawHeight.trim())); 
-        }
-
-        if (mapLevel > 5) {
+        ArrayList<Integer> fuelCellBuildings = new ArrayList<>();
+        
+        // Check if it's the Additional Level 6  where only Player & Portal will spawn
+        if (mapLevel > 5) { 
             stringBuffer.append("|               "); 
         } else {
             stringBuffer.append("|  Level " + mapLevel + ":     "); 
         }
 
+        // Get the Height of the Buildings 
+        for (String rawHeight : state.get(6).split(" , "))
+        {
+            height.add(Integer.parseInt(rawHeight.trim())); 
+        }
+
+        // Get Buildings with the Fuel Cells 
+        for (String buildings : state.get(5).split(" , "))
+        {
+            fuelCellBuildings.add(Integer.parseInt(buildings)); 
+        }
+        
+        // Logic for Printing the Buildings on the console Display
         for (int i = 0; i < 15; i++)
         {   
             stringBuffer.append(" ");
             if (mapLevel == height.get(i))
             {
-                if (i == Integer.parseInt(state.get(3))){
-                    stringBuffer.append("[FF]"); 
+                if (i == Integer.parseInt(state.get(3)))  // Print Frozen Floor
+                {  
+                    stringBuffer.append("[FF]");   
                 } 
-                else if (i == Integer.parseInt(state.get(4))) {
-                    stringBuffer.append("[##]"); 
+                else if (i == Integer.parseInt(state.get(4)))  // Print Web Trap Floor
+                {
+                    stringBuffer.append("[##]");   
                 } 
-                else {
-                    stringBuffer.append("[  ]"); 
+                else  // Check if it's Building with Fuel Cell, if False print Normal Building
+                {   
+                    boolean fuelCellFlag = false; 
+                    for (int j = 0; j < fuelCellBuildings.size(); j ++) 
+                    {
+                        if (i == fuelCellBuildings.get(j)) 
+                        {
+                            fuelCellFlag = true; 
+                            stringBuffer.append("[FC]");  
+                        }
+                    }
+
+                    if (!fuelCellFlag) 
+                    {
+                        stringBuffer.append("[  ]");   
+                    }
                 }              
-            } else {   
-                if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) {
-                    if (i == Integer.parseInt(state.get(0))) {
+            } 
+            else 
+            {   
+                if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) // Print Player & Portal
+                {
+                    if (i == Integer.parseInt(state.get(0)))
+                    {
                         stringBuffer.append("<P1>");
-                    } else if ((i == Integer.parseInt(state.get(2)))) {
+                    } 
+                    else if ((i == Integer.parseInt(state.get(2)))) 
+                    {
                         stringBuffer.append("-{}-");
-                    } else {
+                    } 
+                    else 
+                    {
                         stringBuffer.append("    ");
                     }
-                } else if (mapLevel < height.get(i)){
+                } 
+                else if (mapLevel < height.get(i)) // Print the Normal Floors
+                {
                     stringBuffer.append("[  ]");
                 }
-                else {
+                else 
+                {
                     stringBuffer.append("    ");
                 }
             }
         }
-        stringBuffer.append("\n");
+
+        stringBuffer.append("                  |\n");
         return stringBuffer.toString(); 
     }
-
-
-
 
 }

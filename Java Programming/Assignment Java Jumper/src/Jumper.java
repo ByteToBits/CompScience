@@ -28,11 +28,6 @@ public class Jumper
         this.turn = 0; 
     }
 
-
-
-
-
-
     /**
      * Main Method: This is the Main Method of the Jumper Class & the Java Jumper Assignment
      */

@@ -67,7 +67,8 @@ public class Map {
     {   
         for (int i = 0; i < this.fuelCellBuildings.length; i++)
         {
-            if (this.fuelCellBuildings[i] > 0) {
+            if (this.fuelCellBuildings[i] > 0) 
+            {
                 this.fuelCellBuildings[i]--;
             }
         }
@@ -87,10 +88,13 @@ public class Map {
         int counter = 1; 
         for (int i = 0; i < this.fuelCellBuildings.length; i++) 
         {   
-            if (this.fuelCellBuildings[i] > 0 && counter != MAX_FUEL_CELLS) {
+            if (this.fuelCellBuildings[i] > 0 && counter != MAX_FUEL_CELLS) 
+            {
                 stringBuilder.append(i).append(" , ");
                 counter++;
-            } else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) {
+            } 
+            else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) 
+            {
                 stringBuilder.append(i).append("\n");
             }
         }
@@ -99,7 +103,8 @@ public class Map {
         for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
         {   
             stringBuilder.append(this.buildings[i].getHeight()); 
-            if (i < NUMBER_OF_BUILDINGS - 1) {
+            if (i < NUMBER_OF_BUILDINGS - 1) 
+            {
                 stringBuilder.append(" , ");  
             }
         } 
@@ -156,11 +161,16 @@ public class Map {
      * @param occupiedBuildings ArrayList<Integer>: List of occupied building indices
      * @return int: Unique index for assigning effects
      */
-    private int generateUniqueBuildingIndex(ArrayList<Integer> occupiedBuildings) {
+    private int generateUniqueBuildingIndex(ArrayList<Integer> occupiedBuildings) 
+    {
         int buildingIndex;
-        do {
+
+        do 
+        {
             buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS);
-        } while (occupiedBuildings.contains(buildingIndex));
+        } 
+        while (occupiedBuildings.contains(buildingIndex));
+
         occupiedBuildings.add(buildingIndex);
         return buildingIndex;
     }
@@ -175,10 +185,12 @@ public class Map {
     {   
         // This will track the Index to Prevent Duplication of Effects on the same building
         ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();
-
         occupiedBuildings.add(playerLocation); 
-        for (int i = 0; i < this.fuelCellBuildings.length; i++) {
-            if (this.fuelCellBuildings[i] > 0) {
+
+        for (int i = 0; i < this.fuelCellBuildings.length; i++) 
+        {
+            if (this.fuelCellBuildings[i] > 0) 
+            {
                 occupiedBuildings.add(i); 
             }
         }     
@@ -193,6 +205,7 @@ public class Map {
         setPortalBuilding(newPortalBuildingIndex);
         setFrozenBuilding(newFrozenBuildingIndex);
 
+        // Web Trap Building Generation
         int newWebTrapBuilding = generateUniqueBuildingIndex(occupiedBuildings); 
         occupiedBuildings.add(newWebTrapBuilding);
         setWebTrapBuilding(newWebTrapBuilding);
@@ -215,15 +228,21 @@ public class Map {
             String[] stringSegments = buildingData[i].split(",");
             this.buildings[i].setHeight(Integer.parseInt(stringSegments[0])); 
 
-            if (Boolean.parseBoolean(stringSegments[1].toLowerCase())) {
+            if (Boolean.parseBoolean(stringSegments[1].toLowerCase())) 
+            {
                 setPortalBuilding(i);
-            } else if (Boolean.parseBoolean(stringSegments[3].toLowerCase())) {
+            } 
+            else if (Boolean.parseBoolean(stringSegments[3].toLowerCase())) 
+            {
                 setWebTrapBuilding(i);
-            } else if (Boolean.parseBoolean(stringSegments[4].toLowerCase())) {
+            }
+            else if (Boolean.parseBoolean(stringSegments[4].toLowerCase())) 
+            {
                 setFrozenBuilding(i);
             }
 
-            if  (Boolean.parseBoolean(stringSegments[2].toLowerCase())) {
+            if  (Boolean.parseBoolean(stringSegments[2].toLowerCase())) 
+            {
                 setSpecificFuelCellBuilding(i, FUEL_CELL_LIFETIME); 
             }
         }
@@ -255,9 +274,13 @@ public class Map {
         for (int i = 0; i < MAX_FUEL_CELLS; i++)
         {
             int buildingIndex = 0;
-            do {
+
+            do 
+            {
                 buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS); 
-            } while (occupiedBuildings.contains(buildingIndex));  // Ensures no overlapping effects
+            } 
+            while (occupiedBuildings.contains(buildingIndex));  // Ensures no overlapping effects
+
             occupiedBuildings.add(buildingIndex);  // Similarly, do not spawn another fuel cell on the same building
             setSpecificFuelCellBuilding(buildingIndex, FUEL_CELL_LIFETIME);
         }
@@ -270,10 +293,12 @@ public class Map {
     {   
         // This will track the Index to Prevent Duplication of Effects on the same building
         ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();
-
         occupiedBuildings.add(playerLocation); 
-        for (int i = 0; i < this.fuelCellBuildings.length; i++) {
-            if (this.fuelCellBuildings[i] > 0) {
+
+        for (int i = 0; i < this.fuelCellBuildings.length; i++) 
+        {
+            if (this.fuelCellBuildings[i] > 0) 
+            {
                 occupiedBuildings.add(i); 
             }
         }     
@@ -336,9 +361,12 @@ public class Map {
         this.fuelCellBuildings = fuelCellBuildings;
         for (int i = 0; i < this.fuelCellBuildings.length; i ++)
         {
-            if (this.fuelCellBuildings[i] > 0) {
+            if (this.fuelCellBuildings[i] > 0) 
+            {
                 this.buildings[i].setFuelCell(true);
-            } else {
+            } 
+            else 
+            {
                 this.buildings[i].setFuelCell(false);
             }
         }
