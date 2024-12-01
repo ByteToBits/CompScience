@@ -117,22 +117,7 @@ public class ConsoleDisplay
         stringBuffer.append("                  |\n");
         return stringBuffer.toString(); 
     }
-
-    public void printWelcomeMessage()
-    {    
-        String message = 
-        "\n                                                         < The Java Jumper Game >                                                              \n" + //
-        "------------------------------------------------------------------------------------------------------------------------------------------------\n" + //
-        "| Welcome to Nowhere Land, a mysterious dimension where you're trapped. You must make your way to the Escape Portal to get Home.               |\n" + //
-        "| To reach the escape portal, you've been equipped with a special Jumper Device, which will help you jump and traverse across buildings.       |\n" + //
-        "| The Jumper Device is not perfect; it consumes fuel every time you use it, and if you run out, you may be trapped here forever!               |\n" + //
-        "| Fortunately, there are Fuel Cells scattered across the different buildings, allowing you to replenish your Jumper Device fuel reserves.      |\n" + //
-        "| Nowhere Land is a Dangerous Place, the reality is highly unstable so things shift and warp unpredictably. Moreover, the Nowhere Police       |\n" + //
-        "| have setup Web Traps to catch extra-dimensional beings like you! Carefully Navigate through all the Dangers and reach the Portal to Esecape! |\n" + //
-        "------------------------------------------------------------------------------------------------------------------------------------------------\n";
-        System.out.println(message); 
-    }
-    
+  
     /** 
      * Description: Print the Valid Actions the Player can make next turn
      * @param playerActions String: A Single String containing the valid Actions the Player can make next turn (Left, Right or Stay)
@@ -205,6 +190,40 @@ public class ConsoleDisplay
         {
             System.out.print(mapSegment);
         }
+    }
+
+    /**
+     * Custom Method: Prints the Welcome Message for the Game
+     */
+
+    public void printWelcomeMessage()
+    {    
+        String message = 
+        "\n                                                         < The Java Jumper Game >                                                              \n" + //
+        "------------------------------------------------------------------------------------------------------------------------------------------------\n" + //
+        "| Welcome to Nowhere Land, a mysterious dimension where you're trapped. You must make your way to the Escape Portal to get Home.               |\n" + //
+        "| To reach the escape portal, you've been equipped with a special Jumper Device, which will help you jump and traverse across buildings.       |\n" + //
+        "| The Jumper Device is not perfect; it consumes fuel every time you use it, and if you run out, you may be trapped here forever!               |\n" + //
+        "| Fortunately, there are Fuel Cells scattered across the different buildings, allowing you to replenish your Jumper Device fuel reserves.      |\n" + //
+        "| Nowhere Land is a Dangerous Place, the reality is highly unstable so things shift and warp unpredictably. Moreover, the Nowhere Police       |\n" + //
+        "| have setup Web Traps to catch extra-dimensional beings like you! Carefully Navigate through all the Dangers and reach the Portal to Esecape! |\n" + //
+        "------------------------------------------------------------------------------------------------------------------------------------------------\n";
+        System.out.println(message); 
+    }
+    
+    public void printRules()
+    {    
+        String message = 
+        "\n---------------------------------------------------------- < Dimensional Rules > --------------------------------------------------------------\n" + //
+        "                Win/Lose: Win by reaching the portal. Lose if fuel runs out.\n" + //
+        "                Movement: Jump left or right by the building's height. Fuel is consumed for each jump.\n" + //
+        "                    Fuel: Starts at 50% (10 points). Jump cost = | height difference of Buildings| + 1. Max fuel is 20 points.\n" + //
+        "         Frozen Building: Landing on it means skipping a turn. Can't use the portal if it's frozen.\n" + //
+        "               Web Traps: Costs 5 extra fuel if landed on.\n" + //
+        "              Fuel Cells: Recharge 5 points. Expire after 3 turns.\n" + //
+        " Dimensional Instability: Building Height changes every turn.\n"  + //
+        "------------------------------------------------------------------------------------------------------------------------------------------------\n";
+        System.out.println(message);    
     }
 
 }

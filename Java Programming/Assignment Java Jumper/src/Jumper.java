@@ -53,6 +53,9 @@ public class Jumper
                 if (!validation.isBlank(playerNameInput) && validation.lengthWithinRange(playerNameInput, 3, 13))
                 {
                     this.player.setName(playerNameInput);
+                    System.out.println("Recevied " + this.player.getName() + ", Over! We will let the Extraction Team know... "); 
+                    System.out.println("One last thing, here is a run-through the NoWhere Land's Dimensional Rules. Best of Luck " + this.player.getName() + "!"); 
+                    this.consoleDisplay.printRules(); 
                     invalidInputFlag = false; 
                 } 
                 else 
@@ -64,7 +67,7 @@ public class Jumper
             {
                 System.out.println(e.getMessage()); 
             }
-        }
+        }        
        
     }
 
@@ -76,6 +79,7 @@ public class Jumper
         // Fields
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
+
         javaJumper.player.setLocation(0);
         javaJumper.map.initializeMap(javaJumper.player.getLocation());
 
