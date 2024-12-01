@@ -28,30 +28,71 @@ public class Jumper
         this.turn = 0; 
     }
 
+    public Jumper(Player player, Map map, ConsoleDisplay consoleDisplay, int turn)
+    {
+        this.player = player;
+        this.map = map; 
+        this.consoleDisplay = consoleDisplay; 
+        this.turn = turn; 
+    }
+
+    public void createPlayer(Scanner console)
+    {   
+        // Initialize the Class Dependencies
+        Input input = new Input(console); 
+        Validation validation = new Validation(); 
+        boolean invalidInputFlag = true; 
+
+        this.consoleDisplay.printWelcomeMessage(); 
+        String message = "Our Agents need to know who they will be rescuing at the Portal, Please Enter Your Name (3-13 characters): ";
+        
+        while (invalidInputFlag)
+        {
+            try {
+                String playerNameInput = input.acceptStringInput(message); 
+                if (!validation.isBlank(playerNameInput) && validation.lengthWithinRange(playerNameInput, 3, 13))
+                {
+                    this.player.setName(playerNameInput);
+                    invalidInputFlag = false; 
+                } 
+                else 
+                {
+                    message = "Player Name must be within 3-13 Characters Long! Please Enter Name Again!";
+                }
+            } 
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage()); 
+            }
+        }
+       
+    }
+
     /**
      * Main Method: This is the Main Method of the Jumper Class & the Java Jumper Assignment
      */
     public static void main(String[] args)
-    {
+    {   
+        // Fields
+        Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
+        javaJumper.player.setLocation(0);
         javaJumper.map.initializeMap(javaJumper.player.getLocation());
 
-        System.out.println(javaJumper.consoleDisplay.printWelcomeMessage()); 
-
-        // System.out.println(javaJumper.consoleDisplay.testMap()); 
+        javaJumper.createPlayer(console);
 
         String gameStatePacket = javaJumper.player.displayPlayer() + javaJumper.map.displayMap();
 
-        System.out.println(gameStatePacket);
-
-        System.out.println(javaJumper.player.pathFinder(gameStatePacket));
+        String possibleActions = (javaJumper.player.pathFinder(gameStatePacket));
         javaJumper.consoleDisplay.printMap(gameStatePacket, "John", 5); 
+        javaJumper.consoleDisplay.printPlayerActions(possibleActions);  
+        System.out.println(gameStatePacket);
 
         // Players Next Move
 
         // Input Player Moves
 
-
+        console.close();
     }
 
 }

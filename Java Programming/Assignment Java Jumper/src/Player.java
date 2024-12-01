@@ -49,6 +49,16 @@ public class Player
         String tempString = "Player Building Location: " + (this.location) + "\n" + this.device.displayDevice();
         return tempString;
     }
+
+    /**
+     * Accesor Method: Get the Device Object
+     * @return Device Object: The Player Device Object
+     */
+    public Device getDevice()
+    {
+        return this.device; 
+    }
+    
     
     /**
      * Accesor Method: Get Location of the Player (Building Index)
@@ -60,12 +70,12 @@ public class Player
     }
     
     /**
-     * Accesor Method: Get the Device Object
-     * @return Device Object: The Player Device Object
+     * Accesor Method: Get Name of the Player
+     * @return String: The Name of the Player
      */
-    public Device getDevice()
+    public String getName()
     {
-        return this.device; 
+        return this.name; 
     }
     
     /**
@@ -114,7 +124,7 @@ public class Player
         // Step 2: Get Player Building Height & Validate if the endpoints index (Next Jump) are within bounds | Using Tenary Operators
         int currentBuildingHeight = height.get(this.location); 
         int rightEndpointsIndex = (currentBuildingHeight + this.location < NUMBER_OF_BUILDINGS) ? (currentBuildingHeight + this.location) : NUMBER_OF_BUILDINGS;
-        int leftEndpointsIndex = (this.location - currentBuildingHeight >= 0) ? (currentBuildingHeight - this.location) : -1 ; 
+        int leftEndpointsIndex = (this.location - currentBuildingHeight >= 0) ? (this.location - currentBuildingHeight) : -1 ; 
 
         // Step 3: Check for all the Valid Endpoint Actions (Left, Right, Stay) & Append to a StringBuilder
         StringBuilder stringBuilder = new StringBuilder(); 
@@ -124,18 +134,19 @@ public class Player
         if (rightEndpointsIndex < 15 && rightEndpointsIndex >= 0)
         {   
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(rightEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Right (Cost: " + fuelCost + ")  |  "); 
+            stringBuilder.append(actionNumber + ") Jump Right  (Building: " + (rightEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + ");"); 
             actionNumber++; 
         } 
         
         if (leftEndpointsIndex < 15 && leftEndpointsIndex >= 0)
         {
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(leftEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Left (Cost: " + fuelCost + ")  |  "); 
+            stringBuilder.append(actionNumber + ") Jump Left   (Building: " + (leftEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + ");"); 
             actionNumber++; 
         }
-
-        stringBuilder.append(actionNumber + ") Stay (Cost: 1)"); 
+        
+        fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(currentBuildingHeight)); 
+        stringBuilder.append(actionNumber + ") Stay        (Building: " + (this.location + 1) + " | Fuel Cost: " + fuelCost + ")"); 
 
         return stringBuilder.toString(); 
     }
@@ -149,15 +160,6 @@ public class Player
     }
 
     /**
-     * Mutator Method: Set Player Location
-     * @param buildingIndex int: The Building Index where to set the Player Location
-     */
-    public void setLocation(int buildingIndex)
-    {
-        this.location = buildingIndex;
-    }
-
-    /**
      * Mutator Method: Set Player's Device Object
      * @param device Device Object: The New Device Object to be set to the Player
      */
@@ -166,10 +168,22 @@ public class Player
         this.device = device; 
     }
 
-    public static void main(String[] args)
-    {   
-        Player player1 = new Player();
-        System.out.println(player1.displayPlayer()); 
+    /**
+     * Mutator Method: Set Player Location
+     * @param buildingIndex int: The Building Index where to set the Player Location
+     */
+    public void setLocation(int buildingIndex)
+    {
+        this.location = buildingIndex;
+    }
+    
+    /**
+     * Mutator Method: Set Player Name
+     * @param name
+     */
+    public void setName(String name)
+    {
+        this.name = name;
     }
 
 }
