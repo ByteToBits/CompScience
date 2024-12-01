@@ -46,7 +46,7 @@ public class Player
     */
     public String displayPlayer()
     {   
-        String tempString = "Player Building Location: " + (this.location) + "\n" + this.device.displayDevice();
+        String tempString = "Player Name: " + this.name + "\nPlayer Building Location: " + (this.location) + "\n" + this.device.displayDevice();
         return tempString;
     }
 
@@ -119,7 +119,7 @@ public class Player
         // collect(): Returns the New Collection, it collects elements into a new list, without modiftying external states like a forEach
         states.addAll(Arrays.stream(gameState.split("\n")).map(segment -> segment.split(": ")[1].trim()).collect(Collectors.toList())); 
 
-        height.addAll(Arrays.stream(states.get(6).split(" , ")).map(rawheight -> Integer.parseInt(rawheight.trim())).collect(Collectors.toList())); 
+        height.addAll(Arrays.stream(states.get(7).split(" , ")).map(rawheight -> Integer.parseInt(rawheight.trim())).collect(Collectors.toList())); 
 
         // Step 2: Get Player Building Height & Validate if the endpoints index (Next Jump) are within bounds | Using Tenary Operators
         int currentBuildingHeight = height.get(this.location); 

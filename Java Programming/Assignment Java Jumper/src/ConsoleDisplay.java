@@ -43,13 +43,13 @@ public class ConsoleDisplay
         }
 
         // Get the Height of the Buildings 
-        for (String rawHeight : state.get(6).split(" , "))
+        for (String rawHeight : state.get(7).split(" , "))
         {
             height.add(Integer.parseInt(rawHeight.trim())); 
         }
 
         // Get Buildings with the Fuel Cells 
-        for (String buildings : state.get(5).split(" , "))
+        for (String buildings : state.get(6).split(" , "))
         {
             fuelCellBuildings.add(Integer.parseInt(buildings)); 
         }
@@ -60,11 +60,11 @@ public class ConsoleDisplay
             stringBuffer.append(" ");
             if (mapLevel == height.get(i))
             {
-                if (i == Integer.parseInt(state.get(3)))  // Print Frozen Floor
+                if (i == Integer.parseInt(state.get(4)))  // Print Frozen Floor
                 {  
                     stringBuffer.append("[FF]");   
                 } 
-                else if (i == Integer.parseInt(state.get(4)))  // Print Web Trap Floor
+                else if (i == Integer.parseInt(state.get(5)))  // Print Web Trap Floor
                 {
                     stringBuffer.append("[##]");   
                 } 
@@ -90,11 +90,11 @@ public class ConsoleDisplay
             {   
                 if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) // Print Player & Portal
                 {
-                    if (i == Integer.parseInt(state.get(0)))
+                    if (i == Integer.parseInt(state.get(1)))
                     {
                         stringBuffer.append("<P1>");
                     } 
-                    else if ((i == Integer.parseInt(state.get(2)))) 
+                    else if ((i == Integer.parseInt(state.get(3)))) 
                     {
                         stringBuffer.append("-{}-");
                     } 
@@ -162,8 +162,8 @@ public class ConsoleDisplay
 
         // Each Line is 110 Characters Long & Use "paddings" in string format to keep the second line consistently 110 Characters Long
         map.add("\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"); 
-        map.add(String.format("%-109s|\n",String.format("| Player: %-13s", playerName))); 
-        map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, state.get(1)))); 
+        map.add(String.format("%-109s|\n",String.format("| Player: %-13s", state.get(0)))); 
+        map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, state.get(2)))); 
         map.add( "|                                                                                                            |\n"); 
         
         for (int i = 5; i > 0; i--) 
