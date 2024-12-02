@@ -293,6 +293,7 @@ public class Map {
      */
     public void reshuffleMap(int playerLocation)
     {   
+        
         // This will track the Index to Prevent Duplication of Effects on the same building
         ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();
         occupiedBuildings.add(playerLocation); 
@@ -306,6 +307,15 @@ public class Map {
         }     
         
         randomizeBuildingsHeight();
+
+        // Reset all the Frozen, Portal & Web Traps to False
+        for (int i = 0; i < this.buildings.length; i++)
+        {
+            this.buildings[i].setFrozen(false);
+            this.buildings[i].setWebTrap(false);
+            this.buildings[i].setPortal(false);
+        }
+
         // Allows the Effect of Frozen & Portal to be Together
         int newPortalBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
         int newFrozenBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 

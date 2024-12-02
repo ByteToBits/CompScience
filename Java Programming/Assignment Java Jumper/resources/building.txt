@@ -12,4 +12,3 @@
 5,False,True,False,False
 3,False,False,False,False
 1,False,False,False,True
-5,True,False,False,False

@@ -154,10 +154,6 @@ public class Player
     }
 
     /**
-     * Custom Method: Replenish the Player's Jumper Device to a specified amount
-     */
-
-    /**
      * Custom Method: Player Stays at Current Position for the Turn
      */
     public void stay()
