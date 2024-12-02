@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner; 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Jumper 
 {
@@ -158,6 +159,125 @@ public class Jumper
         return buidlingData; 
     }
 
+    
+    public void startGame(Scanner console)
+    {   
+        boolean terminateGame = false; 
+        createPlayer(console);
+
+        while (!terminateGame)
+        {
+            System.out.println("Start Game? [Y/N]");
+            String userInput = console.nextLine(); 
+            if (userInput.toUpperCase().equals("Y"))
+            {
+                initializeGame();
+                
+                String gameStatePacket = player.displayPlayer() + map.displayMap();
+                consoleDisplay.printMap(gameStatePacket, turn); 
+
+                String possibleActions = player.pathFinder(gameStatePacket);
+                consoleDisplay.printPlayerActions(possibleActions);  
+
+                processTurn(console, possibleActions);
+            }
+            else if (userInput.toUpperCase().equals("N"))
+            {
+                terminateGame = true;
+                System.out.println("Game Terminated...");
+            }
+        }
+    }
+
+    public void processTurn(Scanner console, String possibleActions)
+    {
+        ArrayList<Character> actionsNumber = new ArrayList<>(); 
+        ArrayList<String> actionsList = new ArrayList<>();
+        ArrayList<Integer> buildingIndices = new ArrayList<>();
+        ArrayList<Integer> fuelCosts = new ArrayList<>();
+        String[] segment = possibleActions.split(";");
+
+        for (int i = 0; i < segment.length; i++) 
+        {
+            String[] parts = segment[i].trim().split("\\)");
+            if (parts.length > 0) 
+            {
+                actionsNumber.add(parts[0].charAt(0));  // Extact the Action Number 
+
+                String actionDetails = parts[1].trim();
+                String[] details = actionDetails.split("\\|");
+
+                if (details.length == 3) // Extract the Action Details 
+                {
+                    String action = details[0].trim();
+                    int buildingIndex = Integer.parseInt(details[1].split(":")[1].trim());
+                    int fuelCost = Integer.parseInt(details[2].split(":")[1].trim());
+                    
+                    actionsList.add(action);
+                    buildingIndices.add(buildingIndex);
+                    fuelCosts.add(fuelCost);
+                }
+
+            }
+        }
+
+        System.out.println("Actions: " + actionsList);
+        System.out.println("Building Indices: " + buildingIndices);
+        System.out.println("Fuel Costs: " + fuelCosts);
+        
+        char selectedAction = promptUserInput(console, actionsNumber); 
+        
+        // Get the Building the player will next jump to and get the Effects & Need a mechanic to apply effect next turn!
+        
+        // Get Next Turn Effect; (Portal, Trap, Web, Fuel Cell)
+        // Update Player Fuel Cost & Location | If Player has not enough Fuel, Game Lost if Portal == True && Frozen != True; Win
+        // Increment Turn 
+        // Update Turn & Map
+        // Apply Next Turn Effect;
+
+    }
+    
+    public char promptUserInput(Scanner console, ArrayList<Character> actionsNumber)
+    {
+        Input input = new Input(console);
+        boolean validInputFlag = false;
+        char charInput = 'N';
+  
+        while (!validInputFlag)
+        {   
+            charInput = 'N'; 
+            try
+            {
+                charInput = input.acceptCharInput("Please Input Options:", 0);
+
+                for (int i = 0; i < actionsNumber.size(); i++)
+                {
+                    validInputFlag = (charInput == actionsNumber.get(i)) ? true : false;
+                    if (validInputFlag)
+                    {
+                        break;
+                    }
+                }
+
+                if (charInput == 'S')
+                {
+                    System.out.println("Setting Page Selected"); 
+                }
+                else if (charInput == 'R')
+                {
+                    System.out.println("Rules Page Selected"); 
+                }
+                System.out.println((validInputFlag) ? "" : "Please Select at least 1 of the Numeric Actions to continue...");
+            } 
+            catch (Exception e)
+            {
+                System.out.println("Please Select at least 1 of the given Actions...");
+            }
+        }
+        return charInput;
+    }
+
+
     /**
      * Main Method: This is the Main Method of the Jumper Class & the Java Jumper Assignment
      */
@@ -166,33 +286,8 @@ public class Jumper
         // Fields
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
-        boolean terminateGame = false; 
 
-        javaJumper.createPlayer(console);
-        
-        while (!terminateGame)
-        {
-            System.out.println("Start Game? [Y/N]");
-            String userInput = console.nextLine(); 
-            if (userInput.toUpperCase().equals("Y"))
-            {
-                javaJumper.initializeGame();
-                
-                String gameStatePacket = javaJumper.player.displayPlayer() + javaJumper.map.displayMap();
-
-                String possibleActions = (javaJumper.player.pathFinder(gameStatePacket));
-                javaJumper.consoleDisplay.printMap(gameStatePacket, javaJumper.turn); 
-                javaJumper.consoleDisplay.printPlayerActions(possibleActions);  
-                System.out.println(gameStatePacket);
-
-            }
-            else if (userInput.toUpperCase().equals("N"))
-            {
-                terminateGame = true;
-                System.out.println("Game Terminated...");
-            }
-        }
-
+        javaJumper.startGame(console);
 
         // Players Next Move
 

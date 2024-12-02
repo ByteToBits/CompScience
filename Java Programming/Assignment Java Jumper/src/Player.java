@@ -134,19 +134,18 @@ public class Player
         if (rightEndpointsIndex < 15 && rightEndpointsIndex >= 0)
         {   
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(rightEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Right  (Building: " + (rightEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + ");"); 
+            stringBuilder.append(actionNumber + ") Jump Right  | Building: " + (rightEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
             actionNumber++; 
         } 
         
         if (leftEndpointsIndex < 15 && leftEndpointsIndex >= 0)
         {
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(leftEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Left   (Building: " + (leftEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + ");"); 
+            stringBuilder.append(actionNumber + ") Jump Left   | Building: " + (leftEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
             actionNumber++; 
         }
-        
-        fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(currentBuildingHeight)); 
-        stringBuilder.append(actionNumber + ") Stay        (Building: " + (this.location + 1) + " | Fuel Cost: " + fuelCost + ")"); 
+ 
+        stringBuilder.append(actionNumber + ") Stay        | Building: " + (this.location + 1) + " | Fuel Cost: " + 1 + " |"); 
 
         return stringBuilder.toString(); 
     }
