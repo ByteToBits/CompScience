@@ -270,6 +270,7 @@ public class Map {
         for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
         {
             this.fuelCellBuildings[i] = 0;
+            this.buildings[i].setFuelCell(false);
         }
         for (int i = 0; i < MAX_FUEL_CELLS; i++)
         {

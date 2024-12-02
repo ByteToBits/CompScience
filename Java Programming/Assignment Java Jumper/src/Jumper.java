@@ -101,14 +101,15 @@ public class Jumper
 
         try
         {
-        Building[] buildingData = loadExistingMap(); 
-        this.map.setBuildings(buildingData);
+           Building[] buildingData = loadExistingMap(); 
+           this.map.setBuildings(buildingData);
         } 
         catch (Exception e)
         {
             System.out.println("Dimension Critically Unstable: Failed to Read Building Data from Source File...");
             System.out.println("Generating New Dimension...");
             this.map.initializeMap(this.player.getLocation());
+            System.out.println(this.map.displayMap());
         }
      
     }
@@ -141,19 +142,23 @@ public class Jumper
             if (Boolean.parseBoolean(data[1].toLowerCase())) 
             {
                 map.setPortalBuilding(j);
+                buidlingData[j].setPortal(true); 
             }
             else if (Boolean.parseBoolean(data[2].toLowerCase()))
             {
                 map.setSpecificFuelCellBuilding(j, FUEL_CELL_LIFETIME);
+                buidlingData[j].setFuelCell(true);
             }
             else if (Boolean.parseBoolean(data[3].toLowerCase()))
             {
                 map.setWebTrapBuilding(j);
+                buidlingData[j].setWebTrap(true);
             }
             
             if (Boolean.parseBoolean(data[4].toLowerCase())) 
             {
                 map.setFrozenBuilding(j);
+                buidlingData[j].setFrozen(true);
             }
         }
         return buidlingData; 
@@ -193,7 +198,7 @@ public class Jumper
     {
         ArrayList<Character> actionsNumber = new ArrayList<>(); 
         ArrayList<String> actionsList = new ArrayList<>();
-        ArrayList<Integer> buildingIndices = new ArrayList<>();
+        ArrayList<Integer> buildingIndexes = new ArrayList<>();
         ArrayList<Integer> fuelCosts = new ArrayList<>();
         String[] segment = possibleActions.split(";");
 
@@ -203,10 +208,8 @@ public class Jumper
             if (parts.length > 0) 
             {
                 actionsNumber.add(parts[0].charAt(0));  // Extact the Action Number 
-
                 String actionDetails = parts[1].trim();
                 String[] details = actionDetails.split("\\|");
-
                 if (details.length == 3) // Extract the Action Details 
                 {
                     String action = details[0].trim();
@@ -214,22 +217,42 @@ public class Jumper
                     int fuelCost = Integer.parseInt(details[2].split(":")[1].trim());
                     
                     actionsList.add(action);
-                    buildingIndices.add(buildingIndex);
+                    buildingIndexes.add(buildingIndex);
                     fuelCosts.add(fuelCost);
                 }
-
             }
         }
-
-        System.out.println("Actions: " + actionsList);
-        System.out.println("Building Indices: " + buildingIndices);
-        System.out.println("Fuel Costs: " + fuelCosts);
-        
-        char selectedAction = promptUserInput(console, actionsNumber); 
+       
+        String selectedAction = promptUserInput(console, actionsNumber);  
+        int convertedActionIndex = Integer.parseInt(selectedAction) - 1; 
         
         // Get the Building the player will next jump to and get the Effects & Need a mechanic to apply effect next turn!
+        // System.out.println("Seleced Actions: " + actionsList.get(convertedActionIndex));
+        // System.out.println("Building Index: " + buildingIndices.get(convertedActionIndex));
+        // System.out.println("Fuel Costs: " + fuelCosts.get(convertedActionIndex));
         
         // Get Next Turn Effect; (Portal, Trap, Web, Fuel Cell)
+        Building nextBuilding = this.map.getBuildings()[buildingIndexes.get(convertedActionIndex)]; 
+
+        System.out.println("Building: " + buildingIndexes.get(convertedActionIndex));
+        System.out.println(this.map.getBuildings()[buildingIndexes.get(convertedActionIndex) - 1 ].displayBuilding());
+        System.out.println("Building 2: " + this.map.getBuildings()[1].displayBuilding());
+        System.out.println("Building 3: " + this.map.getBuildings()[2].displayBuilding());
+        System.out.println("Building 4: " + this.map.getBuildings()[3].displayBuilding());
+        System.out.println("Building 5: " + this.map.getBuildings()[4].displayBuilding());
+        System.out.println("Building 6: " + this.map.getBuildings()[5].displayBuilding());
+        System.out.println("Building 7: " + this.map.getBuildings()[6].displayBuilding());
+        System.out.println("Building 8: " + this.map.getBuildings()[7].displayBuilding());
+        System.out.println("Building 9: " + this.map.getBuildings()[8].displayBuilding());
+        System.out.println("Building 10: " + this.map.getBuildings()[9].displayBuilding());
+        System.out.println("Building 11: " + this.map.getBuildings()[10].displayBuilding());
+        System.out.println("Building 12: " + this.map.getBuildings()[11].displayBuilding());
+        System.out.println("Building 13: " + this.map.getBuildings()[12].displayBuilding());
+        System.out.println("Building 14: " + this.map.getBuildings()[13].displayBuilding());
+        System.out.println("Building 15: " + this.map.getBuildings()[14].displayBuilding());
+        System.out.println(this.map.displayMap());
+        
+
         // Update Player Fuel Cost & Location | If Player has not enough Fuel, Game Lost if Portal == True && Frozen != True; Win
         // Increment Turn 
         // Update Turn & Map
@@ -237,45 +260,42 @@ public class Jumper
 
     }
     
-    public char promptUserInput(Scanner console, ArrayList<Character> actionsNumber)
-    {
+    public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) {
         Input input = new Input(console);
         boolean validInputFlag = false;
-        char charInput = 'N';
-  
-        while (!validInputFlag)
-        {   
-            charInput = 'N'; 
-            try
-            {
-                charInput = input.acceptCharInput("Please Input Options:", 0);
-
-                for (int i = 0; i < actionsNumber.size(); i++)
-                {
-                    validInputFlag = (charInput == actionsNumber.get(i)) ? true : false;
-                    if (validInputFlag)
-                    {
-                        break;
+        String stringInput = "";
+    
+        while (!validInputFlag) {
+            stringInput = "";
+            try {
+                // Assuming acceptCharInput now accepts a String input instead of a char
+                stringInput = input.acceptStringInput("Please Input Options:");
+    
+                // Validate user input against the list of actions
+                for (int i = 0; i < actionsNumber.size(); i++) {
+                    String validAction = String.valueOf(actionsNumber.get(i));
+                    if (stringInput.equals(validAction)) {
+                        validInputFlag = true;
+                        return stringInput; // Return the valid action
                     }
                 }
-
-                if (charInput == 'S')
-                {
-                    System.out.println("Setting Page Selected"); 
+    
+                // Handle special cases like 'S' and 'R'
+                if (stringInput.equalsIgnoreCase("S")) {
+                    System.out.println("Setting Page Selected");
+                } else if (stringInput.equalsIgnoreCase("R")) {
+                    System.out.println("Rules Page Selected");
                 }
-                else if (charInput == 'R')
-                {
-                    System.out.println("Rules Page Selected"); 
-                }
-                System.out.println((validInputFlag) ? "" : "Please Select at least 1 of the Numeric Actions to continue...");
-            } 
-            catch (Exception e)
-            {
+    
+                // Message to prompt for valid numeric input
+                System.out.println(validInputFlag ? "" : "Please Select at least 1 of the Numeric Actions to continue...");
+            } catch (Exception e) {
                 System.out.println("Please Select at least 1 of the given Actions...");
             }
         }
-        return charInput;
+        return stringInput;
     }
+    
 
 
     /**

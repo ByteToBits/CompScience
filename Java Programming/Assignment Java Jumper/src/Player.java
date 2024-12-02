@@ -12,7 +12,10 @@ import java.util.stream.Collectors;
 public class Player 
 {
     // Fields
-    private static final int NUMBER_OF_BUILDINGS = 15;       // The Number of Building a Map can HAVE
+    private static final int NUMBER_OF_BUILDINGS = 15;             // The Number of Building a Map can HAVE
+    private static final String ACTION_JUMP_RIGHT = "Jump Right"; 
+    private static final String ACTION_JUMP_LEFT = "Jump Left"; 
+    private static final String ACTION_STAY = "Stay"; 
 
     private String name; 
     private int location;
@@ -134,18 +137,18 @@ public class Player
         if (rightEndpointsIndex < 15 && rightEndpointsIndex >= 0)
         {   
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(rightEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Right  | Building: " + (rightEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
+            stringBuilder.append(actionNumber + ") " + ACTION_JUMP_RIGHT + "  | Building: " + (rightEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
             actionNumber++; 
         } 
         
         if (leftEndpointsIndex < 15 && leftEndpointsIndex >= 0)
         {
             fuelCost = device.calculateFuelConsumption(currentBuildingHeight, height.get(leftEndpointsIndex)); 
-            stringBuilder.append(actionNumber + ") Jump Left   | Building: " + (leftEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
+            stringBuilder.append(actionNumber + ") " + ACTION_JUMP_LEFT + "   | Building: " + (leftEndpointsIndex + 1) + " | Fuel Cost: " + fuelCost + " |;"); 
             actionNumber++; 
         }
  
-        stringBuilder.append(actionNumber + ") Stay        | Building: " + (this.location + 1) + " | Fuel Cost: " + 1 + " |"); 
+        stringBuilder.append(actionNumber + ") " + ACTION_STAY + "        | Building: " + (this.location + 1) + " | Fuel Cost: " + 1 + " |"); 
 
         return stringBuilder.toString(); 
     }
