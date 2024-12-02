@@ -168,10 +168,10 @@ public class Jumper
     
     public void startGame(Scanner console)
     {   
-        boolean terminateGame = false; 
+        runProgram = true; 
         createPlayer(console);
 
-        while (!terminateGame)
+        while (runProgram)
         {
             System.out.println("Start Game? [Y/N]");
             String userInput = console.nextLine(); 
@@ -189,7 +189,7 @@ public class Jumper
             }
             else if (userInput.toUpperCase().equals("N"))
             {
-                terminateGame = true;
+                runProgram = false;
                 System.out.println("Game Terminated...");
             }
         }
@@ -202,7 +202,8 @@ public class Jumper
         ArrayList<Integer> buildingIndexes = new ArrayList<>();
         ArrayList<Integer> fuelCosts = new ArrayList<>();
         String[] segment = possibleActions.split(";");
-
+        
+        // Section is responsible for Parsing the Game State Data 
         for (int i = 0; i < segment.length; i++) 
         {
             String[] parts = segment[i].trim().split("\\)");
@@ -298,13 +299,16 @@ public class Jumper
             }
         }
 
-        // Increment Turn 
-        // Update Turn & Map
         // Apply Next Turn Effect;
 
     }
 
-    
+    /**
+     * Custom Method: Prompts the User for Input for the Java Jumper Game Controls
+     * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
+     * @param actionsNumber ArrayList<Character>: An Array List of Possible Actions "Index" the Player can Make Next Turn 
+     * @return String: A String Containing the Action the Player has selected
+     */
     public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) {
         Input input = new Input(console);
         boolean validInputFlag = false;
@@ -328,7 +332,7 @@ public class Jumper
                 }
     
                 // Handle special cases like 'S' and 'R'
-                if (stringInput.equalsIgnoreCase("S")) 
+                if (stringInput.equalsIgnoreCase("E")) 
                 {
                     System.out.println("Setting Page Selected");
                 } 
@@ -346,7 +350,32 @@ public class Jumper
         return stringInput;
     }
     
-
+    /**
+     * Custom Method: Update the Game Turn and Map | Also Applies the Frozen Affect
+     * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
+     * @param frozen boolean: if the player has been frozen after jumping
+     */
+    public void updateGameTurn(Scanner console, boolean frozen)
+    {   
+        if (frozen) 
+        {
+            boolean playerAcknowledge = false;
+            while (!playerAcknowledge) 
+            {
+                System.out.println("You are Frozen! To thaw yourself out, you will have to skip 2 turns...");
+                System.out.println("For brevity, the Dimension has shifted twice... Press Enter to continue...");
+                console.nextLine(); 
+                playerAcknowledge = true; // Exit the loop after player acknowledges
+            }
+            this.turn += 2; 
+            map.reshuffleMap(this.player.getLocation());
+        } 
+        else 
+        {
+            this.turn++; 
+            map.reshuffleMap(this.player.getLocation());
+        }
+    }
 
     /**
      * Main Method: This is the Main Method of the Jumper Class & the Java Jumper Assignment

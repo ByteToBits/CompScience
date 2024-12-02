@@ -76,6 +76,7 @@ public class Map {
 
     /**
      * Display Method: Display the Fields of the Map Object
+     * @return String: Returns the State of the Map Object as a String
      */
     public String displayMap() 
     {
