@@ -79,28 +79,29 @@ public class Map {
      * @return String: Returns the State of the Map Object as a String
      */
     public String displayMap() 
-    {
+    {   
         StringBuilder stringBuilder = new StringBuilder(); 
-        stringBuilder.append("Index of Portal Building: ").append(getPortalIndex()).append("\n"); 
-        stringBuilder.append("Index of Frozen Building: ").append(getFrozenBuildingIndex()).append("\n"); 
-        stringBuilder.append("Index of Web Trap Building: ").append(getWebTrapBuildingIndex()).append("\n"); 
-        stringBuilder.append("Index of Fuel Cell Buildings: ");
+
+        String message = "Index of Portal Building: "; 
+        stringBuilder.append(message).append(getPortalIndex()).append("\n"); 
+        message = "Index of Frozen Building: "; 
+        stringBuilder.append(message).append(getFrozenBuildingIndex()).append("\n"); 
+        message = "Index of Web Trap Building: "; 
+        stringBuilder.append(message).append(getWebTrapBuildingIndex()).append("\n"); 
+        message = "Index of Fuel Cell Buildings: "; 
+        stringBuilder.append(message);
         
-        int counter = 1; 
-        for (int i = 0; i < this.fuelCellBuildings.length; i++) 
+        for (int i = 0; i < this.buildings.length; i++) 
         {   
-            if (this.fuelCellBuildings[i] > 0 && counter != MAX_FUEL_CELLS) 
+            if (this.buildings[i].getFuelCell())
             {
                 stringBuilder.append(i).append(" , ");
-                counter++;
-            } 
-            else if (this.fuelCellBuildings[i] > 0 && counter == MAX_FUEL_CELLS) 
-            {
-                stringBuilder.append(i).append("\n");
             }
         }
+
+        stringBuilder.setLength(stringBuilder.length() - 3); // Remove the last " , "
         
-        stringBuilder.append("Building Height: "); 
+        stringBuilder.append("\nBuilding Height: "); 
         for (int i = 0; i < NUMBER_OF_BUILDINGS; i++)
         {   
             stringBuilder.append(this.buildings[i].getHeight()); 
@@ -277,23 +278,23 @@ public class Map {
         {
             int buildingIndex = 0;
 
-            do 
+            do // Ensures no overlapping effects
             {
                 buildingIndex = RANDOMIZER.nextInt(NUMBER_OF_BUILDINGS); 
             } 
-            while (occupiedBuildings.contains(buildingIndex));  // Ensures no overlapping effects
-
-            occupiedBuildings.add(buildingIndex);  // Similarly, do not spawn another fuel cell on the same building
+            while (occupiedBuildings.contains(buildingIndex));
+            
+            // Similarly, do not spawn another fuel cell on the same building
+            occupiedBuildings.add(buildingIndex);  
             setSpecificFuelCellBuilding(buildingIndex, FUEL_CELL_LIFETIME);
         }
     }
 
-        /**
+    /**
      * Custom Method: Reshuffle the Map for a New Turn
      */
     public void reshuffleMap(int playerLocation)
     {   
-        
         // This will track the Index to Prevent Duplication of Effects on the same building
         ArrayList<Integer> occupiedBuildings = new ArrayList<Integer>();
         occupiedBuildings.add(playerLocation); 
@@ -331,6 +332,7 @@ public class Map {
         
         decrementFuelCellTurnsRemaining();
         int sumTurns = Arrays.stream(this.fuelCellBuildings).sum(); 
+
         if (sumTurns <= 0) {
             resetFuelCells(occupiedBuildings);
         }

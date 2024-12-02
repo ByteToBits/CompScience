@@ -1,4 +1,3 @@
-
 /**
  * Description: The Building Class for the Java Jumper Game
  * Final Assesment Project for ITO4131 - Java Programming
@@ -119,7 +118,7 @@ public class Building
         this.fuelCell = fuelCell; 
     }
 
-     /**
+    /**
      * Mutator Method: Set Height of the Buildings
      * @param height Set the Height of the Building as a an Integer
      */
@@ -128,7 +127,7 @@ public class Building
         this.height = Math.max(MIN_HEIGHT, Math.min(height, MAX_HEIGHT)); 
     }
 
-        /**
+    /**
     * Mutator Method: Set Portal to a Bulding
     * @param portal Set a Portal to a Building if true; false removes the portal
     */

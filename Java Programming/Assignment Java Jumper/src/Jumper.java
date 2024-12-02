@@ -95,10 +95,16 @@ public class Jumper
        
     }
     
+    /**
+     * Custom Method: Execute Actions will carry out the actions the player has selected
+     * It applies the Effects in the following Turn after the Map has been updated
+     * @param nextHopBuilding int: The Building Object the Player will jump to
+     * @param nextHopIndex int: The Index of the Building the Player has selected to Jump to
+     * @return boolean: Indicating whether the Player has been Frozen by jumping to a Frozen Building
+     */
     public boolean executeActions(Building nextHopBuilding, int nextHopIndex)
     {   
         boolean playerFrozen = false; 
-        System.out.println(nextHopBuilding.displayBuilding()); 
 
         if (this.player.getDevice().getFuelReserves() > 0) 
         {   
@@ -117,12 +123,13 @@ public class Jumper
                 this.player.getDevice().consumeFuelReserves(TRAP_FUEL_PENALTY);
 
                 if (this.player.getDevice().getFuelReserves() <= 0) 
-                {
+                {   
+                    System.out.println("You Landed on a Web Trap! The NoWhere Police have depleted your Fuel Cells!");
                     winStatus = false; 
                     runProgram = false; 
                 } else 
                 {
-                    System.out.println("You landed on a Web Trap and Lost 5 Fuel Cells.");
+                    System.out.println("You landed on a Web Trap! You Lost 5 Fuel Cells to Break Free...");
                 }
             } 
             else if (nextHopBuilding.getFuelCell()) 
@@ -130,15 +137,15 @@ public class Jumper
                 // Replenish Fuel Cells
                 System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
+                this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
             } 
             else
             {
-                System.out.println("Jump to Building " + (nextHopIndex + 1 ) + "!");
+                System.out.println("Safely Jump to Building " + (nextHopIndex + 1 ) + "!");
             }
         } 
         else 
         {   
-            
             if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
             {   
                 // Edge Case: If Player Lands on the Portal Building When he Exactly Runs out of Fuel
@@ -150,10 +157,12 @@ public class Jumper
                 // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
                 System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
+                this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
             } 
             else
             {
                 // Game Lost: No Fuel Cells Left
+                System.out.println("You have used up all your Fuel Cells!!");
                 winStatus = false; 
                 runProgram = false; 
             }
@@ -165,7 +174,7 @@ public class Jumper
     /** 
      * Description: Initializes the Game Map from Map Data 
      * Should the Program Fail to Read or Parse the Map Data, it will automatically generate a New Map by 
-     * Calling the Map Method 
+     * Calling the Map Method to generate a Random Map
      */
     public void initializeGame() 
     {   
@@ -237,7 +246,7 @@ public class Jumper
 
     /**
      * Custom Method: The Game Runs until the Player Wins or Ends the Game
-     * The Main Processes Run inside this Method 
+     * The Game Processes Run inside this Method 
      * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
      */
     public void startGame(Scanner console)
@@ -247,6 +256,7 @@ public class Jumper
         while(runProgram)
         {   
             String gameStatePacket = this.player.displayPlayer() + this.map.displayMap();
+            // System.out.println(gameStatePacket);
             consoleDisplay.printMap(gameStatePacket, turn); 
     
             String possibleActions = this.player.pathFinder(gameStatePacket);
@@ -255,7 +265,14 @@ public class Jumper
             processTurn(console, possibleActions);
         }
     }
-
+    
+    /**
+     * Custom Method: Handles the Processing of Each Turns; 
+     * Generates the Possible Action Players can Make, Takes the User Inputs 
+     * and Updates the Next Turn based on the Player Selected Option
+     * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
+     * @param possibleActions String: A String of Possible Valid Actions the Player can Make for the Next Turn
+     */
     public void processTurn(Scanner console, String possibleActions)
     {
         ArrayList<Character> actionsNumber = new ArrayList<>(); 
@@ -298,30 +315,39 @@ public class Jumper
             int selectedActionIndex = Integer.parseInt(selectedAction) - 1;
             
             // Process the Selected Action & Update the Game Turn
-            boolean playerFrozen = processSelectedAction(selectedActionIndex, buildingIndexes, actionsList, fuelCosts);  
+            boolean playerFrozen = processAction(selectedActionIndex, buildingIndexes, actionsList, fuelCosts);  
             updateGameTurn(console, playerFrozen); 
         }
     }
-
-    public boolean processSelectedAction(int selectedActionIndex, List<Integer> buildingIndexes, List<String> actionsList, List<Integer> fuelCosts) 
+    
+    /**
+     * Custom Method: Process Action selected by the User
+     * @param actionIndex int: The Index of the Action Selected by the User
+     * @param buildingIndexes List<Integer>: The Index of the Buidlings that the Player can jump to
+     * @param actions List<String>: The Actions the Player can Make
+     * @param fuelCosts List<Integer>: The Fuel Cost for each Action
+     * @return boolean: Player Frozen | Skip 1 Turn
+     */
+    public boolean processAction(int actionIndex, List<Integer> buildingIndex, List<String> actions, List<Integer> cost) 
     {
         // Calculate the next building and action details based on selected action index.
-        int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex) - 1; // 0-based Indexing
-        Building nextHopBuilding = this.map.getBuildings()[nextHopBuildingIndex];
-        String nextAction = actionsList.get(selectedActionIndex);
-        int nextHopFuelCost = fuelCosts.get(selectedActionIndex);
+        int nextHopIndex = buildingIndex.get(actionIndex) - 1; // 0-based Indexing
+        Building nextHopBuilding = this.map.getBuildings()[nextHopIndex];
+        String nextAction = actions.get(actionIndex);
+        int nextHopCost = cost.get(actionIndex);
 
         // Retrieve building heights.
         int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight();
-        int nextHopBuildingHeight = nextHopBuilding.getHeight();
+        int nextHopHeight = nextHopBuilding.getHeight();
 
-        // Print selected action details.
         System.out.printf("< Action Selected: %s > < Next Hop: Building %d > < Fuel Cost Calculations: | %d - %d | + 1 = %d >%n",
-                nextAction, nextHopBuildingIndex, playerBuildingHeight, nextHopBuildingHeight, nextHopFuelCost);
+                          nextAction, nextHopIndex + 1, playerBuildingHeight, nextHopHeight, nextHopCost);
 
         // Perform the jump and execute post-jump actions.
-        this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
-        boolean playerFrozen = executeActions(nextHopBuilding, nextHopBuildingIndex); 
+        this.player.jump(nextHopIndex, nextHopCost);
+
+        // Execute the Player's Actions
+        boolean playerFrozen = executeActions(nextHopBuilding, nextHopIndex); 
 
         return playerFrozen;
     }
@@ -337,9 +363,11 @@ public class Jumper
         boolean validInputFlag = false;
         String stringInput = "";
     
-        while (!validInputFlag) {
+        while (!validInputFlag) 
+        {
             stringInput = "";
-            try {
+            try 
+            {
                 // Assuming acceptCharInput now accepts a String input instead of a char
                 stringInput = input.acceptStringInput("Please Input Options:");
     
@@ -356,8 +384,9 @@ public class Jumper
     
                 // Handle special cases like 'E' and 'R'
                 if (stringInput.equals("E"))  // End Game
-                {
-                    String endGameInput = input.acceptStringInput("Enter 'Yes' to End Game or Press any other Key to Resume Game...");
+                {   
+                    String message = "Enter 'Yes' to End Game or Press any other Key to Resume Game..."; 
+                    String endGameInput = input.acceptStringInput(message);
                     if (endGameInput.toLowerCase().equals("yes"))
                     {   
                         stringInput = "End Game"; 
@@ -370,7 +399,8 @@ public class Jumper
                 }
     
                 // Message to prompt for valid numeric input
-                System.out.println(validInputFlag ? "" : "Please Select at least 1 of the Numeric Actions to continue...");
+                String message = "Please Select at least 1 of the Numeric Actions to continue..."; 
+                System.out.println(validInputFlag ? "" : message);
             } 
             catch (Exception e) 
             {
@@ -412,7 +442,7 @@ public class Jumper
      */
     public static void main(String[] args) throws IOException
     {   
-        // Fields
+        // Instatiates the classes
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
 
@@ -435,8 +465,10 @@ public class Jumper
                 System.out.println("Game Terminated...");
             }
         }
-          
-        javaJumper.consoleDisplay.printGameOverMessage(winStatus, turn, javaJumper.player.getDevice().getFuelReserves());
+        
+        int remainingFuel = javaJumper.player.getDevice().getFuelReserves(); 
+        javaJumper.consoleDisplay.printGameOverMessage(winStatus, turn, remainingFuel);
+
         // Need to Write Score to Outcome File
 
         console.close();

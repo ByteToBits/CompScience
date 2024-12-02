@@ -113,7 +113,8 @@ public class Player
      * @throws IndexOutOfBoundsException If the state ArrayList index is out of bounds
      * @throws NullPointerException If the state ArrayList is not correctly initialized
      */
-    public String pathFinder(String gameState) throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
+    public String pathFinder(String gameState) 
+       throws NumberFormatException, IndexOutOfBoundsException, NullPointerException
     {   
         ArrayList<String> states = new ArrayList<>();
         ArrayList<Integer> height = new ArrayList<>(); 
