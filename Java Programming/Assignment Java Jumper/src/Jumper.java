@@ -21,7 +21,7 @@ public class Jumper
     private static final String OUTCOME_FILE = "Assignment Java Jumper\\resources\\outcome.txt";
     private static final int FUEL_CELL_LIFETIME = 3;         // The Lifetime (Turns) until the Fuel Cell expires for a Building 
     
-    private boolean runProgram; 
+    private static boolean runProgram; 
     private Player player;
     private Map map; 
     private ConsoleDisplay consoleDisplay; 
@@ -92,6 +92,68 @@ public class Jumper
        
     }
     
+    public boolean executeActions(Building nextHopBuilding, int nextHopIndex)
+    {   
+        boolean playerFrozen = false; 
+
+        if (this.player.getDevice().getFuelReserves()> 0) 
+        {   
+            
+            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
+            {
+                // Game Win!
+                System.out.println("Congratulations, you have Won!");
+            } 
+            else if (nextHopBuilding.getFrozen()) 
+            {
+                playerFrozen = true;   // Effects will be handle when Updating Map
+            } 
+            else if (nextHopBuilding.getWebTrap()) 
+            {   
+                // Decrease Fuel by 5 
+
+                if (this.player.getDevice().getFuelReserves() <= 0) {
+                    // Game Lost - No more fuel left
+                    System.out.println("You have been caught in the trap and run out of fuel. Game over!");
+                } else {
+                    System.out.println("You landed on a web trap and lost 5 fuel cells.");
+                }
+            } 
+            else if (nextHopBuilding.getFuelCell()) 
+            {
+                // Replenish Fuel Cells
+                // this.player.re
+                System.out.println("Fuel Cell Replenished!");
+            } 
+            else 
+            {
+                // No Effects Applied - Regular move // Reduce Fuel 
+                this.player.setLocation(nextHopIndex); 
+            }
+        } 
+        else 
+        {   
+            // Fuel is not sufficient
+            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
+            {
+                // Win Game - Reached the portal
+                System.out.println("Congratulations, you have Won!");
+            } 
+            else if (nextHopBuilding.getFuelCell()) 
+            {
+                // Replenish Fuel Cells
+                System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
+            } 
+            else
+            {
+                // Game Lost - No fuel left, no portal, no fuel cells
+                System.out.println("Game Over!");
+            }
+        }
+
+        return playerFrozen; 
+    }
+
     /** 
      * Description: Initializes the Game Map from Map Data 
      * Should the Program Fail to Read or Parse the Map Data, it will automatically generate a New Map
@@ -168,30 +230,17 @@ public class Jumper
     
     public void startGame(Scanner console)
     {   
-        runProgram = true; 
-        createPlayer(console);
+        initializeGame();
 
-        while (runProgram)
+        while(runProgram)
         {
-            System.out.println("Start Game? [Y/N]");
-            String userInput = console.nextLine(); 
-            if (userInput.toUpperCase().equals("Y"))
-            {
-                initializeGame();
-                
-                String gameStatePacket = player.displayPlayer() + map.displayMap();
-                consoleDisplay.printMap(gameStatePacket, turn); 
+            String gameStatePacket = player.displayPlayer() + map.displayMap();
+            consoleDisplay.printMap(gameStatePacket, turn); 
+    
+            String possibleActions = player.pathFinder(gameStatePacket);
+            consoleDisplay.printPlayerActions(possibleActions);  
 
-                String possibleActions = player.pathFinder(gameStatePacket);
-                consoleDisplay.printPlayerActions(possibleActions);  
-
-                processTurn(console, possibleActions);
-            }
-            else if (userInput.toUpperCase().equals("N"))
-            {
-                runProgram = false;
-                System.out.println("Game Terminated...");
-            }
+            processTurn(console, possibleActions);
         }
     }
 
@@ -224,83 +273,34 @@ public class Jumper
                 }
             }
         }
-       
-        int selectedActionIndex = Integer.parseInt(promptUserInput(console, actionsNumber)) - 1; 
-
-        Building nextHopBuilding = this.map.getBuildings()[buildingIndexes.get(selectedActionIndex) - 1];
-        String nextAction = actionsList.get(selectedActionIndex); 
-        int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex); 
-        int nextHopFuelCost = fuelCosts.get(selectedActionIndex); 
         
-        int nextHopBuildingHeight = nextHopBuilding.getHeight(); 
-        int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight(); 
+        String selectedAction = promptUserInput(console, actionsNumber); 
 
-        System.out.print("< Action Selected: " + nextAction + " > < Next Hop: Building " + nextHopBuildingIndex  +  " > < ");
-        System.out.println("Fuel Cost Calculations: | " + playerBuildingHeight + " - " + nextHopBuildingHeight + " | + 1 = "+ nextHopFuelCost + " >");
-        
-        this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
-        System.out.println(this.player.displayPlayer()); 
-
-        if (this.player.getDevice().getFuelReserves()> 0) 
-        {   
-            
-            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
-            {
-                // Game Win!
-                System.out.println("Congratulations, you have Won!");
-            } 
-            else if (nextHopBuilding.getFrozen()) 
-            {
-                // Frozen - Skip a turn (Does No Reduce Fuel)
-                System.out.println("You have been Frozen! Skip a Turn to break free!");
-            } 
-            else if (nextHopBuilding.getWebTrap()) 
-            {   
-                // Decrease Fuel by 5 
-
-                if (this.player.getDevice().getFuelReserves() <= 0) {
-                    // Game Lost - No more fuel left
-                    System.out.println("You have been caught in the trap and run out of fuel. Game over!");
-                } else {
-                    System.out.println("You landed on a web trap and lost 5 fuel cells.");
-                }
-
-            } 
-            else if (nextHopBuilding.getFuelCell()) 
-            {
-                // Replenish Fuel Cells
-                // this.player.re
-                System.out.println("Fuel Cell Replenished!");
-            } 
-            else 
-            {
-                // No Effects Applied - Regular move // Reduce Fuel 
-                this.player.setLocation(nextHopBuildingIndex); 
-                
-            }
-        } 
-        else 
-        {   
-            // Fuel is not sufficient
-            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
-            {
-                // Win Game - Reached the portal
-                System.out.println("Congratulations, you have Won!");
-            } 
-            else if (nextHopBuilding.getFuelCell()) 
-            {
-                // Replenish Fuel Cells
-                System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
-            } 
-            else
-            {
-                // Game Lost - No fuel left, no portal, no fuel cells
-                System.out.println("Game Over!");
-            }
+        if (selectedAction == "End Game")
+        {
+            runProgram = false;
         }
+        else 
+        {
+            int selectedActionIndex = Integer.parseInt(selectedAction) - 1; 
 
-        // Apply Next Turn Effect;
-
+            Building nextHopBuilding = this.map.getBuildings()[buildingIndexes.get(selectedActionIndex) - 1];
+            String nextAction = actionsList.get(selectedActionIndex); 
+            int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex); 
+            int nextHopFuelCost = fuelCosts.get(selectedActionIndex); 
+            
+            int nextHopBuildingHeight = nextHopBuilding.getHeight(); 
+            int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight(); 
+    
+            System.out.print("< Action Selected: " + nextAction + " > < Next Hop: Building " + nextHopBuildingIndex  +  " > < ");
+            System.out.println("Fuel Cost Calculations: | " + playerBuildingHeight + " - " + nextHopBuildingHeight + " | + 1 = "+ nextHopFuelCost + " >");
+            
+            this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
+            
+            boolean playerFrozen = executeActions(nextHopBuilding, nextHopBuildingIndex); 
+    
+            updateGameTurn(console, playerFrozen); 
+        }
     }
 
     /**
@@ -331,12 +331,17 @@ public class Jumper
                     }
                 }
     
-                // Handle special cases like 'S' and 'R'
-                if (stringInput.equalsIgnoreCase("E")) 
+                // Handle special cases like 'E' and 'R'
+                if (stringInput.equals("E"))  // End Game
                 {
-                    System.out.println("Setting Page Selected");
+                    String endGameInput = input.acceptStringInput("Enter 'Yes' to End Game or Press any other Key to Resume Game...");
+                    if (endGameInput.toLowerCase().equals("yes"))
+                    {   
+                        stringInput = "End Game"; 
+                        validInputFlag = true; 
+                    }
                 } 
-                else if (stringInput.equalsIgnoreCase("R")) 
+                else if (stringInput.equals("R"))  // Print Rules
                 {
                     consoleDisplay.printRules();
                 }
@@ -386,7 +391,24 @@ public class Jumper
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
 
-        javaJumper.startGame(console);
+        javaJumper.createPlayer(console);
+
+        runProgram = true; 
+
+        while (runProgram)
+        {   
+            System.out.println("Start Game? [Y/N]");
+            String userInput = console.nextLine(); 
+            if (userInput.toUpperCase().equals("Y"))
+            {
+                javaJumper.startGame(console);
+            }
+            else if (userInput.toUpperCase().equals("N"))
+            {
+                runProgram = false;
+                System.out.println("Game Terminated...");
+            }
+        }
 
         // Players Next Move
 
