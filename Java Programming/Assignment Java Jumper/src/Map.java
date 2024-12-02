@@ -345,6 +345,7 @@ public class Map {
     public void removeFuelCell(int index)
     {
         this.fuelCellBuildings[index] = 0; 
+        this.buildings[index].setFuelCell(false);
     }
 
     /**

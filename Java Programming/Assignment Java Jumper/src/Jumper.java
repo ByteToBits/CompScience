@@ -137,7 +137,8 @@ public class Jumper
                 // Replenish Fuel Cells
                 System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
-                this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
+                // this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
+                this.map.removeFuelCell(nextHopIndex);
             } 
             else
             {
@@ -157,7 +158,8 @@ public class Jumper
                 // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
                 System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
-                this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
+                // this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
+                this.map.removeFuelCell(nextHopIndex);
             } 
             else
             {
@@ -167,7 +169,7 @@ public class Jumper
                 runProgram = false; 
             }
         }
-        
+
         return playerFrozen; 
     }
 
