@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.util.Scanner; 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Jumper 
 {
@@ -294,25 +295,35 @@ public class Jumper
         }
         else 
         {
-            int selectedActionIndex = Integer.parseInt(selectedAction) - 1; 
-
-            Building nextHopBuilding = this.map.getBuildings()[buildingIndexes.get(selectedActionIndex) - 1];
-
-            String nextAction = actionsList.get(selectedActionIndex); 
-            int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex) - 1;  // 0-based Indexing
-            int nextHopFuelCost = fuelCosts.get(selectedActionIndex); 
+            int selectedActionIndex = Integer.parseInt(selectedAction) - 1;
             
-            int nextHopBuildingHeight = nextHopBuilding.getHeight(); 
-            int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight(); 
-    
-            System.out.print("< Action Selected: " + nextAction + " > < Next Hop: Building " + nextHopBuildingIndex  +  " > < ");
-            System.out.println("Fuel Cost Calculations: | " + playerBuildingHeight + " - " + nextHopBuildingHeight + " | + 1 = "+ nextHopFuelCost + " >");
-            
-            this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
-            boolean playerFrozen = executeActions(nextHopBuilding, nextHopBuildingIndex); 
-    
+            // Process the Selected Action & Update the Game Turn
+            boolean playerFrozen = processSelectedAction(selectedActionIndex, buildingIndexes, actionsList, fuelCosts);  
             updateGameTurn(console, playerFrozen); 
         }
+    }
+
+    public boolean processSelectedAction(int selectedActionIndex, List<Integer> buildingIndexes, List<String> actionsList, List<Integer> fuelCosts) 
+    {
+        // Calculate the next building and action details based on selected action index.
+        int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex) - 1; // 0-based Indexing
+        Building nextHopBuilding = this.map.getBuildings()[nextHopBuildingIndex];
+        String nextAction = actionsList.get(selectedActionIndex);
+        int nextHopFuelCost = fuelCosts.get(selectedActionIndex);
+
+        // Retrieve building heights.
+        int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight();
+        int nextHopBuildingHeight = nextHopBuilding.getHeight();
+
+        // Print selected action details.
+        System.out.printf("< Action Selected: %s > < Next Hop: Building %d > < Fuel Cost Calculations: | %d - %d | + 1 = %d >%n",
+                nextAction, nextHopBuildingIndex, playerBuildingHeight, nextHopBuildingHeight, nextHopFuelCost);
+
+        // Perform the jump and execute post-jump actions.
+        this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
+        boolean playerFrozen = executeActions(nextHopBuilding, nextHopBuildingIndex); 
+
+        return playerFrozen;
     }
 
     /**
