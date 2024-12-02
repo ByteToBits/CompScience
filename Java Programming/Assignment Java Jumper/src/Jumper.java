@@ -20,7 +20,8 @@ public class Jumper
     private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\building.txt"; 
     private static final String OUTCOME_FILE = "Assignment Java Jumper\\resources\\outcome.txt";
     private static final int FUEL_CELL_LIFETIME = 3;         // The Lifetime (Turns) until the Fuel Cell expires for a Building 
-
+    
+    private boolean runProgram; 
     private Player player;
     private Map map; 
     private ConsoleDisplay consoleDisplay; 
@@ -223,42 +224,86 @@ public class Jumper
             }
         }
        
-        String selectedAction = promptUserInput(console, actionsNumber);  
-        int convertedActionIndex = Integer.parseInt(selectedAction) - 1; 
-        
-        // Get the Building the player will next jump to and get the Effects & Need a mechanic to apply effect next turn!
-        // System.out.println("Seleced Actions: " + actionsList.get(convertedActionIndex));
-        // System.out.println("Building Index: " + buildingIndices.get(convertedActionIndex));
-        // System.out.println("Fuel Costs: " + fuelCosts.get(convertedActionIndex));
-        
-        // Get Next Turn Effect; (Portal, Trap, Web, Fuel Cell)
-        Building nextBuilding = this.map.getBuildings()[buildingIndexes.get(convertedActionIndex)]; 
+        int selectedActionIndex = Integer.parseInt(promptUserInput(console, actionsNumber)) - 1; 
 
-        System.out.println("Building: " + buildingIndexes.get(convertedActionIndex));
-        System.out.println(this.map.getBuildings()[buildingIndexes.get(convertedActionIndex) - 1 ].displayBuilding());
-        System.out.println("Building 2: " + this.map.getBuildings()[1].displayBuilding());
-        System.out.println("Building 3: " + this.map.getBuildings()[2].displayBuilding());
-        System.out.println("Building 4: " + this.map.getBuildings()[3].displayBuilding());
-        System.out.println("Building 5: " + this.map.getBuildings()[4].displayBuilding());
-        System.out.println("Building 6: " + this.map.getBuildings()[5].displayBuilding());
-        System.out.println("Building 7: " + this.map.getBuildings()[6].displayBuilding());
-        System.out.println("Building 8: " + this.map.getBuildings()[7].displayBuilding());
-        System.out.println("Building 9: " + this.map.getBuildings()[8].displayBuilding());
-        System.out.println("Building 10: " + this.map.getBuildings()[9].displayBuilding());
-        System.out.println("Building 11: " + this.map.getBuildings()[10].displayBuilding());
-        System.out.println("Building 12: " + this.map.getBuildings()[11].displayBuilding());
-        System.out.println("Building 13: " + this.map.getBuildings()[12].displayBuilding());
-        System.out.println("Building 14: " + this.map.getBuildings()[13].displayBuilding());
-        System.out.println("Building 15: " + this.map.getBuildings()[14].displayBuilding());
-        System.out.println(this.map.displayMap());
+        Building nextHopBuilding = this.map.getBuildings()[buildingIndexes.get(selectedActionIndex) - 1];
+        String nextAction = actionsList.get(selectedActionIndex); 
+        int nextHopBuildingIndex = buildingIndexes.get(selectedActionIndex); 
+        int nextHopFuelCost = fuelCosts.get(selectedActionIndex); 
         
+        int nextHopBuildingHeight = nextHopBuilding.getHeight(); 
+        int playerBuildingHeight = this.map.getBuildings()[this.player.getLocation()].getHeight(); 
 
-        // Update Player Fuel Cost & Location | If Player has not enough Fuel, Game Lost if Portal == True && Frozen != True; Win
+        System.out.print("< Action Selected: " + nextAction + " > < Next Hop: Building " + nextHopBuildingIndex  +  " > < ");
+        System.out.println("Fuel Cost Calculations: | " + playerBuildingHeight + " - " + nextHopBuildingHeight + " | + 1 = "+ nextHopFuelCost + " >");
+        
+        this.player.jump(nextHopBuildingIndex, nextHopFuelCost);
+        System.out.println(this.player.displayPlayer()); 
+
+        if (this.player.getDevice().getFuelReserves()> 0) 
+        {   
+            
+            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
+            {
+                // Game Win!
+                System.out.println("Congratulations, you have Won!");
+            } 
+            else if (nextHopBuilding.getFrozen()) 
+            {
+                // Frozen - Skip a turn (Does No Reduce Fuel)
+                System.out.println("You have been Frozen! Skip a Turn to break free!");
+            } 
+            else if (nextHopBuilding.getWebTrap()) 
+            {   
+                // Decrease Fuel by 5 
+
+                if (this.player.getDevice().getFuelReserves() <= 0) {
+                    // Game Lost - No more fuel left
+                    System.out.println("You have been caught in the trap and run out of fuel. Game over!");
+                } else {
+                    System.out.println("You landed on a web trap and lost 5 fuel cells.");
+                }
+
+            } 
+            else if (nextHopBuilding.getFuelCell()) 
+            {
+                // Replenish Fuel Cells
+                // this.player.re
+                System.out.println("Fuel Cell Replenished!");
+            } 
+            else 
+            {
+                // No Effects Applied - Regular move // Reduce Fuel 
+                this.player.setLocation(nextHopBuildingIndex); 
+                
+            }
+        } 
+        else 
+        {   
+            // Fuel is not sufficient
+            if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
+            {
+                // Win Game - Reached the portal
+                System.out.println("Congratulations, you have Won!");
+            } 
+            else if (nextHopBuilding.getFuelCell()) 
+            {
+                // Replenish Fuel Cells
+                System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
+            } 
+            else
+            {
+                // Game Lost - No fuel left, no portal, no fuel cells
+                System.out.println("Game Over!");
+            }
+        }
+
         // Increment Turn 
         // Update Turn & Map
         // Apply Next Turn Effect;
 
     }
+
     
     public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) {
         Input input = new Input(console);
@@ -272,19 +317,24 @@ public class Jumper
                 stringInput = input.acceptStringInput("Please Input Options:");
     
                 // Validate user input against the list of actions
-                for (int i = 0; i < actionsNumber.size(); i++) {
+                for (int i = 0; i < actionsNumber.size(); i++) 
+                {
                     String validAction = String.valueOf(actionsNumber.get(i));
-                    if (stringInput.equals(validAction)) {
+                    if (stringInput.equals(validAction)) 
+                    {
                         validInputFlag = true;
                         return stringInput; // Return the valid action
                     }
                 }
     
                 // Handle special cases like 'S' and 'R'
-                if (stringInput.equalsIgnoreCase("S")) {
+                if (stringInput.equalsIgnoreCase("S")) 
+                {
                     System.out.println("Setting Page Selected");
-                } else if (stringInput.equalsIgnoreCase("R")) {
-                    System.out.println("Rules Page Selected");
+                } 
+                else if (stringInput.equalsIgnoreCase("R")) 
+                {
+                    consoleDisplay.printRules();
                 }
     
                 // Message to prompt for valid numeric input

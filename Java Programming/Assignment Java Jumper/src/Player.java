@@ -81,26 +81,26 @@ public class Player
         return this.name; 
     }
     
-    /**
-     * Custom Method: The Player Jumps to the Building at the Left
-     * @param currentBuildingIndex int: The Current Building Index the Player is currently on
-     * @param targetBuildingIndex int: The Target Building Index for the next Hop
-     */
-    public void jumpLeft(int currentBuildingIndex, int targetBuildingIndex)
-    {   
-
-        this.location = targetBuildingIndex; 
-        this.device.consumeFuelReserves(1);
-    }
+    // /**
+    //  * Custom Method: The Player Jumps to the Building at the Left
+    //  * @param targetBuildingIndex int: The Target Building Index for the next Hop
+    //  * @param fuelConsumed int: The amount of Fuel Consumed for the Next Hop
+    //  */
+    // public void jumpLeft(int targetBuildingIndex, int fuelConsumed)
+    // {   
+    //     this.location = targetBuildingIndex; 
+    //     this.device.consumeFuelReserves(fuelConsumed);
+    // }
 
      /**
      * Custom Method: The Player Jumps to the Building at the Right
-     * @param currentBuildingIndex int: The Current Building Index the Player is currently on
      * @param targetBuildingIndex int: The Target Building Index for the next Hop
+     * * @param fuelConsumed int: The amount of Fuel Consumed for the Next Hop
      */
-    public void jumpRight(int currentBuildingIndex, int targetBuildingIndex)
+    public void jump(int targetBuildingIndex, int fuelConsumed)
     {
         this.location = targetBuildingIndex; 
+        this.device.consumeFuelReserves(fuelConsumed);
     }
     
     /**
@@ -152,6 +152,10 @@ public class Player
 
         return stringBuilder.toString(); 
     }
+
+    /**
+     * Custom Method: Replenish the Player's Jumper Device to a specified amount
+     */
 
     /**
      * Custom Method: Player Stays at Current Position for the Turn

@@ -5,8 +5,6 @@
  * @version 1.01
  */
 
-
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.stream.Collectors; 
@@ -17,7 +15,7 @@ public class ConsoleDisplay
      * Default Constructor
      */
     public ConsoleDisplay() {}
-
+    
     /**
      * Custom Method: Generates a Single Line String representing one of the 5 building levels.
      * Example Output: "Level 5   [  ] [  ] [FC] [##] [  ] ..."
@@ -117,32 +115,36 @@ public class ConsoleDisplay
         stringBuffer.append("                  |\n");
         return stringBuffer.toString(); 
     }
-  
-    /** 
-     * Description: Print the Valid Actions the Player can make next turn
-     * @param playerActions String: A Single String containing the valid Actions the Player can make next turn (Left, Right or Stay)
-     */
-    public void printPlayerActions(String playerActions)
-    {   
-        ArrayList<String> actions = new ArrayList<>(); 
-
-        actions.addAll(Arrays.stream(playerActions.split(";")).collect(Collectors.toList())); 
-
-        String stringOutput = String.format("| Please Select Action: %-85s|\n", actions.get(0)); 
-
-        for (int i = 1; i < actions.size(); i ++)
-        {
-            stringOutput = stringOutput + String.format("|                       %-85s|\n", actions.get(i));
-        }
-
-        String optionString = ( "|                       S) Settings  |  R) Rules                                                             |\n" ); 
-        String borderString = ( "|------------------------------------------------------------------------------------------------------------|\n"); 
-
-        System.out.println(stringOutput + optionString + borderString); 
-    }
-
+    
     /**
-     * Description: Print the Jave Jumper Map onto the Console
+     * Custom Method: Generates the Game Over Message
+     * @param win boolean: if the Player Won or Loss the Game
+     * @param turns int: The Number of turns the Player made in the game
+     * @param fuelCells int: The remaining Fuel Cells Left in the Player's Device
+     */
+    public void printGameOverMessage(boolean win, int turns, int fuelCells)
+    {   
+        String message; 
+        if (win) 
+        {
+            message = 
+            "------------------------------------------------------------------------------------------------------------------------------------------------\n" + //
+            "                                                  < Congratulations! You've Won! >                                                              \n" + //
+            "                                    < You've Escaped in " + turns + " Turns with " + fuelCells + " Fuel Cells Remaining! >                                                \n" + //
+            "------------------------------------------------------------------------------------------------------------------------------------------------\n";        
+        }
+        else 
+        {   
+            message = 
+            "------------------------------------------------------------------------------------------------------------------------------------------------\n" + //
+            "                                                     < Game Over! You've Lost! >                                                                \n" + //
+            "                           < You're trapped in Nowhere Land! You made  " + turns + " Turns with " + fuelCells + " Fuel Cells Remaining! >                                  \n" + //
+            "------------------------------------------------------------------------------------------------------------------------------------------------\n";  
+        }
+        System.out.println(message);
+    }
+    /**
+     * Custom Method: Print the Jave Jumper Map onto the Console
      * This Method Generates the Map using a String Data containing the Player & Building States
      * It will also use System.out.println to print the Map onto the Console
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
@@ -191,11 +193,51 @@ public class ConsoleDisplay
             System.out.print(mapSegment);
         }
     }
+    
+    /** 
+     * Custom Method: Print the Valid Actions the Player can make next turn
+     * @param playerActions String: A Single String containing the valid Actions the Player can make next turn (Left, Right or Stay)
+     */
+    public void printPlayerActions(String playerActions)
+    {   
+        ArrayList<String> actions = new ArrayList<>(); 
 
+        actions.addAll(Arrays.stream(playerActions.split(";")).collect(Collectors.toList())); 
+
+        String stringOutput = String.format("| Please Select Action: %-85s|\n", actions.get(0)); 
+
+        for (int i = 1; i < actions.size(); i ++)
+        {
+            stringOutput = stringOutput + String.format("|                       %-85s|\n", actions.get(i));
+        }
+
+        String optionString = ( "|                       E) End Game  |  R) Rules                                                             |\n" ); 
+        String borderString = ( "|------------------------------------------------------------------------------------------------------------|\n"); 
+
+        System.out.println(stringOutput + optionString + borderString); 
+    }
+    
+    /**
+     * Custom Method: Prints the Rules for the Game
+     */
+    public void printRules()
+    {    
+        String message = 
+        "\n---------------------------------------------------------- < Dimensional Rules > --------------------------------------------------------------\n" + //
+        "                Win/Lose: Win by reaching the portal. Lose if fuel runs out.\n" + //
+        "                Movement: Jump left or right by the building's height. Fuel is consumed for each jump.\n" + //
+        "                    Fuel: Starts at 50% (10 Fuel Cells). Jump cost = | height difference of Buildings| + 1. Max fuel is 20 Fuel Cells.\n" + //
+        "         Frozen Building: Landing on it means skipping a turn. Can't use the portal if it's frozen.\n" + //
+        "               Web Traps: Costs 5 extra fuel if landed on.\n" + //
+        "              Fuel Cells: Recharge 5 points. Expire after 3 turns.\n" + //
+        " Dimensional Instability: Building Height changes every turn.\n"  + //
+        "------------------------------------------------------------------------------------------------------------------------------------------------\n";
+        System.out.println(message);    
+    }
+    
     /**
      * Custom Method: Prints the Welcome Message for the Game
      */
-
     public void printWelcomeMessage()
     {    
         String message = 
@@ -209,21 +251,6 @@ public class ConsoleDisplay
         "| have setup Web Traps to catch extra-dimensional beings like you! Carefully Navigate through all the Dangers and reach the Portal to Esecape! |\n" + //
         "------------------------------------------------------------------------------------------------------------------------------------------------\n";
         System.out.println(message); 
-    }
-    
-    public void printRules()
-    {    
-        String message = 
-        "\n---------------------------------------------------------- < Dimensional Rules > --------------------------------------------------------------\n" + //
-        "                Win/Lose: Win by reaching the portal. Lose if fuel runs out.\n" + //
-        "                Movement: Jump left or right by the building's height. Fuel is consumed for each jump.\n" + //
-        "                    Fuel: Starts at 50% (10 points). Jump cost = | height difference of Buildings| + 1. Max fuel is 20 points.\n" + //
-        "         Frozen Building: Landing on it means skipping a turn. Can't use the portal if it's frozen.\n" + //
-        "               Web Traps: Costs 5 extra fuel if landed on.\n" + //
-        "              Fuel Cells: Recharge 5 points. Expire after 3 turns.\n" + //
-        " Dimensional Instability: Building Height changes every turn.\n"  + //
-        "------------------------------------------------------------------------------------------------------------------------------------------------\n";
-        System.out.println(message);    
     }
 
 }
