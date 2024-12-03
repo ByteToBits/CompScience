@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Input
 {   
-    Scanner console; 
+    private Scanner console; 
 
     /**
      * Default Constructor

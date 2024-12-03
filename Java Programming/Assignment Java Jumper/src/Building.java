@@ -38,7 +38,7 @@ public class Building
      */
     public Building(int height, boolean portal, boolean fuelCells, boolean webTraps, boolean frozen)
     {
-        this.height = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, height));  // Clamp the height to the Max & Min Boundaries
+        this.height = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, height));  // Clamp the height to the Max and Min Boundaries
         this.portal = portal;
         this.fuelCell = fuelCells;
         this.webTrap = webTraps;

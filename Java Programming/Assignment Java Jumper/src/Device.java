@@ -67,7 +67,7 @@ public class Device {
     
     /**
      * Display Method: Displays the Device Information as a String Output
-     * @return String: The Fuel Reserves & Percentage Information
+     * @return String: The Fuel Reserves and Percentage Information
      */
     public String displayDevice()
     {   

@@ -31,6 +31,15 @@ public class FileIO
     {   
         this.fileName = fileName; 
     }
+    
+    /**
+     * Custom Method: Displays the File Name/Path
+     * @return String: Returns a String with the File Name
+     */
+    public String displayFileIO()
+    {
+        return "File Path: " + this.fileName; 
+    }
 
     /**
      * Custom Method: Read File Contents
@@ -55,6 +64,15 @@ public class FileIO
             }
         }
         return stringBuffer.toString();
+    }
+    
+    /**
+     * Mutator Method: Sets the File Name
+     * @param fileName String: File Name as a String Input
+     */
+    public void setFileName(String fileName)
+    {
+        this.fileName = fileName; 
     }
 
     /** Custom Method: Write String Data to File

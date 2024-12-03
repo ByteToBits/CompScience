@@ -1,5 +1,5 @@
 /** 
- * Description: The Validation Class validates all the user Input
+ * Description: The Validation Class validates the User Input
  * @author Tristan Sim
  * @version 1.00 
  */

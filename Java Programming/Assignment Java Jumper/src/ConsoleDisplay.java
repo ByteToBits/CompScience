@@ -33,7 +33,7 @@ public class ConsoleDisplay
         ArrayList<Integer> height = new ArrayList<>();
         ArrayList<Integer> fuelCellBuildings = new ArrayList<>();
         
-        // Check if it's the Additional Level 6  where only Player & Portal will spawn
+        // Check if it's the Additional Level 6  where only Player and Portal will spawn
         if (mapLevel > 5) { 
             stringBuffer.append("|               "); 
         } else {
@@ -86,7 +86,7 @@ public class ConsoleDisplay
             } 
             else 
             {   
-                if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) // Print Player & Portal
+                if (mapLevel == (height.get(i) + 1) || (mapLevel == 6 && height.get(i) == 5) ) // Print Player and Portal
                 {
                     if (i == Integer.parseInt(state.get(1)))
                     {
@@ -145,7 +145,7 @@ public class ConsoleDisplay
     }
     /**
      * Custom Method: Print the Jave Jumper Map onto the Console
-     * This Method Generates the Map using a String Data containing the Player & Building States
+     * This Method Generates the Map using a String Data containing the Player and Building States
      * It will also use System.out.println to print the Map onto the Console
      * @param gameStates String: The States of the Building and Player Object parsed as a String 
      * @param turn int: The current Turn of the Game
@@ -162,7 +162,7 @@ public class ConsoleDisplay
             state.add(tempString[1].trim());   
         }
 
-        // Each Line is 110 Characters Long & Use "paddings" in string format to keep the second line consistently 110 Characters Long
+        // Each Line is 110 Characters Long and Use "paddings" in string format to keep the second line consistently 110 Characters Long
         map.add("\n-------------------------------------------- < NoWhere Land > ------------------------------------------------\n"); 
         map.add(String.format("%-109s|\n",String.format("| Player: %-13s", state.get(0)))); 
         map.add(String.format("%-109s|\n", String.format("| Turn %2d  |  Fuel Reserves: %-10s", turn, state.get(2)))); 
@@ -172,7 +172,7 @@ public class ConsoleDisplay
         {
             if (i == 5) 
             {
-                map.add(createLevel(state, i + 1));   // Account for 1 Row Additional Row above Level 5 (Where Player & Portal can exist)
+                map.add(createLevel(state, i + 1));   // Account for 1 Row Additional Row above Level 5 (Where Player and Portal can exist)
                 map.add(createLevel(state, i)); 
             } 
             else 

@@ -178,7 +178,7 @@ public class Map
 
     /** 
      * Custom Method: initialize New Map
-     * Will also randomize the Building Height, Effects, Portals & Traps 
+     * Will also randomize the Building Height, Effects, Portals and Traps 
      * Method also prevents Duplication of Effects on the same building
      * @param playerLocation Player Location/Index where the player is currently at 
     */
@@ -198,7 +198,7 @@ public class Map
         
         randomizeBuildingsHeight();
 
-        // Allows the Effect of Frozen & Portal to be Together
+        // Allows the Effect of Frozen and Portal to be Together
         int newPortalBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
         int newFrozenBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
         occupiedBuildings.add(newPortalBuildingIndex);
@@ -261,9 +261,9 @@ public class Map
     }
 
     /** 
-     * Custom Method: Reset the Fuel Cells Lifetime & Building Index
-     * Does not spawn on another building with effect like Player, Frozen, Traps & Portals are located
-     * @param occupiedBuildings ArrayList<Integer>: An Array List of Integers where Player, Frozen, Traps & Portals are located
+     * Custom Method: Reset the Fuel Cells Lifetime and Building Index
+     * Does not spawn on another building with effect like Player, Frozen, Traps and Portals are located
+     * @param occupiedBuildings ArrayList<Integer>: An Array List of Integers where Player, Frozen, Traps and Portals are located
      * @return Array<Building>: Returns an Array Containing the Building Objects 
     */
     public void resetFuelCells(ArrayList<Integer> occupiedBuildings)
@@ -308,7 +308,7 @@ public class Map
         
         randomizeBuildingsHeight();
 
-        // Reset all the Frozen, Portal & Web Traps to False
+        // Reset all the Frozen, Portal and Web Traps to False
         for (int i = 0; i < this.buildings.length; i++)
         {
             this.buildings[i].setFrozen(false);
@@ -316,7 +316,7 @@ public class Map
             this.buildings[i].setPortal(false);
         }
 
-        // Allows the Effect of Frozen & Portal to be Together
+        // Allows the Effect of Frozen and Portal to be Together
         int newPortalBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
         int newFrozenBuildingIndex = generateUniqueBuildingIndex(occupiedBuildings); 
         occupiedBuildings.add(newPortalBuildingIndex);

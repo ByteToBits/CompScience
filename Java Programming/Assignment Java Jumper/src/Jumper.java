@@ -35,17 +35,16 @@ public class Jumper
     {
         this.player = new Player();
         this.map = new Map(); 
-        this.consoleDisplay = new ConsoleDisplay(); 
+        this.consoleDisplay = new ConsoleDisplay();
     }
     
     /**
      * Non-Default Constructor
-     * @param player Player: Player Object containing the Player Action Methods & Device Objects
+     * @param player Player: Player Object containing the Player Action Methods and Device Objects
      * @param map Map: Map Object containing all the map Attributes like Buildings 
-     * @param consoleDisplay ConsoleDisplay: The Console Display Object responsible for Generating the Text Maps & etc
-     * @param turn int: The Turn the Player is currently on
+     * @param consoleDisplay ConsoleDisplay: The Console Display Object responsible for Generating the Text Maps and etc
      */
-    public Jumper(Player player, Map map, ConsoleDisplay consoleDisplay, int turn)
+    public Jumper(Player player, Map map, ConsoleDisplay consoleDisplay)
     {
         this.player = player;
         this.map = map; 
@@ -53,7 +52,7 @@ public class Jumper
     }
     
     /**
-     * Custom Method: Displays the Welcome Message & Rules. Also Prompts User to Input their Name
+     * Custom Method: Displays the Welcome Message and Rules. Also Prompts User to Input their Name
      * @param console Scanner: Scanner Object passed from the Caller to Get User input
      */
     public void createPlayer(Scanner console)
@@ -91,6 +90,18 @@ public class Jumper
        
     }
     
+    /**
+     * Custom Method: Display the Jumper Object States
+     * @return String: A Single String containing the State of the Jumper Object
+     */
+    public String displayJumper()
+    {   
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Player Details: " +  this.player.displayPlayer());
+        stringBuilder.append("\nMap Details: " +  this.map.displayMap());
+        stringBuilder.append("\nCurrent Turn: " +  turn);
+        return stringBuilder.toString(); 
+    }
     /**
      * Custom Method: Execute Actions will carry out the actions the player has selected
      * It applies the Effects in the following Turn after the Map has been updated
@@ -171,9 +182,19 @@ public class Jumper
 
         return playerFrozen; 
     }
+    
+    public Player getPlayer()
+    {
+        return this.player;
+    }
+
+    public Map getMap()
+    {
+        return this.map; 
+    }
 
     /** 
-     * Description: Initializes the Game Map from Map Data 
+     * Description: Initializes the Game Map from Map Data. 
      * Should the Program Fail to Read or Parse the Map Data, it will automatically generate a New Map by 
      * Calling the Map Method to generate a Random Map
      */
@@ -183,8 +204,10 @@ public class Jumper
         winStatus = false; 
         
         try
-        {
-           Building[] buildingData = loadExistingMap(); 
+        {  
+           FileIO buildingFile = new FileIO(BUILDING_FILE); 
+           String contents = buildingFile.readFile(); 
+           Building[] buildingData = parseDataFromFile(contents); 
            this.map.setBuildings(buildingData);
         } 
         catch (Exception e)
@@ -196,17 +219,15 @@ public class Jumper
     }
 
     /**
-     * Custom Method: Loads an Existing Map Data from a Text File
+     * Custom Method: Parse String Data from Text File into an Array of Building Obects
+     * @param contents: String: A String Containing all the contents from the file
      * @return Building[]: Returns a Building Array parsed from the Data File
      * @throws Exception From Reading the Data File or Parsing the Data within the File
      */
-    public Building[] loadExistingMap() throws IOException
+    public Building[] parseDataFromFile(String contents) throws IOException
     {   
         String[] dataPacket = new String[15]; 
         Building[] buidlingData = new Building[15];
-
-        FileIO buildingFile = new FileIO(BUILDING_FILE); 
-        String contents = buildingFile.readFile(); 
 
         String[] packets = contents.split(DELIMITER);
         for (int i = 0; i < packets.length && i < dataPacket.length; i++) 
@@ -244,28 +265,26 @@ public class Jumper
         }
         return buidlingData; 
     }
-
-    /**
-     * Custom Method: The Game Runs until the Player Wins or Ends the Game
-     * The Game Processes Run inside this Method 
-     * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
-     */
-    public void startGame(Scanner console)
-    {   
-        initializeGame();
-
-        while(runProgram)
-        {   
-            String gameStatePacket = this.player.displayPlayer() + this.map.displayMap();
-            // System.out.println(gameStatePacket);
-            consoleDisplay.printMap(gameStatePacket, turn); 
     
-            String possibleActions = this.player.pathFinder(gameStatePacket);
-            consoleDisplay.printPlayerActions(possibleActions);  
+    /** 
+     * Custom Method: Parse Winning Data and returns a Single Line String for Text File
+     * @param winStatus Boolean: Win Status of the Game
+     * @param turn Int: The Number of Turns the Player has made
+     * @param remainingFuel Int: The Amount of Fuel the Plaeyer has before the game ends
+     * @return String: The parse winning results as a single line String
+     */
+    public String parseDataToFile(boolean winStatus, int turn, int remainingFuel)
+    {
+       StringBuilder stringBuilder = new StringBuilder(); 
+       
+       stringBuilder.append("Player Name: ").append(this.player.getName()).append(DELIMITER);
+       stringBuilder.append("Win Status: ").append(winStatus).append(DELIMITER);
+       stringBuilder.append("Number of Turns Made: ").append(turn).append(DELIMITER);
+       stringBuilder.append("Fuel Cells Remaining: ").append(remainingFuel).append(DELIMITER);
 
-            processTurn(console, possibleActions);
-        }
+        return stringBuilder.toString(); 
     }
+
     
     /**
      * Custom Method: Handles the Processing of Each Turns; 
@@ -282,7 +301,7 @@ public class Jumper
         ArrayList<Integer> fuelCosts = new ArrayList<>();
         String[] segment = possibleActions.split(";");
         
-        // Section is responsible for Parsing the Game State Data 
+        // This Section is responsible for Parsing the Game State Data 
         for (int i = 0; i < segment.length; i++) 
         {
             String[] parts = segment[i].trim().split("\\)");
@@ -303,8 +322,8 @@ public class Jumper
                     fuelCosts.add(fuelCost);
                 }
             }
-        }
-        
+        }     
+        // Get the User Selected Action 
         String selectedAction = promptUserInput(console, actionsNumber); 
 
         if (selectedAction == "End Game")
@@ -315,14 +334,14 @@ public class Jumper
         {
             int selectedActionIndex = Integer.parseInt(selectedAction) - 1;
             
-            // Process the Selected Action & Update the Game Turn
+            // Process the Selected Action and Update the Game Turn
             boolean playerFrozen = processAction(selectedActionIndex, buildingIndexes, actionsList, fuelCosts);  
             updateGameTurn(console, playerFrozen); 
         }
     }
     
     /**
-     * Custom Method: Process Action selected by the User like Jump, Load Rules or Endgame & Runs the Execute Ation Method 
+     * Custom Method: Process Action selected by the User like Jump, Load Rules or Endgame and Runs the Execute Ation Method 
      * @param actionIndex int: The Index of the Action Selected by the User
      * @param buildingIndexes List<Integer>: The Index of the Buidlings that the Player can jump to
      * @param actions List<String>: The Actions the Player can Make
@@ -359,7 +378,8 @@ public class Jumper
      * @param actionsNumber ArrayList<Character>: An Array List of Possible Actions "Index" the Player can Make Next Turn 
      * @return String: A String Containing the Action the Player has selected
      */
-    public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) {
+    public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) 
+    {
         Input input = new Input(console);
         boolean validInputFlag = false;
         String stringInput = "";
@@ -410,26 +430,47 @@ public class Jumper
         }
         return stringInput;
     }
-    
-    /** 
-     * Custom Method: Parse Winning Data and returns a Single Line String for Text File
-     * @param winStatus Boolean: Win Status of the Game
-     * @param turn Int: The Number of Turns the Player has made
-     * @param remainingFuel Int: The Amount of Fuel the Plaeyer has before the game ends
-     * @return String: The parse winning results as a single line String
+
+    /**
+     * Custom Method: The Game Runs until the Player Wins or Ends the Game
+     * The Game Processes Run inside this Method 
+     * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
      */
-    public String parseDataToFile(boolean winStatus, int turn, int remainingFuel)
-    {
-       StringBuilder stringBuilder = new StringBuilder(); 
-       
-       stringBuilder.append("Player Name: ").append(this.player.getName()).append(DELIMITER);
-       stringBuilder.append("Win Status: ").append(winStatus).append(DELIMITER);
-       stringBuilder.append("Number of Turns Made: ").append(turn).append(DELIMITER);
-       stringBuilder.append("Fuel Cells Remaining: ").append(remainingFuel).append(DELIMITER);
+    public void startGame(Scanner console)
+    {   
+        initializeGame();
 
-        return stringBuilder.toString(); 
+        while(runProgram)
+        {   
+            String gameStatePacket = this.player.displayPlayer() + this.map.displayMap();
+            // System.out.println(gameStatePacket);
+            consoleDisplay.printMap(gameStatePacket, turn); 
+    
+            String possibleActions = this.player.pathFinder(gameStatePacket);
+            consoleDisplay.printPlayerActions(possibleActions);  
+
+            processTurn(console, possibleActions);
+        }
     }
-
+    
+    /**
+     * Mutator Method: Set the Player Object
+     * @param player Player: Player Object to be set
+     */
+    public void setPlayer(Player player)
+    {
+        this.player = player;
+    }
+    
+    /**
+     * Mutator Method: Set the Map Object
+     * @param player Map: Map Object to be set
+     */
+    public void setMap(Map map)
+    {
+        this.map = map;
+    }
+    
     /**
      * Custom Method: Update the Game Turn and Map | Also Applies the Frozen Affect
      * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
@@ -459,7 +500,7 @@ public class Jumper
     }
 
     /**
-     * Main Method: This is the Main Method of the Jumper Class & the Java Jumper Assignment
+     * Main Method: This is the Main Method of the Jumper Class and the Java Jumper Assignment
      */
     public static void main(String[] args) throws IOException
     {   
@@ -470,10 +511,11 @@ public class Jumper
         
         // Initialize Static Variables
         runProgram = true; 
-        turn = 1; 
+        turn = 1;
           
         // Run the Main Game Program
         javaJumper.createPlayer(console);
+
         while (runProgram)
         {   
             System.out.println("Start Game? [Y/N]");

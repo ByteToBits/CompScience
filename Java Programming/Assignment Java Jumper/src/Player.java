@@ -81,17 +81,6 @@ public class Player
         return this.name; 
     }
     
-    // /**
-    //  * Custom Method: The Player Jumps to the Building at the Left
-    //  * @param targetBuildingIndex int: The Target Building Index for the next Hop
-    //  * @param fuelConsumed int: The amount of Fuel Consumed for the Next Hop
-    //  */
-    // public void jumpLeft(int targetBuildingIndex, int fuelConsumed)
-    // {   
-    //     this.location = targetBuildingIndex; 
-    //     this.device.consumeFuelReserves(fuelConsumed);
-    // }
-
      /**
      * Custom Method: The Player Jumps to the Building at the Right
      * @param targetBuildingIndex int: The Target Building Index for the next Hop
@@ -106,7 +95,7 @@ public class Player
     /**
      * Custom Method: PathFinder is a Method to determine Next Move what the player allowed to make
      * This method will check for the Bounds of the Map (must be between Building 0 to 14)
-     * Remarks: Testing out & learning how to use some Lambda Functions 
+     * Remarks: Testing out and learning how to use some Lambda Functions 
      * @param gameState String: The State of the Game as a Single String 
      * @return String: A string output of the Possible Actions and corresponding Fuel Cost the player can take
      * @throws NumberFormatException If parsing from String to Integer fails
@@ -119,18 +108,18 @@ public class Player
         ArrayList<String> states = new ArrayList<>();
         ArrayList<Integer> height = new ArrayList<>(); 
         
-        // Remarks: Testing Out Lambda Functions using Streams API | Get Game States & Building Height
+        // Remarks: Testing Out Lambda Functions using Streams API | Get Game States and Building Height
         // collect(): Returns the New Collection, it collects elements into a new list, without modiftying external states like a forEach
         states.addAll(Arrays.stream(gameState.split("\n")).map(segment -> segment.split(": ")[1].trim()).collect(Collectors.toList())); 
 
         height.addAll(Arrays.stream(states.get(7).split(" , ")).map(rawheight -> Integer.parseInt(rawheight.trim())).collect(Collectors.toList())); 
 
-        // Step 2: Get Player Building Height & Validate if the endpoints index (Next Jump) are within bounds | Using Tenary Operators
+        // Step 2: Get Player Building Height and Validate if the endpoints index (Next Jump) are within bounds | Using Tenary Operators
         int currentBuildingHeight = height.get(this.location); 
         int rightEndpointsIndex = (currentBuildingHeight + this.location < NUMBER_OF_BUILDINGS) ? (currentBuildingHeight + this.location) : NUMBER_OF_BUILDINGS;
         int leftEndpointsIndex = (this.location - currentBuildingHeight >= 0) ? (this.location - currentBuildingHeight) : -1 ; 
 
-        // Step 3: Check for all the Valid Endpoint Actions (Left, Right, Stay) & Append to a StringBuilder
+        // Step 3: Check for all the Valid Endpoint Actions (Left, Right, Stay) and Append to a StringBuilder
         StringBuilder stringBuilder = new StringBuilder(); 
         int actionNumber = 1; 
         int fuelCost = 0; 
