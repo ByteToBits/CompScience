@@ -1,4 +1,4 @@
-Player Name: Tristan
-Win Status: false
-Number of Turns Made: 14
-Fuel Cells Remaining: 0
+Player Name: Tristan Sim
+Win Status: true
+Number of Turns Made: 4
+Fuel Cells Remaining: 5

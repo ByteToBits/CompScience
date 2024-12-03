@@ -117,7 +117,8 @@ public class Jumper
         {   
             
             if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
-            {
+            {   
+                System.out.println("\nYou have Escaped!! In just " + turn + " turns!");
                 winStatus = true; 
                 runProgram = false; 
             } 
@@ -131,7 +132,7 @@ public class Jumper
 
                 if (this.player.getDevice().getFuelReserves() <= 0) 
                 {   
-                    System.out.println("\nYou Landed on a Web Trap! The NoWhere Police have depleted your Fuel Cells!");
+                    System.out.println("\nYou Landed on a Web Trap! The NoWhere Police have depleted your Fuel Cells!\n");
                     winStatus = false; 
                     runProgram = false; 
                 } else 
@@ -144,7 +145,7 @@ public class Jumper
                 // Replenish Fuel Cells
                 System.out.println("\nFuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 int fuelReserves = this.player.getDevice().getFuelReserves();
-                System.out.print("Fuel Replenishment Calculation: " + fuelReserves + " + " + REPLENISH_FUEL_AMOUNT + " = ");
+                System.out.print("Fuel Replenishment Calculation: " + fuelReserves + " + 5 = ");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
                 System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                 this.map.removeFuelCell(nextHopIndex);
@@ -161,6 +162,7 @@ public class Jumper
                 if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
                 {   
                     // Edge Case: If Player Lands on the Portal Building When he Exactly Runs out of Fuel
+                    System.out.println("\nYou have Escaped! And With Barely Any Fuel Left!!\n");
                     winStatus = true; 
                     runProgram = false; 
                 } 
@@ -168,7 +170,7 @@ public class Jumper
                 {   
                     // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
                     int fuelReserves = this.player.getDevice().getFuelReserves();
-                    System.out.print("Fuel Replenishment Calculation: " + fuelReserves + " + " + REPLENISH_FUEL_AMOUNT + " = ");
+                    System.out.print("In the Nick of Time! Fuel Replenished: " + fuelReserves + " + 5 = ");
                     this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
                     System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                     this.map.removeFuelCell(nextHopIndex);
@@ -177,6 +179,7 @@ public class Jumper
                 {
                     // Game Lost: No Fuel Cells Left
                     System.out.println("\nYou have used up all your Fuel Cells!!\n");
+                    this.player.getDevice().setFuelReserves(0);
                     winStatus = false; 
                     runProgram = false; 
                 }
@@ -185,6 +188,7 @@ public class Jumper
             {
                 // Game Lost: No Fuel Cells Left
                 System.out.println("\nYou have used up all your Fuel Cells!!\n");
+                this.player.getDevice().setFuelReserves(0);
                 winStatus = false; 
                 runProgram = false; 
             }
@@ -294,7 +298,6 @@ public class Jumper
 
         return stringBuilder.toString(); 
     }
-
     
     /**
      * Custom Method: Handles the Processing of Each Turns; 
@@ -359,7 +362,9 @@ public class Jumper
      * @return boolean: Player Frozen | Skip 1 Turn
      */
     public boolean processAction(int actionIndex, List<Integer> buildingIndex, List<String> actions, List<Integer> cost) 
-    {
+    {   
+        boolean playerFrozen = false;
+
         // Calculate the next building and action details based on selected action index.
         int nextHopIndex = buildingIndex.get(actionIndex) - 1; // 0-based Indexing
         Building nextHopBuilding = this.map.getBuildings()[nextHopIndex];
@@ -372,12 +377,19 @@ public class Jumper
 
         System.out.printf("< Action Selected: %s > < Next Hop: Building %d > < Fuel Cost Calculations: | %d - %d | + 1 = %d >%n",
                           nextAction, nextHopIndex + 1, playerBuildingHeight, nextHopHeight, nextHopCost);
-
+ 
         // Perform the jump and execute post-jump actions.
-        this.player.jump(nextHopIndex, nextHopCost);
-
-        // Execute the Player's Actions
-        boolean playerFrozen = executeActions(nextHopBuilding, nextHopIndex); 
+        if (this.player.getDevice().getFuelReserves() >= nextHopCost)
+        {
+            this.player.jump(nextHopIndex, nextHopCost);
+            playerFrozen = executeActions(nextHopBuilding, nextHopIndex);  // Execute the Player's Actions
+        } 
+        else 
+        {
+            System.out.println("Jumper Device has ran out of Fuel Cells !");
+            this.player.getDevice().setFuelReserves(0);
+            runProgram = false; 
+        }
 
         return playerFrozen;
     }
@@ -449,6 +461,7 @@ public class Jumper
     public void startGame(Scanner console)
     {   
         initializeGame();
+        turn = 1;
 
         while(runProgram)
         {   
@@ -521,7 +534,6 @@ public class Jumper
         
         // Initialize Static Variables
         runProgram = true; 
-        turn = 1;
           
         // Run the Main Game Program
         javaJumper.createPlayer(console);
