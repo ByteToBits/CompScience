@@ -1,7 +1,6 @@
-
 /**
- * Description: Map Class handles all the Map Functionalities like generating of buildings for the Java Jumper Game
- * Final Assesment Project for ITO4131 - Java Programming
+ * Description: Map Class handles all the Map Functionalities for the Java Jumper Game
+ * It handles functionalities like Loading/Generating Buildings for each turn, Randomizing Buildings and Map Resources.
  * @author Tristan Sim
  * @version v1.00
  */
@@ -10,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
 
-public class Map {
-    
+public class Map 
+{
     // Fields - Constants
     private static final Random RANDOMIZER = new Random();   // Generate Random Numbers
     private static final int NUMBER_OF_BUILDINGS = 15;       // The Number of Building a Map can HAVE

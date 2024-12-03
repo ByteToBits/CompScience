@@ -1,6 +1,5 @@
-
 /**
- * Description: Input Class handles the user Input From the console
+ * Description: Input Class handles the User Input from the Console. 
  * @author Tristan Sim
  * @version 1.01
  */

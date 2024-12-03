@@ -1,6 +1,6 @@
 /**
- * Desecription: The Device Class handles the Jumper Device for the Java Jumper Game
- * Final Assesment Project for ITO4131 - Java Programming
+ * Desecription: The Device Class handles the Jumper Device for the Java Jumper Game.
+ * The Jumper Device is what allows the player to traverse buildings and has a fuel reserve.
  * @author Tristan Sim
  * @version 1.00
  */

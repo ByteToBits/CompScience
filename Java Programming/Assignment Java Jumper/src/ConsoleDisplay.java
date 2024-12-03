@@ -1,6 +1,6 @@
-
 /**
- * Description: The Console Display Class Generates Text Output of the Jave Jumper Game on the Consoel Terminal
+ * Description: The Console Display Class Generates Text Output of the Java Jumper Game on the Console Terminal.
+ * Console Text like Welcome Message, Rules and even the Map is generated through this class.
  * @author Tristan Sim
  * @version 1.01
  */

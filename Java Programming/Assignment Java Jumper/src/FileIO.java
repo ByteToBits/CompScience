@@ -1,5 +1,5 @@
 /**
- * Description: The File Input/Ouput (IO) Class class handles te reading & writing functionalities to text files
+ * Description: The File Input/Ouput (IO) Class handles the reading and writing functionalities to text files.
  * @author Tristan Sim
  * @version V1.01
  */
@@ -15,7 +15,6 @@ public class FileIO
     private String fileName; 
     private static final String DELIMITER = "\r\n"; 
     private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\buildings.txt"; 
-    private static final String RESULTS_FILE = "Assignment Java Jumper\\resources\\results.txt";
     
     /**
      * Default Constructor

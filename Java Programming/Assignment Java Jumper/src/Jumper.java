@@ -1,10 +1,9 @@
-
 /**
  * Description: Jumper Class is the Main Program for the Jave Jumper Assignment.
- * The Jumper Class is where the Main method runs and where the Player will interact with the Game.
+ * The Jumper Class is where the Main Method runs and where the Player will interact with the Game.
+ * It initializes the game resources and orchestrates the sub-processes for the game. 
  * @author Tristan Sim
  * @version 1.01
- * @
  */
 
 import java.io.IOException;
@@ -449,13 +448,13 @@ public class Jumper
                 playerAcknowledge = true; // Exit the loop after player acknowledges
             }
             turn += 2; 
-            map.decrementFuelCellTurnsRemaining();
-            map.reshuffleMap(this.player.getLocation());
+            this.map.decrementFuelCellTurnsRemaining();
+            this.map.reshuffleMap(this.player.getLocation());
         } 
         else 
         {
             turn++; 
-            map.reshuffleMap(this.player.getLocation());
+            this.map.reshuffleMap(this.player.getLocation());
         }
     }
 

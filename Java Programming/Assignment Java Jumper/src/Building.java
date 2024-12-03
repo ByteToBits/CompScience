@@ -1,6 +1,6 @@
 /**
- * Description: The Building Class for the Java Jumper Game
- * Final Assesment Project for ITO4131 - Java Programming
+ * Description: The Building Class for the Java Jumper Game.
+ * The Building Class handles all the Building Attributes like Height, Portal and etc.
  * @aurthor Tristan Sim
  * @version v1.00
  */

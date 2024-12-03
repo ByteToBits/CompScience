@@ -1,6 +1,6 @@
 /** 
- * Description: The Player Class handles the Player States & Actions 
- * It consist of the player's information, Device Object and also handles the Actions Methods
+ * Description: The Player Class handles the Player States and Actions 
+ * It consist of the player's information, Device Object and handles the player actions. 
  * @author Tristan Sim
  * @version 1.01
  */
