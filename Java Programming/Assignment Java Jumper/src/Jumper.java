@@ -8,12 +8,9 @@
  */
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.Scanner; 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 public class Jumper 
 {
     // Fields
@@ -124,24 +121,27 @@ public class Jumper
 
                 if (this.player.getDevice().getFuelReserves() <= 0) 
                 {   
-                    System.out.println("You Landed on a Web Trap! The NoWhere Police have depleted your Fuel Cells!");
+                    System.out.println("\nYou Landed on a Web Trap! The NoWhere Police have depleted your Fuel Cells!");
                     winStatus = false; 
                     runProgram = false; 
                 } else 
                 {
-                    System.out.println("You landed on a Web Trap! You Lost 5 Fuel Cells to Break Free...");
+                    System.out.println("\nYou landed on a Web Trap! You Lost 5 Fuel Cells to Break Free...");
                 }
             } 
             else if (nextHopBuilding.getFuelCell()) 
             {   
                 // Replenish Fuel Cells
-                System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
+                System.out.println("\nFuel Cell Replenished! You gained 5 additional Fuel Cells!");
+                int fuelReserves = this.player.getDevice().getFuelReserves();
+                System.out.print("Fuel Replenishment Calculation: " + fuelReserves + " + " + REPLENISH_FUEL_AMOUNT + " = ");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
+                System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                 this.map.removeFuelCell(nextHopIndex);
             } 
             else
             {
-                System.out.println("Safely Jump to Building " + (nextHopIndex + 1 ) + "!");
+                System.out.println("\nSafely Jump to Building " + (nextHopIndex + 1 ) + "!");
             }
         } 
         else 
@@ -155,15 +155,16 @@ public class Jumper
             else if (nextHopBuilding.getFuelCell())  
             {   
                 // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
-                System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
+                int fuelReserves = this.player.getDevice().getFuelReserves();
+                System.out.print("Fuel Replenishment Calculation: " + fuelReserves + " + " + REPLENISH_FUEL_AMOUNT + " = ");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
-                // this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
+                System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                 this.map.removeFuelCell(nextHopIndex);
             } 
             else
             {
                 // Game Lost: No Fuel Cells Left
-                System.out.println("You have used up all your Fuel Cells!!");
+                System.out.println("\nYou have used up all your Fuel Cells!!\n");
                 winStatus = false; 
                 runProgram = false; 
             }

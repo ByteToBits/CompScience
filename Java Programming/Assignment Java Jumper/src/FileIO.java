@@ -14,8 +14,8 @@ public class FileIO
 {
     private String fileName; 
     private static final String DELIMITER = "\r\n"; 
-    private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\building.txt"; 
-    private static final String OUTCOME_FILE = "Assignment Java Jumper\\resources\\outcome.txt";
+    private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\buildings.txt"; 
+    private static final String RESULTS_FILE = "Assignment Java Jumper\\resources\\results.txt";
     
     /**
      * Default Constructor
