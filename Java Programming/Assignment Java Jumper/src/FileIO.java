@@ -72,17 +72,5 @@ public class FileIO
             }
         }
     }
-    
-    public static void main(String[] args) throws IOException
-    {
-        FileIO fileIO = new FileIO(BUILDING_FILE);
-        System.out.println(fileIO.readFile());
-
-        String testString = "Number of Turns: 0,\r\nNumber of Fuel Cells: 10,\r\nWin Status: false"; 
-        FileIO writeFileIO = new FileIO(OUTCOME_FILE); 
-
-        writeFileIO.writeFile(testString); 
-
-    }
 
 }

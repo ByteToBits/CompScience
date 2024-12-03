@@ -203,21 +203,21 @@ public class Jumper
      */
     public Building[] loadExistingMap() throws IOException
     {   
-        String[] rawData = new String[15]; 
+        String[] dataPacket = new String[15]; 
         Building[] buidlingData = new Building[15];
+
         FileIO buildingFile = new FileIO(BUILDING_FILE); 
         String contents = buildingFile.readFile(); 
-        int i = 0; 
 
-        for (String content : contents.split(DELIMITER))
+        String[] packets = contents.split(DELIMITER);
+        for (int i = 0; i < packets.length && i < dataPacket.length; i++) 
         {
-            rawData[i] = content; 
-            i++; 
+            dataPacket[i] = packets[i];
         }
 
         for (int j = 0; j < buidlingData.length; j++)
         {
-            String[] data = rawData[j].split(",");    
+            String[] data = dataPacket[j].split(",");    
             buidlingData[j] = new Building();   // Initialize to prevent Null Values
             buidlingData[j].setHeight(Integer.parseInt(data[0]));        
 
@@ -290,6 +290,7 @@ public class Jumper
             if (parts.length > 0) 
             {
                 actionsNumber.add(parts[0].charAt(0));  // Extact the Action Number 
+
                 String actionDetails = parts[1].trim();
                 String[] details = actionDetails.split("\\|");
                 if (details.length == 3) // Extract the Action Details 
@@ -412,6 +413,22 @@ public class Jumper
         return stringInput;
     }
     
+    /** 
+     * Custom Method: Parse Winning Data and returns a Single Line String for Text File
+     * @param winStatus Boolean: Win Status of the Game
+     * @param turn Int: The Number of Turns the Player has made
+     * @param remainingFuel Int: The Amount of Fuel the Plaeyer has before the game ends
+     * @return String: The parse winning results as a single line String
+     */
+    public String parseDataToFile(boolean winStatus, int turn, int remainingFuel)
+    {
+       StringBuilder stringBuilder = new StringBuilder(); 
+
+       
+
+        return stringBuilder.toString(); 
+    }
+
     /**
      * Custom Method: Update the Game Turn and Map | Also Applies the Frozen Affect
      * @param console Scanner: Pass a Scanner Object Resource from the Method Caller
@@ -430,6 +447,7 @@ public class Jumper
                 playerAcknowledge = true; // Exit the loop after player acknowledges
             }
             turn += 2; 
+            map.decrementFuelCellTurnsRemaining();
             map.reshuffleMap(this.player.getLocation());
         } 
         else 
@@ -447,12 +465,13 @@ public class Jumper
         // Instatiates the classes
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
-
+        
+        // Initialize Static Variables
         runProgram = true; 
         turn = 1; 
-
+          
+        // Run the Main Game Program
         javaJumper.createPlayer(console);
-
         while (runProgram)
         {   
             System.out.println("Start Game? [Y/N]");
@@ -468,10 +487,11 @@ public class Jumper
             }
         }
         
+        // Output Game Over Message
         int remainingFuel = javaJumper.player.getDevice().getFuelReserves(); 
         javaJumper.consoleDisplay.printGameOverMessage(winStatus, turn, remainingFuel);
 
-        // Need to Write Score to Outcome File
+        // Write Game Results to Output File
 
         console.close();
     }
