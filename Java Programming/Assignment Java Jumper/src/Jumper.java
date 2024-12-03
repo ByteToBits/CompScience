@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Scanner; 
 import java.util.ArrayList;
 import java.util.List;
+
 public class Jumper 
 {
     // Fields
@@ -155,44 +156,33 @@ public class Jumper
                 System.out.println("\nSafely Jump to Building " + (nextHopIndex + 1 ) + "!");
             }
         } 
-        else 
-        {   
-            if (this.player.getDevice().getFuelReserves() == 0)
-            {
+        else if (this.player.getDevice().getFuelReserves() == 0) 
+        {
                 if (nextHopBuilding.getPortal() && !nextHopBuilding.getFrozen()) 
-                {   
+                {
                     // Edge Case: If Player Lands on the Portal Building When he Exactly Runs out of Fuel
                     System.out.println("\nYou have Escaped! And With Barely Any Fuel Left!!\n");
-                    winStatus = true; 
-                    runProgram = false; 
+                    winStatus = true;
+                    runProgram = false;
                 } 
-                else if (nextHopBuilding.getFuelCell())  
-                {   
+                else if (nextHopBuilding.getFuelCell()) 
+                {
                     // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
                     int fuelReserves = this.player.getDevice().getFuelReserves();
                     System.out.print("In the Nick of Time! Fuel Replenished: " + fuelReserves + " + 5 = ");
                     this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
                     System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                     this.map.removeFuelCell(nextHopIndex);
-                }
-                else
+                } 
+                else 
                 {
                     // Game Lost: No Fuel Cells Left
                     System.out.println("\nYou have used up all your Fuel Cells!!\n");
                     this.player.getDevice().setFuelReserves(0);
-                    winStatus = false; 
-                    runProgram = false; 
+                    winStatus = false;
+                    runProgram = false;
                 }
             }
-            else
-            {
-                // Game Lost: No Fuel Cells Left
-                System.out.println("\nYou have used up all your Fuel Cells!!\n");
-                this.player.getDevice().setFuelReserves(0);
-                winStatus = false; 
-                runProgram = false; 
-            }
-        }
 
         return playerFrozen; 
     }
