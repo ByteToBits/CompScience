@@ -169,7 +169,8 @@ public class Jumper
                 {
                     // Edge Case: If Player Lands on the Fuel Cell Building After Running out of Fuel
                     int fuelReserves = this.player.getDevice().getFuelReserves();
-                    System.out.print("In the Nick of Time! Fuel Replenished: " + fuelReserves + " + 5 = ");
+                    System.out.print("\nIn the Nick of Time! Found Fuel Cells just when you ran out of Fuel!\n");
+                    System.out.print("Fuel Cells Replenished: " + fuelReserves + " + 5 = ");
                     this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
                     System.out.print(this.player.getDevice().getFuelReserves() + "\n");
                     this.map.removeFuelCell(nextHopIndex);
@@ -376,7 +377,7 @@ public class Jumper
         } 
         else 
         {
-            System.out.println("Jumper Device has ran out of Fuel Cells !");
+            System.out.println("\nThe Jumper Device ran out of Fuel Cells! You're Trapped!\n");
             this.player.getDevice().setFuelReserves(0);
             runProgram = false; 
         }
