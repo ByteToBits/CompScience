@@ -18,8 +18,8 @@ public class Jumper
 {
     // Fields
     private static final String DELIMITER = "\r\n"; 
-    private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\building.txt"; 
-    private static final String OUTCOME_FILE = "Assignment Java Jumper\\resources\\outcome.txt";
+    private static final String BUILDING_FILE = "Assignment Java Jumper\\resources\\buildings.txt"; 
+    private static final String RESULTS_FILE = "Assignment Java Jumper\\resources\\results.txt";
     private static final int FUEL_CELL_LIFETIME = 3;       // The Lifetime (Turns) until the Fuel Cell expires for a Building 
     private static final int REPLENISH_FUEL_AMOUNT = 5; 
     private static final int TRAP_FUEL_PENALTY = 5;
@@ -137,7 +137,6 @@ public class Jumper
                 // Replenish Fuel Cells
                 System.out.println("Fuel Cell Replenished! You gained 5 additional Fuel Cells!");
                 this.player.getDevice().replenishFuelReserves(REPLENISH_FUEL_AMOUNT);
-                // this.map.setSpecificFuelCellBuilding(nextHopIndex, 0);
                 this.map.removeFuelCell(nextHopIndex);
             } 
             else
@@ -310,7 +309,6 @@ public class Jumper
 
         if (selectedAction == "End Game")
         {   
-            this.consoleDisplay.printGameOverMessage(winStatus, turn, this.player.getDevice().getFuelReserves());
             runProgram = false;
         }
         else 
@@ -324,7 +322,7 @@ public class Jumper
     }
     
     /**
-     * Custom Method: Process Action selected by the User
+     * Custom Method: Process Action selected by the User like Jump, Load Rules or Endgame & Runs the Execute Ation Method 
      * @param actionIndex int: The Index of the Action Selected by the User
      * @param buildingIndexes List<Integer>: The Index of the Buidlings that the Player can jump to
      * @param actions List<String>: The Actions the Player can Make
@@ -423,8 +421,11 @@ public class Jumper
     public String parseDataToFile(boolean winStatus, int turn, int remainingFuel)
     {
        StringBuilder stringBuilder = new StringBuilder(); 
-
        
+       stringBuilder.append("Player Name: ").append(this.player.getName()).append(DELIMITER);
+       stringBuilder.append("Win Status: ").append(winStatus).append(DELIMITER);
+       stringBuilder.append("Number of Turns Made: ").append(turn).append(DELIMITER);
+       stringBuilder.append("Fuel Cells Remaining: ").append(remainingFuel).append(DELIMITER);
 
         return stringBuilder.toString(); 
     }
@@ -465,6 +466,7 @@ public class Jumper
         // Instatiates the classes
         Scanner console = new Scanner(System.in); 
         Jumper javaJumper = new Jumper(); 
+        FileIO resultsFile = new FileIO(RESULTS_FILE); 
         
         // Initialize Static Variables
         runProgram = true; 
@@ -492,6 +494,8 @@ public class Jumper
         javaJumper.consoleDisplay.printGameOverMessage(winStatus, turn, remainingFuel);
 
         // Write Game Results to Output File
+        String gameResults = javaJumper.parseDataToFile(winStatus, turn, remainingFuel);
+        resultsFile.writeFile(gameResults);
 
         console.close();
     }

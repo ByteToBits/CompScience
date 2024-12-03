@@ -177,7 +177,7 @@ public class Map {
         return buildingIndex;
     }
 
-       /** 
+    /** 
      * Custom Method: initialize New Map
      * Will also randomize the Building Height, Effects, Portals & Traps 
      * Method also prevents Duplication of Effects on the same building
