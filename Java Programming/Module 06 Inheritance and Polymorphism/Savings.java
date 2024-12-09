@@ -22,7 +22,7 @@ public class Savings extends Account
 
     public Savings(int accountNumber, double balance, double interest, double maxBalance, double bonusInterest)
     {
-        this.super(accountNumber, balance); 
+        super(accountNumber, balance); 
         this.interest = interest;
         this.maxBalance = maxBalance; 
         this.bonusInterest = bonusInterest;
