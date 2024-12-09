@@ -10,6 +10,9 @@
     // Fields
     private int accountNumber;
     private double balance; 
+    
+    // Allow itself and Subclass to Acess | Other classes cannot accest these value
+    protected String protectedMessage = "This is a Secret Message from Super (Account)";
 
     public Account()
     {
@@ -21,6 +24,11 @@
     {
         this.accountNumber = accountNumber;
         this.balance = balance; 
+    }
+
+    protected String displayProtectedMessage()
+    {
+        return this.protectedMessage; 
     }
 
     public int getAccountNumber() 

@@ -15,5 +15,10 @@ public class Bank
         System.out.println("Account Number(Inherited from Super Class 'Accout'): " + savingAccount1.getAccountNumber());
         System.out.println("Account Balance(Inherited from Super Class 'Accout'): " + savingAccount1.getBalance());
         System.out.println("Account Interest(From Class itself): " + savingAccount1.getInterest());
+
+        System.out.println("Protected Message of Account Class Accesed Through Savings: " + savingAccount1.displayProtectedMessage());
+
+        Account account1 = new Account(); 
+        System.out.println("Directly Read Protected Message of Account Class: " + account1.displayProtectedMessage());
     }
 }
