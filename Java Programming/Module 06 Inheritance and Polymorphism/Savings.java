@@ -43,6 +43,11 @@ public class Savings extends Account
         return this.maxBalance;
     }
 
+    public double interestEarned()
+    {
+        return super.getBalance() * this.interest * 12 + this.bonusInterest;
+    }
+
     public void setBonusInterest(double bonusInterest)
     {
         this.bonusInterest = bonusInterest; 
