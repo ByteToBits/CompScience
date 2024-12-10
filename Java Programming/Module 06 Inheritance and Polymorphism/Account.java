@@ -31,6 +31,12 @@
         return this.protectedMessage; 
     }
 
+    public String displayAccount()
+    {   
+        
+        return String.format("Account Number: %d\nBalance: %.2f", this.accountNumber, this.balance);
+    }
+
     public int getAccountNumber() 
     {
         return accountNumber;
