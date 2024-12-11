@@ -15,7 +15,7 @@ public class DataType
     float floatA = 6.32175f;    // 32-Bit - Stores fractional numbers uo to 6 to 7 decimal digits | Needs an declare 'f'
     double doubleA = 8.321556;  // 64 Bit - Stores fractional numbers uo to 15 to 16 decimal digits 
 
-    // Non-Primitive Types
+    // Non-Primitive/Reference Types
     String stringA = "Test String";  //  Variable contains a Collection of Characters
     
     public static void main(String[] args)
