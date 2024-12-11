@@ -15,7 +15,6 @@ public class PolymorphicBank
         // Polymorphism: Allows a subclass object to be referenced by a superclass variable. 
         // The static type (declared type) determines what methods are accessible, while the dynamic type (actual object type) 
         // determines the implementation used.
-        System.out.println("Section Below will cover Subtyping of a Super Class... ");
         System.out.println("<Class Name> <Variable Name> (Static Type) = new <Class Constructor>; (Dynamic Type)");
         System.out.println("'savingAccount' is a polymorphic variable, since it is of static type 'Account'");
         
@@ -26,11 +25,14 @@ public class PolymorphicBank
 
         // Cast to access subclass-specific method (bad practice)
         // Casting: This explicitly tells the compiler that the object is of type Savings, allowing access to methods unique to Savings.
-        System.out.println("Account Interest (Explicitly Casted): " + ((Savings)savingAccount).getInterest()); 
+        if (savingAccount instanceof Savings)
+        {
+            System.out.println("Account Interest (Explicitly Casted): " + ((Savings)savingAccount).getInterest()); 
+        } 
         
         System.out.println("Another Polymorphic Example: Same Static Type, Different Dynamic Type" );
-        System.out.println("ArrayList is of Static Type 'Account'; Since all the Subclasses have 'Account' as a Super Class" );
-        System.out.println("Only the Super Class Type is stored in the ArrayList" );
+        System.out.println("'@Override' in subclass overrides the Parent Class Method" );
+
         ArrayList<Account> accounts = new ArrayList<>(); 
         accounts.add(new Checking());
         accounts.add(new Savings()); 
@@ -38,7 +40,7 @@ public class PolymorphicBank
         
         for (Account account : accounts)
         {
-            System.out.println(account.displayAccount()); 
+            System.out.println(account.display()); 
         }
     }
 

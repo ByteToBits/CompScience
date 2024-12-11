@@ -27,7 +27,13 @@ public class Savings extends Account
         this.maxBalance = maxBalance; 
         this.bonusInterest = bonusInterest;
     }
-
+    
+    @Override
+    public String display()
+    {   
+        return String.format("Savings Class: Invoked display()"); 
+    }
+    
     public double getBonusInterest()
     {
         return this.bonusInterest; 
@@ -58,7 +64,7 @@ public class Savings extends Account
         this.interest = interest; 
     }
 
-    public void setMaxBalance(set maxBalance)
+    public void setMaxBalance(double maxBalance)
     {
         this.maxBalance = maxBalance; 
     }

@@ -14,10 +14,11 @@ public class Checking extends Account
     {
         this.minBalance = 0;
     }
-
+    
+    @Override
     public String display()
-    {
-        return String.format("Minimum Balance: " + this.minBalance); 
+    {   
+       return String.format("Checking Class: Invoked display()"); 
     }
 
     public double getMinBalance() 

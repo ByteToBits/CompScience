@@ -27,6 +27,19 @@ public class Credit extends Account
         this.interestFreeDays = interestFreeDays;
         this.cashRate = cashRate; 
     }
+    
+    // Example of Method Overriding | Overriding the Parent Class display()
+    @Override
+    public String display()
+    {
+        StringBuilder stringBuilder = new StringBuilder(); 
+        stringBuilder.append(super.display()); 
+        stringBuilder.append("\nInterest Rate: ").append(this.interestRate); 
+        stringBuilder.append("\nInterest Free Days: ").append(this.interestFreeDays); 
+        stringBuilder.append("\nCash Rate: ").append(this.cashRate); 
+
+        return String.format("Credit Class: Invoked display()");
+    }
 
     public double getCashRate() 
     {
@@ -45,7 +58,7 @@ public class Credit extends Account
     
     public double interestCharged()
     {
-        return super.getBalance * this.interestRate * (30 - this.interestFreeDays);
+        return this.getBalance() * this.interestRate * (30 - this.interestFreeDays);
     }
 
     public void setCashRate(double cashRate) 
