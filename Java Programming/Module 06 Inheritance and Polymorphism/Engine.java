@@ -16,7 +16,7 @@ public class Engine {
     private double hoursepower;
 
     /**
-     * Default constructor that initializes the engine with default values.
+     * Default constructor that initializes the engine with default values
      */
     public Engine() {
         this.model = "FooBar";
