@@ -1,0 +1,17 @@
+
+Code Comments: 
+- The placement of { }'s to start and end a block must appear on their own line. Opening braces ({) especially should 
+  not be placed on the same line as the header. - ConsoleDisplay -17
+- Scanner is not a property of Input class and using as an attribute could lock the console.
+- Methods must be sorted alphabetically (except constructors, which always appear first). -main method?
+- name is not validated with the blank space
+- main should be the starting point of the game rather than holding the logic?
+- you are referring to hard coded values - reading of the building should be part of the game.- reusability is not considered
+
+
+Video Presentation Comments: 
+The video provides a clear and thorough explanation of Java code design principles and techniques using Class Diagram, 
+with well-organized and easy-to-follow content.
+The presentation is engaging and keeps the viewer's attention throughout the video.
+The video demonstrates a deep understanding of Java code design and provides practical examples using code demonstration and insights.
+The production quality is high, with good audio and video quality, and visually appealing graphics and animation

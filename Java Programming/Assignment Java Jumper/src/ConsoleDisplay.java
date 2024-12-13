@@ -14,7 +14,9 @@ public class ConsoleDisplay
     /**
      * Default Constructor
      */
-    public ConsoleDisplay() {}
+    public ConsoleDisplay() 
+    {   
+    }
     
     /**
      * Custom Method: Generates a Single Line String representing one of the 5 building levels.
