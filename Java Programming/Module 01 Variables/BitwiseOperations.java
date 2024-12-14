@@ -1,3 +1,9 @@
+/**
+ * Description: Bitwise Operation Class demonstrates simple Bit Manipulation
+ * @author Tristan Sim
+ * @version 1.00
+ */
+
 import java.util.ArrayList;
 
 public class BitwiseOperations
