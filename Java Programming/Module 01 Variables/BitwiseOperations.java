@@ -16,10 +16,16 @@ public class BitwiseOperations
             // 2) | bits[i]; "|" is the bitwise OR operator. If bits[i] == 1/true, it sets the right-most bit of byteValue to 1. Otherwise, it remains unchanged.
 
             if (i == 0){
-                System.out.println("Iteration 0 (Before Bit Shfit): " + parseBits(byteValue, 8)); 
+                System.out.println("\nIteration 0 (Before Bit Shift Operation)"); 
+                System.out.println("Value of Byte = " + byteValue + " (8-Bit Form: " + parseBits(byteValue, 8) + ")");
+            }
+            else if (i == 2) {
+                System.out.println("\nIteration 2 (Bit Shift Right to Left Twice)"); 
+                System.out.println("Value of Byte = " + byteValue + " (8-Bit Form: " + parseBits(byteValue, 8) + ")");
             }
         } 
         
+        System.out.println("\nAfter Complete 8-bit Shift Operation:"); 
         System.out.println("Value of Byte = " + byteValue + " (8-Bit Form: " + parseBits(byteValue, 8) + ")");
         
     }
