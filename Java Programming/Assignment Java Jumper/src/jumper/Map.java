@@ -1,3 +1,4 @@
+package jumper;
 /**
  * Description: Map Class handles all the Map Functionalities for the Java Jumper Game
  * It handles functionalities like Loading/Generating Buildings for each turn, Randomizing Buildings and Map Resources.

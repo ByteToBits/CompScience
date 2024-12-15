@@ -1,3 +1,4 @@
+
 /**
  * Description: Jumper Class is the Main Program for the Jave Jumper Assignment.
  * The Jumper Class is where the Main Method runs and where the Player will interact with the Game.
@@ -6,8 +7,12 @@
  * @version 1.01
  */
 
+package jumper;
 import java.io.IOException;
-import java.util.Scanner; 
+import java.util.Scanner;
+import university.FileIO;
+import university.Input;
+import university.Validation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +64,7 @@ public class Jumper
     public void createPlayer(Scanner console)
     {   
         // Initialize the Class Dependencies
-        Input input = new Input(console); 
+        jumper.Input input = new jumper.Input(console); 
         Validation validation = new Validation(); 
         boolean invalidInputFlag = true; 
 
@@ -393,7 +398,7 @@ public class Jumper
      */
     public String promptUserInput(Scanner console, ArrayList<Character> actionsNumber) 
     {
-        Input input = new Input(console);
+        jumper.Input input = new jumper.Input(console);
         boolean validInputFlag = false;
         String stringInput = "";
     

@@ -1,3 +1,4 @@
+package university;
 /**
  * Description: Input Class acts as a Support Class to Take User Inputs
  * @author Tristan Sim
@@ -24,7 +25,7 @@ public class Input
      */
     public Input() 
     {
-      // No initialization required for Scanner
+       // No initialization required for Scanner
     }
 
     /**

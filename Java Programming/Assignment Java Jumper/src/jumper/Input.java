@@ -1,3 +1,4 @@
+package jumper;
 /**
  * Description: Input Class handles the User Input from the Console. 
  * @author Tristan Sim

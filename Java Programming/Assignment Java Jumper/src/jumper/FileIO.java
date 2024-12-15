@@ -1,3 +1,4 @@
+package jumper;
 /**
  * Description: The File Input/Ouput (IO) Class handles the reading and writing functionalities to text files.
  * @author Tristan Sim

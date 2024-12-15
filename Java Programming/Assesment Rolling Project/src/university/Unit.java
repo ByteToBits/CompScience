@@ -1,3 +1,4 @@
+package university;
 
 /**
  * Description: Unit Class contains instructions to handle the Unit (Subjects) information

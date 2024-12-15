@@ -1,3 +1,4 @@
+package jumper;
 /** 
  * Description: The Player Class handles the Player States and Actions 
  * It consist of the player's information, Device Object and handles the player actions. 

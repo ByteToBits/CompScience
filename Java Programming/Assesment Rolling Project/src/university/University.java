@@ -1,3 +1,4 @@
+package university;
 
 /** 
  * Description: University Class acts as the Main Program for Rolling Project Part 2
@@ -378,7 +379,7 @@ public class University
     
     public void startProgram()
     {
-        Input userInput = new Input(); 
+        Input userInput = new Input();
         ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>(); 
         University university = new University(enrollments); 
         FileIO studentFileInfo = new FileIO(studentFilePath); 

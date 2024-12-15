@@ -1,14 +1,8 @@
-
+package jumper;
 /** 
- * Description: The Validation Class validates all the user Input
+ * Description: The Validation Class validates the User Input
  * @author Tristan Sim
  * @version 1.00 
- */
-
-/** Task: 
- * Now create a new class called Validation as shown in the class diagram above. 
- * This class is responsible for performing validation on the various inputs made by the user. 
- * The required methods are defined in the class diagram.
  */
 
  public class Validation 

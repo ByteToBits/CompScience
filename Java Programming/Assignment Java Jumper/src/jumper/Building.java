@@ -1,3 +1,4 @@
+package jumper;
 /**
  * Description: The Building Class for the Java Jumper Game.
  * The Building Class handles all the Building Attributes like Height, Portal and etc.

@@ -1,3 +1,4 @@
+package university;
 
 /**
  * Description: The Student Class contains instructions to handle student information
