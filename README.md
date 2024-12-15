@@ -1,8 +1,7 @@
 
 # Computer Science Studies
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Java](https://img.shields.io/badge/language-Java-orange)
+![Java](https://img.shields.io/badge/language-Java-red)
 ![Python](https://img.shields.io/badge/language-Python-blue)
 
 This Repository contains programming projects from my personal computer science studies.
