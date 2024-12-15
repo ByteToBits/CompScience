@@ -1,19 +1,13 @@
 
-# My Awesome Project
+# Computer Science Studies
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
 
-A short and clear description of the project.
+This Repository contains programming projects from my personal computer science studies.
 
 ## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Java Programming](#Java Programming)
 
-## Features
-- Feature 1: Description of feature
-- Feature 2: Another great feature
-- Feature 3: Yet another feature
+## Java Programming
+- Description: Covers the Fundamentals of Java & Object Oriented Programming
+- Projects: University Enrollment System | Java Jumper Game
