@@ -62,17 +62,24 @@ public class HexOperations {
         return integerValue; 
     }
 
-    public String[] byteToNibble(Byte[] bits)
+    public String[] byteToNibble(Byte[] bits) 
     {   
-        String[] Nibbles = new String[2]; 
-        StringBuffer stringBuffer = new StringBuffer(); 
-
+        if (bits == null || bits.length != 1) {
+            throw new IllegalArgumentException("Input must be a single byte.");
+        }
         
+        String[] nibbles = new String[2]; 
 
+        // Convert the byte to binary string and pad to 8 bits
+        String binaryString = String.format("%8s", Integer.toBinaryString(bits[0] & 0xFF)).replace(' ', '0');
 
+        // Extract the two nibbles (4 bits each)
+        nibbles[0] = binaryString.substring(0, 4); // First nibble
+        nibbles[1] = binaryString.substring(4);   // Second nibble
 
-        return Nibbles; 
+        return nibbles; 
     }
+
 
 
 }
