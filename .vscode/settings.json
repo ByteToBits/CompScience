@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "Java Programming/Module 06 Inheritance and Polymorphism",
+        "Java Programming/Module 01 Variables",
         "Java Programming/Assignment Java Jumper/src",
         "Java Programming/Assesment Rolling Project/src",
-        "Java Programming/Module 01 Variables"
+        "Computer Science/Java Programming/Module 06 Inheritance and Polymorphism"
     ]
 }
