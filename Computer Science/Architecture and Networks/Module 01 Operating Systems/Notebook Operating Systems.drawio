@@ -1,0 +1,462 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Page-1" id="4m2vKYtojVbFhh3aF1HG">
+    <mxGraphModel dx="3813" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-13" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Module 1: Operating Systems&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0000FF;fontColor=#ffffff;strokeColor=#0000FF;arcSize=50;" parent="1" vertex="1">
+          <mxGeometry x="260" y="1190" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-14" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;A Machine that stores and processes data according to instructions given to it. These instructions are given via programs for computers to execute a wide range of task.&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1280.5" width="290" height="87.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-36" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Computer&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1258" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-43" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Responsible for executing and processing instructions within a computer program. It is an electronic circuitry within a computer.&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1410.5" width="290" height="67.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-44" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Central Processing Unit (CPU)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1388" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-61" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="2350" y="1398" width="80" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-47" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#333333;fillColor=#006600;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="7.272727272727273" y="7.2477876106194685" width="65.45454545454545" height="62.123893805309734" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-46" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#333333;strokeColor=#1A1A1A;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="21.81818181818182" y="21.05309734513274" width="36.36363636363637" height="34.51327433628318" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-48" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry y="21.05309734513274" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-49" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry y="34.858407079646014" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-50" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry y="48.66371681415929" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-51" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="65.45454545454545" y="21.05309734513274" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-52" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="65.45454545454545" y="34.858407079646014" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-53" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="65.45454545454545" y="48.66371681415929" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-54" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="18.90909090909091" y="3.451327433628318" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-55" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="46.54545454545455" y="3.451327433628318" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-56" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="32.72727272727273" y="3.451327433628318" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-57" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="18.90909090909091" y="67.64601769911503" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-58" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="46.54545454545455" y="67.64601769911503" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-59" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;rotation=90;fillColor=#CCCC00;strokeColor=#333333;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="32.72727272727273" y="67.64601769911503" width="14.545454545454547" height="6.902654867256636" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-60" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#333333;fillColor=#1A1A1A;" parent="AOHGQarf9SQkaAlcSlwE-61" vertex="1">
+          <mxGeometry x="27.272727272727273" y="26.23008849557522" width="25.454545454545457" height="24.159292035398227" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-62" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;An Electromechanical Storage Deivce that Stores and Retrieves Digital Data using one or more rigi rotating platters (a circular disk) coated in a magnetic material.&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1520.5" width="290" height="77.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-63" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Hard Disk Drive (HDD)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1498" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-64" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;RAM is a high-speed component that allows the storage of temporary data and information that has to be quickly accessed during the execution of the processes to run a program&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1640.5" width="290" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-65" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Random-Access Memory (RAM)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1618" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-67" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Responsible for power routing and coordinating how all the components work togeher. It has expandable interfaces, CPU core and a number of components attachable to it.&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1780.5" width="290" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-68" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Motherboard&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1758" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-69" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Computing Environment is a collection of computer and machinery. This includes Workstations, NAS, Software Applications and Networks that support the processing and exchange of electronic information.&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1928" width="290" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-70" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Computing Environment&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="1898" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-71" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;The many components of a computer make up the System Unit. Which is the CPU, HDD, RAM and Motherboard. Bus connections that connects and carries signals (Control, Address, Data) to all components like Input/Output Devices and Controllers.&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="2060.5" width="290" height="107.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-72" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;The System Unit&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99FFFF;fontColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2465" y="2038" width="290" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-73" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;History of Computers&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0000FF;fontColor=#ffffff;strokeColor=#0000FF;arcSize=50;" parent="1" vertex="1">
+          <mxGeometry x="-710" y="1287.25" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-74" value="&lt;font color=&quot;#e8e7e8&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span&gt;&lt;b&gt;1st Gen: Vacuum Tubes (1940-1956)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6600CC;fontColor=#ffffff;strokeColor=#6600CC;arcSize=50;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-740" y="1348.75" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-76" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;b&gt;2nd Gen: Transistors (1956-1963)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6600CC;fontColor=#ffffff;strokeColor=#6600CC;arcSize=50;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-650" y="1404.75" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-77" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;b&gt;3rd Gen: Integrated Circuits (1964-1971)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6600CC;fontColor=#ffffff;strokeColor=#6600CC;arcSize=50;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-740" y="1458.75" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-78" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;b&gt;4th Gen: Microprocessors (1972-2010)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6600CC;fontColor=#ffffff;strokeColor=#6600CC;arcSize=50;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-650" y="1514.75" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-79" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#e8e7e8&quot;&gt;&lt;b&gt;5th Gen: Quantum Computers (1980-Current)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6600CC;fontColor=#ffffff;strokeColor=#6600CC;arcSize=50;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-740" y="1564.75" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-1" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Hardware&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1385" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-4" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Operating System&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="105" y="1335" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-5" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Utilities&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="125" y="1275" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-6" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Application Software&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="235" y="1275" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-7" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Large Piece of Software which allows the Computer to Run Applications, Develop Programs and Manage System Resources.&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Provides an Environment for Computer Programs to Run.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="1282.5" width="280" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-10" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-4" target="LCs3bIh-CvLZ0qrFG-6O-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-20" y="1413" as="sourcePoint" />
+            <mxPoint x="30" y="1363" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="70" y="1323" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-12" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Application&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1260" width="270" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-13" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Kernel&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1338.25" width="270" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-14" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;CPU&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1420" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-15" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;RAM&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="575" y="1420" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-16" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Devices&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1420" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-13" target="LCs3bIh-CvLZ0qrFG-6O-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="1314" as="sourcePoint" />
+            <mxPoint x="1040" y="1264" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-13" target="LCs3bIh-CvLZ0qrFG-6O-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="558" y="1386" as="sourcePoint" />
+            <mxPoint x="530" y="1430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="615" y="1394" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-13" target="LCs3bIh-CvLZ0qrFG-6O-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="625" y="1386" as="sourcePoint" />
+            <mxPoint x="625" y="1430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-12" target="LCs3bIh-CvLZ0qrFG-6O-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="625" y="1386" as="sourcePoint" />
+            <mxPoint x="625" y="1430" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-24" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Kernel is the core of an Operating System, it is the software that manages the hardware resources and allows softwares to interact with the hardware efficiently and securely.&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="1317" width="315" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-28" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-4" target="LCs3bIh-CvLZ0qrFG-6O-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="115" y="1370" as="sourcePoint" />
+            <mxPoint x="-30" y="1344" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-29" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-24" target="LCs3bIh-CvLZ0qrFG-6O-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="782.5" y="1460" as="sourcePoint" />
+            <mxPoint x="637.5" y="1434" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-31" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Unix/Linux System: Everything is Treated as a File&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Example: Transferring Data from Primary Stroage (RAM) to Secondary Storage (HDD)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1531" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-33" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;File Managment&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1500" width="300" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-34" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-7" target="LCs3bIh-CvLZ0qrFG-6O-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="385" y="1370" as="sourcePoint" />
+            <mxPoint x="490" y="1367" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-110" y="1490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-35" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Operating System is key to control of data in Primary Storaage/Main Memory. Modern Memory Management implements Virtual Memory.&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1673" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-36" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Memory Management&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1642" width="300" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-37" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;A Process is normally defined as a program in execution. Operating System create and destroy processes, controlling execution and allocating hardware resources.&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1813" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-38" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Process Management&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1782" width="300" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-7" target="LCs3bIh-CvLZ0qrFG-6O-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-100" y="1390" as="sourcePoint" />
+            <mxPoint y="1504" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-110" y="1640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-40" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-7" target="LCs3bIh-CvLZ0qrFG-6O-38">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-100" y="1390" as="sourcePoint" />
+            <mxPoint y="1646" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-100" y="1780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-42" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Unix O/S File Management&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1748" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-43" value="&lt;span style=&quot;font-size: 14px; text-align: center;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px; text-align: start;&quot;&gt;&lt;font style=&quot;&quot; color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); font-size: 16px; text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;font-size: 12px;&quot;&gt;Operating System maintians a Directory Strucutre.&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;text-align: center; font-size: 14px;&quot;&gt;&lt;span style=&quot;font-size: 16px; text-align: start;&quot;&gt;&lt;font color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); font-size: 16px; text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;font-size: 12px;&quot;&gt;Provides Naming, Access/Manipulation/Storage/ Secruity/Protection.&lt;/i&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; text-align: center;&quot;&gt;&lt;i style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; text-align: center;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px; text-align: start;&quot;&gt;&lt;font color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); font-size: 16px; text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;font-size: 12px;&quot;&gt;Unix is Case-Sensitive. Avoid Upper-Cases! Avoid spaces and any other special characters!&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1778" width="350" height="99" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-44" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/BIN&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2011.11" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-45" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/ROOT&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1933.61" width="115" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-46" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Essential Binaries&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2011.11" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-47" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;curved=0;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="455" y="1951.11" as="sourcePoint" />
+            <mxPoint x="555" y="2086.1099999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="499" y="2026.11" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-48" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/BOOT&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2061.1099999999997" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-49" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Static Files or Boot Loader&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2061.1099999999997" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-50" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/ETC&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2111.1099999999997" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-51" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Host Specific System Config&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2111.1099999999997" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-52" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/USR&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2161.1099999999997" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-53" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Shareable and Read-Only Data&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2161.1099999999997" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-54" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/VAR&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2213.6099999999997" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-55" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Variable Data Files&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2213.6099999999997" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-56" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;/SBIN&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2271.11" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-57" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;System Binary&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="2271.11" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-58" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;curved=0;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="509" y="1981.11" as="sourcePoint" />
+            <mxPoint x="555" y="2036.11" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="499" y="2076.1099999999997" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-59" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=0;strokeWidth=2;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="495" y="1971.11" as="sourcePoint" />
+            <mxPoint x="555" y="2086.1099999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="499" y="2126.1099999999997" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-60" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=0;strokeWidth=2;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-52">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="485" y="2011.11" as="sourcePoint" />
+            <mxPoint x="531" y="2166.1099999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="499" y="2176.1099999999997" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-61" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=0;strokeWidth=2;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-54">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="495" y="1971.11" as="sourcePoint" />
+            <mxPoint x="555" y="2186.1099999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="499" y="2229.1099999999997" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-62" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=0;strokeWidth=2;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-56">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="509" y="1981.36" as="sourcePoint" />
+            <mxPoint x="555" y="2238.3599999999997" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="2286.36" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-63" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#FFFF00;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.folder_open;" vertex="1" parent="1">
+          <mxGeometry x="950" y="1743.74" width="70" height="53.75" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-64" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Files&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1817.99" width="115" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-66" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;$ ls (List Command): List all the Files/Folder in the Directory&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;b style=&quot;text-align: center; font-size: 14px;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;$ ls -l (Long Listing): List all the Files/Folder with Greater Details&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;$ ls -al (List All): List all the Files (Including Hidden Ones)&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;$cat - Displays the Content of the File (Like the Contents of a Text File)&lt;br&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;$ pipe - Pass the Contents of the File into another File&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;color: rgb(0, 255, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 16px;&quot;&gt;$ stat - Display the Metaadata of the File (Last Changed, Last Accessed &amp;amp; etc)&lt;/b&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="1647" width="685" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-67" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Linux Commands&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="1617" width="685" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-68" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-67" target="LCs3bIh-CvLZ0qrFG-6O-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="1607.36" as="sourcePoint" />
+            <mxPoint x="610" y="1607.36" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1010" y="1627" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-69" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 102); background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot; face=&quot;Comic Sans MS&quot;&gt;Files have an &quot;Owner&quot; whether it&#39;s the System or User.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 102); background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot; face=&quot;Comic Sans MS&quot;&gt;Superusers (&quot;Root&quot; User) Has Access to all the Files.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;align=left;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1919.11" width="470" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-70" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Special File: /etc/passwd&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF33;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="2111.1099999999997" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-71" value="&lt;font style=&quot;font-size: 12px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Stores all the Important User Information&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="2141.11" width="340" height="35.89" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-74" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=0;strokeWidth=2;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-51" target="LCs3bIh-CvLZ0qrFG-6O-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1005" y="2081.1099999999997" as="sourcePoint" />
+            <mxPoint x="1110" y="2078.1099999999997" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-75" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-69" target="LCs3bIh-CvLZ0qrFG-6O-64">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="1765.36" as="sourcePoint" />
+            <mxPoint x="1045" y="1846.36" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="1951.48" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-79" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 102); background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot; face=&quot;Comic Sans MS&quot;&gt;Kernel identify files not by name but by a Unique Number called &quot;Inode Number&quot; (e.g. 4063242).&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;fontSize=18;align=left;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1644.85" width="370" height="54.31" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-80" value="" style="endArrow=none;html=1;rounded=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-63" target="LCs3bIh-CvLZ0qrFG-6O-79">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1185" y="1682" as="sourcePoint" />
+            <mxPoint x="1004" y="1754" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="1667" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-81" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Unix/Linux: Treats Everything as a File&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1579.5" width="400" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-82" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Three Level of Permissions&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;1) the User&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;2) User&#39;s Group&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;3) Others (who have an account of the system)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2244.61" width="370" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-83" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;File Managment Permissions&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#000000;strokeColor=#000000;align=center;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2213.61" width="370" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-84" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Three kind of Permissions&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;1) Read&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;2) Write&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;3) Execute&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2319" width="370" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-85" value="&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;Example: 9-Binary bits Representing Permissions&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#00ff00&quot;&gt;User&amp;nbsp; &lt;/font&gt;&lt;font color=&quot;#ffff00&quot;&gt;Group&lt;/font&gt;&lt;font color=&quot;#00ff00&quot;&gt;&amp;nbsp; &lt;/font&gt;&lt;font color=&quot;#00ffff&quot;&gt;Others&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#00ff00&quot;&gt;rwx&amp;nbsp; &lt;/font&gt;&lt;font color=&quot;#ffff00&quot;&gt;&amp;nbsp;rw-&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#00ff00&quot;&gt; &amp;nbsp; &lt;/font&gt;&lt;font color=&quot;#00ffff&quot;&gt;r--&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#00ffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;r : Read&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;w : Write&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;x : Executre&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;- : Permission Not Given&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="2244.61" width="450" height="214.39" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-86" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Linux Commands&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="2213.61" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-88" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=1;strokeWidth=2;endFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="LCs3bIh-CvLZ0qrFG-6O-45" target="LCs3bIh-CvLZ0qrFG-6O-64">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1070" y="1963" as="sourcePoint" />
+            <mxPoint x="983" y="1866" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="990" y="1961.48" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-95" value="&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;Example: Change Mode (Change Permissions)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;chmod 760 File 2&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#00ff00&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#00ff00&quot;&gt;User(7)&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#ffff00&quot;&gt;Group(4+2)&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#00ff00&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#00ffff&quot;&gt;Others(0)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#00ff00&quot;&gt;rwx&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#ffff00&quot;&gt;&amp;nbsp;rw-&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#00ff00&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#00ffff&quot;&gt;---&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#00ffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;7 : Read Write Execute&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;4 : Read-Only&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;2 : Write-Only&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;1 : Execute&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ffffff&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;0 : No Permissions&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2380" width="450" height="269" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-96" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Linux Commands&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="545" y="2349" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-98" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;Standard Input, Output and Error&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;fontColor=#000000;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2439" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-99" value="&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Everytime a Shell is called, 3 Filles are Automatically Opened:&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;i&gt;&lt;b&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: start;&quot;&gt;&lt;font color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;stdin - Keyboard 0&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;i&gt;&lt;b&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: start;&quot;&gt;&lt;font color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;stdout - Screeen 1&lt;/span&gt;&lt;br&gt;&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;i&gt;&lt;b&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: start;&quot;&gt;&lt;font color=&quot;#000066&quot;&gt;•&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(191, 191, 191); text-align: start;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;stderr - Screen 2&lt;/span&gt;&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;&lt;b style=&quot;font-size: 14px; text-align: center;&quot;&gt;&lt;i style=&quot;font-size: 12px; font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2469" width="370" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-102" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Hard Link&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;align=center;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1985.61" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-103" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Pointer/Reference to a Inode Number of a File (Every File has at least one Hard link to it)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1985.61" width="580" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-104" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Soft Link&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;align=center;spacing=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="2029.4999999999998" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LCs3bIh-CvLZ0qrFG-6O-105" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Symbolic Link (symlink or soft link) is a Link like a &quot;Shortcut&quot;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;fontColor=#000000;strokeColor=#000000;align=left;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="2029.5000000000002" width="580" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
