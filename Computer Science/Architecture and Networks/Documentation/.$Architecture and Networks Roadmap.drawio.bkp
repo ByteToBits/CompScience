@@ -1,0 +1,52 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Page-1" id="4m2vKYtojVbFhh3aF1HG">
+    <mxGraphModel dx="-8" dy="-499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-1" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="920" y="1290" width="190" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-2" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Depth-First Search(DFS)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-1">
+          <mxGeometry width="154.375" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999900;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-1">
+          <mxGeometry x="154.375" width="35.625" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick;strokeColor=#000000;fillColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-1">
+          <mxGeometry x="162.59249999999997" y="3.5" width="19.190000000000005" height="15.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-5" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="920" y="1319" width="190" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-6" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Bread-First Search(BFS)&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-5">
+          <mxGeometry width="154.375" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999900;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-5">
+          <mxGeometry x="154.375" width="35.625" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-8" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick;strokeColor=#000000;fillColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-5">
+          <mxGeometry x="162.59249999999997" y="3.5" width="19.190000000000005" height="15.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-9" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="920" y="1348" width="190" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-10" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Dijkstra&#39;s Algorithm&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-9">
+          <mxGeometry width="154.375" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#999900;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-9">
+          <mxGeometry x="154.375" width="35.625" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-12" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick;strokeColor=#000000;fillColor=#000000;" vertex="1" parent="AOHGQarf9SQkaAlcSlwE-9">
+          <mxGeometry x="162.59249999999997" y="3.5" width="19.190000000000005" height="15.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-13" value="&lt;b&gt;&lt;font color=&quot;#e8e7e8&quot; style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;Architecture and Networks&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="1170" width="270" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AOHGQarf9SQkaAlcSlwE-14" value="&lt;b&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&amp;nbsp;&lt;u&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Java Learning Roadmap:&lt;/font&gt;&lt;/u&gt;&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;&amp;nbsp;Author: Tristan Sim&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;&amp;nbsp;Sources: 1) Monash ITO 4131 (Java Programming)&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;2) https://roadmap.sh/java&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;align=left;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1170" width="380" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
