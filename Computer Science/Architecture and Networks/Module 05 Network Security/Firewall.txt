@@ -3,18 +3,36 @@
 
 # Firewall Policy 
 
-# Lab Task 1: Block All Network Traffic ------------------------------------------------------------------------
+# Lab Task 1: Block All Network Traffic --------------------
 # Set default policy: drop all packets
 # Firewall will block all traffic for the identified chain
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
-# Lab Task 2: Allow External (Internet) Acess to the DMZ Web Server --------------------------------------------
-# Incoming Rule: Append: FORWARD Chain | Input Interface: eth2 | Output Interface: eth0 | Destination: 10.1.1.71 
-#                # Protocal: TCP | Destination Port: 80 | Accept Incoming packets
-iptables -A FORWARD -i eth2 -o eth0 -d 10.1.1.71 -p tcp --dport 80 -j ACCEPT
 
-# Outgoing Rule: Append: FORWARD Chain | Input Interface: eth0 | Output Interface: eth2 | Destination: 10.1.1.71 
-#                # Protocal: TCP | Source Port: 80 | Accept Incoming packets
-iptables -A FORWARD -i eth2 -o eth0 -d 10.1.171 -p tcp --sport 80 -j ACCEPT
+# Lab Task 2: Allow External (Internet) Access to the DMZ Web Server
+# Incoming Rule: 
+# Append: FORWARD Chain | Input Interface: eth2 | Output Interface: eth1
+# Destination IP: 10.1.1.71  Protocol: TCP | Destination Port: 80 
+iptables -A FORWARD -i eth2 -o eth1 -d 10.1.1.71 -p tcp --dport 80 -j ACCEPT
+
+# Outgoing Rule: 
+# Append: FORWARD Chain | Input Interface: eth1 | Output Interface: eth2 |
+# Source IP: 10.1.1.71 | Protocol: TCP | Source Port: 80 |
+iptables -A FORWARD -i eth1 -o eth2 -s 10.1.1.71 -p tcp --sport 80 -j ACCEPT
+
+
+# Lab Task 3: Allows Internal Network (eth0) to Reach DMZ (eth1) for Web, Mail, and DNS
+
+# Allow Internal Clients to Access the Mail Server using SMTP (Port 25)
+iptables -A FORWARD -i eth0 -o eth1 -d 10.1.1.72 -p tcp --dport 25 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -s 10.1.1.72 -p tcp --sport 25 -j ACCEPT
+
+# Allow Internal Clients to Query the DNS Server (UDP Port 53)
+iptables -A FORWARD -i eth0 -o eth1 -d 10.1.1.70 -p udp --dport 53 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -s 10.1.1.70 -p udp --sport 53 -j ACCEPT
+
+# Allow Internal Clients to Access the Web Server using HTTP (Port 80)
+iptables -A FORWARD -i eth0 -o eth1 -d 10.1.1.71 -p tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i eth1 -o eth0 -s 10.1.1.71 -p tcp --sport 80 -j ACCEPT
