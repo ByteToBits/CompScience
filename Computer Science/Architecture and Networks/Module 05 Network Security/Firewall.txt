@@ -1,0 +1,20 @@
+
+# Linux Firewall Configuration Firewall
+
+# Firewall Policy 
+
+# Lab Task 1: Block All Network Traffic ------------------------------------------------------------------------
+# Set default policy: drop all packets
+# Firewall will block all traffic for the identified chain
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+# Lab Task 2: Allow External (Internet) Acess to the DMZ Web Server --------------------------------------------
+# Incoming Rule: Append: FORWARD Chain | Input Interface: eth2 | Output Interface: eth0 | Destination: 10.1.1.71 
+#                # Protocal: TCP | Destination Port: 80 | Accept Incoming packets
+iptables -A FORWARD -i eth2 -o eth0 -d 10.1.1.71 -p tcp --dport 80 -j ACCEPT
+
+# Outgoing Rule: Append: FORWARD Chain | Input Interface: eth0 | Output Interface: eth2 | Destination: 10.1.1.71 
+#                # Protocal: TCP | Source Port: 80 | Accept Incoming packets
+iptables -A FORWARD -i eth2 -o eth0 -d 10.1.171 -p tcp --sport 80 -j ACCEPT
