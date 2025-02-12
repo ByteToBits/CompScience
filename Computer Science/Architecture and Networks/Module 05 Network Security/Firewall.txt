@@ -3,7 +3,7 @@
 
 # Firewall Policy 
 
-# Lab Task 1: Block All Network Traffic --------------------
+# Lab Task 1: Block All Network Traffic -----------------------------------------------
 # Set default policy: drop all packets
 # Firewall will block all traffic for the identified chain
 iptables -P INPUT DROP
@@ -11,7 +11,7 @@ iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
 
-# Lab Task 2: Allow External (Internet) Access to the DMZ Web Server
+# Lab Task 2: Allow External (Internet) Access to the DMZ Web Server ------------------
 # Incoming Rule: 
 # Append: FORWARD Chain | Input Interface: eth2 | Output Interface: eth1
 # Destination IP: 10.1.1.71  Protocol: TCP | Destination Port: 80 
@@ -36,3 +36,37 @@ iptables -A FORWARD -i eth1 -o eth0 -s 10.1.1.70 -p udp --sport 53 -j ACCEPT
 # Allow Internal Clients to Access the Web Server using HTTP (Port 80)
 iptables -A FORWARD -i eth0 -o eth1 -d 10.1.1.71 -p tcp --dport 80 -j ACCEPT
 iptables -A FORWARD -i eth1 -o eth0 -s 10.1.1.71 -p tcp --sport 80 -j ACCEPT
+
+
+# Lab Task 4: Stateful Firewall (Internal to External) ---------------------------------
+
+# Any Packets from Internal are allowed to pass the Firewall to Outside Network
+# Append: FORWARD Chain | Input Interface: eth0 | Output Interface: eth2 |
+# Source Subnet: 10.1.1.0/26 | Protocol: TCP | Destination Port: 80 |
+# NEW: Internal Clients can initiate New Connections
+# RELATED, ESTABLISHED: Responses from the webservers are allowed back
+
+iptables -A FORWARD -i eth0 -o eth2 -s 10.1.1.0/26 -p tcp --dport 80 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
+
+# External Traffic is allowed to pass if it is a response to a request made 
+# by the local client of the internal Network (Only Traffic From HTTP)
+# Append: FORWARD Chain | Input Interface: eth2 | Output Interface: eth0 |
+# Destination Subnet: 10.1.1.0/26 | Protocol: TCP | Source Port: 80 |
+# RELATED: Responses Related to an Existing Connections
+# ESTABLISHED: Connection that are already approved
+
+iptables -A FORWARD -i eth2 -o eth0 -d 10.1.1.0/26 -p tcp --sport 80 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+# Lab Task 5: Allow Internal Clients to SSH (Secure Shell) to Router ---------------------
+
+# Allow Clients to SSH into the Firewall
+# Append: INPUT chain | Input Interface: eth0 | Source Subnet: 10.1.1.0/26 | 
+# Protocol: TCP | Destination Port: 22 |
+iptables -A INPUT -i eth0 -s 10.1.1.0/26 -p tcp --dport 22 -j ACCEPT
+
+# Allow Clients to SSH into the Firewall
+# Append: OUTPUT chain | Output Interface: eth0 | Destination Subnet: 10.1.1.0/26 | 
+# Protocol: TCP | Source Port: 22 |
+iptables -A OUTPUT -o eth0 -d 10.1.1.0/26 -p tcp --sport 22 -j ACCEPT
+
