@@ -8,9 +8,14 @@ This Repository contains programming projects from my personal computer science 
 
 ## Table of Contents
 - [Java Programming](#java-programming)
+- [Architecture and Networks](#architecture-and-networks)
 
 ## Java Programming
 - **Description**: A collection of Java projects and learning modules covering core concepts such as variables, objects, 
     control flows, exception handling, inheritance, polymorphism, data structures, and algorithms. 
     Key projects include the Assessment Rolling Project and Java Jumper Assignment.
-- **Study Map**: [Java Roadmap](https://github.com/ByteToBits/CompScience/blob/main/Java%20Programming/Java%20Roadmap.jpg)
+
+## Architecture and Networks
+- **Description**: This module covers the Linux operating system, network architecture, and the TCP/IP model. It uses the 
+    Core Network Simulator for lab tasks to configure switches, routers, and endpoints, covering tasks such as static routing, 
+    VLAN segmentation, firewall configuration, etc.
