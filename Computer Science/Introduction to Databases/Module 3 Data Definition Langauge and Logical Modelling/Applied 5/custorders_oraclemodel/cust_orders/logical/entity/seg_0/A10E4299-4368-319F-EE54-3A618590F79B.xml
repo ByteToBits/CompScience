@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A10E4299-4368-319F-EE54-3A618590F79B" name="ORDERS">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 13:10:57 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="C4CB29B2-A08F-F8D3-60CD-C33BD0EC4697" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="order_no" id="DDA0E056-CCE8-5A4A-AA17-0DCAE0B8C4CF">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 13:11:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Number]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="C4CB29B2-A08F-F8D3-60CD-C33BD0EC4697" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="order_date" id="F641EE52-7F4C-F6B8-F267-3EBFC9D23892">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 13:11:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Date]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="C4CB29B2-A08F-F8D3-60CD-C33BD0EC4697" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cust_no" id="FAAD8AE2-0349-A16B-658C-C9B7BB2D460B">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 13:23:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Number (Primary Key)]]></commentInRDBMS>
+<generatorID>20976209-18A8-82C9-899E-39429A5A555D</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="C4CB29B2-A08F-F8D3-60CD-C33BD0EC4697" value="true"/>
+</engineerTo>
+<referedAttribute>E8DEFD9E-E3FA-5471-95F3-C6BEDA7D0B84</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="67E1D76B-8C53-657B-9B2C-AB304188A02A" name="ORDERS PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 13:11:31 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="C4CB29B2-A08F-F8D3-60CD-C33BD0EC4697" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DDA0E056-CCE8-5A4A-AA17-0DCAE0B8C4CF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

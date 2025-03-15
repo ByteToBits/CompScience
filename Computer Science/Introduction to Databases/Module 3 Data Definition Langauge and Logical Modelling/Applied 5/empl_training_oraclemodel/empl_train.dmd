@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="empl_train" id="6A0C9BD4-73C4-92B1-744F-897AD8FF07E5" version="3.5">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:16:26 UTC</createdTime>
+<ownerDesignName>empl_train</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6A0C9BD4-73C4-92B1-744F-897AD8FF07E5</designId>
+</OSDM_Design>

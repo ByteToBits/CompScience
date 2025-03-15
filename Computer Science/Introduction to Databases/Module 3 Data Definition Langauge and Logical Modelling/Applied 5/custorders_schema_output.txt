@@ -1,0 +1,345 @@
+SQL> 
+SQL> --student id: 30428831
+SQL> --student name: Tristan Sim Yook Min
+SQL> 
+SQL> DROP TABLE CUSTOMER CASCADE CONSTRAINTS 
+  2  ;
+
+Table CUSTOMER dropped.
+
+SQL> 
+SQL> DROP TABLE ORDERLINE CASCADE CONSTRAINTS 
+  2  ;
+
+Table ORDERLINE dropped.
+
+SQL> 
+SQL> DROP TABLE ORDERS CASCADE CONSTRAINTS 
+  2  ;
+
+Table ORDERS dropped.
+
+SQL> 
+SQL> DROP TABLE PROD_CATEGORY CASCADE CONSTRAINTS 
+  2  ;
+
+Table PROD_CATEGORY dropped.
+
+SQL> 
+SQL> DROP TABLE PRODUCT CASCADE CONSTRAINTS 
+  2  ;
+
+Table PRODUCT dropped.
+
+SQL> 
+SQL> -- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+SQL> 
+SQL> -- predefined type, no DDL - XMLTYPE
+SQL> 
+SQL> CREATE TABLE CUSTOMER 
+  2      ( 
+  3       cust_no      NUMBER (7)  NOT NULL , 
+  4       cust_name    VARCHAR2 (50)  NOT NULL , 
+  5       cust_address VARCHAR2 (50)  NOT NULL , 
+  6       cust_phone   CHAR (10) , 
+  7       cust_level   CHAR (1)  NOT NULL 
+  8      ) 
+  9  ;
+
+Table CUSTOMER created.
+
+SQL> 
+SQL> ALTER TABLE CUSTOMER 
+  2      ADD CONSTRAINT chk_cust_level 
+  3      CHECK (cust_level IN ('B', 'G', 'S')) 
+  4  ;
+
+Table CUSTOMER altered.
+
+SQL> 
+SQL> COMMENT ON COLUMN CUSTOMER.cust_no IS 'Customer Number (Primary Key)' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN CUSTOMER.cust_name IS 'Customer Name' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN CUSTOMER.cust_address IS 'Customer Address' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN CUSTOMER.cust_phone IS 'Customer Phone Number' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN CUSTOMER.cust_level IS 'Customer Level (CHECK Constraint: G - Gold, S - Silver , B - Bronze)' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE CUSTOMER 
+  2      ADD CONSTRAINT CUSTOMER_PK PRIMARY KEY ( cust_no ) ;
+
+Table CUSTOMER altered.
+
+SQL> 
+SQL> CREATE TABLE ORDERLINE 
+  2      ( 
+  3       order_no      NUMBER (7)  NOT NULL , 
+  4       prod_no       NUMBER (7)  NOT NULL , 
+  5       ol_qtyordered NUMBER (7)  NOT NULL , 
+  6       ol_lineprice  NUMBER (8,2)  NOT NULL 
+  7      ) 
+  8  ;
+
+Table ORDERLINE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERLINE.order_no IS 'Order Number' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERLINE.prod_no IS 'Product Number' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERLINE.ol_qtyordered IS 'Order Line Quantity Ordered' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERLINE.ol_lineprice IS 'Order Line Line Price' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE ORDERLINE 
+  2      ADD CONSTRAINT ORDERLINE_PK PRIMARY KEY ( order_no, prod_no ) ;
+
+Table ORDERLINE altered.
+
+SQL> 
+SQL> CREATE TABLE ORDERS 
+  2      ( 
+  3       order_no   NUMBER (7)  NOT NULL , 
+  4       order_date DATE  NOT NULL , 
+  5       cust_no    NUMBER (7)  NOT NULL 
+  6      ) 
+  7  ;
+
+Table ORDERS created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERS.order_no IS 'Order Number' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERS.order_date IS 'Order Date' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN ORDERS.cust_no IS 'Customer Number (Primary Key)' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE ORDERS 
+  2      ADD CONSTRAINT ORDERS_PK PRIMARY KEY ( order_no ) ;
+
+Table ORDERS altered.
+
+SQL> 
+SQL> CREATE TABLE PROD_CATEGORY 
+  2      ( 
+  3       pcat_id   NUMBER (7)  NOT NULL , 
+  4       pcat_name VARCHAR2 (50)  NOT NULL 
+  5      ) 
+  6  ;
+
+Table PROD_CATEGORY created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PROD_CATEGORY.pcat_id IS 'Product Categoryd ID (Primary Key)' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PROD_CATEGORY.pcat_name IS 'Product Category Name' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE PROD_CATEGORY 
+  2      ADD CONSTRAINT PROD_CATEGORY_PK PRIMARY KEY ( pcat_id ) ;
+
+Table PROD_CATEGORY altered.
+
+SQL> 
+SQL> CREATE TABLE PRODUCT 
+  2      ( 
+  3       prod_no        NUMBER (7)  NOT NULL , 
+  4       prod_desc      VARCHAR2 (50)  NOT NULL , 
+  5       prod_unitprice NUMBER (8,2)  NOT NULL , 
+  6       pcat_id        NUMBER (7)  NOT NULL 
+  7      ) 
+  8  ;
+
+Table PRODUCT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PRODUCT.prod_no IS 'Product Number' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PRODUCT.prod_desc IS 'Product Description' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PRODUCT.prod_unitprice IS 'Product Unit Price' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN PRODUCT.pcat_id IS 'Product Categoryd ID (Primary Key)' 
+  2  ;
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE PRODUCT 
+  2      ADD CONSTRAINT PRODUCT_PK PRIMARY KEY ( prod_no ) ;
+
+Table PRODUCT altered.
+
+SQL> 
+SQL> ALTER TABLE ORDERS 
+  2      ADD CONSTRAINT cust_orders_fk FOREIGN KEY 
+  3      ( 
+  4       cust_no
+  5      ) 
+  6      REFERENCES CUSTOMER 
+  7      ( 
+  8       cust_no
+  9      ) 
+ 10  ;
+
+Table ORDERS altered.
+
+SQL> 
+SQL> ALTER TABLE ORDERLINE 
+  2      ADD CONSTRAINT order_no_fk FOREIGN KEY 
+  3      ( 
+  4       order_no
+  5      ) 
+  6      REFERENCES ORDERS 
+  7      ( 
+  8       order_no
+  9      ) 
+ 10  ;
+
+Table ORDERLINE altered.
+
+SQL> 
+SQL> ALTER TABLE PRODUCT 
+  2      ADD CONSTRAINT pcat_id_fk FOREIGN KEY 
+  3      ( 
+  4       pcat_id
+  5      ) 
+  6      REFERENCES PROD_CATEGORY 
+  7      ( 
+  8       pcat_id
+  9      ) 
+ 10  ;
+
+Table PRODUCT altered.
+
+SQL> 
+SQL> ALTER TABLE ORDERLINE 
+  2      ADD CONSTRAINT prod_no_fk FOREIGN KEY 
+  3      ( 
+  4       prod_no
+  5      ) 
+  6      REFERENCES PRODUCT 
+  7      ( 
+  8       prod_no
+  9      ) 
+ 10  ;
+
+Table ORDERLINE altered.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> -- Oracle SQL Developer Data Modeler Summary Report: 
+SQL> -- 
+SQL> -- CREATE TABLE                             5
+SQL> -- CREATE INDEX                             0
+SQL> -- ALTER TABLE                             10
+SQL> -- CREATE VIEW                              0
+SQL> -- ALTER VIEW                               0
+SQL> -- CREATE PACKAGE                           0
+SQL> -- CREATE PACKAGE BODY                      0
+SQL> -- CREATE PROCEDURE                         0
+SQL> -- CREATE FUNCTION                          0
+SQL> -- CREATE TRIGGER                           0
+SQL> -- ALTER TRIGGER                            0
+SQL> -- CREATE COLLECTION TYPE                   0
+SQL> -- CREATE STRUCTURED TYPE                   0
+SQL> -- CREATE STRUCTURED TYPE BODY              0
+SQL> -- CREATE CLUSTER                           0
+SQL> -- CREATE CONTEXT                           0
+SQL> -- CREATE DATABASE                          0
+SQL> -- CREATE DIMENSION                         0
+SQL> -- CREATE DIRECTORY                         0
+SQL> -- CREATE DISK GROUP                        0
+SQL> -- CREATE ROLE                              0
+SQL> -- CREATE ROLLBACK SEGMENT                  0
+SQL> -- CREATE SEQUENCE                          0
+SQL> -- CREATE MATERIALIZED VIEW                 0
+SQL> -- CREATE MATERIALIZED VIEW LOG             0
+SQL> -- CREATE SYNONYM                           0
+SQL> -- CREATE TABLESPACE                        0
+SQL> -- CREATE USER                              0
+SQL> -- 
+SQL> -- DROP TABLESPACE                          0
+SQL> -- DROP DATABASE                            0
+SQL> -- 
+SQL> -- REDACTION POLICY                         0
+SQL> -- TSDP POLICY                              0
+SQL> -- 
+SQL> -- ORDS DROP SCHEMA                         0
+SQL> -- ORDS ENABLE SCHEMA                       0
+SQL> -- ORDS ENABLE OBJECT                       0
+SQL> -- 
+SQL> -- ERRORS                                   0
+SQL> -- WARNINGS                                 0
+SQL> 
+SQL> SPOOL off

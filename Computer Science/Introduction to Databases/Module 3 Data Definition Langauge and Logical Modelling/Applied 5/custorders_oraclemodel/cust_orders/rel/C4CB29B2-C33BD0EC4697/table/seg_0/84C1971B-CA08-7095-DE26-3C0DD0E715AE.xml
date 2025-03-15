@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84C1971B-CA08-7095-DE26-3C0DD0E715AE" name="ORDERS">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>A10E4299-4368-319F-EE54-3A618590F79B</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_no" id="86048140-3CA4-732B-8B07-B1ECEB787B06">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Number]]></commentInRDBMS>
+<generatorID>DDA0E056-CCE8-5A4A-AA17-0DCAE0B8C4CF</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_date" id="1367071C-E06E-D92D-A495-56FC766A7495">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Date]]></commentInRDBMS>
+<generatorID>F641EE52-7F4C-F6B8-F267-3EBFC9D23892</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cust_no" id="1B990E58-DC82-7D25-B9BC-2F7EB5F27515">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Number (Primary Key)]]></commentInRDBMS>
+<generatorID>FAAD8AE2-0349-A16B-658C-C9B7BB2D460B</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D1FDD80-D9E7-A838-E42C-F786B7E42781" referredColumn="94C27143-13D3-6A86-5311-DD79A4E3F525"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C6584C6-FF15-8003-FB01-0C0CE9CE468B" name="ORDERS_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>67E1D76B-8C53-657B-9B2C-AB304188A02A</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86048140-3CA4-732B-8B07-B1ECEB787B06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C7C739D8-462A-9429-3842-70D8E0B2D012" name="cust_orders_fk">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>20976209-18A8-82C9-899E-39429A5A555D</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B990E58-DC82-7D25-B9BC-2F7EB5F27515"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
