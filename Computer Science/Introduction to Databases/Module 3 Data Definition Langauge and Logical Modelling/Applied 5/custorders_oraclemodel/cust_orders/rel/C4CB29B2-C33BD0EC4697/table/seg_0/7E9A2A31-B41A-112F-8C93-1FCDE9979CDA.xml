@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7E9A2A31-B41A-112F-8C93-1FCDE9979CDA" name="ORDERLINE">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>1960E5B8-41AE-17A0-5CB8-E5296B1A8869</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_no" id="16A190A9-CFF2-5C93-7AE5-1E60EBFEFE6A">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Number]]></commentInRDBMS>
+<generatorID>137CBE52-CE86-753C-C7CF-129985772B81</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF44BC36-C23B-E4B8-DAE7-DC701DAD858F" referredColumn="86048140-3CA4-732B-8B07-B1ECEB787B06"/>
+</associations>
+</Column>
+<Column name="prod_no" id="A9AA7349-DF9A-52A0-8AA9-C05067A58A7B">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product Number]]></commentInRDBMS>
+<generatorID>41CA3AD8-B4E2-DC52-3860-7CA40D9DB987</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A7A7C64-09EB-22C8-5842-50D971AC1E69" referredColumn="F5BCB392-904A-1C5A-C343-347126D06761"/>
+</associations>
+</Column>
+<Column name="ol_qtyordered" id="8871E9D6-C240-D4AB-AD09-5F753E109933">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Line Quantity Ordered]]></commentInRDBMS>
+<generatorID>E3A8F2C5-CB06-BD28-BD34-DB63A70F4AA3</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ol_lineprice" id="E3CB3213-4550-A65C-3B30-6F5023315294">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Line Line Price]]></commentInRDBMS>
+<generatorID>48011A4F-0208-D5C7-D942-F1D385F667F8</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="29B29C42-2EE2-6052-A766-62EEAC952789" name="ORDERLINE_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>EFE7B213-5C67-6513-89D8-027D616CD7DC</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16A190A9-CFF2-5C93-7AE5-1E60EBFEFE6A"/>
+<colUsage columnID="A9AA7349-DF9A-52A0-8AA9-C05067A58A7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A79BAFAA-881A-0580-4CAB-A29F8A27C4C9" name="order_no_fk">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>AB083E63-6CBC-C585-4F3E-9B32B9D22CA8</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16A190A9-CFF2-5C93-7AE5-1E60EBFEFE6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53C4E6BE-BA26-321E-073E-13C11227E89C" name="prod_no_fk">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 17:09:58 UTC</createdTime>
+<generatorID>DF09D357-E9C5-2601-F0A9-6D327942D8DB</generatorID>
+<ownerDesignName>cust_orders</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A9AA7349-DF9A-52A0-8AA9-C05067A58A7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

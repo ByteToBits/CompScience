@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B0EEF7BD-8391-1B0F-F710-BA76FDF48488" name="EMPLOYEE_TRAINING">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:21:28 UTC</createdTime>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="training_code" id="11A01EA4-124E-56CE-E280-63A91D767F7E">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:25:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Training Code (Primary Key)]]></commentInRDBMS>
+<generatorID>7EB97023-29F9-A3B2-5E50-1C602AA6CF10</generatorID>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<referedAttribute>2D6DB8C5-C931-28C1-A42A-2ED790106564</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="empl_no" id="585688F5-299D-B365-4B9F-64404F5C243A">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:26:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[Employee Number (Primary Key)]]></commentInRDBMS>
+<generatorID>0F82CFB8-9271-68BB-5BDC-9D647EE90D09</generatorID>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<referedAttribute>A6D05135-D6A8-1C7B-F285-C1D111F17C6A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="et_date_completed" id="087E741E-1DEA-C26F-D5FD-04ED2616ADC6">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:27:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Training Date Completed]]></commentInRDBMS>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="et_no" id="2ACC9D39-513B-F1DC-E36B-9835713706B5">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:29:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[Employee Training Number (Surrogate Primary Key)]]></commentInRDBMS>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C8B74C3C-A5F7-C6ED-E198-219ABD302A7F" name="EMPLOYEE_TRAINING PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:27:19 UTC</createdTime>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2ACC9D39-513B-F1DC-E36B-9835713706B5</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="EA7B23E4-4F5D-50BD-D70D-B61154190FD9" name="EMPLOYEE_TRAINING_NK">
+<createdBy>ASUS</createdBy>
+<createdTime>2025-03-15 16:34:13 UTC</createdTime>
+<ownerDesignName>empl_train</ownerDesignName>
+<engineerTo>
+<item key="2EDBE64B-7607-D874-BA19-71BC1BF55CD4" value="true"/>
+</engineerTo>
+<newElementsIDs>7EB97023-29F9-A3B2-5E50-1C602AA6CF10,0F82CFB8-9271-68BB-5BDC-9D647EE90D09,087E741E-1DEA-C26F-D5FD-04ED2616ADC6</newElementsIDs>
+<usedAttributes>
+<attributeRef>11A01EA4-124E-56CE-E280-63A91D767F7E</attributeRef>
+<attributeRef>585688F5-299D-B365-4B9F-64404F5C243A</attributeRef>
+<attributeRef>087E741E-1DEA-C26F-D5FD-04ED2616ADC6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
