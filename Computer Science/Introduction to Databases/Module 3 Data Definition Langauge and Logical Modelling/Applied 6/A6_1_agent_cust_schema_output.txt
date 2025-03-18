@@ -1,23 +1,58 @@
 SQL> SET DEFINE OFF;
 SQL> 
 SQL> -- ITO 4131 Unit Varaibles: CHAR, VARCHAR2, NUMBER and DATE ONLY
-SQL> -- Clear Any Tables in the SQL Database (Order: FK Entity -> PK Entity)
+SQL> -- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
+SQL> -- ALTER TABLE is the Best Approach Tables to Create Tables first without errors and apply the Required Constraints
+SQL> 
+SQL> -- Clear Any Tables in the SQL Database (Deletion Order: FK Entity -> PK Entity)
 SQL> DROP TABLE customer CASCADE constraints PURGE;
 
-Table CUSTOMER dropped.
+Error starting at line : 15 in command -
+DROP TABLE customer CASCADE constraints PURGE
+Error report -
+ORA-00942: table or view does not exist
 
+https://docs.oracle.com/error-help/db/ora-00942/00942. 00000 -  "table or view%s does not exist"
+*Cause:    The specified table or view did not exist, or a synonym
+           pointed to a table or view that did not exist.
+           To find existing user tables and views, query the
+           ALL_TABLES and ALL_VIEWS data dictionary views. Certain
+           privileges may be required to access the table. If an
+           application returned this message, then the table that the
+           application tried to access did not exist in the database, or
+           the application did not have access to it.
+*Action:   Check each of the following
+           - The spelling of the table or view name is correct.
+           - The referenced table or view name does exist.
+           - The synonym points to an existing table or view.
 SQL> DROP TABLE property_agent CASCADE constraints PURGE;
 
-Table PROPERTY_AGENT dropped.
+Error starting at line : 16 in command -
+DROP TABLE property_agent CASCADE constraints PURGE
+Error report -
+ORA-00942: table or view does not exist
 
+https://docs.oracle.com/error-help/db/ora-00942/00942. 00000 -  "table or view%s does not exist"
+*Cause:    The specified table or view did not exist, or a synonym
+           pointed to a table or view that did not exist.
+           To find existing user tables and views, query the
+           ALL_TABLES and ALL_VIEWS data dictionary views. Certain
+           privileges may be required to access the table. If an
+           application returned this message, then the table that the
+           application tried to access did not exist in the database, or
+           the application did not have access to it.
+*Action:   Check each of the following
+           - The spelling of the table or view name is correct.
+           - The referenced table or view name does exist.
+           - The synonym points to an existing table or view.
 SQL> 
 SQL> -- Create an Agent Table
 SQL> CREATE TABLE property_agent (
   2      -- Column Constraints (Since it's the only Primary Key, a Single Attribute/Column Constraint is enough)
-  3      prop_agent_code      NUMBER(3) CONSTRAINT agent_pk PRIMARY KEY,  -- Column Constraints (Primary Key)
-  4      prop_agent_areacode  NUMBER(3) NOT NULL,
-  5      prop_agent_phone     CHAR(8) NOT NULL,
-  6      prop_agent_lname     VARCHAR2(50) NOT NULL, 
+  3      prop_agent_code        NUMBER(3) CONSTRAINT agent_pk PRIMARY KEY,  -- Column Constraints (Primary Key)
+  4      prop_agent_areacode    NUMBER(3) NOT NULL,
+  5      prop_agent_phone       CHAR(8) NOT NULL,
+  6      prop_agent_lname       VARCHAR2(50) NOT NULL, 
   7      prop_agent_ytd_sales   NUMBER(8,2) NOT NULL
   8  );
 
@@ -59,7 +94,8 @@ SQL> CREATE TABLE customer (
  10      CONSTRAINT customer_pk PRIMARY KEY (cust_code),
  11      CONSTRAINT customer_agent_fk FOREIGN KEY (agent_code) 
  12          REFERENCES property_agent(prop_agent_code) ON DELETE SET NULL -- Overrides the RESTRICT Constraint
- 13  );
+ 13      -- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
+ 14  );
 
 Table CUSTOMER created.
 
