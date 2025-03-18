@@ -1,0 +1,75 @@
+SQL> SET DEFINE OFF;
+SQL> 
+SQL> -- ITO 4131 Unit Varaibles: CHAR, VARCHAR2, NUMBER and DATE ONLY
+SQL> -- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
+SQL> -- ALTER TABLE is the Best Approach Tables to Create Tables first without errors and apply the Required Constraints
+SQL> 
+SQL> -- Clear Any Tables in the SQL Database (Deletion Order: FK Entity -> PK Entity)
+SQL> DROP TABLE employee CASCADE constraints PURGE;
+
+Table EMPLOYEE dropped.
+
+SQL> DROP TABLE department CASCADE constraints PURGE;
+
+Table DEPARTMENT dropped.
+
+SQL> 
+SQL> -- Step 1: Create Tables 
+SQL> -- Create Employee Table 
+SQL> CREATE TABLE employee (
+  2      emp_num       NUMBER(6) NOT NULL,
+  3      emp_fname     VARCHAR2(20),
+  4      emp_lname     VARCHAR2(25) NOT NULL,
+  5      emp_email     VARCHAR2(25) NOT NULL,
+  6      emp_phone     VARCHAR2(20),
+  7      emp_hiredate  DATE NOT NULL,
+  8      emp_title     VARCHAR2(45) NOT NULL,
+  9      emp_comm      NUMBER(2,2),
+ 10      dept_num      NUMBER(3)
+ 11  );
+
+Table EMPLOYEE created.
+
+SQL> -- Create Department Table 
+SQL> CREATE TABLE department (
+  2      dept_num       NUMBER(3) NOT NULL,
+  3      dept_name      VARCHAR2(50) NOT NULL,
+  4      dept_mail_box  VARCHAR2(3),
+  5      dept_phone     VARCHAR2(9),
+  6      emp_num        NUMBER(6)
+  7  );
+
+Table DEPARTMENT created.
+
+SQL> 
+SQL> 
+SQL> -- Step 2: Alter Table Constraints
+SQL> -- Add Primary Key Constraints to Employee Table 
+SQL> ALTER TABLE employee
+  2  ADD CONSTRAINT employee_pk PRIMARY KEY (emp_num);
+
+Table EMPLOYEE altered.
+
+SQL> 
+SQL> ALTER TABLE department 
+  2  ADD CONSTRAINT department_pk PRIMARY KEY (dept_num);
+
+Table DEPARTMENT altered.
+
+SQL> 
+SQL> -- Add Foreign Key Constraints 
+SQL> ALTER TABLE employee
+  2  ADD CONSTRAINT emp_dept_fk FOREIGN KEY (dept_num)
+  3  REFERENCES department(dept_num) ON DELETE SET NULL;
+
+Table EMPLOYEE altered.
+
+SQL> 
+SQL> ALTER TABLE department
+  2  ADD CONSTRAINT dept_emp_fk FOREIGN KEY (emp_num)
+  3  REFERENCES employee(emp_num) ON DELETE SET NULL;
+
+Table DEPARTMENT altered.
+
+SQL> 
+SQL> SPOOL off

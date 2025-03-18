@@ -1,24 +1,27 @@
 
--- Applied 6 - 1: Create Customer Agent Schema
---student id: 30428831
---student name: Tristan Sim Yook Min
+-- Applied 6-1: Create Customer Agent Schema
+-- Student ID: 30428831
+-- Name: Tristan Sim
 
 set echo on
 SPOOL A6_1_agent_cust_schema_output.txt
 SET DEFINE OFF;
 
 -- ITO 4131 Unit Varaibles: CHAR, VARCHAR2, NUMBER and DATE ONLY
--- Clear Any Tables in the SQL Database (Order: FK Entity -> PK Entity)
+-- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
+-- ALTER TABLE is the Best Approach Tables to Create Tables first without errors and apply the Required Constraints
+
+-- Clear Any Tables in the SQL Database (Deletion Order: FK Entity -> PK Entity)
 DROP TABLE customer CASCADE constraints PURGE; 
 DROP TABLE property_agent CASCADE constraints PURGE; 
 
 -- Create an Agent Table
 CREATE TABLE property_agent (
     -- Column Constraints (Since it's the only Primary Key, a Single Attribute/Column Constraint is enough)
-    prop_agent_code      NUMBER(3) CONSTRAINT agent_pk PRIMARY KEY,  -- Column Constraints (Primary Key)
-    prop_agent_areacode  NUMBER(3) NOT NULL,
-    prop_agent_phone     CHAR(8) NOT NULL,
-    prop_agent_lname     VARCHAR2(50) NOT NULL, 
+    prop_agent_code        NUMBER(3) CONSTRAINT agent_pk PRIMARY KEY,  -- Column Constraints (Primary Key)
+    prop_agent_areacode    NUMBER(3) NOT NULL,
+    prop_agent_phone       CHAR(8) NOT NULL,
+    prop_agent_lname       VARCHAR2(50) NOT NULL, 
     prop_agent_ytd_sales   NUMBER(8,2) NOT NULL
 );
 
@@ -42,6 +45,7 @@ CREATE TABLE customer (
     CONSTRAINT customer_pk PRIMARY KEY (cust_code),
     CONSTRAINT customer_agent_fk FOREIGN KEY (agent_code) 
         REFERENCES property_agent(prop_agent_code) ON DELETE SET NULL -- Overrides the RESTRICT Constraint
+    -- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
 );
 
 COMMENT ON COLUMN customer.cust_code IS 'Customer Code (Unique for Each Customer)';
