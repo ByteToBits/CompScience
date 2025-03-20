@@ -11,7 +11,7 @@ SET DEFINE OFF;
 
 -- Place DROP commands at head of schema file
 DROP TABLE student CASCADE constraints PURGE;
-DROP TABLE enrolment CASCADE constraints PURGE;
+DROP TABLE enrollment CASCADE constraints PURGE;
 DROP TABLE unit CASCADE constraints PURGE;
 
 /* Create STUDENT Table and use Alter to Add Constraints ----------------------------- */
