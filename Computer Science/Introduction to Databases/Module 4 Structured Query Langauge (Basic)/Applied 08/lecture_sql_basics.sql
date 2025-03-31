@@ -15,3 +15,17 @@ SELECT rent_no, drone_id, rent_out_dt, nvl(rent_in_dt,'Still Out') from drone.re
 
 -- Sorting Query Result (ORDER BY - Drone Fligt Time in Descending Order)
 SELECT drone_id, drone_flight_time FROM drone.drone ORDER BY drone_flight_time DESC, drone_id; 
+
+-- SQL EQUI JOIN (Join Columns are Shown Twice)
+SELECT * FROM
+   drone.manufacturer
+   JOIN drone.DRONE_TYPE
+   ON manufacturer.manuf_id = drone_type.manuf_id
+ORDER BY dt_code;
+
+-- SQL NATURAL JOIN (Speical EQUI)
+SELECT * FROM 
+   drone.manufacturer
+   NATURAL JOIN drone.drone_type
+ORDER BY
+   dt_code; 
