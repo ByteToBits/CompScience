@@ -3,13 +3,16 @@
 -- Student ID: 30428831
 -- Name: Tristan Sim
 
+-- Run Applied 6-2: Create Student Enrolment Schema
+
 set echo on
 SPOOL applied7_dml_output.txt
 SET DEFINE OFF;
 
 -- ITO 4131 Unit Varaibles: CHAR, VARCHAR2, NUMBER and DATE ONLY
--- When Working with a Foreign Key Definition, Carefully Consider Appropriate Delete Approach (RESTRICT, CASCASE, NULIFY) for each scenario
--- ALTER TABLE is the Best Approach Tables to Create Tables first without errors and apply the Required Constraints
+
+-- Drop the Sequence to Prevent Errors
+DROP SEQUENCE STUDENT_SEQ;
 
 --- Transaction 1: ==INSERT==-- =
 /*1. Write SQL INSERT statements to add the data into the specified tables */
@@ -27,7 +30,6 @@ INSERT INTO unit (unit_code, unit_name) VALUES ('FIT5111', 'Student''s Life');
 
 -- Enrollment 
 INSERT INTO enrolment VALUES (11111111, 'FIT9132', 2022, 1, 35, 'N');
-INSERT INTO enrolment VALUES (11111111, 'FIT9132', 2022, 1, 35, 'N');
 INSERT INTO enrolment VALUES (11111111, 'FIT9161', 2022, 1, 61, 'C');
 INSERT INTO enrolment VALUES (11111111, 'FIT9132', 2022, 2, 42, 'N');
 INSERT INTO enrolment VALUES (11111111, 'FIT5111', 2022, 2, 76, 'D');
@@ -39,25 +41,35 @@ INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (1
 INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (11111114, 'FIT9132', 2023, 1);
 INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (11111114, 'FIT5111', 2023, 1);
 
+
 COMMIT; -- Makes Changes Permenant
 
 ---==INSERT using SEQUENCEs ==--
 /*1. Create a sequence for the STUDENT table called STUDENT_SEQ */
-CREATE SEQUENCE STUDENT_SEQ
-    START WITH 11111115
-    INCREMENT BY 1
-    NOCACHE
-    NOCYCLE; 
+
+CREATE SEQUENCE student_seq START WITH 11111115 INCREMENT BY 1; 
+
+SELECT * FROM cat; -- cat refers to the Oracle Catalogue (The Objects Which you Own)
 
 /*2. Add a new student (MICKEY MOUSE) and an enrolment for this student as listed below, 
 treat all the data that you add as a single transaction. */
-INSERT INTO student (stu_nbr, stu_lname, stu_fname, stu_dob)
-VALUES (student_seq.NEXTVAL, 'Mouse', 'Mickey', TO_DATE('1-Jan-2006', 'DD-Mon-YYYY'));
+INSERT INTO student VALUES (
+    student_seq.NEXTVAL, 
+    'Mouse', 
+    'Mickey', 
+    TO_DATE('1-Jan-2006', 'DD-Mon-YYYY')
+);
 
 -- Assume Mickey Mouse is enrolling in 'FIT9132' in semester 1 of 2024 with mark 88, grade 'HD'
 -- Retrieve the last generated student number using CURRVAL
-INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester, enrol_mark, enrol_grade)
-VALUES (student_seq.CURRVAL,'FIT9132', 2024, 1, 88, 'HD');
+INSERT INTO enrolment VALUES (
+    student_seq.CURRVAL,
+    'FIT9132', 
+    2024, 
+    1, 
+    88, 
+    'HD'
+);
 
 COMMIT;
 
@@ -71,48 +83,76 @@ and you may assume there is only one student with such a name in the system.
 You must not do a manual lookup to find the unit code of the Introduction to Databases 
 and the student number.
  */
-INSERT INTO student (stu_nbr, stu_lname, stu_fname, stu_dob)
-VALUES (STUDENT_SEQ.nextval, 'Croft', 'Laura', TO_DATE('15-Feb-2002', 'DD-Mon-YYYY'));
+
+INSERT INTO student VALUES (
+    STUDENT_SEQ.nextval, 
+    'Gerard', 
+    'Frost', 
+    TO_DATE('15-Feb-2002', 'DD-Mon-YYYY')
+);
 
 -- Insert Enrolment using Sequence + SELECT (Must not do a Manual Lookup)
-INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester, enrol_mark, enrol_grade)
-SELECT student_seq.currval, unit_code, 2025, 2, 92, 'HD'
-FROM UNIT
-WHERE unit_name = 'Introduction to Databases'; 
+INSERT INTO enrolment VALUES (
+
+    -- Get the Student Number of the Student Previously Created | Alternative is 'student_seq.currval'
+    (SELECT stu_nbr FROM student WHERE upper(stu_lname) = upper('Gerard') AND upper(stu_fname) = upper('Frost')),
+
+    -- Get Unit Code from the Name 'Introduction to Database
+    (SELECT unit_code FROM unit WHERE upper(unit_name) = upper('Introduction to Databases')), 
+
+    -- Populate the Remaining Data 
+    2025,
+    2,
+    92,
+    'HD'
+);
 
 COMMIT;
 
 ---=Creating a table and inserting data as a single SQL statement==--
 /*1. Create a table called FIT5111_STUDENT. The table should contain all enrolments for the 
 unit FIT5111 */
+
 -- Create a new table containing only enrolments for unit 'FIT5111'
-CREATE TABLE fit5111_student AS
-SELECT *
-FROM enrolment
-WHERE UPPER(unit_code) = UPPER('FIT5111');
+DROP TABLE fit5111_student CASCADE CONSTRAINTS PURGE; 
+
+-- Create a Table From Data from another Table using 'AS' 
+CREATE TABLE fit5111_student 
+   AS 
+     SELECT * FROM enrolment WHERE upper(unit_code) = upper('FIT5111'); 
+
+COMMENT ON COLUMN fit5111_student.stu_nbr IS 'Student Number';
+COMMENT ON COLUMN fit5111_student.stu_nbr IS 'Student number';
+COMMENT ON COLUMN fit5111_student.unit_code IS 'Unit code';
+COMMENT ON COLUMN fit5111_student.enrol_year IS 'Enrolment year';
+COMMENT ON COLUMN fit5111_student.enrol_semester IS 'Enrolment semester';
+COMMENT ON COLUMN fit5111_student.enrol_mark IS 'Enrolment mark (real)';
+COMMENT ON COLUMN fit5111_student.enrol_grade IS 'Enrolment grade (letter)';
+
 
 /*2. Check the table exists */
-SELECT table_name
-FROM user_tables
-WHERE table_name = 'FIT5111_STUDENT';
+SELECT * FROM cat; 
 
 /*3. List the contents of the table */
-SELECT * FROM fit5111_student; 
+SELECT * FROM fit5111_student;
 
 
 ---==8.2.5 UPDATE==--
 /*1. Update the unit name of FIT9999 from 'FIT Last Unit' to 'place holder unit'.*/
-UPDATE UNIT
-SET unit_name = 'place holder unit'
-WHERE unit_code = 'FIT9999'; 
+SELECT * FROM unit; 
+UPDATE unit SET unit_name = 'Placeholder Unit Name' WHERE upper(unit_code) = 'FIT9999'; 
 
 /*2. Enter the mark and grade for the student with the student number of 11111113 
 for Introduction to Databases that the student enrolled in semester 1 of 2023. 
 The mark is 75 and the grade is D.*/
-UPDATE ENROLMENT
-SET enrol_mark = 75, enrol_grade = 'D'
-WHERE stu_nbr = 11111113  AND unit_code = 'FIT9132' AND enrol_year = 2023 AND enrol_semester = 1;
+SELECT * FROM enrolment; 
 
+UPDATE enrolment 
+SET enrol_mark = 75, enrol_grade = 'D' 
+WHERE stu_nbr = 11111113 AND enrol_semester = 1 AND enrol_year = 2023 
+AND unit_code = (SELECT unit_code FROM unit WHERE upper(unit_name) = upper('Introduction to Database')); 
+
+COMMIT; 
 
 /*3. The university introduced a new grade classification scale. 
 The new classification are:
@@ -124,19 +164,7 @@ The new classification are:
 85 - 100 is HD
 Change the database to reflect the new grade classification scale.
 */
-UPDATE enrolment
-SET enrol_grade = CASE
-    WHEN enrol_mark BETWEEN 0 AND 44 THEN 'N'
-    WHEN enrol_mark BETWEEN 45 AND 54 THEN 'P1'
-    WHEN enrol_mark BETWEEN 55 AND 64 THEN 'P2'
-    WHEN enrol_mark BETWEEN 65 AND 74 THEN 'C'
-    WHEN enrol_mark BETWEEN 75 AND 84 THEN 'D'
-    WHEN enrol_mark BETWEEN 85 AND 100 THEN 'HD'
-    ELSE enrol_grade  -- leave it unchanged if null or outside valid range
-END
-WHERE enrol_mark IS NOT NULL;
 
-COMMIT;
 
 /*4. Due to the new regulation, the Faculty of IT decided to change 'Project' unit code 
 from FIT9161 into FIT5161. Change the database to reflect this situation.
