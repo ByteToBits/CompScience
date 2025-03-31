@@ -14,7 +14,7 @@ SET DEFINE OFF;
 -- Drop the Sequence to Prevent Errors
 DROP SEQUENCE STUDENT_SEQ;
 
---- Transaction 1: ==INSERT==-- =
+--- Transaction 1: ==INSERT==-------------------------------------------------------------------------------------------------------------------------------
 /*1. Write SQL INSERT statements to add the data into the specified tables */
 -- Student
 INSERT INTO student (stu_nbr, stu_lname, stu_fname, stu_dob) VALUES (11111111, 'Bloggs', 'Fred', TO_DATE('01-Jan-2003', 'DD-Mon-YYYY'));
@@ -41,10 +41,11 @@ INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (1
 INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (11111114, 'FIT9132', 2023, 1);
 INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (11111114, 'FIT5111', 2023, 1);
 
-
 COMMIT; -- Makes Changes Permenant
 
----==INSERT using SEQUENCEs ==--
+
+
+---==INSERT using SEQUENCEs ==-------------------------------------------------------------------------------------------------------------------
 /*1. Create a sequence for the STUDENT table called STUDENT_SEQ */
 
 CREATE SEQUENCE student_seq START WITH 11111115 INCREMENT BY 1; 
@@ -73,7 +74,8 @@ INSERT INTO enrolment VALUES (
 
 COMMIT;
 
----==Advanced INSERT==--
+
+---==Advanced INSERT==-------------------------------------------------------------------------------------------------------------------------------
 /*1. A new student has started a course. Subsequently this new student needs to enrol into 
 Introduction to databases. Enter the new student's details, then insert his/her enrollment 
 to the database using the sequence in combination with a SELECT statement. You can 
@@ -109,7 +111,8 @@ INSERT INTO enrolment VALUES (
 
 COMMIT;
 
----=Creating a table and inserting data as a single SQL statement==--
+
+---=Creating a table and inserting data as a single SQL statement==---------------------------------------------------------------------------
 /*1. Create a table called FIT5111_STUDENT. The table should contain all enrolments for the 
 unit FIT5111 */
 
@@ -137,7 +140,8 @@ SELECT * FROM cat;
 SELECT * FROM fit5111_student;
 
 
----==8.2.5 UPDATE==--
+
+---==8.2.5 UPDATE==------------------------------------------------------------------------------------------------------------------------
 /*1. Update the unit name of FIT9999 from 'FIT Last Unit' to 'place holder unit'.*/
 SELECT * FROM unit; 
 UPDATE unit SET unit_name = 'Placeholder Unit Name' WHERE upper(unit_code) = 'FIT9999'; 
@@ -149,8 +153,11 @@ SELECT * FROM enrolment;
 
 UPDATE enrolment 
 SET enrol_mark = 75, enrol_grade = 'D' 
-WHERE stu_nbr = 11111113 AND enrol_semester = 1 AND enrol_year = 2023 
-AND unit_code = (SELECT unit_code FROM unit WHERE upper(unit_name) = upper('Introduction to Database')); 
+WHERE 
+   stu_nbr = 11111113 
+   AND enrol_semester = 1 
+   AND enrol_year = 2023 
+   AND unit_code = (SELECT unit_code FROM unit WHERE upper(unit_name) = upper('Introduction to Database')); 
 
 COMMIT; 
 
@@ -164,29 +171,107 @@ The new classification are:
 85 - 100 is HD
 Change the database to reflect the new grade classification scale.
 */
+UPDATE enrolment 
+SET 
+  enrol_grade = 
+    CASE
+       WHEN enrol_mark BETWEEN 0 AND 44 THEN 'N'
+       WHEN enrol_mark BETWEEN 45 AND 54 THEN 'P1'
+       WHEN enrol_mark BETWEEN 55 AND 64 THEN 'P2'
+       WHEN enrol_mark BETWEEN 65 AND 74 THEN 'C'
+       WHEN enrol_mark BETWEEN 75 AND 84 THEN 'D'
+       WHEN enrol_mark BETWEEN 85 AND 100 THEN 'HD' 
+    END; 
 
+COMMIT; 
+
+SELECT * FROM enrolment; 
 
 /*4. Due to the new regulation, the Faculty of IT decided to change 'Project' unit code 
 from FIT9161 into FIT5161. Change the database to reflect this situation.
 Note: you need to disable the FK constraint before you do the modification 
 then enable the FK to have it active again.
 */
+SELECT * FROM unit;
+SELECT * FROM enrolment; 
 
+/* A direct update statement on unit table will return error 
+"integrity constraint (AAA.STUDENT_ENROLMENT_FK) violated - child record found". */
+-- Step 1: Disable Forein Key Constraint before Modification 
+ALTER TABLE enrolment DISABLE CONSTRAINT enrolment_unit_fk;
 
+-- Step 2: Update the Unit code for Enrolment and Unit
+UPDATE enrolment 
+  SET unit_code = 'FIT5161'
+    WHERE upper(unit_code) = upper('FIT9161');
 
---==DELETE==--
+UPDATE unit 
+  SET unit_code = 'FIT5161'
+    WHERE upper(unit_code) = upper('FIT9161'); 
+
+SELECT * FROM unit;
+SELECT * FROM enrolment; 
+
+ALTER TABLE enrolment ENABLE CONSTRAINT enrolment_unit_fk;
+
+COMMIT; 
+
+--==DELETE==---------------------------------------------------------------------------------------------------------------------------------------------------
 /*1. A student with student number 11111114 has taken intermission in semester 1 2023, 
 hence all the enrolment of this student for semester 1 2023 should be removed. 
 Change the database to reflect this situation.*/
 
+SELECT * FROM enrolment; 
+
+DELETE FROM enrolment
+  WHERE 
+    stu_nbr = 11111114
+    AND enrol_semester = '1'
+    AND enrol_year = 2023; 
+
+COMMIT; 
+
+SELECT * FROM enrolment; 
 
 /*2. The faculty decided to remove all Student's Life unit's enrolments. 
 Change the database to reflect this situation.
 Note: unit names are unique in the database.*/
 
+SELECT * FROM enrolment; 
+
+DELETE FROM  enrolment
+WHERE 
+   unit_code = (
+      SELECT unit_code FROM unit WHERE upper(unit_name) = upper('Student''s Life')
+   );
+
+COMMIT;
+
+SELECT * FROM enrolment; 
+
 
 /*3. Assume that Wendy Wheat (student number 11111113) has withdrawn from the university. 
 Remove her details from the database.*/
+
+SELECT * FROM student; 
+SELECT * FROM enrolment; 
+
+/* is statement will return error "integrity constraint (AAA.STUDENT_ENROLMENT_FK) violated - child record found"
+DELETE FROM student
+WHERE
+    stu_nbr = 11111113; */ 
+
+-- child records need to be deleted first and then the parent record:
+DELETE FROM enrolment
+WHERE stu_nbr  = 11111113; -- Child Record
+
+DELETE FROM student
+WHERE stu_nbr =  = 11111113;
+
+COMMIT; 
+
+SELECT * FROM student; 
+SELECT * FROM enrolment; 
 
 
 SPOOL off
