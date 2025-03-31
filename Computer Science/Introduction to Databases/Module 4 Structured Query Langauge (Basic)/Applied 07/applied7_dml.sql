@@ -266,7 +266,7 @@ DELETE FROM enrolment
 WHERE stu_nbr  = 11111113; -- Child Record
 
 DELETE FROM student
-WHERE stu_nbr =  = 11111113;
+WHERE stu_nbr  = 11111113;
 
 COMMIT; 
 
