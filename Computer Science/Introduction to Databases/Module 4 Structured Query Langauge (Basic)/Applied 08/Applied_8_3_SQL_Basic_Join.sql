@@ -1,10 +1,10 @@
 /*
-Applied 8-2: SQL Basics
+Applied 8-3: SQL Basics (Joins)
 Monash University
 Subeject: Introduction to Databases
 
 Student Name: Tristan Sim 
-Last Modified Date: 2nd April 2025
+Last Modified Date: 3rd April 2025
 */
 
 /* Part B - Retrieving data from multiple tables */
@@ -47,7 +47,6 @@ ORDER BY
 -- B3. List the student id, student name (firstname and surname) as one attribute 
 -- and the unit name of all enrolments for semester 1 of 2021. Order the output by unit name, 
 -- within a given unit name, order by student id.
-
 -- Operator: The || symbol in SQL is the string concatenation operator
 SELECT 
    s.stuid, stufname || ' ' || stulname AS STUDENT_NAME, unitname
@@ -61,13 +60,66 @@ ORDER BY
    unitname, stuid;
 
 
--- B4
+-- B4. List the id and full name of all students who have marks in the range of 80 to 100 in FIT9132 
+-- semester 2 of 2019. Order the output by full name. If there are more than one student with the same 
+-- name, order them based on their id.
+DESC uni.student; 
+DESC uni.enrolment;
+
+SELECT 
+   s.stuid, stufname || ' ' || stulname AS FULLNAME, enrolmark
+FROM
+   uni.student s
+   JOIN uni.enrolment e 
+   ON s.stuid = e.stuid
+WHERE 
+   enrolmark BETWEEN 80 AND 100 
+   AND UPPER(unitcode) = 'FIT9132'
+   AND ofsemester = 2
+   AND TO_CHAR(ofyear, 'yyyy') = '2019'
+ORDER BY
+   FULLNAME, stuid; 
 
 
--- B5
+-- B5. List the unit code, semester, class type (lecture or tutorial), day, time and duration (in minutes) for 
+-- all units taught by Windham Ellard in 2021. Sort the list according to the unit code, within a given unit 
+-- code, order by offering semester.
+DESC uni.schedclass;
+DESC uni.staff;
+
+SELECT
+   c.unitcode, ofsemester, cltype AS CLASS_TYPE, clday AS CLASS_Day, cltime AS CLASS_TIME, clduration AS CLASS_DURATION, 
+   c.staffid, stafffname || ' ' || stafflname AS LECTURER_NAME
+FROM 
+   uni.schedclass c
+   JOIN uni.staff s
+   ON c.staffid = s.staffid
+WHERE
+   TO_CHAR(ofyear,'yyyy') = '2021'
+ORDER BY 
+   unitcode,
+   ofsemester;
 
 
--- B6
+-- B6. Create a study statement for Brier Kilgour. A study statement contains unit code, unit name, semester and year the study 
+-- was attempted, the mark and grade. If the mark and/or grade is unknown, show the mark and/or grade as ‘N/A’. Sort the list by year, 
+-- then by semester and unit code.
+DESC uni.student;
+DESC uni.enrolment;
+DESC uni.unit;
+
+SELECT
+   u.unitcode, unitname, ofsemester AS SEMESTER, TO_CHAR(ofyear, 'yyyy') AS YEAR, 
+   NVL(TO_CHAR(enrolmark, '999'), 'N/A') as MARK, NVL(enrolgrade, 'N/A') AS GRADE
+FROM 
+   uni.unit u
+   JOIN uni.enrolment e ON e.unitcode = u.unitcode
+   JOIN uni.student s ON e.stuid = s.stuid
+WHERE 
+   UPPER(stufname) = UPPER('Brier') AND 
+   UPPER(stulname) = UPPER('Kilgour')
+ORDER BY
+   ofyear, ofsemester, unitcode; 
 
 
 -- B7
