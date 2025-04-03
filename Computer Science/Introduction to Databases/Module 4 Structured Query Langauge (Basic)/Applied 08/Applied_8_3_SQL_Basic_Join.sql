@@ -122,13 +122,66 @@ ORDER BY
    ofyear, ofsemester, unitcode; 
 
 
--- B7
+-- B7. List the unit code, unit name and the unit code and unit name of the prerequisite 
+-- units for all units in the database which have prerequisites. Order the output by unit 
+-- code and prerequisite unit code.
+DESC uni.unit;
+DESC uni.prereq;
+-- Query Retrieves the Unit Code & Name 
+-- Query is Joining the Prereq Table to get Prerequisite Unit Code 
+-- This Self-Join retrieves and does the necessary lookup to get the Name of the Prerequisite Units 
+SELECT 
+   u1.unitcode, u1.unitname, prerequnitcode AS prereq_unit_code, u2.unitname AS prereq_unit_name
+FROM 
+   uni.unit u1 
+   JOIN uni.prereq p ON u1.unitcode = p.unitcode
+   JOIN uni.unit u2 ON u2.unitcode = p.prerequnitcode
+ORDER BY 
+   unitcode, prerequnitcode;
 
 
--- B8
+-- B8. List the unit code and unit name of the prerequisite units of the Introduction to data 
+-- science unit. Order the output by prerequisite unit code.
+SELECT
+   u1.unitcode, u1.unitname, prerequnitcode AS prereq_unit_code, u2.unitname AS prereq_unit_name
+FROM 
+   uni.unit u1
+   JOIN uni.prereq p ON u1.unitcode = p.unitcode
+   JOIN uni.unit u2 ON u2.unitcode = p.prerequnitcode
+WHERE
+   UPPER(u1.unitname) = UPPER('Introduction to Data Science')
+ORDER BY
+   prerequnitcode; 
 
 
--- B9
+-- B9. Find all students (list their id, firstname and surname) who have received an HD for 
+-- FIT2094 in semester 2 of 2021. Sort the list by student id.
+DESC uni.student;
+DESC uni.enrolment;
+DESC uni.unit;
+
+SELECT
+   s1.stuid, stufname, stulname, enrolmark, enrolgrade
+FROM 
+   uni.student s1
+   JOIN uni.enrolment e1 ON s1.stuid = e1.stuid
+   JOIN uni.unit u1 ON e1.unitcode = u1.unitcode
+WHERE
+   UPPER(u1.unitcode) = 'FIT2094' AND ofsemester = 2 AND TO_CHAR(ofyear,'yyyy') = '2021'
+   AND enrolgrade = 'HD'
+ORDER BY
+   stuid; 
 
 
--- B10
+-- B10. List the student's full name, unit code for those students who have no mark in any
+-- unit in semester 1 of 2021. Sort the list by student full name.
+SELECT 
+   stufname || ' ' || stulname AS STUDENT_FULL_NAME, unitcode, enrolmark
+FROM 
+   uni.student s1
+   JOIN uni.enrolment e1 ON s1.stuid = e1.stuid
+WHERE
+   enrolmark IS NULL 
+   AND ofsemester = 1 AND TO_CHAR(ofyear,'yyyy') = '2021'
+ORDER BY
+   STUDENT_FULL_NAME;
