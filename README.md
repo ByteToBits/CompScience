@@ -13,7 +13,7 @@ This Repository contains programming projects from my personal computer science 
 - [Introduction to Databases](#introduction-to-databases)
 
 ## Java Programming
-flat-square
+![Java](https://img.shields.io/badge/Java-DC143C?style=flat-squaree&logo=java&logoColor=white)
 - **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling, design
 class diagrams and object-oriented programming principles. Assessment 1: Rolling Project was a two-part assessment to develop a simple University Enrollment Program. The Capstone Assessment 2: Java Jumper required the development of a Simple Video Game, and the video presentation can be found at the [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc)
 
