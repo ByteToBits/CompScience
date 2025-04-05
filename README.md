@@ -9,13 +9,22 @@ This Repository contains programming projects from my personal computer science 
 ## Table of Contents
 - [Java Programming](#java-programming)
 - [Architecture and Networks](#architecture-and-networks)
+- [Introduction to Databases](#introduction-to-databases)
 
 ## Java Programming
-- **Description**: A collection of Java projects and learning modules covering core concepts such as variables, objects, 
-    control flows, exception handling, inheritance, polymorphism, data structures, and algorithms. 
-    Key projects include the Assessment Rolling Project and Java Jumper Assignment.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+- **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling and object oriented programming. There are two major practical assessments: the progressive "Rolling Project" that builds skills incrementally, and the capstone "Java Jumper" project which is to develop a simple video game. 
 
 ## Architecture and Networks
-- **Description**: This module covers the Linux operating system, network architecture, and the TCP/IP model. It uses the 
-    Core Network Simulator for lab tasks to configure switches, routers, and endpoints, covering tasks such as static routing, 
-    VLAN segmentation, firewall configuration, etc.
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![Linux & Networking](https://img.shields.io/badge/Linux_&_Networking-0078D6?style=for-the-badge)
+- **Description**: This module covers the Linux operating system, signal modulation, network architecture, and the TCP/IP (OSI) model. 
+    Assessments include creating modulation and constellation diagrams with Desmos, analyzing network traffic with Wireshark, and a final practical assessment using the Core Network Simulator to configure network devices including static routing, VLAN segmentation, and firewall configuration.
+
+
+## Introduction to Databases
+![Oracle SQL Database](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+- **Description**: This module covers database design and modeling using Oracle SQL Database and Oracle Data Modeler, 
+   SQL programming for database querying and management, and an introduction to non-relational databases through MongoDB. 
+   Assessments include Database Design Theory and SQL/NoSQL implementation using Oracle SQL Database and MongoDB.
