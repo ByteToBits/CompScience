@@ -13,9 +13,9 @@ This Repository contains programming projects from my personal computer science 
 - [Introduction to Databases](#introduction-to-databases)
 
 ## Java Programming
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-- **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling and object oriented programming. There are two major practical assessments: the progressive "Rolling Project" that builds skills incrementally, and the capstone "Java Jumper" project which is to develop a simple video game. 
-Java Jumper Video Presentation: [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc)
+![Java](https://img.shields.io/badge/Java-DC143C?style=for-the-badge&logo=java&logoColor=white)
+- **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling, design
+class diagrams and object-oriented programming principles (Encapsulation, Inheritance, Polymorphism & Abstraction). Assessment 1: Rolling Project was a two-part assessment to develop a simple University Enrollment Program. The Capstone Assessment 2: Java Jumper required the development of a Simple Video Game, and the video presentation can be found at the [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc)
 
 ## Architecture and Networks
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
@@ -25,7 +25,7 @@ Java Jumper Video Presentation: [Youtube Link](https://www.youtube.com/watch?v=V
 
 
 ## Introduction to Databases
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 - **Description**: This module covers database design and modeling using Oracle SQL Database and Oracle Data Modeler, 
    SQL programming for database querying and management, and an introduction to non-relational databases through MongoDB. 

@@ -1,12 +1,12 @@
 /*
 Applied 8-2: SQL Basics
-Monash University
-Subeject: Introduction to Databases
+Institution: Monash University Australia
+Subject: ITO 4132 Introduction to Databases
+Database Type:: Oracle SQL Database
 
 Student Name: Tristan Sim 
 Last Modified Date: 2nd April 2025
 */
-
 /* Part A - Retrieving data from a single table */
 
 -- A1. List all units and their details. Order the output by unit code.
