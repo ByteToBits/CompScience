@@ -1,9 +1,13 @@
 
--- Applied 8-1: The University Database, Handling Dates and Strings
--- Subject: ITO 4132 Introduction to Databases
--- Student: Tristan Sim
--- Date: 1st April 2025
--- Database: Oracle SQL Database
+/*
+Applied 8-1: The University Database, Handling Dates and Strings
+Institution: Monash University Australia
+Subject: ITO 4132 Introduction to Databases
+Database Type:: Oracle SQL Database
+
+Student Name: Tristan Sim 
+Last Modified Date: 2nd April 2025
+*/
 
 -- In the Monash Oracle database, this UNIVERSITY set of tables has been created under the user "UNI".
 

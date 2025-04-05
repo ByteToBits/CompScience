@@ -1,12 +1,12 @@
 /*
 Applied 8-3: SQL Basics (Joins)
-Monash University
-Subeject: Introduction to Databases
+Institution: Monash University
+Subject: ITO 4132 Introduction to Databases
+Database Type:: Oracle SQL Database
 
 Student Name: Tristan Sim 
-Last Modified Date: 3rd April 2025
+Last Modified Date: 2nd April 2025
 */
-
 /* Part B - Retrieving data from multiple tables */
 
 /* In this Unit, It is REQUIRED to use ANSI Joins (Join..On.. , Join..Using.. , Natural Join)
