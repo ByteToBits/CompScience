@@ -16,8 +16,8 @@ This Repository contains programming projects from my personal computer science 
 - **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling and object oriented programming. There are two major practical assessments: the progressive "Rolling Project" that builds skills incrementally, and the capstone "Java Jumper" project which is to develop a simple video game. 
 
 ## Architecture and Networks
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
-![Linux & Networking](https://img.shields.io/badge/Linux_&_Networking-0078D6?style=for-the-badge)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
+![Linux & Networking](https://img.shields.io/badge/Linux_&_Networking-0078D6?style=flat-square&logo=linux&logoColor=white)
 - **Description**: This module covers the Linux operating system, signal modulation, network architecture, and the TCP/IP (OSI) model. 
     Assessments include creating modulation and constellation diagrams with Desmos, analyzing network traffic with Wireshark, and a final practical assessment using the Core Network Simulator to configure network devices including static routing, VLAN segmentation, and firewall configuration.
 
