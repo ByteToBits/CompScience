@@ -3,6 +3,7 @@
 
 ![Java](https://img.shields.io/badge/language-Java-FF6347)
 ![Python](https://img.shields.io/badge/language-Python-blue)
+![SQL](https://img.shields.io/badge/language-SQL-4479A1)
 
 This Repository contains programming projects from my personal computer science studies.
 
@@ -12,8 +13,9 @@ This Repository contains programming projects from my personal computer science 
 - [Introduction to Databases](#introduction-to-databases)
 
 ## Java Programming
-markdownCopy![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 - **Description**: A collection of Java programming projects and learning modules exploring essential concepts including variables, objects, control flows, exception handling and object oriented programming. There are two major practical assessments: the progressive "Rolling Project" that builds skills incrementally, and the capstone "Java Jumper" project which is to develop a simple video game. 
+Java Jumper Video Presentation: [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc)
 
 ## Architecture and Networks
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
@@ -23,7 +25,7 @@ markdownCopy![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge
 
 
 ## Introduction to Databases
-![Oracle SQL](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 - **Description**: This module covers database design and modeling using Oracle SQL Database and Oracle Data Modeler, 
    SQL programming for database querying and management, and an introduction to non-relational databases through MongoDB. 
