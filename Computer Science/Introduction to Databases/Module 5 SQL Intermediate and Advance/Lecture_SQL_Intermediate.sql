@@ -107,3 +107,16 @@ SELECT *
 FROM dronetypeprice
 WHERE drone_pur_price IN (SELECT MAX(drone_pur_price) FROM dronetypeprice GROUP BY dt_code);
 
+-- 1st Query Returns to Find Minimum Drone Purchase Price
+-- 2nd Query Returns Finds all the Drones where the Prices are greater than the Minimum Values Return; Causing Duplicates.
+SELECT *
+FROM dronetypeprice
+WHERE drone_pur_price > ANY (SELECT MIN(drone_pur_price) FROM dronetypeprice GROUP BY dt_code)
+ORDER BY drone_id;
+
+-- 1st Query Returns to Find Minimum Drone Purchase Price
+-- 2nd Query Returns Finds all Drones Prices which are Highes than the Max value of the 1st Query; Causing Duplicates.
+SELECT *
+FROM dronetypeprice
+WHERE drone_pur_price > ALL (SELECT MIN(drone_pur_price) FROM dronetypeprice GROUP BY dt_code)
+ORDER BY drone_id;
