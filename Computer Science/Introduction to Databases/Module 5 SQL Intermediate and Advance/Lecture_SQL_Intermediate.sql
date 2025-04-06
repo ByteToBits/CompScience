@@ -120,3 +120,24 @@ SELECT *
 FROM dronetypeprice
 WHERE drone_pur_price > ALL (SELECT MIN(drone_pur_price) FROM dronetypeprice GROUP BY dt_code)
 ORDER BY drone_id;
+
+-- SQL Task: Write the SQL Query to Find all of the drones which have a purchase price less than the average purchase price
+-- for all drones Manufactured by DJI Da-Jiang Innovations
+-- Output must show the Drone ID, the Type Code, the Purchase Price, the Year Purchased and the Manufacturers Name. 
+-- Order by output by Drone ID.CUST_TRAIN
+
+SELECT drone_id, dt_code, drone_pur_price, TO_CHAR(drone_pur_date, 'yyyy') as yearpurchased, manuf_name
+FROM drone.drone NATURAL JOIN drone.drone_type NATURAL JOIN drone.manufacturer
+WHERE
+   drone_pur_price < (
+      SELECT 
+         AVG(drone_pur_price)
+      FROM
+         drone.drone
+         NATURAL JOIN drone.DRONE_TYPE
+         NATURAL JOIN drone.MANUFACTURER
+      WHERE
+         upper(manuf_name) = 'DJI DA-JIANG INNOVATIONS'
+   )
+ORDER BY
+   drone_id;
