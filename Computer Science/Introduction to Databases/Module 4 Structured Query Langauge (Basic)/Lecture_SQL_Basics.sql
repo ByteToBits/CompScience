@@ -1,4 +1,14 @@
 
+/*
+Module 4 Lecture: SQL Basics 
+Institution: Monash University Australia
+Subject: ITO 4132 Introduction to Databases
+Database Type:: Oracle SQL Database
+
+Student Name: Tristan Sim 
+Last Modified Date: 2nd April 2025
+*/
+
 SELECT drone_id, drone_cost_hr/60 AS costpermin from drone.drone; 
 
 -- Will Return the Student Information (Displays Null)
@@ -51,3 +61,4 @@ WHERE
   drone_pur_date > TO_DATE('01-Mar-2021','dd-Mon-yyyy')
 ORDER BY
   drone_id; 
+
