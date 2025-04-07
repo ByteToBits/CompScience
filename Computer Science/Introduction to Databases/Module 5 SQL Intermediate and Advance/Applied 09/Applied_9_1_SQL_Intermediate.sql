@@ -178,11 +178,40 @@ ORDER BY
 
 -- 11 Find the oldest student/s in FIT9132. Display the student’s id, full name and the date of birth. Sort the list by student id.
 
+DESC uni.student; 
+DESC uni.enrolment; 
+
+SELECT 
+   s1.stuid,
+   stufname || ' ' || stulname AS Full_Name, 
+   TO_CHAR(studob, 'dd/mm/yyyy') AS Date_of_Birth
+FROM
+   uni.student s1
+   JOIN uni.enrolment e1 ON s1.stuid = e1.stuid
+WHERE
+   UPPER(e1.unitcode) = 'FIT9132'
+   AND studob = 
+   (
+      SELECT 
+         MIN(studob)
+      FROM 
+         uni.student s1
+         JOIN uni.enrolment e1 ON s1.stuid = e1.stuid
+      WHERE
+         UPPER(e1.unitcode) = 'FIT9132'
+   )
+ORDER BY
+   s1.stuid; 
+
 
 
 -- 12 A unit offering is an instance of a particular unit in a particular semester - for example FIT1045 offered in semester 1 of 2019 - is a unit offering. 
 -- All unit offerings are listed in the OFFERING table. Find the unit offering/s with the highest number of enrolments for any unit offering which occurred in 
 -- the year 2019. Display the unit code, offering semester and number of students enrolled in the offering. Sort the list by semester then by unit code. 
+
+
+
+
 
 
 
