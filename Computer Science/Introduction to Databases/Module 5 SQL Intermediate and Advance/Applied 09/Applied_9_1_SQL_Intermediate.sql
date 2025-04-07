@@ -209,18 +209,64 @@ ORDER BY
 -- All unit offerings are listed in the OFFERING table. Find the unit offering/s with the highest number of enrolments for any unit offering which occurred in 
 -- the year 2019. Display the unit code, offering semester and number of students enrolled in the offering. Sort the list by semester then by unit code. 
 
+DESC uni.offering;
+DESC uni.enrolment;
 
-
-
+SELECT
+   unitcode,
+   ofsemester,
+   COUNT(stuid) AS student_count
+FROM
+   uni.enrolment
+WHERE
+   TO_CHAR(ofyear, 'yyyy') = '2019'
+GROUP BY
+   unitcode,
+   ofsemester
+HAVING 
+   COUNT(stuid) = (
+      SELECT
+         MAX(COUNT(stuid))
+      FROM 
+         uni.enrolment
+      WHERE
+         TO_CHAR(ofyear, 'yyyy') = '2019'
+      GROUP BY
+         unitcode,
+         ofsemester
+   )
+ORDER BY
+   ofsemester,
+   unitcode;
 
 
 
 -- 13 Find all students enrolled in FIT3157 in semester 1, 2020 who have scored more than the average mark for FIT3157 in the same offering. Display the students' 
 -- name and the mark. Sort the list in the order of the mark from the highest to the lowest then in increasing order of student name.
 
+DESC uni.student;
+DESC uni.enrolment;
 
-
-
-
-
+SELECT
+   stufname || ' ' || stulname AS full_name,
+   enrolmark
+FROM
+   uni.student s1
+   JOIN uni.enrolment e1 ON s1.stuid = e1.stuid
+WHERE
+   UPPER(unitcode) = 'FIT3157'
+   AND ofsemester = 1
+   AND TO_CHAR(ofyear, 'yyyy') = '2020'
+   AND enrolmark > (
+      SELECT
+         AVG(enrolmark)
+      FROM
+         uni.enrolment
+      WHERE
+         UPPER(unitcode) = 'FIT3157'
+         AND ofsemester = 1
+         AND TO_CHAR(ofyear, 'yyyy') = '2020'
+   )
+ORDER BY
+   enrolmark DESC, full_name;
 
