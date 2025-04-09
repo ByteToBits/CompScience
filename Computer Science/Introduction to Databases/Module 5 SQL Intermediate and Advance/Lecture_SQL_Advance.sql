@@ -322,7 +322,6 @@ ORDER BY
    cust_id;
    
 
-
 /* INTERSECION: Find the Employees who have the same last name as any customer */
 SELECT
    emp_no,
@@ -363,3 +362,27 @@ WHERE
 ORDER BY
    drone_id,
    ds_date_serviced;
+
+
+
+/* Padding ----------------------------------------------------------------------------------------------------- */
+/* Left PAD (LPAD) */
+SELECT lpad ('Page 1', 15, '*') AS "Lpad Example" FROM dual;
+
+SELECT 
+   drone_id,
+   COUNT(*) AS times_rented,
+   LPAD(LTRIM(TO_CHAR(COUNT(*) * 100 / (
+      SELECT
+         COUNT(rent_in_dt)
+      FROM
+         drone.rental
+   ), '990.99')), 15, '*') AS percent_overall
+FROM
+   drone.rental
+WHERE
+   rent_in_dt IS NOT NULL
+GROUP BY
+   drone_id
+ORDER BY
+   percent_overall DESC;
