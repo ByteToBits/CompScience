@@ -321,3 +321,45 @@ WHERE
 ORDER BY
    cust_id;
    
+
+
+/* INTERSECION: Find the Employees who have the same last name as any customer */
+SELECT
+   emp_no,
+   emp_fname,
+   emp_lname,
+   emp_type
+FROM
+   drone.employee
+WHERE
+   emp_lname IN (
+      SELECT
+         emp_lname
+      FROM
+         drone.employee
+      INTERSECT
+      SELECT
+         cust_lname
+      FROM
+         drone.customer
+   );
+
+
+
+/* EXTRACT and DECODE */
+SELECT
+   drone_id,
+   ds_date_serviced,
+   emp_no,
+   emp_fname
+   || ' '
+   || emp_lname AS employee_fullname,
+   decode(emp_type, 'F', 'Full time', 'C', 'Contract') AS employee_category
+FROM
+   drone.employee
+   NATURAL JOIN drone.drone_service
+WHERE 
+   EXTRACT(MONTH FROM ds_date_serviced) BETWEEN 1 AND 3
+ORDER BY
+   drone_id,
+   ds_date_serviced;
