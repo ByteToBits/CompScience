@@ -63,7 +63,7 @@ ORDER BY
    drone_id;
 
 
-/* Subquery (Nested): Example for Refresher */
+/* Subquery (Nested): Example for Refresher ------------------------------------------------------------------------------ */
 SELECT
    drone_id,
    TO_CHAR((rent_in_dt - rent_out_dt),'9990.99') AS Max_Days_Out,
@@ -180,3 +180,82 @@ GROUP BY
    drone_id
 ORDER BY
    percent_overall DESC;
+
+
+/* Subquery to INSERT Data */
+INSERT INTO drone_details
+   ( SELECT
+        drone_id, 
+        drone_pur_date,
+        dt_model
+     FROM
+        drone.drone
+        NATURAL JOIN drone.drone_type
+   );
+
+
+/* VIEW - Virtual Table Derived From one or More Base Tables -------------------------------------------------------- */
+/* Sometimes used as "Access Control" to the Database */
+
+/* VIEW example: For each drone find the customers (cust_id only) who rented drone for the longest duration */
+SELECT
+   drone_id,
+   (rent_in_dt - rent_out_dt) AS maxdaysout,
+   cust_id
+FROM
+   drone.cust_train
+   NATURAL JOIN drone.rental
+WHERE
+   rent_in_dt IS NOT NULL
+   AND (drone_id, (rent_in_dt - rent_out_dt)) IN (
+      SELECT
+         drone_id, maxdays
+      FROM
+         maxdaysout_view
+   )
+ORDER BY
+   drone_id,
+   cust_id;
+
+
+/* Joins ------------------------------------------------------------------------------------------------------ */
+/* Self Join */
+SELECT e1.empno, e1.empname, e1.empinit, e1.mgrno, e2.empname AS MANAGER
+FROM emp.employee e1 JOIN emp.employee e2 ON ee1.mgrno = e2.empno
+ORDER BY e1.empname;
+
+/* INNER JOINs (Equi/Natural Join) will throw away data/rows that don't relate in Table 1 and 2 */
+/* FULL OUTER JOINs will fill unrelated data/rows will Nulls instead of throwing away non-matching data */
+SELECT * FROM
+student s FULL OUTER JOIN mark m ON s.id = m.id;
+
+/* LEFT OUTER JOINs including everything on the Left and NULL filling any no matching data */
+/* Left Table 'Student' will be included; 'mark' with non-matching with be NULL Filled */
+SELECT * FROM
+student s LEFT OUTER JOIN mark m ON s.id = m.id;
+
+
+/* Exercise Natural Join: List the Number of Times all Drones have been rented */
+SELECT
+   drone_id,
+   COUNT(rent_out_dt) AS times_rented
+FROM
+   drone.drone
+   JOIN drone.rental
+   USING (drone_id)
+GROUP BY
+   drone_id
+ORDER BY
+   drone_id;
+
+/* Exercise Left Outer Join: List the Number of Times all Drones have been rented */
+SELECT
+   drone_id,
+   COUNT(rent_out_dt) as times_rented
+FROM
+   drone.drone
+   LEFT OUTER JOIN drone.rental USING (drone_id)
+GROUP BY
+   drone_id
+ORDER BY
+   drone_id;
