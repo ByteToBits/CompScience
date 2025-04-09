@@ -259,3 +259,65 @@ GROUP BY
    drone_id
 ORDER BY
    drone_id;
+
+
+/* Relational Set Operators --------------------------------------------------------------------------------------------------
+UnionAll: All rows selected by either query, including all duplicates 
+Union: All rows selected by either query, removing duplicates (e.g. DISTINCT on Union ALL) 
+Intersect: All Distinct Rows selected by both queries
+Minus: All distinct rows selected by the first query but not by the second
+
+/* MINUS: Using a Set Operator which drones have not been Rented? */
+SELECT
+   drone_id,
+   TO_CHAR(drone_pur_date, 'dd-Mon-YYYY') AS purchasedate,
+   drone_cost_hr
+FROM
+   drone.drone
+WHERE
+   drone_id IN (
+      SELECT
+         drone_id
+      FROM 
+         drone.drone
+      MINUS
+      SELECT
+         drone_id
+      FROM
+         drone.rental
+   )
+ORDER BY
+   drone_id;
+
+
+/* UNION: Using Union Operator, create a single list of all customers 
+For those who have completed training show "Completed Training"
+For those who have not completed training show "Not Completed Training" */
+SELECT DISTINCT
+   cust_id,
+   cust_fname
+   || ' '
+   || cust_lname AS custname,
+   'Has completed training' AS trainingstatus
+FROM
+   drone.customer
+   NATURAL JOIN drone.cust_train
+UNION
+SELECT
+   cust_id,
+   cust_fname
+   || ' '
+   || cust_lname,
+   'Has not completed training'
+FROM
+   drone.customer
+WHERE
+   cust_id NOT IN (
+      SELECT
+         cust_id
+      FROM
+         drone.cust_train
+   )
+ORDER BY
+   cust_id;
+   
