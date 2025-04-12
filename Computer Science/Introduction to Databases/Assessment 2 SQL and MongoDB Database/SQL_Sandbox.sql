@@ -28,6 +28,7 @@ SELECT * FROM PART_CHARGE;
 DESC CUSTOMER;
 SELECT CUST_NO, CUST_NAME FROM CUSTOMER;
 
+
 -- Task 4: Question C Validation
 -- Parts that have been used in at least one service
 SELECT 
@@ -91,3 +92,6 @@ FROM (
     GROUP BY
         c.cust_no
 ) customer_totals;
+
+
+SELECT * FROM part;

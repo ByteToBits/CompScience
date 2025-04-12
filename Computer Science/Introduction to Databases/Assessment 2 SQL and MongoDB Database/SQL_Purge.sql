@@ -1,6 +1,6 @@
 
 /*
-Script: SQL Purge all Active Users and Locking Sessions
+Script: SQL Purge all Unused Tables from Oracle Database
 Institution: Monash University Australia
 Subject: ITO 4132 Introduction to Databases
 Database Type:: Oracle SQL Database
@@ -8,7 +8,6 @@ Database Type:: Oracle SQL Database
 Student Name: Tristan Sim 
 Last Modified Date: 2nd April 2025
 
-Remarks: This Script was provided by the Courtesy of the Lecturers of Monash University Australia
 */
 
 -- This Script is to Purge Tables From the SQL Server
@@ -19,7 +18,6 @@ Remarks: This Script was provided by the Courtesy of the Lecturers of Monash Uni
 -- DROP TABLE FIT5111_STUDENT CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE STUDENT CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE UNIT CASCADE CONSTRAINTS PURGE;
-
 
 -- DROP TABLE ASSESSOR CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE BUILDING CASCADE CONSTRAINTS PURGE;
@@ -34,13 +32,22 @@ Remarks: This Script was provided by the Courtesy of the Lecturers of Monash Uni
 -- DROP TABLE VISIT CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE DAMAGE_ASSESSMENT CASCADE CONSTRAINTS PURGE;
 
-
 -- DROP TABLE ENROLMENT CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE FIT5111_STUDENT CASCADE CONSTRAINTS PURGE;
 -- DROP TABLE STUDENT CASCADE CONSTRAINTS PURGE; 
 -- DROP TABLE UNIT CASCADE CONSTRAINTS PURGE;
+-- DROP SEQUENCE STUDENT_SEQ;
+
+-- Drop Sequences for Assignment 2
+DROP SEQUENCE service_seq; 
+DROP SEQUENCE part_charge_seq; 
+DROP SEQUENCE part_purchase_seq;
+DROP SEQUENCE part_sale_seq;
 
 
+-- Drop Tables for Assignment 2
+DROP TABLE part_purchase CASCADE CONSTRAINTS PURGE;
+DROP TABLE part_sale CASCADE CONSTRAINTS PURGE;
 DROP TABLE CUSTOMER CASCADE CONSTRAINTS PURGE; 
 DROP TABLE PART CASCADE CONSTRAINTS PURGE;
 DROP TABLE PART_CHARGE CASCADE CONSTRAINTS PURGE;
@@ -48,5 +55,8 @@ DROP TABLE SERVICE CASCADE CONSTRAINTS PURGE;
 DROP TABLE SERVICE_JOB CASCADE CONSTRAINTS PURGE;
 DROP TABLE VEHICLE CASCADE CONSTRAINTS PURGE;
 DROP TABLE PAY_MODE CASCADE CONSTRAINTS PURGE;
+DROP TABLE VENDOR CASCADE CONSTRAINTS PURGE;
 
+
+-- Purge Oracle Database Recycle Bin
 PURGE RECYCLEBIN;
