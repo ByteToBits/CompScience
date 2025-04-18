@@ -249,3 +249,88 @@ ORDER BY
 Introduction to computer architecture and networks (note: both unit names are unique) in semester 1 2020. You should note that the case provided for 
 these unit names does not necessarily match the case in the database. Order the list by the student id.
 */
+
+SELECT
+    stuid,
+    stufname
+    || ' '
+    || stulname AS student_full_name
+FROM
+    uni.student
+WHERE
+    stuid IN (
+        SELECT
+            stuid
+        FROM
+            uni.enrolment
+            NATURAL JOIN uni.unit
+        WHERE
+            lower(unitname) = lower('Introduction to databases')
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+        INTERSECT
+        SELECT
+            stuid
+        FROM
+            uni.enrolment
+            NATURAL JOIN uni.unit
+        WHERE
+            lower(unitname) = lower('Introduction to computer architecture and networks')
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+    )
+ORDER BY
+    stuid;
+
+
+/* 8. Given that the payment rate for a tutorial is $42.85 per hour and the payment rate for a lecture is $75.60 per hour, calculate the 
+weekly payment per type of class for each staff member in semester 1 2020. In the display, include staff id, staff name, type of class (lecture - L or tutorial - T), 
+number of classes, number of hours (total duration), and weekly payment (number of hours * payment rate). The weekly payment must be displayed to two decimal 
+points and right aligned. Order the list by the staff id and for a given staff id by the type of class.
+*/ 
+
+SELECT
+    staffid,
+    stafffname
+    || ' '
+    || stafflname AS staffname,
+    'Lecture' AS type,
+    COUNT(*) AS no_of_classes,
+    SUM(clduration) AS total_hours,
+    lpad(to_char(SUM(clduration) * 75.60, '$999.99'), 14, ' ') AS weekly_payment
+FROM
+    uni.schedclass
+    NATURAL JOIN uni.staff
+WHERE
+    upper(cltype) = 'L'
+    AND ofsemester = 1
+    AND to_char(ofyear, 'yyyy') = '2020'
+GROUP BY
+    staffid,
+    stafffname
+    || ' '
+    || stafflname
+UNION
+SELECT
+    staffid,
+    stafffname
+    || ' '
+    || stafflname AS staffname,
+    'Tutorial' AS type,
+    COUNT(*) AS no_of_classes,
+    SUM(clduration) AS total_hours,
+    lpad(to_char(SUM(clduration) * 42.85, '$999.99'), 14, ' ') AS weekly_payment
+FROM
+    uni.schedclass
+    NATURAL JOIN uni.staff
+WHERE
+    upper(cltype) = 'T'
+    AND ofsemester = 1
+    AND to_char(ofyear, 'yyyy') = '2020'
+GROUP BY
+    staffid,
+    stafffname
+    || ' '
+    || stafflname
+ORDER BY
+    staffid, type;
