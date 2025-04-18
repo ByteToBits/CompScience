@@ -14,7 +14,7 @@ This Repository contains programming projects from my personal computer science 
 
 ## Java Programming
 ![Java](https://img.shields.io/badge/Java-DC143C?style=flat-squaree&logo=java&logoColor=white)
-- **Description**: This module focuses on Java Programming covering essential concepts such as variables, objects, control flows, exception handling, class diagram design, and object-oriented programming principles. Key assessments included the "Rolling Project," a two-part task to develop a University Enrollment Program, and the capstone project "Java Jumper," a simple video game demonstrated in this[Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc)
+- **Description**: This module focuses on Java Programming covering essential concepts such as variables, objects, control flows, exception handling, class diagram design, and object-oriented programming principles. Key assessments included the "Rolling Project," a two-part task to develop a University Enrollment Program, and the capstone project "Java Jumper," a simple video game demonstrated in this [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc).
 
 ## Architecture and Networks
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
