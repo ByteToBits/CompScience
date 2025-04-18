@@ -166,3 +166,86 @@ ORDER BY
    unitcode;
 
 -- Using Operator MINUS
+SELECT
+   u.unitcode,
+   unitname
+FROM
+   uni.unit u 
+MINUS
+SELECT
+   u.unitcode,
+   unitname
+FROM
+   uni.unit u
+   JOIN uni.prereq p ON u.unitcode = p.unitcode
+ORDER BY
+   unitcode;
+
+
+/* 5. List the unit code, semester, number of enrolments and the average mark for each unit offering in 2019. 
+A unit offering is a particular unit in a particular semester for a particular year - for example the offering of FIT3176 in 
+semester 2 of 2019 is one offering. Include offerings without any enrolment in the list. Round the average to 2 digits after the decimal point. 
+If the average result is 'null', display the average as 0.00. The average must be shown with two decimal digits and right aligned. Order the list 
+by the average mark, and when the average mark for several offerings is the same, sort by the semester then by the unit code.
+*/
+
+DESC uni.offering;
+DESC uni.enrolment;
+
+SELECT
+   unitcode,
+   ofsemester,
+   COUNT(stuid) AS number_of_enrollments,
+   LPAD(TO_CHAR(NVL(AVG(enrolmark), 0), '990.99'), 12, ' ') AS average_mark
+FROM
+   uni.offering
+   LEFT OUTER JOIN uni.enrolment USING (ofyear, ofsemester, unitcode)
+WHERE
+   EXTRACT (YEAR from ofyear) = 2019
+GROUP BY
+   unitcode,
+   ofsemester
+ORDER BY
+   average_mark,
+   ofsemester,
+   unitcode;
+
+
+/* 6. List all units offered in semester 2 2019 which do not have any students enrolled. Include the unit code, unit name, and the chief examiner's 
+name in a single column titled ce_name. Order the list based on the unit code.
+*/ 
+
+DESC uni.offering;
+DESC uni.enrolment;
+DESC uni.staff;
+DESC uni.unit;
+
+SELECT
+  o.unitcode,
+  unitname, 
+  s.stafffname || ' ' || s.stafflname 
+FROM
+  (( uni.offering o
+  LEFT OUTER JOIN uni.enrolment e 
+      ON o.unitcode = e.unitcode
+      AND o.ofyear = e.ofyear
+      AND o.ofsemester = e.ofsemester)
+  JOIN uni.staff s ON s.staffid = o.staffid)
+  JOIN uni.unit u ON o.unitcode = u.unitcode
+WHERE
+  TO_CHAR(o.ofyear, 'yyyy') = '2019'
+  AND o.ofsemester = 2
+GROUP BY
+  o.unitcode,
+  unitname,
+  stafffname || ' ' || stafflname
+HAVING
+  COUNT(e.stuid) = 0
+ORDER BY
+  unitcode;
+
+
+/* 7. List the id and full name (in a single column titled student_full_name) of students who are enrolled in both Introduction to databases and 
+Introduction to computer architecture and networks (note: both unit names are unique) in semester 1 2020. You should note that the case provided for 
+these unit names does not necessarily match the case in the database. Order the list by the student id.
+*/
