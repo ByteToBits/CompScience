@@ -1,6 +1,6 @@
 
 /*
-Lecture 5 Lecture: SQL Intermediate
+Lecture 5: SQL Intermediate
 Institution: Monash University Australia
 Subject: ITO 4132 Introduction to Databases
 Database Type:: Oracle SQL Database
