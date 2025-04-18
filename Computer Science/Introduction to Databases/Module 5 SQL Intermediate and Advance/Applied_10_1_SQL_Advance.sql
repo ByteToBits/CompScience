@@ -117,3 +117,52 @@ ORDER BY
 /* 3. Find the total number of prerequisite units for all units. Include in the list the unit code of units that do not have a prerequisite. 
 Order the list in descending order of the number of prerequisite units and where several units have the same number of prerequisites order then by unit code.
 */
+
+DESC uni.unit;
+DESC uni.prereq;
+
+SELECT 
+   u.unitcode,
+   COUNT(PREREQUNITCODE) AS number_of_prerequisites
+FROM
+   uni.unit u 
+   LEFT OUTER JOIN uni.prereq p ON u.unitcode = p.unitcode
+GROUP BY
+   u.unitcode
+ORDER BY 
+   number_of_prerequisites DESC, u.unitcode;
+
+
+/* 4. Display the unit code and unit name for units that do not have a prerequisite. Order the list by unit code. There are many approaches that you
+ can take in writing an SQL statement to answer this query. You can use the SET OPERATORS, OUTER JOIN and a SUBQUERY. Write SQL statements 
+ based on all three approaches. */
+
+-- Using Outer Join
+SELECT
+   u.unitcode,
+   u.unitname
+FROM
+   uni.unit u
+   LEFT OUTER JOIN uni.prereq p ON u.unitcode = p.unitcode
+WHERE
+   p.prerequnitcode IS NULL
+ORDER BY
+   u.unitcode;
+
+-- Using Subquery
+SELECT
+   unitcode,
+   unitname
+FROM
+   uni.unit
+WHERE
+   unitcode NOT IN (
+      SELECT
+         unitcode
+      FROM
+         uni.prereq
+   )
+ORDER BY
+   unitcode;
+
+-- Using Operator MINUS
