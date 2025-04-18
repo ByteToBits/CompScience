@@ -334,3 +334,140 @@ GROUP BY
     || stafflname
 ORDER BY
     staffid, type;
+
+
+
+/* 9. Given that the payment rate for a tutorial is $42.85 per hour and the payment rate for a lecture is $75.60 per hour, calculate the total weekly payment 
+(the sum of both tutorial and lecture payments) for each staff member in semester 1 2020. In the display, include staff id, staff name, total weekly payment 
+for tutorials, total weekly payment for lectures and the total weekly payment as a single line of output. If the payment is null, show it as $0.00.
+ The tutorial payment, lecture payment and total weekly payment must be displayed to two decimal points and right aligned. Order the list by the staff id.
+*/ 
+
+
+SELECT DISTINCT
+    s.staffid,
+    stafffname
+    || ' '
+    || stafflname AS staffname,
+    lpad(to_char(nvl((
+        SELECT
+            SUM(clduration) * 42.85
+        FROM
+            uni.schedclass sc1
+        WHERE
+            sc1.staffid = sc.staffid
+            AND upper(cltype) = 'T'
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+    ), 0), '$990.99'), 16, ' ') AS tutorial_payment,
+    lpad(to_char(nvl((
+        SELECT
+            SUM(clduration) * 75.60
+        FROM
+            uni.schedclass sc1
+        WHERE
+            sc1.staffid = sc.staffid
+            AND upper(cltype) = 'L'
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+    ), 0), '$990.99'), 16, ' ') AS lecture_payment,
+    lpad(to_char(nvl((
+        SELECT
+            SUM(clduration) * 75.60
+        FROM
+            uni.schedclass sc1
+        WHERE
+            sc1.staffid = sc.staffid
+            AND upper(cltype) = 'L'
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+    ), 0) + nvl((
+        SELECT
+            SUM(clduration) * 42.85
+        FROM
+            uni.schedclass sc1
+        WHERE
+            sc1.staffid = sc.staffid
+            AND upper(cltype) = 'T'
+            AND ofsemester = 1
+            AND to_char(ofyear, 'yyyy') = '2020'
+    ), 0), '$990.99'), 20, ' ') AS total_weekly_payment
+FROM
+    uni.schedclass   sc
+    JOIN uni.staff        s ON sc.staffid = s.staffid
+ORDER BY
+    staffid;
+
+
+/* 10. Assume that all units are worth 6 credit points each, calculate each student’s Weighted Average Mark (WAM) and GPA. 
+Please refer to these Monash websites: https://www.monash.edu/exams/results/wam and https://www.monash.edu/exams/results/gpa 
+for more information about WAM and GPA respectively. Do not include NULL, WH or DEF grade in the calculation.
+
+Calculation example for student 14374036 (Claudette Serman):
+WAM = (56x6 + 16x6 + 81x6 + 77x6 + 64x6)/(6+6+6+6+6) = 58.80
+GPA = (1x6+ 0.3x6 + 4x6 + 3x6 + 2x6)/(6+6+6+6+6) = 2.06
+
+Calculation example for student 23545528 (Benny Plunket):
+WAM = (53x3 + 97x3 + 78x6 + 94x6 + 85 x 6)/(3+3+6+6+6) = 83.00
+GPA = (1x6 + 4x6+ 3x6 + 4x6 + 4x6)/(6+6+6+6+6) = 3.20
+
+Include student id, student full name (in a 40 characters wide column headed student_fullname),
+WAM and GPA in the display. Order the list by descending order of WAM then descending order of GPA. 
+If two students have the same WAM and GPA, order them by their respective id.
+*/
+
+SELECT
+    stuid,
+    rpad(stufname
+         || ' '
+         || stulname, 40, ' ') AS student_fullname,
+    to_char(SUM(
+        CASE
+            WHEN enrolmark IS NOT NULL
+                 AND substr(unitcode, 4, 1) = '1' THEN
+                enrolmark * 3
+            WHEN enrolmark IS NOT NULL
+                 AND substr(unitcode, 4, 1) <> '1' THEN
+                enrolmark * 6
+        END
+    ) / SUM(
+        CASE
+            WHEN enrolmark IS NOT NULL
+                 AND substr(unitcode, 4, 1) = '1' THEN
+                3
+            WHEN enrolmark IS NOT NULL
+                 AND substr(unitcode, 4, 1) <> '1' THEN
+                6
+        END
+    ), '990.99') AS wam,
+    to_char(SUM(
+        CASE
+            WHEN enrolmark IS NOT NULL
+                 AND upper(enrolgrade) = 'N' THEN
+                0.3
+            WHEN enrolmark IS NOT NULL
+                 AND upper(enrolgrade) = 'P' THEN
+                1
+            WHEN enrolmark IS NOT NULL
+                 AND upper(enrolgrade) = 'C' THEN
+                2
+            WHEN enrolmark IS NOT NULL
+                 AND upper(enrolgrade) = 'D' THEN
+                3
+            WHEN enrolmark IS NOT NULL
+                 AND upper(enrolgrade) = 'HD' THEN
+                4
+        END
+        * 6) /(COUNT(enrolmark) * 6), '990.99') AS gpa
+FROM
+    uni.enrolment
+    NATURAL JOIN uni.student
+GROUP BY
+    stuid,
+    rpad(stufname
+         || ' '
+         || stulname, 40, ' ')
+ORDER BY
+    wam DESC,
+    gpa DESC,
+    stuid;
