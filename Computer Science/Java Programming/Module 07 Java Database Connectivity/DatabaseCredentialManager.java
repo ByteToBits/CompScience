@@ -34,6 +34,19 @@ public class DatabaseCredentialManager {
         this.databaseSoftware = "";
         this.databaseURL = "";
     }
+
+    /** Non-Default Constructor: 
+     * @param serviceName The Name of the Service, For Example "Microsoft SQL University Database"
+     * Initializes a New Database Credential Manager instance with Default Values From a JSON File
+     */
+    public DatabaseCredentialManager(String serviceName)
+    {
+        this.databaseServervice = "null";
+        this.databaseUsername = "null";
+        this.databasePassword = "";
+        this.databaseSoftware = "";
+        this.databaseURL = "";
+    }
     
     /**
      * Get Method: Gets the Username of the Database
@@ -79,5 +92,43 @@ public class DatabaseCredentialManager {
     {
         return databaseSoftware;
     }
+
+    /**
+     * Custom Method: Reads Database Configuration Settings from JSON File
+     * @param serviceName The Service Type, For Example "Microsoft SQL University Database"
+     */
+
+    private void loadCredentials(String serviceName)
+    {
+        // Instantiate a JSON Parser Class
+        JSONParser parser = new JSONParser(); 
+        
+        try (FileReader reader = new FileReader(CREDENTIAL_FILE_PATH)) {
+            
+            // Get all the JSON Root Object & Read the Crendential Arrays
+            JSONObject rootObject = (JSONObject) parser.parse(reader); 
+            JSONArray credentialArray = (JSONArray) rootObject.get("loginCredentials"); 
+
+            // Look for the Credentials for the Specified Service
+            for (Object credentialObject : credentialArray) {
+                JSONObject credential = (JSONObject) credentialObject;
+                String service = (String) credential.get("service"); 
+
+                // Check if Service Name Matches Search Criteria
+                if (service != null && service.equals(serivceName)) {
+                    this.databaseUsername = (String) credential.get("username");
+                    this.databasePassword = (String) credential.get("password"); 
+                    this.databaseURL = (String) credential.get("url"); 
+                    return;
+                }
+            }
+
+            System.err.println("No Credentials Found for Service " + serviceName ); 
+
+        } catch (IOException | ParseException e) {
+            System.err.println("Error Loading Database Credentials: " + e.getMessage());
+        }
+    }
+
 
 }
