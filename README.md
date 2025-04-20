@@ -20,10 +20,10 @@ This Repository contains programming projects from my personal computer science 
 - **Description**: This module focuses on Java Programming covering essential concepts such as variables, objects, control flows, exception handling, class diagram design, and object-oriented programming principles. Key assessments included the "Rolling Project," a two-part task to develop a University Enrollment Program, and the capstone project "Java Jumper," a simple video game demonstrated in this [Youtube Link](https://www.youtube.com/watch?v=VDigYY18HOc).
 
 ## Architecture and Networks
-- **Description**: This module explores Linux OS fundamentals, signal modulation, network architectures, and the TCP/IP (OSI) model. Assessments involved creating modulation and constellation diagrams in Desmos, analyzing network traffic with Wireshark, and performing practical network configurations—including static routing, VLAN segmentation, and firewall setup—using the Core Network Simulator.
+- **Description**: This module explores Linux OS fundamentals, signal modulation, network architectures, and the TCP/IP (OSI) model. Assessments involved creating modulation and constellation diagrams in Desmos, analyzing network traffic with Wireshark, and performing practical network configurations like static routing, VLAN segmentation, and firewall setup—using the Core Network Simulator.
 
 ## Introduction to Databases
-- **Description**: This module focuses on database design, modeling, and querying using Oracle SQL Database and Oracle Data Modeler, alongside an introduction to non-relational databases through MongoDB. Assessments covered Database Design Theory and practical SQL/NoSQL implementations using Oracle SQL Database and MongoDB.
+- **Description**: This module focuses on database design, modeling, and querying using Oracle SQL Database and Oracle Data Modeler, alongside an introduction to NoSQL databases through MongoDB. Assessments covered Database Design Theory and practical SQL/NoSQL implementations using Oracle SQL Database and MongoDB.
 
 ## Foundations of Computing
 - **Description**: This module explores core mathematical models in Computer Science, including Graph Theory, Tree Structures, Propositional & Predicate Logic, Probability, Calculus, Linear Algebra, Statistics, and Data Encoding. Notes and exercises were completed using Python in Jupyter Notebook.
