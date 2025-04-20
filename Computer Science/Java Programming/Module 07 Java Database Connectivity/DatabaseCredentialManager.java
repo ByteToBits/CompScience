@@ -23,7 +23,17 @@ public class DatabaseCredentialManager {
     private String databaseSoftware;
     private String databaseURL;
 
-
+    /** Default Constructor: 
+     * Initializes a New Database Credential Manager instance with Default Values
+     */
+    public DatabaseCredentialManager()
+    {
+        this.databaseServervice = "null";
+        this.databaseUsername = "null";
+        this.databasePassword = "";
+        this.databaseSoftware = "";
+        this.databaseURL = "";
+    }
     
     /**
      * Get Method: Gets the Username of the Database
@@ -69,8 +79,5 @@ public class DatabaseCredentialManager {
     {
         return databaseSoftware;
     }
-        
-
-
 
 }
