@@ -1,3 +1,4 @@
+
 /**
  * Module 07: Database Credential Manager
  * Institution: Monash Unviersity Australia
@@ -10,6 +11,7 @@
 import java.io.FileReader;
 import java.io.IOException;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -28,7 +30,7 @@ public class DatabaseCredentialManager {
      */
     public DatabaseCredentialManager()
     {
-        this.databaseServervice = "null";
+        this.databaseService = "null";
         this.databaseUsername = "null";
         this.databasePassword = "";
         this.databaseSoftware = "";
@@ -41,7 +43,7 @@ public class DatabaseCredentialManager {
      */
     public DatabaseCredentialManager(String serviceName)
     {
-        this.databaseServervice = "null";
+        this.databaseService = "null";
         this.databaseUsername = "null";
         this.databasePassword = "";
         this.databaseSoftware = "";
@@ -115,7 +117,7 @@ public class DatabaseCredentialManager {
                 String service = (String) credential.get("service"); 
 
                 // Check if Service Name Matches Search Criteria
-                if (service != null && service.equals(serivceName)) {
+                if (service != null && service.equals(serviceName)) {
                     this.databaseUsername = (String) credential.get("username");
                     this.databasePassword = (String) credential.get("password"); 
                     this.databaseURL = (String) credential.get("url"); 
@@ -123,12 +125,15 @@ public class DatabaseCredentialManager {
                 }
             }
 
-            System.err.println("No Credentials Found for Service " + serviceName ); 
+            System.err.println("No Credentials Found for Service " + serviceName); 
 
         } catch (IOException | ParseException e) {
             System.err.println("Error Loading Database Credentials: " + e.getMessage());
         }
     }
-
+    
+    public static void main(String[] args) {
+        System.out.println("Hellow World!");
+    }
 
 }

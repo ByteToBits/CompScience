@@ -1,3 +1,4 @@
+package src;
 /**
  * Module 07: Database Connection (Oracle SQL)
  * Institution: Monash Unviersity Australia
@@ -7,4 +8,8 @@
  * @version 1.01
 */
 
-
+public class DatabaseConnection
+{
+    // Fields
+    
+}
