@@ -129,12 +129,9 @@ public class DatabaseCredentialManager {
     }
     
     public static void main(String[] args) {
-        System.out.println("Hellow World!");
-        
-        DatabaseCredentialManager dbCredentials = new DatabaseCredentialManager("Monash Oracle SQL Server");
-        
+        System.out.println("Hellow World!");    
+        DatabaseCredentialManager dbCredentials = new DatabaseCredentialManager("Monash Oracle SQL Server");    
         System.out.println("Database Username: " + dbCredentials.getDatabaseUsername());
-
     }
 
 }
