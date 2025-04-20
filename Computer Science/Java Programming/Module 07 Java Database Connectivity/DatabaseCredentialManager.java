@@ -15,6 +15,62 @@ import org.json.simple.parser.ParseException;
 
 public class DatabaseCredentialManager {
     
-   
+    // Fields
+    private static final String CREDENTIAL_FILE_PATH = ".LocalCache\\Confidential\\Secrets.json";
+    private String databaseService;
+    private String databaseUsername;
+    private String databasePassword;
+    private String databaseSoftware;
+    private String databaseURL;
+
+
+    
+    /**
+     * Get Method: Gets the Username of the Database
+     * @return Returns the Username as a String
+     */
+    public String getDatabaseUsername()
+    {
+        return databaseUsername; 
+    }
+    
+    /**
+     * Get Method: Gets the URL of the Database
+     * @return Returns the URL of the Database as a String
+     */
+    public String getDatabaseURL()
+    {
+        return databaseURL; 
+    }
+
+    /**
+     * Get Method: Gets the Password of the Database
+     * @return Returns the Password as a String
+     */
+    public String getDatabasePassword()
+    {
+        return databasePassword;
+    }
+
+    /**
+     * Get Method: Gets the Service name of the Database
+     * @return Returns the Service name as a String
+     */
+    public String getDatabaseService()
+    {
+        return databaseService;
+    }
+
+    /**
+     * Get Method: Gets the Software name of the Database
+     * @return Returns the Software name as a String
+     */
+    public String getDatabaseSoftware()
+    {
+        return databaseSoftware;
+    }
+        
+
+
 
 }
