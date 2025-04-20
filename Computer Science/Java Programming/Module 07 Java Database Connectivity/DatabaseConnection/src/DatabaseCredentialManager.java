@@ -18,7 +18,7 @@ import org.json.simple.parser.ParseException;
 public class DatabaseCredentialManager {
     
     // Fields
-    private static final String CREDENTIAL_FILE_PATH = ".LocalCache\\Confidential\\Secrets.json";
+    private static final String CREDENTIAL_FILE_PATH = "resources\\Secrets.json";
     private String databaseService;
     private String databaseUsername;
     private String databasePassword;
@@ -43,11 +43,7 @@ public class DatabaseCredentialManager {
      */
     public DatabaseCredentialManager(String serviceName)
     {
-        this.databaseService = "null";
-        this.databaseUsername = "null";
-        this.databasePassword = "";
-        this.databaseSoftware = "";
-        this.databaseURL = "";
+        loadCredentials(serviceName); 
     }
     
     /**
@@ -134,6 +130,11 @@ public class DatabaseCredentialManager {
     
     public static void main(String[] args) {
         System.out.println("Hellow World!");
+        
+        DatabaseCredentialManager dbCredentials = new DatabaseCredentialManager("Monash Oracle SQL Server");
+        
+        System.out.println("Database Username: " + dbCredentials.getDatabaseUsername());
+
     }
 
 }
