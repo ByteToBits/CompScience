@@ -1,0 +1,5 @@
+        <tr><th style="background:#666;color:#fff;">1</th><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><th style="background:#666;color:#fff;">2</th><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><th style="background:#666;color:#fff;">3</th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><th style="background:#666;color:#fff;">4</th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><th style="background:#666;color:#fff;">5</th><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
