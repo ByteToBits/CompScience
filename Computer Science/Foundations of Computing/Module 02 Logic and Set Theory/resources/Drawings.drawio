@@ -112,9 +112,6 @@
         <mxCell id="HtunkDSxhIQNC_XrT3Kh-10" value="&lt;b style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 15px;&quot;&gt;Equal Set&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FFFF;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="3301.35" y="1665" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HtunkDSxhIQNC_XrT3Kh-13" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=18;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="2910" y="1350" width="130" height="1050" as="geometry" />
-        </mxCell>
         <mxCell id="HtunkDSxhIQNC_XrT3Kh-14" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#333333;strokeWidth=2;endFill=0;endSize=4;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="3074" y="1460" as="sourcePoint" />
@@ -159,9 +156,6 @@
         </mxCell>
         <mxCell id="EdPjmC5KVBf4B7WpG1KR-11" value="&lt;b style=&quot;font-size: 13px; font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;Two Sets with the Same Number of Elements.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5CCFF;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="3531.17" y="1738" width="180" height="38" as="geometry" />
-        </mxCell>
-        <mxCell id="EdPjmC5KVBf4B7WpG1KR-12" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=18;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="3748" y="1359" width="130" height="1041" as="geometry" />
         </mxCell>
         <mxCell id="EdPjmC5KVBf4B7WpG1KR-13" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;A={1, 2}&amp;nbsp; B={Dog,Cat}&amp;nbsp; U=&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 15px;&quot;&gt;{1, 2, Dog, Cat}&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF99FF;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="3215" y="1837" width="340" height="30" as="geometry" />
