@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Page-1" id="3yqpxKQvHaOyZTGhgoW6">
+    <mxGraphModel dx="-2323" dy="-2673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-40" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5CCFF;strokeColor=none;fontColor=#FFFFFF;arcSize=5;container=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="3420" y="3450" width="811" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-12" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5CCFF;strokeColor=none;fontColor=#FFFFFF;arcSize=3;container=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="3420" y="3758" width="810" height="183" as="geometry" />
+        </mxCell>
+        <mxCell id="pB6tjZf9dUS_jM-rtNOT-37" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;1.0 Introduction to Bayesian Networks&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C0099;strokeColor=none;fontColor=#FFFFFF;arcSize=18;container=0;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="3415" y="3330" width="817" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="pB6tjZf9dUS_jM-rtNOT-40" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;A Bayesian Network is a Directed Acyclic Graph. Nodes represent a Random Variable and Directed Links connect pairs of nodes, each node has a conditional probaility table (CPT)&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CC99FF;strokeColor=none;fontColor=#FFFFFF;arcSize=10;container=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="3419" y="3383" width="813" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pB6tjZf9dUS_jM-rtNOT-41" value="&lt;b&gt;&lt;font style=&quot;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;At each node X&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;we have a CPT and this specifies the probability distribution of the variable given all possible combinations of its parents. The CPT specifies the probability of X given parents A1, A2, A3 and so on.&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;&lt;b&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;We can think therefore of the Bayesian network as the combination of the&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;topology or graph structure&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;&amp;nbsp;and the&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;local conditional probabilities&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5CCFF;strokeColor=none;fontColor=#FFFFFF;arcSize=3;container=0;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="3433" y="3460" width="515" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pB6tjZf9dUS_jM-rtNOT-42" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Graphical Examples&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C0099;strokeColor=none;fontColor=#FFFFFF;arcSize=12;container=0;" parent="1" vertex="1">
+          <mxGeometry x="3420" y="3720" width="810" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-1" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Cavity&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3765.5" y="3780" width="120" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-4" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Toothache&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3695.5" y="3870" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-5" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Catch&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3855.5" y="3870" width="100" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#4C0099;" edge="1" parent="1" source="nk46r4_pkxUhkhJV1g_T-1" target="nk46r4_pkxUhkhJV1g_T-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3895.5" y="3810" as="sourcePoint" />
+            <mxPoint x="3945.5" y="3760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.526;entryY=0.002;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#4C0099;entryPerimeter=0;" edge="1" parent="1" source="nk46r4_pkxUhkhJV1g_T-1" target="nk46r4_pkxUhkhJV1g_T-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3783.5" y="3828" as="sourcePoint" />
+            <mxPoint x="3735.5" y="3880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-10" value="&lt;font color=&quot;#000000&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Nodes Represent Random Variables&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CC99FF;strokeColor=none;fontColor=#FFFFFF;arcSize=23;container=0;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="3910" y="3783" width="250" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-11" value="&lt;font color=&quot;#000000&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Arcs represent the relationship&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CC99FF;strokeColor=none;fontColor=#FFFFFF;arcSize=22;container=0;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="3500" y="3820" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-41" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#4C0099;" edge="1" parent="1" source="nk46r4_pkxUhkhJV1g_T-38" target="nk46r4_pkxUhkhJV1g_T-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3904" y="3830" as="sourcePoint" />
+            <mxPoint x="3944" y="3883" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-42" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#4C0099;" edge="1" parent="1" source="nk46r4_pkxUhkhJV1g_T-37" target="nk46r4_pkxUhkhJV1g_T-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4158" y="3519" as="sourcePoint" />
+            <mxPoint x="4119" y="3563" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-37" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;A1&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3995" y="3466" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-38" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;A8&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="4133" y="3466" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-39" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;X&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#FF99FF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="4066" y="3546" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-43" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="4066" y="3486" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-44" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="4086" y="3486" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-45" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="4105" y="3486" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-46" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#4C0099;" edge="1" parent="1" target="nk46r4_pkxUhkhJV1g_T-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4091" y="3505" as="sourcePoint" />
+            <mxPoint x="4119" y="3563" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-47" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#4C0099;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nk46r4_pkxUhkhJV1g_T-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="4094.83" y="3606" as="sourcePoint" />
+            <mxPoint x="4091" y="3626" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nk46r4_pkxUhkhJV1g_T-48" value="&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px; text-align: left;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b style=&quot;&quot;&gt;P ( X | A1 ... A)&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CC99FF;strokeColor=none;fontColor=#FFFFFF;arcSize=50;container=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="4011" y="3637" width="160" height="29" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
