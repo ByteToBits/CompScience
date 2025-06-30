@@ -1,0 +1,167 @@
+// ~->[DNET-1]->~
+
+// File created by an unlicensed user using Netica 7.01 on Jun 30, 2025 at 14:21:14 UTC.
+
+bnet Bayesian_Decision_Network_Task {
+AutoCompile = TRUE;
+autoupdate = TRUE;
+whenchanged = 1751293271;
+
+visual V1 {
+	defdispform = BELIEFBARS;
+	nodelabeling = TITLE;
+	NodeMaxNumEntries = 50;
+	nodefont = font {shape= "Arial"; size= 9;};
+	linkfont = font {shape= "Arial"; size= 9;};
+	ShowLinkStrengths = 1;
+	windowposn = (26, 26, 1139, 767);
+	scrollposn = (99, 0);
+	resolution = 72;
+	drawingbounds = (2027, 1062);
+	showpagebreaks = FALSE;
+	usegrid = TRUE;
+	gridspace = (6, 6);
+	NodeSet Node {BuiltIn = 1; Color = 0x00e1e1e1;};
+	NodeSet Nature {BuiltIn = 1; Color = 0x00f8eed2;};
+	NodeSet Deterministic {BuiltIn = 1; Color = 0x00d3caa6;};
+	NodeSet Finding {BuiltIn = 1; Color = 0x00c8c8c8;};
+	NodeSet Constant {BuiltIn = 1; Color = 0x00ffffff;};
+	NodeSet ConstantValue {BuiltIn = 1; Color = 0x00ffffb4;};
+	NodeSet Utility {BuiltIn = 1; Color = 0x00ffbdbd;};
+	NodeSet Decision {BuiltIn = 1; Color = 0x00dee8ff;};
+	NodeSet Documentation {BuiltIn = 1; Color = 0x00f0fafa;};
+	NodeSet Title {BuiltIn = 1; Color = 0x00ffffff;};
+	PrinterSetting A {
+		margins = (1270, 1270, 1270, 1270);
+		};
+	};
+
+node Flu {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = ();
+	probs = 
+		// True         False        
+		  (0.05,        0.95);
+	whenchanged = 1751293195;
+	belief = (0.05, 0.95);
+	visual V1 {
+		center = (240, 78);
+		height = 1;
+		};
+	};
+
+node Fever {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Flu);
+	probs = 
+		// True         False         // Flu   
+		  (0.95,        0.05,         // True  
+		   0.02,        0.98);        // False ;
+	whenchanged = 1751292593;
+	belief = (0.0665, 0.9335);
+	visual V1 {
+		center = (240, 234);
+		height = 2;
+		};
+	};
+
+node Thermometer {
+	discrete = TRUE;
+	states = (High, Low);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Fever);
+	probs = 
+		// High         Low           // Fever 
+		  (0.9,         0.1,          // True  
+		   0.05,        0.95);        // False ;
+	whenchanged = 1751293271;
+	belief = (0.106525, 0.893475);
+	visual V1 {
+		center = (240, 384);
+		height = 4;
+		};
+	};
+
+node Take_Aspirin {
+	discrete = TRUE;
+	states = (Yes, No);
+	kind = DECISION;
+	chance = DETERMIN;
+	parents = (Thermometer);
+	functable = 
+		                    // Thermometer 
+		  (Yes,             // High        
+		   No);             // Low         ;
+	whenchanged = 1751292871;
+	belief = (0.5, 0.5);
+	visual V1 {
+		center = (522, 72);
+		height = 5;
+		};
+	};
+
+node Fever_Later {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Fever, Take_Aspirin);
+	probs = 
+		// True         False         // Fever Take_Aspirin 
+		  (0.05,        0.95,         // True  Yes          
+		   0.9,         0.1,          // True  No           
+		   0.01,        0.99,         // False Yes          
+		   0.02,        0.98);        // False No           ;
+	whenchanged = 1751292953;
+	belief = (0.04559, 0.95441);
+	visual V1 {
+		center = (522, 234);
+		height = 3;
+		};
+	};
+
+node Reaction {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Take_Aspirin);
+	probs = 
+		// True         False         // Take_Aspirin 
+		  (0.05,        0.95,         // Yes          
+		   0,           1);           // No           ;
+	whenchanged = 1751292988;
+	belief = (0.025, 0.975);
+	visual V1 {
+		center = (780, 162);
+		height = 7;
+		};
+	};
+
+node U {
+	discrete = FALSE;
+	measure = RATIO;
+	kind = UTILITY;
+	chance = DETERMIN;
+	parents = (Fever_Later, Reaction);
+	functable = 
+		                 // Fever_Later Reaction 
+		  (-50,          // True        True     
+		   -10,          // True        False    
+		   -30,          // False       True     
+		   50);          // False       False    ;
+	whenchanged = 1751293034;
+	visual V1 {
+		center = (780, 300);
+		height = 6;
+		};
+	};
+ElimOrder = (Flu, Reaction, Fever_Later, Fever, Take_Aspirin, Thermometer);
+};
