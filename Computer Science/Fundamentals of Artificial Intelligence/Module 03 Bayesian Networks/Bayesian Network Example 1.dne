@@ -1,0 +1,128 @@
+// ~->[DNET-1]->~
+
+// File created by an unlicensed user using Netica 7.01 on Jun 29, 2025 at 15:29:02 UTC.
+
+bnet Bayesian_Network_Example_1 {
+AutoCompile = TRUE;
+autoupdate = TRUE;
+whenchanged = 1751210139;
+
+visual V1 {
+	defdispform = BELIEFBARS;
+	nodelabeling = TITLE;
+	NodeMaxNumEntries = 50;
+	nodefont = font {shape= "Arial"; size= 9;};
+	linkfont = font {shape= "Arial"; size= 9;};
+	ShowLinkStrengths = 1;
+	windowposn = (26, 26, 1139, 638);
+	resolution = 72;
+	drawingbounds = (1499, 720);
+	showpagebreaks = FALSE;
+	usegrid = TRUE;
+	gridspace = (6, 6);
+	NodeSet Node {BuiltIn = 1; Color = 0x00e1e1e1;};
+	NodeSet Nature {BuiltIn = 1; Color = 0x00f8eed2;};
+	NodeSet Deterministic {BuiltIn = 1; Color = 0x00d3caa6;};
+	NodeSet Finding {BuiltIn = 1; Color = 0x00c8c8c8;};
+	NodeSet Constant {BuiltIn = 1; Color = 0x00ffffff;};
+	NodeSet ConstantValue {BuiltIn = 1; Color = 0x00ffffb4;};
+	NodeSet Utility {BuiltIn = 1; Color = 0x00ffbdbd;};
+	NodeSet Decision {BuiltIn = 1; Color = 0x00dee8ff;};
+	NodeSet Documentation {BuiltIn = 1; Color = 0x00f0fafa;};
+	NodeSet Title {BuiltIn = 1; Color = 0x00ffffff;};
+	PrinterSetting A {
+		margins = (1270, 1270, 1270, 1270);
+		};
+	};
+
+node Pollution {
+	discrete = TRUE;
+	states = (High, Low);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = ();
+	probs = 
+		// High         Low          
+		  (0.9,         0.1);
+	whenchanged = 1751210136;
+	belief = (0.9, 0.1);
+	visual V1 {
+		center = (354, 114);
+		height = 5;
+		};
+	};
+
+node Smoker {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = ();
+	probs = 
+		// True         False        
+		  (0.3,         0.7);
+	whenchanged = 1751210138;
+	belief = (0.3, 0.7);
+	visual V1 {
+		center = (804, 114);
+		height = 2;
+		};
+	};
+
+node Cancer {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Pollution, Smoker);
+	probs = 
+		// True         False         // Pollution Smoker 
+		  (0.05,        0.95,         // High      True   
+		   0.02,        0.98,         // High      False  
+		   0.03,        0.97,         // Low       True   
+		   0.001,       0.999);       // Low       False  ;
+	whenchanged = 1751209688;
+	belief = (0.02707, 0.97293);
+	visual V1 {
+		center = (594, 294);
+		height = 1;
+		};
+	};
+
+node Xray {
+	discrete = TRUE;
+	states = (Pos, Neg);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Cancer);
+	probs = 
+		// Pos          Neg           // Cancer 
+		  (0.9,         0.1,          // True   
+		   0.2,         0.8);         // False  ;
+	whenchanged = 1751209715;
+	belief = (0.218949, 0.781051);
+	visual V1 {
+		center = (360, 432);
+		height = 4;
+		};
+	};
+
+node Dyspnoea {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Cancer);
+	probs = 
+		// True         False         // Cancer 
+		  (0.65,        0.35,         // True   
+		   0.3,         0.7);         // False  ;
+	whenchanged = 1751210139;
+	belief = (0.3094745, 0.6905255);
+	visual V1 {
+		center = (798, 432);
+		height = 3;
+		};
+	};
+ElimOrder = (Xray, Dyspnoea, Pollution, Smoker, Cancer);
+};
