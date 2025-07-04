@@ -1,0 +1,128 @@
+// ~->[DNET-1]->~
+
+// File created by an unlicensed user using Netica 7.01 on Jul 04, 2025 at 14:38:42 UTC.
+
+bnet Bayesian_Network_Example_2 {
+AutoCompile = TRUE;
+autoupdate = TRUE;
+whenchanged = 1751639920;
+
+visual V1 {
+	defdispform = BELIEFBARS;
+	nodelabeling = TITLE;
+	NodeMaxNumEntries = 50;
+	nodefont = font {shape= "Arial"; size= 9;};
+	linkfont = font {shape= "Arial"; size= 9;};
+	ShowLinkStrengths = 1;
+	windowposn = (54, 54, 1167, 555);
+	resolution = 72;
+	drawingbounds = (1080, 720);
+	showpagebreaks = FALSE;
+	usegrid = TRUE;
+	gridspace = (6, 6);
+	NodeSet Node {BuiltIn = 1; Color = 0x00e1e1e1;};
+	NodeSet Nature {BuiltIn = 1; Color = 0x00f8eed2;};
+	NodeSet Deterministic {BuiltIn = 1; Color = 0x00d3caa6;};
+	NodeSet Finding {BuiltIn = 1; Color = 0x00c8c8c8;};
+	NodeSet Constant {BuiltIn = 1; Color = 0x00ffffff;};
+	NodeSet ConstantValue {BuiltIn = 1; Color = 0x00ffffb4;};
+	NodeSet Utility {BuiltIn = 1; Color = 0x00ffbdbd;};
+	NodeSet Decision {BuiltIn = 1; Color = 0x00dee8ff;};
+	NodeSet Documentation {BuiltIn = 1; Color = 0x00f0fafa;};
+	NodeSet Title {BuiltIn = 1; Color = 0x00ffffff;};
+	PrinterSetting A {
+		margins = (1270, 1270, 1270, 1270);
+		};
+	};
+
+node Exercise {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = ();
+	probs = 
+		// True         False        
+		  (0.4,         0.6);
+	whenchanged = 1751639884;
+	belief = (0.4, 0.6);
+	visual V1 {
+		center = (210, 66);
+		height = 1;
+		};
+	};
+
+node Eat_Fatty_Foods {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = ();
+	probs = 
+		// True         False        
+		  (0.35,        0.65);
+	whenchanged = 1751639919;
+	belief = (0.35, 0.65);
+	visual V1 {
+		center = (468, 66);
+		height = 2;
+		};
+	};
+
+node High_Blood_Pressure {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Exercise, Eat_Fatty_Foods);
+	probs = 
+		// True         False         // Exercise Eat_Fatty_Foods 
+		  (0.45,        0.55,         // True     True            
+		   0.05,        0.95,         // True     False           
+		   0.95,        0.05,         // False    True            
+		   0.55,        0.45);        // False    False           ;
+	whenchanged = 1751639875;
+	belief = (0.49, 0.51);
+	visual V1 {
+		center = (294, 192);
+		height = 3;
+		};
+	};
+
+node Stroke {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (High_Blood_Pressure);
+	probs = 
+		// True         False         // High_Blood_Pressure 
+		  (0.75,        0.25,         // True                
+		   0.05,        0.95);        // False               ;
+	whenchanged = 1751639920;
+	belief = (0.393, 0.607);
+	visual V1 {
+		center = (294, 312);
+		height = 5;
+		};
+	};
+
+node High_Cholesterol {
+	discrete = TRUE;
+	states = (True, False);
+	kind = NATURE;
+	chance = CHANCE;
+	parents = (Eat_Fatty_Foods);
+	probs = 
+		// True         False         // Eat_Fatty_Foods 
+		  (0.8,         0.2,          // True            
+		   0.4,         0.6);         // False           ;
+	whenchanged = 1751639883;
+	belief = (0.54, 0.46);
+	visual V1 {
+		center = (528, 192);
+		height = 4;
+		};
+	};
+ElimOrder = (Stroke, High_Cholesterol, Exercise, Eat_Fatty_Foods, High_Blood_Pressure);
+};
