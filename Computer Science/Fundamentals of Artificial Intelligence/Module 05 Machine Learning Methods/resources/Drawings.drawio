@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Page-1" id="3yqpxKQvHaOyZTGhgoW6">
+    <mxGraphModel dx="-1562" dy="-3274" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-1" value="&lt;div style=&quot;line-height: 19px; white-space: pre;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Naïve Bayes&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C0099;strokeColor=none;fontColor=#FFFFFF;arcSize=18;container=0;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="3422.69" y="4430" width="808.31" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-2" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font color=&quot;#33001a&quot; face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;&lt;span style=&quot;background-color: initial; text-align: center;&quot;&gt;Naïve Bayes is a &lt;/span&gt;&lt;span style=&quot;background-color: initial; text-align: center;&quot;&gt;classification algorithm&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-align: center;&quot;&gt; that utilizes the Bayesian Rules to predict what category something belongs to based on its features. It&#39;s called &quot;naïve&quot; because it makes a simple assumption that might not always be true in real life.&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial; text-align: center;&quot;&gt;Think of it like this: You want to predict if an email is spam or not spam based on the words it contains. Naïve Bayes looks at each word separately and calculates the probability.&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5CCFF;strokeColor=none;fontColor=#FFFFFF;arcSize=5;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3420.19" y="4470" width="810" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-5" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Multinomial Naive Bayes&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;strokeColor=none;fontColor=#FFFFFF;arcSize=18;container=0;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="3420" y="4667" width="400" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-10" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Gaussian Naive Bayes&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;strokeColor=none;fontColor=#FFFFFF;arcSize=18;container=0;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="3830.19" y="4667" width="400" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-11" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;Used for: Discrete/Categorical Data (Word Counts and Categories)&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3420" y="4707" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-13" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; background-color: initial;&quot;&gt;Example: Text Classification, Email Spam Detection and Document Categorization.&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3420" y="4762" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-14" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; background-color: initial;&quot;&gt;Data Type: Counts of Frequencies (How many times a Word Appears)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3420.19" y="4818" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-15" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#000000&quot;&gt;&lt;b&gt;Used for: Continuous Numerical Data&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3830.81" y="4706.5" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-16" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; background-color: initial;&quot;&gt;Example: Medical Diagnosis on Test Results and Predicting House Prices&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3830.81" y="4761.5" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-17" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Comic Sans MS&amp;quot;; background-color: initial;&quot;&gt;Data Type: Feautures are Continous Numbers (Height, Temperature, Age, etc)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCE6;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" parent="1" vertex="1">
+          <mxGeometry x="3831" y="4817.5" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E8kt_dxEYCXthbl-dFJB-20" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Two Main Types&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;strokeColor=none;fontColor=#FFFFFF;arcSize=18;container=0;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="3420" y="4627" width="810" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-9" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=4;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="c_0ql-a7YFW9CGbc3SsH-12" target="c_0ql-a7YFW9CGbc3SsH-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3844.69" y="5288" as="sourcePoint" />
+            <mxPoint x="3892.69" y="5420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-12" value="&lt;font face=&quot;Comic Sans MS&quot; color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;C1&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#006600;" vertex="1" parent="1">
+          <mxGeometry x="3790" y="4930" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-13" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;V1&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#CCFF99;" vertex="1" parent="1">
+          <mxGeometry x="3650" y="5060" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-14" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;V2&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#CCFF99;" vertex="1" parent="1">
+          <mxGeometry x="3790" y="5060" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-17" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;V3&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#CCFF99;" vertex="1" parent="1">
+          <mxGeometry x="3933.19" y="5060" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-18" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="c_0ql-a7YFW9CGbc3SsH-12" target="c_0ql-a7YFW9CGbc3SsH-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3860" y="4991" as="sourcePoint" />
+            <mxPoint x="3953" y="5079" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-19" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=4;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="c_0ql-a7YFW9CGbc3SsH-12" target="c_0ql-a7YFW9CGbc3SsH-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3835" y="5000" as="sourcePoint" />
+            <mxPoint x="3835" y="5070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-20" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Node C1 Represnets the Common Cuase&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#000000;arcSize=18;container=0;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="3877" y="4926" width="190" height="47.52" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-21" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;A Key Assumption: Attributes are Conditionally Independent&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#000000;arcSize=18;container=0;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="3420" y="5066.24" width="210" height="47.52" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-22" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3734.69" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-29" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3752" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-30" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3769" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-31" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3877" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-32" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3894.31" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-33" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="3911.31" y="5087" width="6.31" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="c_0ql-a7YFW9CGbc3SsH-34" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#FFFFFF;arcSize=7;container=0;fontSize=16;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="4083.19" y="4910" width="146.81" height="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
