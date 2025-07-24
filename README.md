@@ -8,7 +8,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
 ![Weka](https://img.shields.io/badge/Weka-FF6B35?style=flat&logo=weka&logoColor=white)
 
-This repository contains programming projects from my **Master's in Computer Science** studies, focusing on **Artificial Intelligence** and software engineering fundamentals.
+This repository contains programming projects from my **Computer Science** studies.
 
 ## Table of Contents
 - [Java Programming](#java-programming)
