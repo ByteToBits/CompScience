@@ -8,13 +8,13 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
 ![Weka](https://img.shields.io/badge/Weka-FF6B35?style=flat&logo=weka&logoColor=white)
 
-This repository contains programming projects from my **Computer Science** studies.
+This repository contains programming projects from my Computer Science studies.
 
 ## Table of Contents
 - [Java Programming](#java-programming)
 - [Architecture and Networks](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Architecture%20and%20Networks/Module%2001%20Operating%20Systems/Module%201%20Operating%20Systems.png)
-- [Introduction to Databases](#introduction-to-databases)
-- [Foundations of Computing](#foundations-of-computing)
+- [Introduction to Databases](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Introduction%20to%20Databases/Module%203%20Data%20Definition%20Langauge/Module%203%20Data%20Definition%20Langauge%20and%20Logical%20Modelling.png)
+- [Foundations of Computing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Foundations%20of%20Computing/Module%2001%20Graphs%20and%20Trees/topic_1_graph_theory.ipynb)
 - [Fundamentals of Artificial Intelligence](#fundamentals-of-artificial-intelligence)
 
 ## Java Programming
