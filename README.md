@@ -11,11 +11,11 @@
 This repository contains programming projects from my Computer Science studies.
 
 ## Table of Contents
-- [Java Programming](#java-programming)
+- [Java Programming](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Java%20Programming/Notebooks/Module%201%20Programming.pdf)
 - [Architecture and Networks](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Architecture%20and%20Networks/Module%2001%20Operating%20Systems/Module%201%20Operating%20Systems.png)
 - [Introduction to Databases](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Introduction%20to%20Databases/Module%203%20Data%20Definition%20Langauge/Module%203%20Data%20Definition%20Langauge%20and%20Logical%20Modelling.png)
 - [Foundations of Computing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Foundations%20of%20Computing/Module%2001%20Graphs%20and%20Trees/topic_1_graph_theory.ipynb)
-- [Fundamentals of Artificial Intelligence](#fundamentals-of-artificial-intelligence)
+- [Fundamentals of Artificial Intelligence](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Fundamentals%20of%20Artificial%20Intelligence/Module%2001%20Intelligent%20Agents/Intelligent_Agents.ipynb)
 
 ## Java Programming
 - **Description**: Object-oriented programming covering variables, objects, control flows, exception handling, and class diagram design. Key projects included the "Rolling Project" (University Enrollment System) and capstone project "Java Jumper" game ([Demo Video](https://www.youtube.com/watch?v=VDigYY18HOc)).
