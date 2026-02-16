@@ -12,7 +12,7 @@ This repository contains programming projects from my **Computer Science** studi
 
 ## Table of Contents
 - [Java Programming](#java-programming)
-- [Architecture and Networks](#architecture-and-networks)
+- [Architecture and Networks](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Architecture%20and%20Networks/Module%2001%20Operating%20Systems/Module%201%20Operating%20Systems.png)
 - [Introduction to Databases](#introduction-to-databases)
 - [Foundations of Computing](#foundations-of-computing)
 - [Fundamentals of Artificial Intelligence](#fundamentals-of-artificial-intelligence)
@@ -30,4 +30,7 @@ This repository contains programming projects from my **Computer Science** studi
 - **Description**: Core mathematical models including Graph Theory, Tree Structures, Propositional & Predicate Logic, Probability, Calculus, Linear Algebra, and Statistics. All work completed using Python in Jupyter Notebook.
 
 ## Fundamentals of Artificial Intelligence
-- **Description**: Introduction to AI concepts including Intelligent Agents, Adversarial Search, Bayesian Networks, and Machine Learning fundamentals.
+- **Description**: Introduction to AI concepts including Intelligent Agents, Adversarial Search, Bayesian Networks, Machine Learning fundamentals and Artificial Neural Networks.
+
+## Natural Language Processing
+- **Description**: 
