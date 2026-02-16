@@ -1,0 +1,196 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Sketch Book" id="rXl57ETMllONJgyVxjrs">
+    <mxGraphModel dx="1744" dy="1244" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="pQhNZeRnFEtJsWPPW5VE-0" />
+        <mxCell id="pQhNZeRnFEtJsWPPW5VE-1" parent="pQhNZeRnFEtJsWPPW5VE-0" />
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-0" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=2;strokeWidth=2;fillColor=none;strokeColor=#001933;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="55" width="315" height="308" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-3" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Intention:&amp;nbsp;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;Decide when and what information should be Transmitted (May Require the Agent to Plan and Reason the Goals and Thoughts).&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="31.5" y="64" width="300" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-4" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Generation:&amp;nbsp;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;Translate Information into a String of Words in a Desired Natural Language (Language of Thought).&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="31.5" y="140" width="300" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-5" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Synthesis:&amp;nbsp;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;Output the String in a Desired Modality, Text or Speach.&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="31.5" y="205" width="300" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-6" value="&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Comic Sans MS&quot;&gt;Speaker&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=17;strokeWidth=2;align=left;spacing=10;strokeColor=#001933;fillColor=#001933;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="22" width="315" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-7" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=2;strokeWidth=2;fillColor=none;strokeColor=#190033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="448" y="55" width="315" height="308" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-8" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Perception:&amp;nbsp;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;Map input Modality to a String of Words&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;(Example, Optical Character Recognition (OCR) or Speach Recognition)&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="455.5" y="64" width="300" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-9" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Analysis (Interpretation):&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="455.5" y="140" width="300" height="149" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-11" value="&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Comic Sans MS&quot;&gt;Hearer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=17;strokeWidth=2;align=left;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="448" y="22" width="315" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-12" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=6;strokeColor=#CC0066;endFill=1;" parent="pQhNZeRnFEtJsWPPW5VE-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="349" y="205" as="sourcePoint" />
+            <mxPoint x="439" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-13" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Incorporation:&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;Determine whether to Trust the Content of the String before storing it in memory.&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="455.5" y="297" width="300" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-14" value="&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;1) Synthetic (Parsing): Find the Correct Parse Tree Showing the Phrase Structure of the String.&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=5;strokeColor=#330066;fillColor=#330066;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="465" y="166" width="282" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-15" value="&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;2) Semantic: Find the Literal (Logical) Meaning of the String.&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=5;strokeColor=#330066;fillColor=#330066;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="464.5" y="207" width="282" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-16" value="&lt;div&gt;&lt;font face=&quot;Comic Sans MS&quot; size=&quot;1&quot;&gt;3) Pragmatic: Weight the effect of Overall Context on Altering the literal meaning of the sentence.&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=5;strokeColor=#330066;fillColor=#330066;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="465" y="248" width="282" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-20" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 15px;&quot;&gt;1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=center;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="393" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-21" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;Syntax (Ordering of Words)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="60" y="393" width="285" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-22" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Syntax concerns itself about the &lt;b&gt;Ordering of Words&lt;/b&gt; which can affect the meaning of the Sentence.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="424" width="321" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-38" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=5;strokeColor=#CC0066;endFill=1;" parent="pQhNZeRnFEtJsWPPW5VE-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="356" y="431.88" as="sourcePoint" />
+            <mxPoint x="446" y="431.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-39" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The car drove by the house.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="393" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-43" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The house drove by the car.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="423" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-44" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Drove the house by the car.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="453" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-45" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 15px;&quot;&gt;2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=center;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="497" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-46" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;Semantics (Literal Meaning)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="60" y="497" width="285" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-47" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Semantics relates to the Literal Meaning of the Sentence and Words. Consider the word &#39;Plant&#39;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="24" y="528" width="321" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-48" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=5;strokeColor=#CC0066;endFill=1;" parent="pQhNZeRnFEtJsWPPW5VE-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="356" y="535.88" as="sourcePoint" />
+            <mxPoint x="446" y="535.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-49" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Plant is a type of organism.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="497" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-50" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Plant is an industrial manufacturing facility.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="527" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="94ldGD2Ufkbb-8vhfXpT-51" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Plant is the act of sowing the seeds.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" parent="pQhNZeRnFEtJsWPPW5VE-1" vertex="1">
+          <mxGeometry x="462" y="557" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-0" value="&lt;font face=&quot;Comic Sans MS&quot; style=&quot;font-size: 15px;&quot;&gt;3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=center;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="604" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-1" value="&lt;font style=&quot;font-size: 15px;&quot; face=&quot;Comic Sans MS&quot;&gt;Pragmatics (Social Context)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="60" y="604" width="285" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-2" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Pragmatics relates to the Context (Communicative and Social) and its effect on interpretation.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="635" width="321" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-3" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=5;strokeColor=#CC0066;endFill=1;" edge="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="356" y="642.88" as="sourcePoint" />
+            <mxPoint x="446" y="642.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-4" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Democracy at its finest.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="462" y="604" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-5" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;John thinks vanilla.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="462" y="634" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-6" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;The ham sandwich wants another beer.&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="462" y="664" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-7" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The ship was spotted by the captain on the bridge.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=center;spacing=10;strokeColor=#4C0099;fillColor=#4C0099;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="779" width="321" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-8" value="&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Comic Sans MS&quot;&gt;Given the following example:&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#190033;fillColor=#190033;fontStyle=1" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="746" width="321" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-9" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The ship captain was spotted on the bridge.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="466" y="779" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-10" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The bridge captain spotted the ship.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="466" y="809" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-11" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The ship spotted the captain on the bridge.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="466" y="839" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-15" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=5;strokeColor=#CC0066;endFill=1;" edge="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="358" y="803.18" as="sourcePoint" />
+            <mxPoint x="421" y="803.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-16" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=8;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="779" width="23" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-17" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=8;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="809" width="23" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-18" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=8;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="839" width="23" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-19" value="&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Comic Sans MS&quot;&gt;The possible interpretations could be:&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#33001A;fillColor=#33001A;fontStyle=1" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="746" width="328" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-20" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;The ship and bridge were spotted by the captain.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="466" y="869" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-21" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;The captain spotted the ship near the bridge.&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=10;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="466" y="899" width="297" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-22" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;4&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=8;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="869" width="23" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-23" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;5&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=0;strokeWidth=2;align=left;spacing=8;strokeColor=#660033;fillColor=#660033;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="435" y="899" width="23" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-24" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=3;strokeColor=#B3B3B3;endFill=0;" edge="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="25" y="939" as="sourcePoint" />
+            <mxPoint x="763" y="939" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-25" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Speech Recognition&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#003366;fillColor=#003366;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="962" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-26" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Speech Recognition may interpret &#39;Redundancy Failover&#39; as &#39;Indecency Hailed Over &#39;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="24" y="995" width="235" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-33" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Syntactic Analysis&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#003366;fillColor=#003366;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="276" y="962" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-34" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Syntactic Analysis can have Trouble distinguishing &#39;I ate pasta with forks&#39; and &#39;I ate pasta with porks&#39;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="276" y="995" width="235" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-35" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;b&gt;Semantic Analysis&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=2;align=left;spacing=10;strokeColor=#003366;fillColor=#003366;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="528" y="962" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="Gjf-OUapwk3rKo_xqIw4-36" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;Semantic Analysis fail to differentiate &#39;The ink is in the squid&#39; and &#39;The ink is in the pen&#39;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=2;align=left;spacing=10;strokeColor=#004C99;fillColor=#004C99;" vertex="1" parent="pQhNZeRnFEtJsWPPW5VE-1">
+          <mxGeometry x="528" y="995" width="235" height="64" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
