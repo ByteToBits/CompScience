@@ -1,0 +1,13 @@
+@relation postoperative-patient-data-simplified-test
+
+@attribute L-CORE {high,low,mid}
+@attribute L-SURF {high,low,mid}
+@attribute L-O2 {excellent,good}
+@attribute L-BP {high,low,mid}
+@attribute SURF-STBL {stable,unstable}
+@attribute CORE-STBL {mod-stable,stable,unstable}
+@attribute BP-STBL {mod-stable,stable,unstable}
+@attribute decision {A,S}
+
+@data
+mid,low,good,high,stable,stable,mod-stable,A
