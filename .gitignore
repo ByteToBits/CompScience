@@ -2,3 +2,9 @@
 .gitattributes/
 .LocalCache/
 /CompScienceEnv/
+*.docx
+*.bkp
+*.xlsx
+*.csv
+*.txt
+*.arff
