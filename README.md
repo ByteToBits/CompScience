@@ -2,11 +2,11 @@
 
 ![Java](https://img.shields.io/badge/Java-DC143C?style=flat&logo=openjdk&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
-![Weka](https://img.shields.io/badge/Weka-FF6B35?style=flat&logo=weka&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
 
 This repository contains programming projects from my Computer Science studies.
 
@@ -16,6 +16,7 @@ This repository contains programming projects from my Computer Science studies.
 - [Introduction to Databases](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Introduction%20to%20Databases/Module%203%20Data%20Definition%20Langauge/Module%203%20Data%20Definition%20Langauge%20and%20Logical%20Modelling.png)
 - [Foundations of Computing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Foundations%20of%20Computing/Module%2001%20Graphs%20and%20Trees/topic_1_graph_theory.ipynb)
 - [Fundamentals of Artificial Intelligence](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Fundamentals%20of%20Artificial%20Intelligence/Module%2001%20Intelligent%20Agents/Intelligent_Agents.ipynb)
+- [Natural Language Processing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Module%204%20Neural%20Machine%20Translation/Neural_Machine_Translation.ipynb)
 
 ## Java Programming
 - **Description**: Object-oriented programming covering variables, objects, control flows, exception handling, and class diagram design. Key projects included the "Rolling Project" (University Enrollment System) and capstone project "Java Jumper" game ([Demo Video](https://www.youtube.com/watch?v=VDigYY18HOc)).
@@ -30,7 +31,10 @@ This repository contains programming projects from my Computer Science studies.
 - **Description**: Core mathematical models including Graph Theory, Tree Structures, Propositional & Predicate Logic, Probability, Calculus, Linear Algebra, and Statistics. All work completed using Python in Jupyter Notebook.
 
 ## Fundamentals of Artificial Intelligence
-- **Description**: Introduction to AI concepts including Intelligent Agents, Adversarial Search, Bayesian Networks, Machine Learning fundamentals and Artificial Neural Networks.
+- **Description**: Introduction to AI concepts including Intelligent Agents, Adversarial Search, Bayesian Networks, Machine Learning fundamentals and Artificial Neural Network (Feed-Forward Perceptron, Deep Neural Networks and Graph Neural Networks).
 
 ## Natural Language Processing
-- **Description**: 
+- **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
+
+## Intelligent Image and Video Analysis
+- **Description**:
