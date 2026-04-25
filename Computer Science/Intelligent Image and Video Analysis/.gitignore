@@ -3,5 +3,7 @@
 /Module 2 Language Modelling/Data
 Paper References
 
+*.png
+*.jpg
 *.pkl
 *.npy
