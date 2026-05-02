@@ -1,7 +1,13 @@
 /Documentation/Resources
-/Assessment*
 /Module 2 Language Modelling/Data
 Paper References
 
+Assessment 2 PyTorch Deep Learning/Data
+Assessment 2 PyTorch Deep Learning/Documentation
+Assessment 2 PyTorch Deep Learning/References
+Assessment 2 PyTorch Deep Learning/Resources
+
 *.pkl
 *.npy
+*.docx
+*.pth
