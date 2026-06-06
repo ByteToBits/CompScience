@@ -35,6 +35,7 @@ This repository contains programming projects from my Computer Science studies.
 
 ## Natural Language Processing
 - **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
+1) Sequence-To-Sequence (LSTM) Recipe Generator: ([Assessment 2 Jupyter Notebook](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb))
 
 ## Intelligent Image and Video Analysis
-- **Description**:
+- **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks (ResNet, Inception Module, Squueze and Excitation Techniques), Optical Flow (FlowNet) and Image Segmentation (Fully Convolutional Networks, Feature Pyramid Extraction and U-Net). 
