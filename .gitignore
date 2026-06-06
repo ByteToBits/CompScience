@@ -3,6 +3,7 @@
 .LocalCache/
 /CompScienceEnv/
 /Environments/
+.claude/
 
 *.docx
 *.bkp
