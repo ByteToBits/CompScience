@@ -19,7 +19,7 @@ This repository contains programming projects from my Computer Science studies.
 - [Natural Language Processing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Module%204%20Neural%20Machine%20Translation/Neural_Machine_Translation.ipynb)
 
 ## Java Programming
-- **Description**: Object-oriented programming covering variables, objects, control flows, exception handling, and class diagram design. Key projects included the "Rolling Project" (University Enrollment System) and capstone project "Java Jumper" game ([Demo Video](https://www.youtube.com/watch?v=VDigYY18HOc)).
+- **Description**: Object-oriented programming covering variables, objects, control flows, exception handling, and class diagram design. Key projects included the "Rolling Project" (University Enrollment System) and capstone project "Java Jumper" game ([Youtube: Demo Video](https://www.youtube.com/watch?v=VDigYY18HOc)).
 
 ## Architecture and Networks
 - **Description**: Linux OS fundamentals, signal modulation, network architectures, and TCP/IP (OSI) model. Practical work included network traffic analysis with Wireshark, static routing, VLAN segmentation, and firewall configuration using Core Network Simulator.
@@ -35,7 +35,10 @@ This repository contains programming projects from my Computer Science studies.
 
 ## Natural Language Processing
 - **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
-1) Sequence-To-Sequence (LSTM) Recipe Generator: ([Assessment 2 Jupyter Notebook](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb))
+1) Sequence-To-Sequence (LSTM) Recipe Generator ([Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb))
 
 ## Intelligent Image and Video Analysis
-- **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks (ResNet, Inception Module, Squueze and Excitation Techniques), Optical Flow (FlowNet) and Image Segmentation (Fully Convolutional Networks, Feature Pyramid Extraction and U-Net). 
+- **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
+1) Assessment 1: Feature Extraction (Canny Edge Detection and Harris Corner Detection)
+2) Assessment 2: Convolutional Neural Networks foir Image Classification (ResNet, Inception Module, Squeeze & Excitation Techniques) 
+3) Assessment 3: Semantic segmentation (ResNet, Inception Module, Squueze and Excitation Techniques)
