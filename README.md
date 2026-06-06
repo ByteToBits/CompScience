@@ -39,6 +39,6 @@ This repository contains programming projects from my Computer Science studies.
 
 ## Intelligent Image and Video Analysis
 - **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
-1) Assessment 1: Feature Extraction (Canny Edge Detection and Harris Corner Detection)
-2) Assessment 2: Convolutional Neural Networks foir Image Classification (ResNet, Inception Module, Squeeze & Excitation Techniques) 
-3) Assessment 3: Semantic segmentation (ResNet, Inception Module, Squueze and Excitation Techniques)
+1) Assessment 1: Feature Extraction (Canny Edge Detection and Harris Corner Detection) [Github Link]
+2) Assessment 2: CNN for Image Classification (ResNet, Inception Module, SE Techniques) [Github Link]
+3) Assessment 3: Semantic segmentation (Fully Convolutional Network, Feature Pyramid Network, U-Net) [Github Link]
