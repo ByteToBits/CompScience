@@ -13,3 +13,4 @@
 *.arff
 *.zip
 *.pt
+*.keras
