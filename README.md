@@ -35,11 +35,10 @@ This repository contains programming projects from my Computer Science studies.
 
 ## Natural Language Processing
 - **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
-1) [Sequence-To-Sequence (LSTM) Recipe Generator Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
-2) [Transformer Model Recipe Generator Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
+1) [Sequence-To-Sequence (LSTM) Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
+2) [Transformer Model Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
 
 ## Intelligent Image and Video Analysis
 - **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
-1) [Feature Extraction (Canny Edge Detection and Harris Corner Detection)]
-2) [CNN for Image Classification (ResNet, Inception Module, SE Techniques)]
-3) [Semantic Segmentation (Fully Convolutional Network, FPN, U-Net)]
+1) [Convulutional Neural Networks (ResNet, Inception Module, SE Techniques) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%202%20Neural%20Netwoks%20for%20Image%20Classification/Assessment_2_Neural_Networks_for_Image_Classifcation.ipynb)
+2) [Semantic Segmentation (Fully Convolutional Network, FPN, U-Net) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%203%20Semantic%20Segmentation/Assessment_3_Semantic_Segmentation.ipynb)
