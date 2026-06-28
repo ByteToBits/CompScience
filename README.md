@@ -35,11 +35,11 @@ This repository contains programming projects from my Computer Science studies.
 
 ## Natural Language Processing
 - **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
-1) Sequence-To-Sequence (LSTM) Recipe Generator ([Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb))
-2) Transformer Architecture: [Github Link]
+1) [Sequence-To-Sequence (LSTM) Recipe Generator Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
+2) [Transformer Model Recipe Generator Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
 
 ## Intelligent Image and Video Analysis
 - **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
-1) Assessment 1: Feature Extraction (Canny Edge Detection and Harris Corner Detection) [Github Link]
-2) Assessment 2: CNN for Image Classification (ResNet, Inception Module, SE Techniques) [Github Link]
-3) Assessment 3: Semantic Segmentation (Fully Convolutional Network, FPN, U-Net) [Github Link]
+1) [Feature Extraction (Canny Edge Detection and Harris Corner Detection)]
+2) [CNN for Image Classification (ResNet, Inception Module, SE Techniques)]
+3) [Semantic Segmentation (Fully Convolutional Network, FPN, U-Net)]
