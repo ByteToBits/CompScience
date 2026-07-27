@@ -59,7 +59,8 @@ def show_images(images, labels = None, size=(28,28), rows = 1, scale=4):
     fig = plt.figure()
     for n, (image, title) in enumerate(zip(images, labels)):
         image = image.reshape(size)
-        a = fig.add_subplot(rows, np.ceil(n_images/float(rows)), n + 1)
+        # a = fig.add_subplot(rows, np.ceil(n_images/float(rows)), n + 1)
+        a = fig.add_subplot(rows, int(np.ceil(n_images/float(rows))), n + 1)
         if image.ndim == 2:
             plt.gray()
         plt.imshow(image)
