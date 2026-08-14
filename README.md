@@ -11,12 +11,25 @@
 This repository contains programming projects from my Computer Science studies.
 
 ## Table of Contents
+- [Fundamentals of Artificial Intelligence](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Fundamentals%20of%20Artificial%20Intelligence/Module%2001%20Intelligent%20Agents/Intelligent_Agents.ipynb)
+- [Natural Language Processing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Module%204%20Neural%20Machine%20Translation/Neural_Machine_Translation.ipynb)
+- [Intelligent Image & Video Analysis](http://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%203%20Semantic%20Segmentation/Assessment_3_Semantic_Segmentation.ipynb)
+- [Machine Learning](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Machine%20Learning/Module%205%20Neural%20Networks/Neural_Networks.ipynb)
 - [Java Programming](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Java%20Programming/Notebooks/Module%201%20Programming.pdf)
 - [Architecture and Networks](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Architecture%20and%20Networks/Module%2001%20Operating%20Systems/Module%201%20Operating%20Systems.png)
 - [Introduction to Databases](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Introduction%20to%20Databases/Module%203%20Data%20Definition%20Langauge/Module%203%20Data%20Definition%20Langauge%20and%20Logical%20Modelling.png)
-- [Foundations of Computing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Foundations%20of%20Computing/Module%2001%20Graphs%20and%20Trees/topic_1_graph_theory.ipynb)
-- [Fundamentals of Artificial Intelligence](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Fundamentals%20of%20Artificial%20Intelligence/Module%2001%20Intelligent%20Agents/Intelligent_Agents.ipynb)
-- [Natural Language Processing](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Module%204%20Neural%20Machine%20Translation/Neural_Machine_Translation.ipynb)
+
+***
+
+## Natural Language Processing
+- **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
+1) [Sequence-To-Sequence (LSTM) Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
+2) [Transformer Model Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
+
+## Intelligent Image and Video Analysis
+- **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
+1) [Convulutional Neural Networks (ResNet, Inception Module, SE Techniques) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%202%20Neural%20Netwoks%20for%20Image%20Classification/Assessment_2_Neural_Networks_for_Image_Classifcation.ipynb)
+2) [Semantic Segmentation (Fully Convolutional Network, FPN, U-Net) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%203%20Semantic%20Segmentation/Assessment_3_Semantic_Segmentation.ipynb)
 
 ## Java Programming
 - **Description**: Object-oriented programming covering variables, objects, control flows, exception handling, and class diagram design. Key projects included the "Rolling Project" (University Enrollment System) and capstone project "Java Jumper" game ([Youtube: Demo Video](https://www.youtube.com/watch?v=VDigYY18HOc)).
@@ -33,12 +46,3 @@ This repository contains programming projects from my Computer Science studies.
 ## Fundamentals of Artificial Intelligence
 - **Description**: Introduction to AI concepts including Intelligent Agents, Adversarial Search, Bayesian Networks, Machine Learning fundamentals and Artificial Neural Network (Feed-Forward Perceptron, Deep Neural Networks and Graph Neural Networks).
 
-## Natural Language Processing
-- **Description**: NLP covers concepts of Language Modelling, Word Embeddings and Neural Language Networks. Assessment Primarily focuses on Deep Neural Networks using Long Short-Term Memory (LSTM) with Attention Mechanism using PyTorch. It also covers new model architectrues like BERT and Transformers Models.
-1) [Sequence-To-Sequence (LSTM) Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
-2) [Transformer Model Recipe Generator Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Natural%20Language%20Processing/Assessment%202%20PyTorch%20Deep%20Learning/PyTorch_Recipe_Generator.ipynb)
-
-## Intelligent Image and Video Analysis
-- **Description**: The module covers Image and Video Processing Techniques like Image Classifcation, Object Detection and Segmentation using Popular libraries like TensorFlow and Keras. Methods covered include Convolutional Neural Networks, Optical Flow and Semantic Segmentation Techniques. 
-1) [Convulutional Neural Networks (ResNet, Inception Module, SE Techniques) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%202%20Neural%20Netwoks%20for%20Image%20Classification/Assessment_2_Neural_Networks_for_Image_Classifcation.ipynb)
-2) [Semantic Segmentation (Fully Convolutional Network, FPN, U-Net) Github Link](https://github.com/ByteToBits/CompScience/blob/main/Computer%20Science/Intelligent%20Image%20and%20Video%20Analysis/Assessment%203%20Semantic%20Segmentation/Assessment_3_Semantic_Segmentation.ipynb)
